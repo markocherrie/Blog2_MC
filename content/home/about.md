@@ -12,6 +12,7 @@ weight = 1
 # List your academic interests.
 [interests]
   interests = [
+    "R",
     "GIS",
     "Web Scraping",
     "Data Visualisation"

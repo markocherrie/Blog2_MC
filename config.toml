@@ -170,8 +170,8 @@ defaultContentLanguageInSubdir = false
   weight = 4
 
 [[menu.main]]
-  name = "Portfolio"
-  url = "#portfolio"
+  name = "Teaching"
+  url = "#Teaching"
   weight = 5
 
 [[menu.main]]
