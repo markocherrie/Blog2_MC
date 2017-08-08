@@ -24,7 +24,7 @@ view = 1
 [[filter]]
   name = "All"
   tag = "*"
-  
+
 [[filter]]
   name = "MMP"
   tag = ".MMP"
@@ -40,6 +40,10 @@ view = 1
 [[filter]]
   name = "UV"
   tag = ".UV"
+  
+[[filter]]
+  name = "Social(media)"
+  tag = ".Social(media)"
 
 [[filter]]
   name = "Other"

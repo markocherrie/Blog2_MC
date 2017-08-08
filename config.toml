@@ -26,7 +26,7 @@ defaultContentLanguageInSubdir = false
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "Mark.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "mark.cherrie@ed.ac.uk"
-  address = "Drummond Street, Edinburgh, EH8 9AP"
+  address = "School of Geosciences, Drummond Street, Edinburgh, EH8 9XP"
   office_hours = ""
   phone = ""
   skype = ""
@@ -155,23 +155,23 @@ defaultContentLanguageInSubdir = false
   weight = 1
 
 [[menu.main]]
-  name = "Publications"
-  url = "#publications_selected"
+  name = "Projects"
+  url = "#projects"
   weight = 2
 
 [[menu.main]]
-  name = "Posts"
-  url = "#posts"
+  name = "Publications"
+  url = "#publications_selected"
   weight = 3
-
-[[menu.main]]
-  name = "Projects"
-  url = "#projects"
-  weight = 4
 
 [[menu.main]]
   name = "Teaching"
   url = "#teaching"
+  weight = 4
+  
+[[menu.main]]
+  name = "Posts"
+  url = "#posts"
   weight = 5
 
 [[menu.main]]
