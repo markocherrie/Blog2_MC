@@ -45,9 +45,5 @@ view = 1
   name = "Social(media)"
   tag = ".Social(media)"
 
-[[filter]]
-  name = "Other"
-  tag = ".demo"
-
 +++
 
