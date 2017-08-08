@@ -1,6 +1,6 @@
 baseurl = "https://example.com/"  # End your URL with a `/` trailing slash.
 title = "Researcher"
-copyright = "&copy; 2016 Mark Cherrie"
+copyright = "&copy; 2017 Mark Cherrie"
 theme = "hugo-academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
@@ -170,8 +170,8 @@ defaultContentLanguageInSubdir = false
   weight = 4
 
 [[menu.main]]
-  name = "Teaching"
-  url = "#teaching"
+  name = "Portfolio"
+  url = "#Portfolio"
   weight = 5
 
 [[menu.main]]
