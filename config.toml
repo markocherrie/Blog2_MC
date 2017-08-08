@@ -25,11 +25,11 @@ defaultContentLanguageInSubdir = false
   organization_url = ""
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
-  email = "test@example.org"
-  address = "Building 1 Room 1, Stanford University, California, 90210, USA"
-  office_hours = "Monday 10:00 to 13:00 or email for appointment"
-  phone = "888 888 88 88"
-  skype = "echo123"
+  email = "mark.cherrie@ed.ac.uk"
+  address = "Drummond Street, Edinburgh, EH8 9AP"
+  office_hours = ""
+  phone = ""
+  skype = ""
   telegram = ""
 
   # Enable Keybase in Contact section by entering your keybase.io username.
