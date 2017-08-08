@@ -26,8 +26,20 @@ view = 1
   tag = "*"
   
 [[filter]]
-  name = "Deep Learning"
-  tag = ".deep-learning"
+  name = "MMP"
+  tag = ".MMP"
+
+[[filter]]
+  name = "IVF"
+  tag = ".IVF"
+
+[[filter]]
+  name = "DISPLAY"
+  tag = ".DISPLAY"
+  
+[[filter]]
+  name = "UV"
+  tag = ".UV"
 
 [[filter]]
   name = "Other"
