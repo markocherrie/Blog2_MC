@@ -12,10 +12,10 @@ weight = 1
 # List your academic interests.
 [interests]
   interests = [
-    "R",
-    "GIS",
-    "Web Scraping",
-    "Data Visualisation"
+    "UVR, greenspace, deprivation, air pollution, built environment",
+    "Asthma, cognitive ageing, infectious diseases, behaviour change",
+    "Lifecourse epidemiology, activity spaces, natural experiments",
+    "R, GIS, web scraping, data visualisation"
   ]
 
 # List your qualifications (such as academic degrees).
