@@ -21,12 +21,12 @@ weight = 1
 [[education.courses]]
   course = "PhD in Environmental Epidemiology"
   institution = "Peninsula College of Medicine and Dentistry"
-  year = 2015
+  year = 2016
 
 [[education.courses]]
-  course = ""
-  institution = ""
-  year = 
+  course = "MA Geography"
+  institution = "University of Edinburgh"
+  year = 2010 
  
 +++
 
