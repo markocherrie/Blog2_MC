@@ -23,7 +23,7 @@ math = false
 
 # Optional featured image (relative to `static/img/` folder).
 [header]
-image = "headers/MMPbanner.jpg"
+image = "headers/MMPbanner.png"
 caption = "MMP project 2013-2017"
 +++
 
