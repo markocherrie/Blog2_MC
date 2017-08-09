@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>/project/display/</loc>
+      <lastmod>2017-09-08T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/project/mmp/</loc>
       <lastmod>2017-08-08T00:00:00+00:00</lastmod>
     </url>
@@ -218,6 +227,16 @@
     
     <url>
     
+      <loc>/tags/display/</loc>
+      <lastmod>2017-09-08T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/greenspace/</loc>
       <lastmod>2017-08-08T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -279,7 +298,7 @@
     <url>
     
       <loc>/project/</loc>
-      <lastmod>2017-08-08T00:00:00+00:00</lastmod>
+      <lastmod>2017-09-08T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -338,8 +357,28 @@
     
     <url>
     
+      <loc>/tags/schoolchildren/</loc>
+      <lastmod>2017-09-08T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/tobacco/</loc>
+      <lastmod>2017-09-08T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
