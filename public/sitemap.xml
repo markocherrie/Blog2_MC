@@ -41,6 +41,15 @@
     
     <url>
     
+      <loc>/project/medmi/</loc>
+      <lastmod>2017-08-29T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/project/mmp/</loc>
       <lastmod>2017-08-08T00:00:00+00:00</lastmod>
     </url>
@@ -306,6 +315,16 @@
     
     <url>
     
+      <loc>/tags/infectious-disease/</loc>
+      <lastmod>2017-08-29T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/ivf/</loc>
       <lastmod>2017-08-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -328,6 +347,16 @@
     
       <loc>/tags/lifecourse/</loc>
       <lastmod>2017-08-08T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/medmi/</loc>
+      <lastmod>2017-08-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -407,6 +436,16 @@
     <url>
     
       <loc>/</loc>
+      <lastmod>2017-08-29T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/seasonality/</loc>
       <lastmod>2017-08-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>

@@ -46,8 +46,8 @@ view = 1
   tag = ".UV"
   
 [[filter]]
-  name = "Social(media)"
-  tag = ".Social(media)"
+  name = "MEDMI"
+  tag = ".MEDMI"
 
 +++
 
