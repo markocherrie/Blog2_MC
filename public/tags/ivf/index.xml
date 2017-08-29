@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ivf on Researcher</title>
+    <link>/tags/ivf/</link>
+    <description>Recent content in Ivf on Researcher</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Mark Cherrie</copyright>
+    <lastBuildDate>Tue, 29 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/ivf/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Environmental determinants of IVF treatment</title>
+      <link>/project/ivf/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/project/ivf/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,10 +3,10 @@
 date = "2017-08-08"
 
 # Project title.
-title = "Mobilty, Mood and Place"
+title = "Mobility, Mood and Place"
 
 # Project summary to display on homepage.
-##summary = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+summary = "Our health and mobility are intrinsically linked with the quality of our local environment. All sorts of things affect us, from housing density and neighbourhood deprivation to access to green space. In Topic 3, we are exploring how physical, built and social environments evolve over time and how they impact on inequalities in health-related mobility as people move into older age. We will be using data from 1,641 people in their 70s and 90s, together with temporal, area-level measures of their current, recent and past environment."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "MMP.jpg"
@@ -24,7 +24,5 @@ math = false
 # Optional featured image (relative to `static/img/` folder).
 [header]
 image = "headers/MMPbanner.png"
-caption = "MMP project 2013-2017"
 +++
 
-Life course of places, health & mobility 

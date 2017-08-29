@@ -21,29 +21,29 @@
     </item>
     
     <item>
+      <title>Air Pollution</title>
+      <link>/tags/air-pollution/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/air-pollution/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Alcohol</title>
+      <link>/tags/alcohol/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/alcohol/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Cognitive Function</title>
       <link>/tags/cognitive-function/</link>
       <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/cognitive-function/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Deep Learning</title>
-      <link>/tags/deep-learning/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/deep-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Demo</title>
-      <link>/tags/demo/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/demo/</guid>
       <description></description>
     </item>
     
@@ -75,11 +75,29 @@
     </item>
     
     <item>
+      <title>Health Inequalities</title>
+      <link>/tags/health-inequalities/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/health-inequalities/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Hugo</title>
       <link>/tags/hugo/</link>
       <pubDate>Wed, 20 Apr 2016 12:00:00 +0000</pubDate>
       
       <guid>/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ivf</title>
+      <link>/tags/ivf/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ivf/</guid>
       <description></description>
     </item>
     
@@ -125,24 +143,6 @@
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
       <guid>/tags/r-markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Regression</title>
-      <link>/tags/regression/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/tags/regression/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Schoolchildren</title>
-      <link>/tags/schoolchildren/</link>
-      <pubDate>Fri, 08 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/schoolchildren/</guid>
       <description></description>
     </item>
     
