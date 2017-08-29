@@ -6,14 +6,14 @@ date = "2017-09-08"
 title = "DISPLAY"
   
 # Project summary to display on homepage.
-##summary = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+summary = "The DISPLAY study has a multimodal before-and-after design using mixed methods to collect data in four purposively selected communities. This data was used to explore the location and density of tobacco retail outlets around the home, school and route to school in relation to smoking attitudes and behaviour."
   
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "DISPLAY.jpg"
   
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["DISPLAY", "Tobacco", "Schoolchildren"]
+tags = ["DISPLAY", "Tobacco", "Childhood"]
   
 # Optional external URL for project (replaces project detail page).
 external_link = "http://www.cahru.org/research/display"

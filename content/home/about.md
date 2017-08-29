@@ -1,7 +1,7 @@
 +++
 # About/Biography widget.
 
-date = "2016-04-20T00:00:00"
+date = "2017-08-29T00:00:00"
 draft = false
 
 widget = "about"
@@ -14,7 +14,7 @@ weight = 1
   interests = [
     "UVR, greenspace, deprivation, air pollution, built environment",
     "Asthma, cognitive ageing, infectious diseases, behaviour change",
-    "Lifecourse epidemiology, activity spaces, natural experiments",
+    "Lifecourse epidemiology, activity spaces, exposomics, natural experiments",
     "R, GIS, web scraping, data visualisation"
   ]
 
@@ -33,7 +33,7 @@ weight = 1
 
 # Biography
 
-I am a researcher currently working at the Centre for Research on Environment, Society and Health <a href="https://cresh.org.uk/">(CRESH)</a>. On this site you'll find a record of my academic career and current interests which will be updated from time to time.
+I love data, problem solving and presenting solutions to promote public well-being. In that capacity, I am currently working on several exciting projects at the Centre for Research on Environment, Society and Health <a href="https://cresh.org.uk/">(CRESH)</a>. On this site you'll find a record of my work and current interests which will be updated from time to time.
 
 
 {{% alert warning %}}
