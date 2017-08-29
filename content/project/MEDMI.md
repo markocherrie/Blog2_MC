@@ -6,7 +6,7 @@ date = "2017-08-29"
 title = "Medical & Environmental Data Mash-up Infrastructure project"
 
 # Project summary to display on homepage.
-summary = "We are exploring how physical, built and social environments evolve over time and how they impact on inequalities in health-related mobility as people move into older age. We used data from 1,091 people in their 70s, together with temporal, area-level measures of their current, recent and past environment."
+summary = "Using data from Public Health England and the Met office we were exploring the relationship between pathogen seasonality and weather patterns for England and Wales. The results were presented in an Rshiny application."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "MEDMI.png"
