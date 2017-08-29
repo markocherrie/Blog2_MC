@@ -65,7 +65,6 @@ health effect of human interactions with climate, the relationship between sever
 meteorological variables and GP prevalence rates of asthma was investigated.
 A combination of high UVvitd and temperature and low relative humidity and
 precipitation was associated with lower asthma prevalence.
-
 To summarise, the findings have determined that UVvitd varies geographically
 and temporally with 25(OH)D in Britain and higher levels could benefit specific
 subtypes of allergic disease. By utilising multiple existing meteorological data,
