@@ -1,48 +1,41 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Projects on Researcher</title>
-    <link>/project/</link>
-    <description>Recent content in Projects on Researcher</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2017 Mark Cherrie</copyright>
-    <lastBuildDate>Fri, 08 Sep 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/project/" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>DISPLAY</title>
-      <link>/project/display/</link>
-      <pubDate>Fri, 08 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/project/display/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Alcohol and Tobacco Environments in Scotland</title>
-      <link>/project/webmap/</link>
-      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/project/webmap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Analysing the Association between Ultraviolet Radiation, Vitamin D and Allergic Disease</title>
-      <link>/project/uv/</link>
-      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/project/uv/</guid>
-      <description>&lt;p&gt;Exposure to vitamin D effective ultraviolet radiation (UVvitd) is key to the
++++
+# Date this page was created.
+date = "2017-08-29"
+  
+# Project title.
+title = "Analysing the Association between Ultraviolet Radiation, Vitamin D and Allergic Disease"
+  
+# Project summary to display on homepage.
+summary = "Using a number of secondary data sources, I investigated the spatio-temporal relationship between UVR and 25(OH)D levels, in order to determine the association with asthma and allergic health outcomes."
+  
+# Optional image to display on homepage (relative to `static/img/` folder).
+image_preview = "UV.png"
+  
+# Tags: can be used for filtering projects.
+# Example: `tags = ["machine-learning", "deep-learning"]`
+tags = ["UV", "Vitamin D", "Asthma", "Allergic Disease"]
+  
+# Optional external URL for project (replaces project detail page).
+external_link = ""
+  
+# Does the project detail page use math formatting?
+math = false
+  
+# Optional featured image (relative to `static/img/` folder).
+#[header]
+#image = "headers/MMPbanner.png"
+#caption = "DISPLAY project 2012-2017"
++++
+
+Exposure to vitamin D effective ultraviolet radiation (UVvitd) is key to the
 production of vitamin D in human skin. Ambient ultraviolet radiation, dietary intake
 of D3/D2 and 25-hydroxy vitamin D in serum and saliva have been used as a proxy
 for vitamin D status. However, these exposures have yet to yield a consistent
 effect on allergic diseases. The aim of the thesis was to determine the spatiotemporal
 distribution of UVvitd and 25(OH)D in Britain, so as to investigate the
-effect on allergic health outcomes.&lt;/p&gt;
+effect on allergic health outcomes.
 
-&lt;p&gt;The relative effectiveness of known determinants of UVvitd and 25(OH)D
+The relative effectiveness of known determinants of UVvitd and 25(OH)D
 (latitude and month of the year) and proposed determinants (longitude, elevation,
 urban/rural residence, coastal residence, year of blood measurement, day of
 blood measurement/year) were described. Coastal residence was shown to
@@ -71,32 +64,9 @@ every 10 nmol/l decrease in 25(OH)D. Given that vitamin D represents only one
 health effect of human interactions with climate, the relationship between several
 meteorological variables and GP prevalence rates of asthma was investigated.
 A combination of high UVvitd and temperature and low relative humidity and
-precipitation was associated with lower asthma prevalence.&lt;/p&gt;
+precipitation was associated with lower asthma prevalence.
 
-&lt;p&gt;To summarise, the findings have determined that UVvitd varies geographically
+To summarise, the findings have determined that UVvitd varies geographically
 and temporally with 25(OH)D in Britain and higher levels could benefit specific
 subtypes of allergic disease. By utilising multiple existing meteorological data,
-the understanding of the aetiology of allergic disease can be advanced.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Environmental determinants of IVF treatment</title>
-      <link>/project/ivf/</link>
-      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/project/ivf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mobility, Mood and Place</title>
-      <link>/project/mmp/</link>
-      <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/project/mmp/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
-</rss>
+the understanding of the aetiology of allergic disease can be advanced.

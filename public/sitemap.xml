@@ -23,6 +23,15 @@
     
     <url>
     
+      <loc>/project/uv/</loc>
+      <lastmod>2017-08-29T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/project/ivf/</loc>
       <lastmod>2017-08-29T00:00:00+00:00</lastmod>
     </url>
@@ -189,6 +198,26 @@
     <url>
     
       <loc>/tags/alcohol/</loc>
+      <lastmod>2017-08-29T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/allergic-disease/</loc>
+      <lastmod>2017-08-29T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/asthma/</loc>
       <lastmod>2017-08-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -407,7 +436,27 @@
     
     <url>
     
+      <loc>/tags/uv/</loc>
+      <lastmod>2017-08-29T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/uvr/</loc>
+      <lastmod>2017-08-29T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/vitamin-d/</loc>
       <lastmod>2017-08-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
