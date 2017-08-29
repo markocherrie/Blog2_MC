@@ -3,7 +3,6 @@ abstract = "There is evidence that populations living close to the coast have im
 abstract_short = "Geographic location in the UK may influence human biochemistry and health outcomes due to environmental factors. This can provide benefits in terms of vitamin D status but may also pose a risk due to higher skin cancer rates. We provide further evidence in support of the claim that coastal environments can provide opportunities for health and wellbeing."
 authors = ["MPC Cherrie", "BW Wheeler", "MP White", "CS Sarran", "N Osborne"]
 date = "2015-04-01"
-image_preview = ""
 math = true
 publication_types = ["1"]
 publication = "In *Environment International*"
