@@ -16,10 +16,12 @@
   tags = ["alcohol", "tobbaco", "health inequalities"]
   
   # Optional external URL for project (replaces project detail page).
-  external_link = "hhtps://creshmap.com"
+  external_link = ""
   
   # Does the project detail page use math formatting?
   math = false
   
-
+  +++
     
+    Life course of places, health & mobility 
+  
