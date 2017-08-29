@@ -71,9 +71,8 @@ every 10 nmol/l decrease in 25(OH)D. Given that vitamin D represents only one
 health effect of human interactions with climate, the relationship between several
 meteorological variables and GP prevalence rates of asthma was investigated.
 A combination of high UVvitd and temperature and low relative humidity and
-precipitation was associated with lower asthma prevalence.&lt;/p&gt;
-
-&lt;p&gt;To summarise, the findings have determined that UVvitd varies geographically
+precipitation was associated with lower asthma prevalence.
+To summarise, the findings have determined that UVvitd varies geographically
 and temporally with 25(OH)D in Britain and higher levels could benefit specific
 subtypes of allergic disease. By utilising multiple existing meteorological data,
 the understanding of the aetiology of allergic disease can be advanced.&lt;/p&gt;
@@ -90,7 +89,7 @@ the understanding of the aetiology of allergic disease can be advanced.&lt;/p&gt
     </item>
     
     <item>
-      <title>Medical &amp; Environmental Data Mash-up Infrastructure project</title>
+      <title>Medical &amp; Environmental Data Mash-up Infrastructure project (MEDMI)</title>
       <link>/project/medmi/</link>
       <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
       
@@ -931,6 +930,16 @@ Figure 1: A fancy pie chart.
     </item>
     
     <item>
+      <title>Coastal climate is associated with elevated solar irradiance and higher serum vitamin D levels</title>
+      <link>/publication/uv/</link>
+      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/uv/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Migrate from Jekyll to Hugo</title>
       <link>/post/migrate-from-jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
@@ -971,16 +980,6 @@ With Jekyll, something that looked like&lt;/p&gt;
 &lt;h2 id=&#34;a-practical-example&#34;&gt;A practical example&lt;/h2&gt;
 
 &lt;p&gt;Alexandre Normand migrated his website from Jekyll to Hugo in less than a day. You can see all his changes by looking at this GitHub &lt;a href=&#34;https://github.com/alexandre-normand/alexandre-normand/compare/869d69435bd2665c3fbf5b5c78d4c22759d7613a...b7f6605b1265e83b4b81495423294208cc74d610&#34; target=&#34;_blank&#34;&gt;diff&lt;/a&gt;. However, bear in mind that this example is &lt;strong&gt;not specific to the Academic theme nor does it use the latest version of Hugo&lt;/strong&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Mobile visual clothing search</title>
-      <link>/publication/clothing-search/</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/clothing-search/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
