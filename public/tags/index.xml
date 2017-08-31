@@ -111,15 +111,6 @@
     </item>
     
     <item>
-      <title>Hugo</title>
-      <link>/tags/hugo/</link>
-      <pubDate>Wed, 20 Apr 2016 12:00:00 +0000</pubDate>
-      
-      <guid>/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Infectious Disease</title>
       <link>/tags/infectious-disease/</link>
       <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
@@ -138,11 +129,20 @@
     </item>
     
     <item>
-      <title>Jekyll</title>
-      <link>/tags/jekyll/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      <title>Lifecourse</title>
+      <link>/tags/lifecourse/</link>
+      <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/jekyll/</guid>
+      <guid>/tags/lifecourse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Medmi</title>
+      <link>/tags/medmi/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/medmi/</guid>
       <description></description>
     </item>
     

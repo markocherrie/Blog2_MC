@@ -1,0 +1,15 @@
+---
+title: Rshiny Weather App
+author: ~
+date: '2017-08-30'
+slug: rshiny-weather-app
+categories: ["Rshiny", "Weather", "Behaviour"]
+tags: []
+draft: yes
+---
+
+```r
+library(reshape2)
+x<-44 + 12
+
+```
