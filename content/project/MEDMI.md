@@ -21,8 +21,5 @@ external_link = "https://thebest.shinyapps.io/medmi_app/"
 # Does the project detail page use math formatting?
 math = false
 
-# Optional featured image (relative to `static/img/` folder).
-[header]
-image = "headers/MMPbanner.png"
 +++
 
