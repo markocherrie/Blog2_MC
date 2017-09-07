@@ -8,7 +8,6 @@ tags: ["Web Development", "R", "Web Design"]
 categories: ["Website"]
 ---
 
-## Welcome
 Welcome to my first post. As an avid R user, I was amazed at how quickly it was to setup a static website with the help from the R package ["blogdown"](https://bookdown.org/yihui/blogdown/). I thought Yihui Xie gave a convincing argument for blogging from his personal experience (Appendix D in above website). In summary he provides three reasons in favour of blogging: 
 
 1. To consolidate thoughts and create a clearer argument for topics that are important to you.
