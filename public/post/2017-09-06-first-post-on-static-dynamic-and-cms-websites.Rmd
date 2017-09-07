@@ -1,19 +1,28 @@
 ---
-title: 'First post: On static, dynamic and CMS websites'
-author: "null"
-date: '2017-09-06'
-draft: yes
-slug: first-post-on-static-dynamic-and-cms-websites
-tags: []
-categories: []
+title: 'First post'
+author: "Mark Cherrie"
+date: '2017-09-07'
+draft: no
+slug: first-post
+tags: ["Web Development", "R", "Web Design"]
+categories: ["Website"]
 ---
 
 ## Welcome
-Welcome to my first post. As an avid R user, I was amazed at how quickly it was to setup a static website with the help from the R package ["blogdown"](https://bookdown.org/yihui/blogdown/). I though Yihui Xie gave a convincing argument for blogging from his personal experience (Appendix D in above website). In summary he provides three reasons for being in favour of blogging: 
+Welcome to my first post. As an avid R user, I was amazed at how quickly it was to setup a static website with the help from the R package ["blogdown"](https://bookdown.org/yihui/blogdown/). I thought Yihui Xie gave a convincing argument for blogging from his personal experience (Appendix D in above website). In summary he provides three reasons in favour of blogging: 
+
 1. To consolidate thoughts and create a clearer argument for topics that are important to you.
 2. To engage with other people and get helpful feedback.
-3. To remember things that you have done so that they can be re-used in new applications
+3. To remember things that you have done so that they can be re-used in new applications.
 
-I already try to do the first two points in my day-to-day life, although what I find is that they are either quite time consuming (e.g. giving a tutorial or presentation) or fleeting (e.g. conversations with friends and family), a blog fits nicely in between. I have started to make progress on the third point by having a github repository for [helpful code]("https://github.com/markocherrie/Helpful_Code") but this tends to be more of a dump of things that I have found useful rather than   
+These are things that I already try to do, albeit unsystematically. I find that the things I do in this respect are either quite time consuming (e.g. giving a tutorial or presentation) or fleeting (e.g. conversations with friends and family), and a blog fits nicely in between. With respect to the third point I have a github repository for [helpful code]("https://github.com/markocherrie/Helpful_Code"), however this tends to be more of a dump of code snippets rather than a thoughtful write-up of what I was doing. So this website fits in nicely. 
+
+I mentioned that this is a static website in the first paragraph. This terminology was completely new to me when I started to set this site up. A static website is one that has every webpage stored as a single file on the server, e.g. this post has it's own HTML (Hypertext Markup Language) file associated with it. Hugo, Jeykll and Hexo are the static site generators that you pass these files to. The main advantage to static websites is that you can hit the ground running, a little bit of HTML and CSS (Cascading Style Sheets) knowledge can go a long way. There is no requirement to know any server side scripting languages such a PHP (Hypertext Preprocessor) or SQL (Structured Query Language), which means there is no server-host interaction and therefore load times are very quick. There are drawbacks though. If you intend to change something on every page, then this can be very time consuming. There is also a lot less functionality than a dynamic page which can add features such as shopping carts and social media interactions. Another option would have been to use a CMS (Content Management System) such as Joomla or Wordpress, beating both static and dynamic on ease of setup and time to update. Although I think that their functionality is a black box and if you want to deviate from the default template then you may get unstuck. CMS's have got around this by adding plugins. However I have found that often these aren't available on the cheaper pricing tiers. For example Wordpress does not allow you to use iframe (a webpage inside another webpage...webception) and the plugin is only available on the business pricing tier (£20.83 a month). So I'd argue that a static website for a blog is a good option, which allows the website to grow as the webmaster's skills do. 
+
+As with all my posts, I'll be writing from memory, from my own experiences, which may have not been remembered correctly or do not include the full picture. If you think there should be an improvement to the post then please get in touch and I'll update it, I'm always willing to learn! 
+
+
+
+
 
 
