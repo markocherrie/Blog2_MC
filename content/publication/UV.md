@@ -16,6 +16,6 @@ url_project = "project/UV/"
 # Optional featured image (relative to `static/img/` folder).
 [header]
 image = "headers/UV_banner.jpg"
-caption = ""
+caption = "The sky above Perranporth in August 2014, by Mark Cherrie"
 
 +++
