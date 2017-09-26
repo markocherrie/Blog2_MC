@@ -7,7 +7,7 @@ math = true
 publication_types = ["2"]
 publication = "In *Environment International*"
 publication_short = "In *EI*"
-selected = true
+selected = false
 title = "Land cover and air pollution are associated with asthma hospitalisations: A cross-sectional study."
 url_pdf = "https://www.ncbi.nlm.nih.gov/pubmed/28926750"
 url_project = "project/Misc/"
@@ -15,7 +15,7 @@ url_project = "project/Misc/"
   
 # Optional featured image (relative to `static/img/` folder).
 [header]
-image = "headers/airpoll.jpg"
+image = "headers/airpollbanner.png"
 caption = "Air Pollution Level 5 London April 30 2014 (2) by David Holt"
   
 +++

@@ -7,7 +7,7 @@ math = true
 publication_types = ["2"]
 publication = "In *Clinical and Experimental Allergy*"
 publication_short = "In *CEA*"
-selected = true
+selected = false
 title = "British Society for Allergy and Clinical Immunology Abstracts of the 2014 Annual Meeting"
 url_pdf = "http://onlinelibrary.wiley.com/doi/10.1111/cea.12456/full"
 url_project = "project/UV/"
@@ -15,7 +15,7 @@ url_project = "project/UV/"
   
 # Optional featured image (relative to `static/img/` folder).
 [header]
-image = "headers/pubbanner.jpg"
+image = "headers/pubbanner.png"
 caption = ""
   
 +++
