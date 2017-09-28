@@ -1,10 +1,10 @@
 +++
-# Recent and Upcoming Talks widget.
+# Recent and Upcoming Presentations widget.
 
 date = "2016-04-20T00:00:00"
 draft = false
 
-title = "Recent & Upcoming Talks"
+title = "Recent & Upcoming Presentations"
 subtitle = ""
 widget = "talks"
 
