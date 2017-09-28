@@ -1,0 +1,28 @@
+---
+title: 'Mapzen Isochrone Maps'
+author: "Mark Cherrie"
+date: '2017-09-28'
+draft: no
+slug: isochrone
+tags: ["Routing", "Maps","GIS", "API", "Mapzen"]
+categories: ["Mobility"]
+---
+I have just come across Mapzen's routing engine (Valhalla), which can be used to produce incredible isochrone maps, mentioned in this [blog post](https://mapzen.com/blog/introducing-isochrone-service/). If you've not heard of [Mapzen](https://mapzen.com/) they provide mapping tools for developers so that you can convert your website to the spatial side. The neat thing abour isochrone lines is that they show the boundary around a point where travel time is equal. So you can ask some interesting proximity based questions (e.g. What types of greenspace do I have within a 5 minute cycling distance from my home?). I've been eager to create isochrone maps since seeing [Rome2Rio's set](https://www.rome2rio.com/blog/2016/01/08/time-flies-according-to-these-maps-it-does/), which show isochrones from London for 1914 and 2016. Below I have used the [mobility explorer](https://mapzen.com/mobility/explorer/) to generate isochrones maps (in 15 minute bands) for where I live, for several different travel options (walking, cycling, public transport and driving). 
+
+![Walking](mapzenimages/walking.png)
+![Cycling](mapzenimages/cycling.png)
+![Public Transport](mapzenimages/transit.png)
+![Driving](mapzenimages/driving.png)
+  
+
+
+
+
+As with all my posts, I'm writing from memory, from my own experiences, which may have not been remembered correctly or do not include the full picture. If you think there should be an improvement to the post then please get in touch and I'll update it, I'm always willing to learn! 
+  
+  
+  
+  
+  
+  
+  

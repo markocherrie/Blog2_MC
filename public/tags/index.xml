@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>Api</title>
+      <link>/tags/api/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Asthma</title>
       <link>/tags/asthma/</link>
       <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
@@ -93,6 +102,15 @@
     </item>
     
     <item>
+      <title>Gis</title>
+      <link>/tags/gis/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/gis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Greenspace</title>
       <link>/tags/greenspace/</link>
       <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
@@ -125,24 +143,6 @@
       <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/ivf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lifecourse</title>
-      <link>/tags/lifecourse/</link>
-      <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/lifecourse/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Medmi</title>
-      <link>/tags/medmi/</link>
-      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/medmi/</guid>
       <description></description>
     </item>
     
