@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Admin</title>
+      <link>/tags/admin/</link>
+      <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/admin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Air Pollution</title>
       <link>/tags/air-pollution/</link>
       <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
@@ -134,15 +143,6 @@
       <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/infectious-disease/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ivf</title>
-      <link>/tags/ivf/</link>
-      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/ivf/</guid>
       <description></description>
     </item>
     

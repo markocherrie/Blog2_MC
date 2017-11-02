@@ -5,13 +5,28 @@ date: '2017-08-30'
 slug: rshiny-weather-app
 categories: ["Rshiny", "Weather", "Behaviour"]
 tags: []
-draft: yes
+draft: no
 ---
 
 
 
-```r
-library(reshape2)
-x<-44 + 12
-
+```{r, echo = FALSE}
+library(shiny)
+shinyApp(
+  
+  ui = fluidPage(
+    selectInput("region", "Region:", 
+                choices = colnames(WorldPhones)),
+    plotOutput("phonePlot")
+  ),
+  
+  server = function(input, output) {
+    output$phonePlot <- renderPlot({
+      barplot(WorldPhones[,input$region]*1000, 
+              ylab = "Number of Telephones", xlab = "Year")
+    })
+  },
+  
+  options = list(height = 500)
+)
 ```

@@ -11,6 +11,19 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Removing pages from a </title>
+      <link>/post/isochrone/</link>
+      <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/isochrone/</guid>
+      <description>&lt;p&gt;More of a note than a post but hopefully this can help someone else out having the same issue.&lt;/p&gt;
+&lt;p&gt;I needed to remove a couple of pages from a PDF document today. This can be done easily on a mac using preview (i.e. backspace when the page thumbnail is highlighted) but I couldn’t find a way on the PC, using my default PDF reader- Acrobat Reader DC. It seems that most of the useful functionality requires the pro version.&lt;/p&gt;
+&lt;p&gt;I first tried to edit it in GIMP (opensource photo editing software). I was able to import each of the PDF pages as layers and delete the layers I didn’t need. However, I couldn’t find a way of exporting properly, all I got was the first page. I did see something about saving it as a .mng and using inkscape/imagemagick’s ‘convert’ command but it seemed like a bit of work. Next up, LibreOffice, I saw an article describing that it was possible to import and edit a PDF using this software. This worked well, and was very intuitive, however when I looked at the exported PDF document it had made all the pages portrait. This was a problem as my some of my pages with wide table were landscape, so it had clipped them. Not being able to find a way to rotate individual pages in libreOffice (there must be a way of doing this!), I tried a final option to use a google drive extension- DocHub. This worked so well and made it really easy to save back to my Google drive.&lt;/p&gt;
+&lt;p&gt;So if you need some powerful software to edit a PDF quickly, check out [DocHub] (&lt;a href=&#34;https://dochub.com&#34; class=&#34;uri&#34;&gt;https://dochub.com&lt;/a&gt;)!. Just beware that it’s only free up to a point. You can view and edit up to 2,000 documents, sign 5 documents/month, request up to 3 signers/month and email up to 3 documents/day, anything over this and you will need to go onto the pro account.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Data, data, big not small, how can R increase efficiency for all?</title>
       <link>/talk/example-talk/</link>
       <pubDate>Thu, 28 Sep 2017 11:30:00 +0000</pubDate>
@@ -25,7 +38,7 @@
       <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/isochrone/</guid>
-      <description>&lt;p&gt;I have just come across Mapzen’s routing engine (Valhalla), which can be used to produce incredible isochrone maps, mentioned in this &lt;a href=&#34;https://mapzen.com/blog/introducing-isochrone-service/&#34;&gt;blog post&lt;/a&gt;. If you’ve not heard of &lt;a href=&#34;https://mapzen.com/&#34;&gt;Mapzen&lt;/a&gt; they provide mapping tools for developers so that their websites can be converted to the spatial side. The neat thing abour isochrone lines is that they show the boundary around a point where travel time is equal. So you can ask some interesting proximity based questions (e.g. What types of greenspace do I have within a 5 minute cycling distance from my home?). I’ve been eager to create isochrone maps since seeing &lt;a href=&#34;https://www.rome2rio.com/blog/2016/01/08/time-flies-according-to-these-maps-it-does/&#34;&gt;Rome2Rio’s set&lt;/a&gt;, which show isochrones from London for 1914 and 2016. Below I have used the &lt;a href=&#34;https://mapzen.com/mobility/explorer/&#34;&gt;mobility explorer&lt;/a&gt; to generate isochrones maps (in 15 minute bands) for where I live, for several different travel options (walking, cycling, public transport and driving). Have a go!&lt;/p&gt;
+      <description>&lt;p&gt;I have just come across Mapzen’s routing engine (Valhalla), which can be used to produce incredible isochrone maps, mentioned in this &lt;a href=&#34;https://mapzen.com/blog/introducing-isochrone-service/&#34;&gt;blog post&lt;/a&gt;. If you’ve not heard of &lt;a href=&#34;https://mapzen.com/&#34;&gt;Mapzen&lt;/a&gt; they provide mapping tools for developers so that their websites can be converted to the spatial side. The neat thing about isochrone lines is that they show the boundary around a point where travel time is equal. So you can ask some interesting proximity based questions (e.g. What types of greenspace do I have within a 5 minute walk from my home?). I’ve been eager to create isochrone maps since seeing &lt;a href=&#34;https://www.rome2rio.com/blog/2016/01/08/time-flies-according-to-these-maps-it-does/&#34;&gt;Rome2Rio’s set&lt;/a&gt;, which show isochrones from London for 1914 and 2016. Below I have used the &lt;a href=&#34;https://mapzen.com/mobility/explorer/&#34;&gt;mobility explorer&lt;/a&gt; to generate isochrones boundaries (in 15 minute bands) for where I live, for several different travel options (walking, cycling, public transport and driving). Have a go!&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;img/mapzenimages/walking.png&#34; alt=&#34;Walking&#34; /&gt; &lt;img src=&#34;img/mapzenimages/cycling.png&#34; alt=&#34;Cycling&#34; /&gt; &lt;img src=&#34;img/mapzenimages/transit.png&#34; alt=&#34;Public Transport&#34; /&gt; &lt;img src=&#34;img/mapzenimages/driving.png&#34; alt=&#34;Driving&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;As with all my posts, I’m writing from memory, from my own experiences, which may have not been remembered correctly or do not include the full picture. If you think there should be an improvement to the post then please get in touch and I’ll update it, I’m always willing to learn!&lt;/p&gt;
 </description>
@@ -73,10 +86,7 @@
       <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/rshiny-weather-app/</guid>
-      <description>&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(reshape2)
-x&amp;lt;-44 + 12
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description></description>
     </item>
     
     <item>

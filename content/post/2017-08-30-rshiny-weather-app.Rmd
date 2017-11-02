@@ -8,10 +8,3 @@ tags: []
 draft: yes
 ---
 
-
-
-```r
-library(reshape2)
-x<-44 + 12
-
-```
