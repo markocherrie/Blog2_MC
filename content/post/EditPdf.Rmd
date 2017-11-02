@@ -4,7 +4,7 @@ author: "Mark Cherrie"
 date: '2017-11-02'
 draft: no
 slug: pdf
-tags: ["Pdf", "Software","admin"]
+tags: ["PDF", "Software","admin"]
 categories: ["Research Tips"]
 ---
 More of a note than a post but hopefully this can help someone else out having the same issue. 
