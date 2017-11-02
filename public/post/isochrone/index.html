@@ -56,7 +56,7 @@
 
   
 
-  <title>Mapzen Isochrone Maps | Researcher</title>
+  <title>Removing pages from a PDF | Researcher</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
@@ -169,14 +169,14 @@
 
 
   <div class="article-container">
-    <h1 itemprop="name">Mapzen Isochrone Maps</h1>
+    <h1 itemprop="name">Removing pages from a PDF</h1>
     
 
 <div class="article-metadata">
 
   <span class="article-date">
-    <time datetime="2017-09-28 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-      Thu, Sep 28, 2017
+    <time datetime="2017-11-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Thu, Nov 2, 2017
     </time>
   </span>
 
@@ -186,7 +186,7 @@
   <span class="article-categories">
     <i class="fa fa-folder"></i>
     
-    <a href="/categories/mobility">Mobility</a
+    <a href="/categories/research-tips">Research Tips</a
     >
     
   </span>
@@ -199,19 +199,13 @@
   <span class="article-tags">
     <i class="fa fa-tags"></i>
     
-    <a href="/tags/routing">Routing</a
+    <a href="/tags/pdf">Pdf</a
     >, 
     
-    <a href="/tags/maps">Maps</a
+    <a href="/tags/software">Software</a
     >, 
     
-    <a href="/tags/gis">GIS</a
-    >, 
-    
-    <a href="/tags/api">API</a
-    >, 
-    
-    <a href="/tags/mapzen">Mapzen</a
+    <a href="/tags/admin">admin</a
     >
     
   </span>
@@ -231,28 +225,28 @@
     </li>
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Mapzen%20Isochrone%20Maps&amp;url=%2fpost%2fisochrone%2f"
+         href="https://twitter.com/intent/tweet?text=Removing%20pages%20from%20a%20PDF&amp;url=%2fpost%2fisochrone%2f"
          target="_blank">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fisochrone%2f&amp;title=Mapzen%20Isochrone%20Maps"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fisochrone%2f&amp;title=Removing%20pages%20from%20a%20PDF"
          target="_blank">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=%2fpost%2fisochrone%2f&amp;title=Mapzen%20Isochrone%20Maps"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2fisochrone%2f&amp;title=Removing%20pages%20from%20a%20PDF"
          target="_blank">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Mapzen%20Isochrone%20Maps&amp;body=%2fpost%2fisochrone%2f">
+         href="mailto:?subject=Removing%20pages%20from%20a%20PDF&amp;body=%2fpost%2fisochrone%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -265,9 +259,10 @@
 </div>
 
     <div class="article-style" itemprop="articleBody">
-      <p>I have just come across Mapzen’s routing engine (Valhalla), which can be used to produce incredible isochrone maps, mentioned in this <a href="https://mapzen.com/blog/introducing-isochrone-service/">blog post</a>. If you’ve not heard of <a href="https://mapzen.com/">Mapzen</a> they provide mapping tools for developers so that their websites can be converted to the spatial side. The neat thing about isochrone lines is that they show the boundary around a point where travel time is equal. So you can ask some interesting proximity based questions (e.g. What types of greenspace do I have within a 5 minute walk from my home?). I’ve been eager to create isochrone maps since seeing <a href="https://www.rome2rio.com/blog/2016/01/08/time-flies-according-to-these-maps-it-does/">Rome2Rio’s set</a>, which show isochrones from London for 1914 and 2016. Below I have used the <a href="https://mapzen.com/mobility/explorer/">mobility explorer</a> to generate isochrones boundaries (in 15 minute bands) for where I live, for several different travel options (walking, cycling, public transport and driving). Have a go!</p>
-<p><img src="img/mapzenimages/walking.png" alt="Walking" /> <img src="img/mapzenimages/cycling.png" alt="Cycling" /> <img src="img/mapzenimages/transit.png" alt="Public Transport" /> <img src="img/mapzenimages/driving.png" alt="Driving" /></p>
-<p>As with all my posts, I’m writing from memory, from my own experiences, which may have not been remembered correctly or do not include the full picture. If you think there should be an improvement to the post then please get in touch and I’ll update it, I’m always willing to learn!</p>
+      <p>More of a note than a post but hopefully this can help someone else out having the same issue.</p>
+<p>I needed to remove a couple of pages from a PDF document today. This can be done easily on a mac using preview (i.e. backspace when the page thumbnail is highlighted) but I couldn’t find a way on the PC, using my default PDF reader- Acrobat Reader DC. It seems that most of the useful functionality requires the pro version.</p>
+<p>I first tried to edit it in GIMP (opensource photo editing software). I was able to import each of the PDF pages as layers and delete the layers I didn’t need. However, I couldn’t find a way of exporting properly, all I got was the first page. I did see something about saving it as a .mng and using inkscape/imagemagick’s ‘convert’ command but it seemed like a bit of work. Next up, LibreOffice, I saw an article describing that it was possible to import and edit a PDF using this software. This worked well, and was very intuitive, however when I looked at the exported PDF document it had made all the pages portrait. This was a problem as my some of my pages with wide table were landscape, so it had clipped them. Not being able to find a way to rotate individual pages in libreOffice (there must be a way of doing this!), I tried a final option to use a google drive extension- DocHub. This worked so well and made it really easy to save back to my Google drive.</p>
+<p>So if you need some powerful software to edit a PDF quickly, check out [DocHub] (<a href="https://dochub.com" class="uri">https://dochub.com</a>)!. Just beware that it’s only free up to a point. You can view and edit up to 2,000 documents, sign 5 documents/month, request up to 3 signers/month and email up to 3 documents/day, anything over this and you will need to go onto the pro account.</p>
 
     </div>
   </div>
@@ -278,13 +273,10 @@
   <nav>
   <ul class="pager">
     
-    <li class="previous"><a href="/post/first-post/"><span
-      aria-hidden="true">&larr;</span> First post</a></li>
+    <li class="previous"><a href="/post/isochrone/"><span
+      aria-hidden="true">&larr;</span> Mapzen Isochrone Maps</a></li>
     
 
-    
-    <li class="next"><a href="/post/isochrone/">Removing pages from a  <span
-      aria-hidden="true">&rarr;</span></a></li>
     
   </ul>
 </nav>
@@ -344,5 +336,8 @@
     
 
   </body>
+</html>
+
+
 </html>
 
