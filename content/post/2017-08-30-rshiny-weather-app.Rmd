@@ -5,7 +5,7 @@ date: '2017-08-30'
 slug: rshiny-weather-app
 categories: ["Rshiny", "Weather", "Behaviour"]
 tags: ["Ideas"]
-draft: no
+draft: yes
 ---
 
 ```r{app echo=F}
