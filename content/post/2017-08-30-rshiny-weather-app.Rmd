@@ -4,7 +4,11 @@ author: ~
 date: '2017-08-30'
 slug: rshiny-weather-app
 categories: ["Rshiny", "Weather", "Behaviour"]
-tags: []
-draft: yes
+tags: ["Ideas"]
+draft: no
 ---
 
+```r{app echo=F}
+library(knitr)
+knitr::include_app("https://thebest.shinyapps.io/shortstowork/",height ="600px")
+```

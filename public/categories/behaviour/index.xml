@@ -16,7 +16,8 @@
       <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/rshiny-weather-app/</guid>
-      <description></description>
+      <description>&lt;p&gt;&lt;code&gt;r{app echo=F} library(knitr) knitr::include_app(&amp;quot;https://thebest.shinyapps.io/shortstowork/&amp;quot;,height =&amp;quot;600px&amp;quot;)&lt;/code&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

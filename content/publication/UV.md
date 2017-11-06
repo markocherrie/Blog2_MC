@@ -7,7 +7,7 @@ math = true
 publication_types = ["2"]
 publication = "In *Environment International*"
 publication_short = "In *EI*"
-selected = true
+selected = false
 title = "Coastal climate is associated with elevated solar irradiance and higher serum vitamin D levels"
 url_pdf = "https://ore.exeter.ac.uk/repository/bitstream/handle/10871/16989/Cherrie,%202014a.pdf?sequence=1"
 url_project = "project/UV/"
