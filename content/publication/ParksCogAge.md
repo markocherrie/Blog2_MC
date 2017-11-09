@@ -9,7 +9,7 @@ publication = "In *Social Science and Medicine*"
 publication_short = "In *SSM*"
 selected = true
 title = "Green space and cognitive ageing: A retrospective life course analysis in the Lothian Birth Cohort 1936"
-url_pdf = ""
+url_pdf = "https://doi.org/10.1016/j.socscimed.2017.10.038"
 url_project = "project/MMP/"
   
   
