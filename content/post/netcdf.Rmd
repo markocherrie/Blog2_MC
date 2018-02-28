@@ -5,7 +5,7 @@ date: '2018-02-24'
 slug: netCDF in R
 categories: ["R", "netCDF", "Data", "Time series", "satellite"]
 tags: ["Data wrangling"]
-draft: no
+draft: yes
 ---
 
 NetCDF stands for "Network Common Data Format" which was created by unidata for geoscience data. Here's a short description on their  website (https://www.unidata.ucar.edu/netcdf/):
