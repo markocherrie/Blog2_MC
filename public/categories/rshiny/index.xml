@@ -11,12 +11,17 @@
     <atom:link href="/categories/rshiny/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Rshiny Weather App</title>
+      <title>Nudging people to make healthy behaviour choices</title>
       <link>/post/rshiny-weather-app/</link>
       <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/rshiny-weather-app/</guid>
-      <description>&lt;p&gt;&lt;code&gt;r{app echo=F} library(knitr) knitr::include_app(&amp;quot;https://thebest.shinyapps.io/shortstowork/&amp;quot;,height =&amp;quot;600px&amp;quot;)&lt;/code&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Nudge theory made it big after the book by Thaler and Sunstein gathered some high profile readers (ref). Alongside public health officials and politicians, researchers have been interested in using the theory to influence people to make ‘healthy’ behaviour choices. The central tenant of the theory is based around libertarian paternalism, or influencing without coercion. The most well known example is the placement of stickers of flys on urinals in Schipol airport in Amsterdam, which improved the aim of users as they targeted the fly. How might we use R to provide information to nudge people into behaviour change?&lt;/p&gt;
+&lt;p&gt;An environmental stimulus that has not recieved as much attention as it’s long term sister is the weather. I have noticed Facebook have jumped on providing weather information to help nudge their users to optimal behaviour choices. (insert graphic)&lt;/p&gt;
+&lt;p&gt;However I haven’t seen any R Shiny applications that have used current weather observations or forecasts.&lt;/p&gt;
+&lt;p&gt;In terms of data sources, the datapoint API available from the UK Met Office provides x, y and z data. Data from the Met Office goes through many rigorous checks and is reliable. Functions to query the datapoint API have been written in python and porting this to R is not a small task. Also, the datapoint API has been taken offline in recent months so that it can be updated.&lt;/p&gt;
+&lt;p&gt;Another source of live weather data is the Underground? API. This provides information for a given latitude and longitude.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;r{app echo=F} library(knitr) knitr::include_app(&amp;quot;https://thebest.shinyapps.io/shortstowork/&amp;quot;,height =&amp;quot;600px&amp;quot;)&lt;/code&gt;&lt;/p&gt;
 </description>
     </item>
     

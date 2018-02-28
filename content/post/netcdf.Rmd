@@ -1,0 +1,20 @@
+---
+title: netCDF in R
+author: ~
+date: '2017-02-24'
+slug: netCDF in R
+categories: ["R", "netCDF", "Data", "Time series", "satellite"]
+tags: ["Data wrangling"]
+draft: no
+---
+
+NetCDF stands for "Network Common Data Format" which was created by unidata for geoscience data. Here's a short description on their  website (https://www.unidata.ucar.edu/netcdf/):
+
+"NetCDF is a set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-orientated scientific data."
+
+NetCDF files are containers for dimensions, variables and global atttributes.
+I've recently had to process air pollution data stored in this format (.nc/.NC). It's used for a lot of climate data from x, y and z, so it's worth learning how to use it if you might use this data in the future. Let's pick apart the definition a bit further.
+
+Self-describing
+This is one of the main advantages of the format, whereby all the information required to use it correctly is supplied within the data file. So it doesn't matter if you are using Python, Perl or R, you will be able to read it in and plot it.
+

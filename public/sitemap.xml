@@ -122,6 +122,15 @@
     
     <url>
     
+      <loc>/post/netcdf-in-r/</loc>
+      <lastmod>2017-02-24T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/academic/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
@@ -227,6 +236,16 @@
     
     <url>
     
+      <loc>/categories/app/</loc>
+      <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/asthma/</loc>
       <lastmod>2017-08-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -269,6 +288,26 @@
     
       <loc>/tags/cognitive-function/</loc>
       <lastmod>2017-08-08T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/data/</loc>
+      <lastmod>2017-02-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/data-wrangling/</loc>
+      <lastmod>2017-02-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -347,6 +386,16 @@
     
     <url>
     
+      <loc>/categories/intervention/</loc>
+      <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/ivf/</loc>
       <lastmod>2017-08-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -417,6 +466,26 @@
     
     <url>
     
+      <loc>/categories/netcdf/</loc>
+      <lastmod>2017-02-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/nudge-theory/</loc>
+      <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/pdf/</loc>
       <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -467,6 +536,16 @@
     
     <url>
     
+      <loc>/categories/r/</loc>
+      <lastmod>2017-02-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/categories/research-tips/</loc>
       <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -507,6 +586,16 @@
     
     <url>
     
+      <loc>/categories/satellite/</loc>
+      <lastmod>2017-02-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/seasonality/</loc>
       <lastmod>2017-08-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -529,6 +618,16 @@
     
       <loc>/tags/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/time-series/</loc>
+      <lastmod>2017-02-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

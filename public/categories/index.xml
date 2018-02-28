@@ -11,6 +11,15 @@
     <atom:link href="/categories/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>App</title>
+      <link>/categories/app/</link>
+      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/app/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Behaviour</title>
       <link>/categories/behaviour/</link>
       <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
@@ -20,11 +29,56 @@
     </item>
     
     <item>
+      <title>Data</title>
+      <link>/categories/data/</link>
+      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Intervention</title>
+      <link>/categories/intervention/</link>
+      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/intervention/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Mobility</title>
       <link>/categories/mobility/</link>
       <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>/categories/mobility/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Netcdf</title>
+      <link>/categories/netcdf/</link>
+      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/netcdf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nudge Theory</title>
+      <link>/categories/nudge-theory/</link>
+      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/nudge-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/categories/r/</link>
+      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/r/</guid>
       <description></description>
     </item>
     
@@ -43,6 +97,24 @@
       <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/categories/rshiny/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Satellite</title>
+      <link>/categories/satellite/</link>
+      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/satellite/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Time Series</title>
+      <link>/categories/time-series/</link>
+      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/time-series/</guid>
       <description></description>
     </item>
     

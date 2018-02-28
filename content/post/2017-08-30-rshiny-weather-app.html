@@ -1,13 +1,18 @@
 ---
-title: Rshiny Weather App
+title: Nudging people to make healthy behaviour choices
 author: ~
 date: '2017-08-30'
 slug: rshiny-weather-app
-categories: ["Rshiny", "Weather", "Behaviour"]
+categories: ["Rshiny", "Weather", "Behaviour", "Nudge theory", "Intervention", "app"]
 tags: ["Ideas"]
 draft: yes
 ---
 
 
 
+<p>Nudge theory made it big after the book by Thaler and Sunstein gathered some high profile readers (ref). Alongside public health officials and politicians, researchers have been interested in using the theory to influence people to make ‘healthy’ behaviour choices. The central tenant of the theory is based around libertarian paternalism, or influencing without coercion. The most well known example is the placement of stickers of flys on urinals in Schipol airport in Amsterdam, which improved the aim of users as they targeted the fly. How might we use R to provide information to nudge people into behaviour change?</p>
+<p>An environmental stimulus that has not recieved as much attention as it’s long term sister is the weather. I have noticed Facebook have jumped on providing weather information to help nudge their users to optimal behaviour choices. (insert graphic)</p>
+<p>However I haven’t seen any R Shiny applications that have used current weather observations or forecasts.</p>
+<p>In terms of data sources, the datapoint API available from the UK Met Office provides x, y and z data. Data from the Met Office goes through many rigorous checks and is reliable. Functions to query the datapoint API have been written in python and porting this to R is not a small task. Also, the datapoint API has been taken offline in recent months so that it can be updated.</p>
+<p>Another source of live weather data is the Underground? API. This provides information for a given latitude and longitude.</p>
 <p><code>r{app echo=F} library(knitr) knitr::include_app(&quot;https://thebest.shinyapps.io/shortstowork/&quot;,height =&quot;600px&quot;)</code></p>

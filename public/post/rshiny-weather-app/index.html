@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.26" />
+  <meta name="generator" content="Hugo 0.21" />
   <meta name="author" content="Mark Cherrie">
   <meta name="description" content="Postdoctoral Researcher in Environment and Health">
 
@@ -56,7 +56,7 @@
 
   
 
-  <title>Rshiny Weather App | Researcher</title>
+  <title>Nudging people to make healthy behaviour choices | Researcher</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
@@ -169,7 +169,7 @@
 
 
   <div class="article-container">
-    <h1 itemprop="name">Rshiny Weather App</h1>
+    <h1 itemprop="name">Nudging people to make healthy behaviour choices</h1>
     
 
 <div class="article-metadata">
@@ -193,6 +193,15 @@
     >, 
     
     <a href="/categories/behaviour">Behaviour</a
+    >, 
+    
+    <a href="/categories/nudge-theory">Nudge theory</a
+    >, 
+    
+    <a href="/categories/intervention">Intervention</a
+    >, 
+    
+    <a href="/categories/app">app</a
     >
     
   </span>
@@ -225,28 +234,28 @@
     </li>
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Rshiny%20Weather%20App&amp;url=%2fpost%2frshiny-weather-app%2f"
+         href="https://twitter.com/intent/tweet?text=Nudging%20people%20to%20make%20healthy%20behaviour%20choices&amp;url=%2fpost%2frshiny-weather-app%2f"
          target="_blank">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2frshiny-weather-app%2f&amp;title=Rshiny%20Weather%20App"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2frshiny-weather-app%2f&amp;title=Nudging%20people%20to%20make%20healthy%20behaviour%20choices"
          target="_blank">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=%2fpost%2frshiny-weather-app%2f&amp;title=Rshiny%20Weather%20App"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2frshiny-weather-app%2f&amp;title=Nudging%20people%20to%20make%20healthy%20behaviour%20choices"
          target="_blank">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Rshiny%20Weather%20App&amp;body=%2fpost%2frshiny-weather-app%2f">
+         href="mailto:?subject=Nudging%20people%20to%20make%20healthy%20behaviour%20choices&amp;body=%2fpost%2frshiny-weather-app%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -259,7 +268,12 @@
 </div>
 
     <div class="article-style" itemprop="articleBody">
-      <p><code>r{app echo=F} library(knitr) knitr::include_app(&quot;https://thebest.shinyapps.io/shortstowork/&quot;,height =&quot;600px&quot;)</code></p>
+      <p>Nudge theory made it big after the book by Thaler and Sunstein gathered some high profile readers (ref). Alongside public health officials and politicians, researchers have been interested in using the theory to influence people to make ‘healthy’ behaviour choices. The central tenant of the theory is based around libertarian paternalism, or influencing without coercion. The most well known example is the placement of stickers of flys on urinals in Schipol airport in Amsterdam, which improved the aim of users as they targeted the fly. How might we use R to provide information to nudge people into behaviour change?</p>
+<p>An environmental stimulus that has not recieved as much attention as it’s long term sister is the weather. I have noticed Facebook have jumped on providing weather information to help nudge their users to optimal behaviour choices. (insert graphic)</p>
+<p>However I haven’t seen any R Shiny applications that have used current weather observations or forecasts.</p>
+<p>In terms of data sources, the datapoint API available from the UK Met Office provides x, y and z data. Data from the Met Office goes through many rigorous checks and is reliable. Functions to query the datapoint API have been written in python and porting this to R is not a small task. Also, the datapoint API has been taken offline in recent months so that it can be updated.</p>
+<p>Another source of live weather data is the Underground? API. This provides information for a given latitude and longitude.</p>
+<p><code>r{app echo=F} library(knitr) knitr::include_app(&quot;https://thebest.shinyapps.io/shortstowork/&quot;,height =&quot;600px&quot;)</code></p>
 
     </div>
   </div>
@@ -269,6 +283,9 @@
 <div class="container">
   <nav>
   <ul class="pager">
+    
+    <li class="previous"><a href="/post/netcdf-in-r/"><span
+      aria-hidden="true">&larr;</span> netCDF in R</a></li>
     
 
     
