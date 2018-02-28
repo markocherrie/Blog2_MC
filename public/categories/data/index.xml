@@ -7,13 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Mark Cherrie</copyright>
-    <lastBuildDate>Fri, 24 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 24 Feb 2018 00:00:00 +0000</lastBuildDate>
     <atom:link href="/categories/data/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>netCDF in R</title>
       <link>/post/netcdf-in-r/</link>
-      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/netcdf-in-r/</guid>
       <description>&lt;p&gt;NetCDF stands for “Network Common Data Format” which was created by unidata for geoscience data. Here’s a short description on their website (&lt;a href=&#34;https://www.unidata.ucar.edu/netcdf/&#34; class=&#34;uri&#34;&gt;https://www.unidata.ucar.edu/netcdf/&lt;/a&gt;):&lt;/p&gt;

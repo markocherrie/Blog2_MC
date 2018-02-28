@@ -5,6 +5,24 @@
     
     <url>
     
+      <loc>/post/netcdf-in-r/</loc>
+      <lastmod>2018-02-24T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/post/rshiny-weather-app/</loc>
+      <lastmod>2017-12-22T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/publication/parkscogage/</loc>
       <lastmod>2017-11-06T00:00:00+00:00</lastmod>
     </url>
@@ -68,15 +86,6 @@
     
     <url>
     
-      <loc>/post/rshiny-weather-app/</loc>
-      <lastmod>2017-08-30T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/project/webmap/</loc>
       <lastmod>2017-08-29T00:00:00+00:00</lastmod>
     </url>
@@ -115,15 +124,6 @@
     
       <loc>/project/mmp/</loc>
       <lastmod>2017-08-08T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/post/netcdf-in-r/</loc>
-      <lastmod>2017-02-24T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -237,7 +237,7 @@
     <url>
     
       <loc>/categories/app/</loc>
-      <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -257,7 +257,7 @@
     <url>
     
       <loc>/categories/behaviour/</loc>
-      <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -267,7 +267,7 @@
     <url>
     
       <loc>/categories/</loc>
-      <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -297,7 +297,7 @@
     <url>
     
       <loc>/categories/data/</loc>
-      <lastmod>2017-02-24T00:00:00+00:00</lastmod>
+      <lastmod>2018-02-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -307,7 +307,7 @@
     <url>
     
       <loc>/tags/data-wrangling/</loc>
-      <lastmod>2017-02-24T00:00:00+00:00</lastmod>
+      <lastmod>2018-02-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -367,7 +367,7 @@
     <url>
     
       <loc>/tags/ideas/</loc>
-      <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -387,7 +387,7 @@
     <url>
     
       <loc>/categories/intervention/</loc>
-      <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -467,7 +467,7 @@
     <url>
     
       <loc>/categories/netcdf/</loc>
-      <lastmod>2017-02-24T00:00:00+00:00</lastmod>
+      <lastmod>2018-02-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -477,7 +477,7 @@
     <url>
     
       <loc>/categories/nudge-theory/</loc>
-      <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -497,7 +497,7 @@
     <url>
     
       <loc>/post/</loc>
-      <lastmod>2017-11-02T00:00:00+00:00</lastmod>
+      <lastmod>2018-02-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -537,7 +537,7 @@
     <url>
     
       <loc>/categories/r/</loc>
-      <lastmod>2017-02-24T00:00:00+00:00</lastmod>
+      <lastmod>2018-02-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -577,7 +577,7 @@
     <url>
     
       <loc>/categories/rshiny/</loc>
-      <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -587,7 +587,7 @@
     <url>
     
       <loc>/categories/satellite/</loc>
-      <lastmod>2017-02-24T00:00:00+00:00</lastmod>
+      <lastmod>2018-02-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -627,7 +627,7 @@
     <url>
     
       <loc>/categories/time-series/</loc>
-      <lastmod>2017-02-24T00:00:00+00:00</lastmod>
+      <lastmod>2018-02-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -677,7 +677,7 @@
     <url>
     
       <loc>/categories/weather/</loc>
-      <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

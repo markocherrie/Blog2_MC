@@ -1,18 +1,70 @@
 ---
 title: Nudging people to make healthy behaviour choices
 author: ~
-date: '2017-08-30'
+date: '2017-12-22'
 slug: rshiny-weather-app
 categories: ["Rshiny", "Weather", "Behaviour", "Nudge theory", "Intervention", "app"]
 tags: ["Ideas"]
-draft: yes
+draft: no
 ---
 
 
 
-<p>Nudge theory made it big after the book by Thaler and Sunstein gathered some high profile readers (ref). Alongside public health officials and politicians, researchers have been interested in using the theory to influence people to make ‘healthy’ behaviour choices. The central tenant of the theory is based around libertarian paternalism, or influencing without coercion. The most well known example is the placement of stickers of flys on urinals in Schipol airport in Amsterdam, which improved the aim of users as they targeted the fly. How might we use R to provide information to nudge people into behaviour change?</p>
-<p>An environmental stimulus that has not recieved as much attention as it’s long term sister is the weather. I have noticed Facebook have jumped on providing weather information to help nudge their users to optimal behaviour choices. (insert graphic)</p>
-<p>However I haven’t seen any R Shiny applications that have used current weather observations or forecasts.</p>
-<p>In terms of data sources, the datapoint API available from the UK Met Office provides x, y and z data. Data from the Met Office goes through many rigorous checks and is reliable. Functions to query the datapoint API have been written in python and porting this to R is not a small task. Also, the datapoint API has been taken offline in recent months so that it can be updated.</p>
-<p>Another source of live weather data is the Underground? API. This provides information for a given latitude and longitude.</p>
-<p><code>r{app echo=F} library(knitr) knitr::include_app(&quot;https://thebest.shinyapps.io/shortstowork/&quot;,height =&quot;600px&quot;)</code></p>
+<p>Nudge theory made it big after the 2008 book by Thaler and Sunstein gathered some high profile readers (Obama, Cameron etc). Alongside public health officials and politicians, researchers have been interested in using the theory to influence people to make ‘healthy’ behaviour choices. The central tenant of the theory is based around libertarian paternalism, or influencing an individual’s ‘choice architecture’ without coercion. Nudge-type interventions (e.g. nutritional labeling, size of serving dishes) have been used to tackle <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4967524/">obesity</a> and were found to increase ‘healthy’ behaviours by 15.3%.</p>
+<p>Biometerology is the study of the impacts of the weather and climate on human health. The Met Office provide a cold weather <a href="https://www.metoffice.gov.uk/public/weather/cold-weather-alert/#?tab=coldWeatherAlert">alert</a> to ensure that people with conditions (e.g. COPD) susceptible to the cold can take precautions, based on evidence of spikes in hospital admissions in weeks of [cold weather (below °C)] (<a href="http://err.ersjournals.com/content/15/101/185.full" class="uri">http://err.ersjournals.com/content/15/101/185.full</a>). I have noticed Facebook have jumped on the bandwagon by providing weather information to help nudge their users to optimal behaviour choices. I wondered whether I could replicate this type of nudge intervention in an R Shiny application.</p>
+<p>In terms of data sources, the <a href="https://www.metoffice.gov.uk/datapoint">datapoint API</a> available from the UK Met Office provides 3 hourly forecasts for a range of weather (e.g. temperature, UV, wind speed) for 5,000 UK sites (i.e. requires a script to determine closest station). Data from the Met Office goes through many rigorous checks and is reliable. Functions to query the datapoint API have been written in <a href="https://pypi.python.org/pypi/datapoint/">python</a> and porting this to R is not a small task. Also, the datapoint API has been taken offline in recent months so that it can be updated (UPDATE 02/02/2018, it is now back online, and will be used in the future).</p>
+<p>In the interim I used weather data from the <a href="https://www.wunderground.com/weather/api/">Weather Underground API</a>. This provides hourly weather forecasts for a given latitude and longitude and is available for locations around the world. The latitude and longitude was determined by the user’s smartphone or computer <a href="https://github.com/AugustT/shiny_geolocation">location</a>. As this is a test, and I want to do a full literature review to ensure the best weather thresholds, I started with a trivial example - whether it is warm enough to wear shorts to work (arbitrarily set at over 15°C).</p>
+<p>Below is the code for the UI:</p>
+<pre class="r"><code>library(shiny)
+library(rwunderground)
+shinyUI(fluidPage(
+  titlePanel(&quot;Shorts to work?&quot;),
+    tags$script(&#39;
+                $(document).ready(function () {
+                navigator.geolocation.getCurrentPosition(onSuccess, onError);
+                
+                function onError (err) {
+                Shiny.onInputChange(&quot;geolocation&quot;, false);
+                }
+                
+                function onSuccess (position) {
+                setTimeout(function () {
+                var coords = position.coords;
+                console.log(coords.latitude + &quot;, &quot; + coords.longitude);
+                Shiny.onInputChange(&quot;geolocation&quot;, true);
+                Shiny.onInputChange(&quot;lat&quot;, coords.latitude);
+                Shiny.onInputChange(&quot;long&quot;, coords.longitude);
+                }, 1100)
+                }
+                });
+                &#39;),
+    
+    # output message
+    fluidRow(column(width = 2,
+                    textOutput(&quot;message&quot;))
+    ),
+  tags$head(tags$style(HTML(&quot;
+                            #message {
+                            font-size: 100px;
+                            }
+                            &quot;)))
+  
+  )
+)</code></pre>
+<p>Here is the code for the server:</p>
+<pre class="r"><code>library(shiny)
+library(rwunderground)
+
+shinyServer(function(input, output) {
+  observe({
+    if(!is.null(input$lat)){
+    output$message &lt;- renderText({
+      location&lt;-as.character(paste0(input$lat,&quot;,&quot;, input$long))
+      ifelse(hourly(set_location(lat_long = location ), use_metric = TRUE, key = &quot;&quot;, raw = FALSE, message = FALSE)[2,2]&gt;15, &quot;YES&quot;, &quot;NO&quot;)
+      })
+    }
+      })
+})</code></pre>
+<p>Here is the final app:</p>
+<iframe src="https://thebest.shinyapps.io/shortstowork/?showcase=0" width="672" height="600px">
+</iframe>

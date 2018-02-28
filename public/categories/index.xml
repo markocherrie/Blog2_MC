@@ -7,13 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Mark Cherrie</copyright>
-    <lastBuildDate>Wed, 30 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 Dec 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="/categories/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>App</title>
       <link>/categories/app/</link>
-      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/categories/app/</guid>
       <description></description>
@@ -22,7 +22,7 @@
     <item>
       <title>Behaviour</title>
       <link>/categories/behaviour/</link>
-      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/categories/behaviour/</guid>
       <description></description>
@@ -31,7 +31,7 @@
     <item>
       <title>Data</title>
       <link>/categories/data/</link>
-      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/data/</guid>
       <description></description>
@@ -40,7 +40,7 @@
     <item>
       <title>Intervention</title>
       <link>/categories/intervention/</link>
-      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/categories/intervention/</guid>
       <description></description>
@@ -58,7 +58,7 @@
     <item>
       <title>Netcdf</title>
       <link>/categories/netcdf/</link>
-      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/netcdf/</guid>
       <description></description>
@@ -67,7 +67,7 @@
     <item>
       <title>Nudge Theory</title>
       <link>/categories/nudge-theory/</link>
-      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/categories/nudge-theory/</guid>
       <description></description>
@@ -76,7 +76,7 @@
     <item>
       <title>R</title>
       <link>/categories/r/</link>
-      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/r/</guid>
       <description></description>
@@ -94,7 +94,7 @@
     <item>
       <title>Rshiny</title>
       <link>/categories/rshiny/</link>
-      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/categories/rshiny/</guid>
       <description></description>
@@ -103,7 +103,7 @@
     <item>
       <title>Satellite</title>
       <link>/categories/satellite/</link>
-      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/satellite/</guid>
       <description></description>
@@ -112,7 +112,7 @@
     <item>
       <title>Time Series</title>
       <link>/categories/time-series/</link>
-      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/time-series/</guid>
       <description></description>
@@ -121,7 +121,7 @@
     <item>
       <title>Weather</title>
       <link>/categories/weather/</link>
-      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/categories/weather/</guid>
       <description></description>

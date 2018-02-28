@@ -7,8 +7,88 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Mark Cherrie</copyright>
-    <lastBuildDate>Thu, 02 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 24 Feb 2018 00:00:00 +0000</lastBuildDate>
     <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>netCDF in R</title>
+      <link>/post/netcdf-in-r/</link>
+      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/netcdf-in-r/</guid>
+      <description>&lt;p&gt;NetCDF stands for “Network Common Data Format” which was created by unidata for geoscience data. Here’s a short description on their website (&lt;a href=&#34;https://www.unidata.ucar.edu/netcdf/&#34; class=&#34;uri&#34;&gt;https://www.unidata.ucar.edu/netcdf/&lt;/a&gt;):&lt;/p&gt;
+&lt;p&gt;“NetCDF is a set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-orientated scientific data.”&lt;/p&gt;
+&lt;p&gt;NetCDF files are containers for dimensions, variables and global atttributes. I’ve recently had to process air pollution data stored in this format (.nc/.NC). It’s used for a lot of climate data from x, y and z, so it’s worth learning how to use it if you might use this data in the future. Let’s pick apart the definition a bit further.&lt;/p&gt;
+&lt;p&gt;Self-describing This is one of the main advantages of the format, whereby all the information required to use it correctly is supplied within the data file. So it doesn’t matter if you are using Python, Perl or R, you will be able to read it in and plot it.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Nudging people to make healthy behaviour choices</title>
+      <link>/post/rshiny-weather-app/</link>
+      <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rshiny-weather-app/</guid>
+      <description>&lt;p&gt;Nudge theory made it big after the 2008 book by Thaler and Sunstein gathered some high profile readers (Obama, Cameron etc). Alongside public health officials and politicians, researchers have been interested in using the theory to influence people to make ‘healthy’ behaviour choices. The central tenant of the theory is based around libertarian paternalism, or influencing an individual’s ‘choice architecture’ without coercion. Nudge-type interventions (e.g. nutritional labeling, size of serving dishes) have been used to tackle &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4967524/&#34;&gt;obesity&lt;/a&gt; and were found to increase ‘healthy’ behaviours by 15.3%.&lt;/p&gt;
+&lt;p&gt;Biometerology is the study of the impacts of the weather and climate on human health. The Met Office provide a cold weather &lt;a href=&#34;https://www.metoffice.gov.uk/public/weather/cold-weather-alert/#?tab=coldWeatherAlert&#34;&gt;alert&lt;/a&gt; to ensure that people with conditions (e.g. COPD) susceptible to the cold can take precautions, based on evidence of spikes in hospital admissions in weeks of [cold weather (below °C)] (&lt;a href=&#34;http://err.ersjournals.com/content/15/101/185.full&#34; class=&#34;uri&#34;&gt;http://err.ersjournals.com/content/15/101/185.full&lt;/a&gt;). I have noticed Facebook have jumped on the bandwagon by providing weather information to help nudge their users to optimal behaviour choices. I wondered whether I could replicate this type of nudge intervention in an R Shiny application.&lt;/p&gt;
+&lt;p&gt;In terms of data sources, the &lt;a href=&#34;https://www.metoffice.gov.uk/datapoint&#34;&gt;datapoint API&lt;/a&gt; available from the UK Met Office provides 3 hourly forecasts for a range of weather (e.g. temperature, UV, wind speed) for 5,000 UK sites (i.e. requires a script to determine closest station). Data from the Met Office goes through many rigorous checks and is reliable. Functions to query the datapoint API have been written in &lt;a href=&#34;https://pypi.python.org/pypi/datapoint/&#34;&gt;python&lt;/a&gt; and porting this to R is not a small task. Also, the datapoint API has been taken offline in recent months so that it can be updated (UPDATE 02/02/2018, it is now back online, and will be used in the future).&lt;/p&gt;
+&lt;p&gt;In the interim I used weather data from the &lt;a href=&#34;https://www.wunderground.com/weather/api/&#34;&gt;Weather Underground API&lt;/a&gt;. This provides hourly weather forecasts for a given latitude and longitude and is available for locations around the world. The latitude and longitude was determined by the user’s smartphone or computer &lt;a href=&#34;https://github.com/AugustT/shiny_geolocation&#34;&gt;location&lt;/a&gt;. As this is a test, and I want to do a full literature review to ensure the best weather thresholds, I started with a trivial example - whether it is warm enough to wear shorts to work (arbitrarily set at over 15°C).&lt;/p&gt;
+&lt;p&gt;Below is the code for the UI:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(shiny)
+library(rwunderground)
+shinyUI(fluidPage(
+  titlePanel(&amp;quot;Shorts to work?&amp;quot;),
+    tags$script(&amp;#39;
+                $(document).ready(function () {
+                navigator.geolocation.getCurrentPosition(onSuccess, onError);
+                
+                function onError (err) {
+                Shiny.onInputChange(&amp;quot;geolocation&amp;quot;, false);
+                }
+                
+                function onSuccess (position) {
+                setTimeout(function () {
+                var coords = position.coords;
+                console.log(coords.latitude + &amp;quot;, &amp;quot; + coords.longitude);
+                Shiny.onInputChange(&amp;quot;geolocation&amp;quot;, true);
+                Shiny.onInputChange(&amp;quot;lat&amp;quot;, coords.latitude);
+                Shiny.onInputChange(&amp;quot;long&amp;quot;, coords.longitude);
+                }, 1100)
+                }
+                });
+                &amp;#39;),
+    
+    # output message
+    fluidRow(column(width = 2,
+                    textOutput(&amp;quot;message&amp;quot;))
+    ),
+  tags$head(tags$style(HTML(&amp;quot;
+                            #message {
+                            font-size: 100px;
+                            }
+                            &amp;quot;)))
+  
+  )
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here is the code for the server:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(shiny)
+library(rwunderground)
+
+shinyServer(function(input, output) {
+  observe({
+    if(!is.null(input$lat)){
+    output$message &amp;lt;- renderText({
+      location&amp;lt;-as.character(paste0(input$lat,&amp;quot;,&amp;quot;, input$long))
+      ifelse(hourly(set_location(lat_long = location ), use_metric = TRUE, key = &amp;quot;&amp;quot;, raw = FALSE, message = FALSE)[2,2]&amp;gt;15, &amp;quot;YES&amp;quot;, &amp;quot;NO&amp;quot;)
+      })
+    }
+      })
+})&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here is the final app:&lt;/p&gt;
+&lt;iframe src=&#34;https://thebest.shinyapps.io/shortstowork/?showcase=0&#34; width=&#34;672&#34; height=&#34;600px&#34;&gt;
+&lt;/iframe&gt;
+</description>
+    </item>
     
     <item>
       <title>Removing pages from a PDF</title>
@@ -50,34 +130,6 @@
 &lt;p&gt;These are things that I already try to do, albeit unsystematically. I find that the things I do in this respect are either quite time consuming (e.g. giving a tutorial or presentation) or fleeting (e.g. conversations with friends and family). With respect to the third point I have a github repository for &lt;a href=&#34;https://github.com/markocherrie/Helpful_Code&#34;&gt;helpful code&lt;/a&gt;, however this tends to be more of a dump of code snippets rather than a thoughtful write-up of what I was doing. So this website fits in nicely.&lt;/p&gt;
 &lt;p&gt;I mentioned that this is a static website in the first paragraph. This terminology was completely new to me when I started to set this site up. A static website is one that has every webpage stored as a single file on the server, e.g. this post has it’s own HTML (Hypertext Markup Language) file associated with it. Hugo, Jeykll and Hexo are the static site generators that you pass these files to. The main advantage to static websites is that you can hit the ground running, a little bit of HTML and CSS (Cascading Style Sheets) knowledge can go a long way. There is no requirement to know any server side scripting languages such a PHP (Hypertext Preprocessor) or SQL (Structured Query Language), which means there is no server-host interaction and therefore load times are very quick. There are drawbacks though. If you intend to change something on every page, then this can be very time consuming. There is also a lot less functionality comapared to a dynamic page which gives you the ability to add features such as shopping carts and social media interactions. Another option would have been to use a CMS (Content Management System) such as Joomla or Wordpress, beating both static and dynamic on ease of setup and time to update. Although I feel that their functionality is a black box and if you want to deviate from the default template then you may get unstuck. CMS’s have got around this by adding plugins. However I have found that often these aren’t available on the cheaper pricing tiers. For example Wordpress does not allow you to use iframe (a webpage inside another webpage…webception) and adding a plugin is only available on the business pricing tier (£20.83 a month). So I’d argue that a static website for a blog is a good option, which allows the website to grow as the webmaster’s skills do.&lt;/p&gt;
 &lt;p&gt;As with all my posts, I’m writing from memory, from my own experiences, which may have not been remembered correctly or do not include the full picture. If you think there should be an improvement to the post then please get in touch and I’ll update it, I’m always willing to learn!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Nudging people to make healthy behaviour choices</title>
-      <link>/post/rshiny-weather-app/</link>
-      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rshiny-weather-app/</guid>
-      <description>&lt;p&gt;Nudge theory made it big after the book by Thaler and Sunstein gathered some high profile readers (ref). Alongside public health officials and politicians, researchers have been interested in using the theory to influence people to make ‘healthy’ behaviour choices. The central tenant of the theory is based around libertarian paternalism, or influencing without coercion. The most well known example is the placement of stickers of flys on urinals in Schipol airport in Amsterdam, which improved the aim of users as they targeted the fly. How might we use R to provide information to nudge people into behaviour change?&lt;/p&gt;
-&lt;p&gt;An environmental stimulus that has not recieved as much attention as it’s long term sister is the weather. I have noticed Facebook have jumped on providing weather information to help nudge their users to optimal behaviour choices. (insert graphic)&lt;/p&gt;
-&lt;p&gt;However I haven’t seen any R Shiny applications that have used current weather observations or forecasts.&lt;/p&gt;
-&lt;p&gt;In terms of data sources, the datapoint API available from the UK Met Office provides x, y and z data. Data from the Met Office goes through many rigorous checks and is reliable. Functions to query the datapoint API have been written in python and porting this to R is not a small task. Also, the datapoint API has been taken offline in recent months so that it can be updated.&lt;/p&gt;
-&lt;p&gt;Another source of live weather data is the Underground? API. This provides information for a given latitude and longitude.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;r{app echo=F} library(knitr) knitr::include_app(&amp;quot;https://thebest.shinyapps.io/shortstowork/&amp;quot;,height =&amp;quot;600px&amp;quot;)&lt;/code&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>netCDF in R</title>
-      <link>/post/netcdf-in-r/</link>
-      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/netcdf-in-r/</guid>
-      <description>&lt;p&gt;NetCDF stands for “Network Common Data Format” which was created by unidata for geoscience data. Here’s a short description on their website (&lt;a href=&#34;https://www.unidata.ucar.edu/netcdf/&#34; class=&#34;uri&#34;&gt;https://www.unidata.ucar.edu/netcdf/&lt;/a&gt;):&lt;/p&gt;
-&lt;p&gt;“NetCDF is a set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-orientated scientific data.”&lt;/p&gt;
-&lt;p&gt;NetCDF files are containers for dimensions, variables and global atttributes. I’ve recently had to process air pollution data stored in this format (.nc/.NC). It’s used for a lot of climate data from x, y and z, so it’s worth learning how to use it if you might use this data in the future. Let’s pick apart the definition a bit further.&lt;/p&gt;
-&lt;p&gt;Self-describing This is one of the main advantages of the format, whereby all the information required to use it correctly is supplied within the data file. So it doesn’t matter if you are using Python, Perl or R, you will be able to read it in and plot it.&lt;/p&gt;
 </description>
     </item>
     
