@@ -1,6 +1,6 @@
 ---
 title: 'Mapping Green Space and Traffic in Glasgow'
-author: "Mark Cherrie"
+author: ~
 date: '2017-11-10'
 draft: no
 slug: greentraffic
