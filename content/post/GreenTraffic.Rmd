@@ -12,8 +12,7 @@ The question, in relation to theories of how the quality of greenspace can affec
 
 First load the packages:
 
-```{r ui, eval=F, message=FALSE, warning=FALSE}
-Load packages
+```{r packages, eval=F, message=FALSE, warning=FALSE}
 # allows r to work with spatial data
 library(rgdal)
 # allows r to connect with google apis
