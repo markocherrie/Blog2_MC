@@ -29,7 +29,7 @@ green&lt;-readOGR(&quot;boundaries/green&quot;, &quot;GB_GreenspaceSite&quot;)
 # Download the local authority boundary for Glasgow City from here:
 # https://saspac.org/data/2011-census/scotland-2011/
 glasgow&lt;-readOGR(&quot;boundaries/Scottish-Census-boundaries(shp)/2011_Council_Area/CA_2011_EoR_Glasgow_City&quot;, &quot;CA_2011_EoR_Glasgow_City&quot;)
-## OGR data source with driver: ESRI Shapefile 
+# clip to glasgow
 green_subset &lt;- green[glasgow, ]
 
 # Project Glasgow greenspace (BNG) to lat/long (WGS84)
@@ -107,4 +107,4 @@ add_polygons(data = polyline_df, polyline =&quot;polyline&quot;, stroke_weight =
 })}
 # run the app!
 shinyApp(ui, server)</code></pre>
-<p>This is the final result: <iframe src="https://thebest.shinyapps.io/test_MC/?showcase=0" width="672" height="400px"></iframe></p>
+<p>Here is the final result: <iframe src="https://thebest.shinyapps.io/test_MC/?showcase=0" width="672" height="400px"></iframe></p>
