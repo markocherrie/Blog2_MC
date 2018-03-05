@@ -182,8 +182,7 @@ shinyServer(function(input, output) {
       <guid>/post/greentraffic/</guid>
       <description>&lt;p&gt;The question, in relation to theories of how the quality of greenspace can affect relationships with health, was: Do traffic events occur close to greenspaces? How does this vary spatially and temporally? How can this be visualised?&lt;/p&gt;
 &lt;p&gt;First load the packages:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Load packages
-# allows r to work with spatial data
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# allows r to work with spatial data
 library(rgdal)
 # allows r to connect with google apis
 library(googleway)

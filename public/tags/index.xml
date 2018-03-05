@@ -93,15 +93,6 @@
     </item>
     
     <item>
-      <title>Data Visualisation</title>
-      <link>/tags/data-visualisation/</link>
-      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/data-visualisation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Data Wrangling</title>
       <link>/tags/data-wrangling/</link>
       <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
@@ -143,6 +134,15 @@
       <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/glasgow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Green Space</title>
+      <link>/tags/green-space/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/green-space/</guid>
       <description></description>
     </item>
     
