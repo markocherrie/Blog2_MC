@@ -176,7 +176,7 @@
   
   <div>
     
-    <h2><a href="/post/netcdf-in-r/">netCDF in R</a></h2>
+    <h2><a href="/post/netcdf/">NetCDF in R</a></h2>
     
 
 <div class="article-metadata">
@@ -196,7 +196,7 @@
     <a href="/categories/r">R</a
     >, 
     
-    <a href="/categories/netcdf">netCDF</a
+    <a href="/categories/netcdf">NetCDF</a
     >, 
     
     <a href="/categories/data">Data</a
@@ -205,7 +205,7 @@
     <a href="/categories/time-series">Time series</a
     >, 
     
-    <a href="/categories/satellite">satellite</a
+    <a href="/categories/satellite">Satellite</a
     >
     
   </span>
@@ -231,9 +231,9 @@
 
     <div class="article-style"><p>
       
-      NetCDF stands for “Network Common Data Format” which was created by unidata for geoscience data. Here’s a short description on their website (<a href="https://www.unidata.ucar.edu/netcdf/):" target="_blank">https://www.unidata.ucar.edu/netcdf/):</a>
+      NetCDF stands for “Network Common Data Format” and was created by ‘unidata’ for handling large geospatial data. Here’s a short description from their website:
 “NetCDF is a set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-orientated scientific data.”
-NetCDF files are containers for dimensions, variables and global atttributes. I’ve recently had to process air pollution data stored in this format (.nc/.NC). It’s used for a lot of climate data from x, y and z, so it’s worth learning how to use it if you might use this data in the future.
+NetCDF files are containers for dimensions, variables and global atttributes. It’s used to store climatology, meteorology and oceanography data by over 1300 organisations including NOAA and EUMETSAT.
       
     </p></div>
   </div>
@@ -272,7 +272,7 @@ NetCDF files are containers for dimensions, variables and global atttributes. I�
     <a href="/categories/intervention">Intervention</a
     >, 
     
-    <a href="/categories/app">app</a
+    <a href="/categories/app">App</a
     >
     
   </span>
@@ -299,6 +299,73 @@ NetCDF files are containers for dimensions, variables and global atttributes. I�
     <div class="article-style"><p>
       
       Nudge theory made it big after the 2008 book by Thaler and Sunstein gathered some high profile readers (Obama, Cameron etc). Alongside public health officials and politicians, researchers have been interested in using the theory to influence people to make ‘healthy’ behaviour choices. The central tenant of the theory is based around libertarian paternalism, or influencing an individual’s ‘choice architecture’ without coercion. Nudge-type interventions (e.g. nutritional labeling, size of serving dishes) have been used to tackle obesity and were found to increase ‘healthy’ behaviours by 15.
+      
+    </p></div>
+  </div>
+  
+  <div>
+    
+    <h2><a href="/post/greentraffic/">Mapping Green Space and Traffic in Glasgow</a></h2>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2017-11-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Fri, Nov 10, 2017
+    </time>
+  </span>
+
+  
+  
+  
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/data-visualisation">Data visualisation</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/data-visualisation">Data visualisation</a
+    >, 
+    
+    <a href="/tags/green-space">Green space</a
+    >, 
+    
+    <a href="/tags/traffic">Traffic</a
+    >, 
+    
+    <a href="/tags/glasgow">Glasgow</a
+    >, 
+    
+    <a href="/tags/neighbourhood">Neighbourhood</a
+    >, 
+    
+    <a href="/tags/rshiny">Rshiny</a
+    >
+    
+  </span>
+  
+  
+
+  
+
+</div>
+
+    <div class="article-style"><p>
+      
+      The question, in relation to theories of how the quality of greenspace can affect relationships with health, might be: Do traffic events occur close to greenspaces? How does this vary spatially and temporally? How can this be visualised?
+First load the packages:
+Load packages # allows r to work with spatial data library(rgdal) # allows r to connect with google apis library(googleway) # allows r to perform GIS operations (on vectors especially?
       
     </p></div>
   </div>
