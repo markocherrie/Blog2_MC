@@ -180,7 +180,7 @@ shinyServer(function(input, output) {
       <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/greentraffic/</guid>
-      <description>&lt;p&gt;The question, in relation to theories of how the quality of greenspace can affect relationships with health, might be: Do traffic events occur close to greenspaces? How does this vary spatially and temporally? How can this be visualised?&lt;/p&gt;
+      <description>&lt;p&gt;The question, in relation to theories of how the quality of greenspace can affect relationships with health, was: Do traffic events occur close to greenspaces? How does this vary spatially and temporally? How can this be visualised?&lt;/p&gt;
 &lt;p&gt;First load the packages:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Load packages
 # allows r to work with spatial data
@@ -244,7 +244,7 @@ spdf &amp;lt;- spTransform(spdf, CRS(&amp;quot;+init=epsg:4326&amp;quot;))
 # Let&amp;#39;s just look at all the motovehicles combineds
 traffichistoric&amp;lt;-as.data.frame(spdf)
 traffichistoric&amp;lt;-subset(traffichistoric, select=c(&amp;quot;coords.x1&amp;quot;, &amp;quot;coords.x2&amp;quot;, &amp;quot;AllMotorVehicles&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We can get the relevant information from the googleway package, i.e. current traffic volume. So all that’s needed is to put it in a shiny app for the final data visualisation:&lt;/p&gt;
+&lt;p&gt;To get contemporary traffic information we can use the googleway package, i.e. current traffic volume on roads. All the data is then brought together in the Rshiny app:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# load packages
 library(shiny)
 library(googleway)
@@ -277,8 +277,7 @@ add_polygons(data = polyline_df, polyline =&amp;quot;polyline&amp;quot;, stroke_
 })}
 # run the app!
 shinyApp(ui, server)&lt;/code&gt;&lt;/pre&gt;
-&lt;iframe src=&#34;https://thebest.shinyapps.io/test_MC/?showcase=0&#34; width=&#34;672&#34; height=&#34;600px&#34;&gt;
-&lt;/iframe&gt;
+&lt;p&gt;This is the final result: &lt;iframe src=&#34;https://thebest.shinyapps.io/test_MC/?showcase=0&#34; width=&#34;672&#34; height=&#34;400px&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
 </description>
     </item>
     

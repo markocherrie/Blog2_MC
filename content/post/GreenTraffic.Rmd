@@ -8,7 +8,7 @@ tags: ["Data visualisation", "Green space","Traffic", "Glasgow", "Neighbourhood"
 categories: ["Data visualisation"]
 ---
 
-The question, in relation to theories of how the quality of greenspace can affect relationships with health, might be: Do traffic events occur close to greenspaces? How does this vary spatially and temporally? How can this be visualised?
+The question, in relation to theories of how the quality of greenspace can affect relationships with health, was: Do traffic events occur close to greenspaces? How does this vary spatially and temporally? How can this be visualised?
 
 First load the packages:
 
@@ -84,7 +84,7 @@ traffichistoric<-as.data.frame(spdf)
 traffichistoric<-subset(traffichistoric, select=c("coords.x1", "coords.x2", "AllMotorVehicles"))
 ```
 
-We can get the relevant information from the googleway package, i.e. current traffic volume. So all that's needed is to put it in a shiny app for the final data visualisation:
+To get contemporary traffic information we can use the googleway package, i.e. current traffic volume on roads. All the data is then brought together in the Rshiny app:
 
 ```{r shinyapp, eval=F, message=FALSE, warning=FALSE}
 # load packages
@@ -121,8 +121,9 @@ add_polygons(data = polyline_df, polyline ="polyline", stroke_weight = 3, fill_c
 shinyApp(ui, server)
 ```
 
+This is the final result:
 ```{r app, echo=F, message=FALSE, warning=FALSE}
 library(knitr)
-knitr::include_app("https://thebest.shinyapps.io/test_MC/",height ="600px")
+knitr::include_app("https://thebest.shinyapps.io/test_MC/")
 ```
   

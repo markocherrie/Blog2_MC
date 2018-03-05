@@ -10,7 +10,7 @@ categories: ["Data visualisation"]
 
 
 
-<p>The question, in relation to theories of how the quality of greenspace can affect relationships with health, might be: Do traffic events occur close to greenspaces? How does this vary spatially and temporally? How can this be visualised?</p>
+<p>The question, in relation to theories of how the quality of greenspace can affect relationships with health, was: Do traffic events occur close to greenspaces? How does this vary spatially and temporally? How can this be visualised?</p>
 <p>First load the packages:</p>
 <pre class="r"><code>Load packages
 # allows r to work with spatial data
@@ -74,7 +74,7 @@ spdf &lt;- spTransform(spdf, CRS(&quot;+init=epsg:4326&quot;))
 # Let&#39;s just look at all the motovehicles combineds
 traffichistoric&lt;-as.data.frame(spdf)
 traffichistoric&lt;-subset(traffichistoric, select=c(&quot;coords.x1&quot;, &quot;coords.x2&quot;, &quot;AllMotorVehicles&quot;))</code></pre>
-<p>We can get the relevant information from the googleway package, i.e. current traffic volume. So all that’s needed is to put it in a shiny app for the final data visualisation:</p>
+<p>To get contemporary traffic information we can use the googleway package, i.e. current traffic volume on roads. All the data is then brought together in the Rshiny app:</p>
 <pre class="r"><code># load packages
 library(shiny)
 library(googleway)
@@ -107,5 +107,4 @@ add_polygons(data = polyline_df, polyline =&quot;polyline&quot;, stroke_weight =
 })}
 # run the app!
 shinyApp(ui, server)</code></pre>
-<iframe src="https://thebest.shinyapps.io/test_MC/?showcase=0" width="672" height="600px">
-</iframe>
+<p>This is the final result: <iframe src="https://thebest.shinyapps.io/test_MC/?showcase=0" width="672" height="400px"></iframe></p>
