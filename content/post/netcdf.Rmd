@@ -2,8 +2,8 @@
 title: netCDF in R
 author: ~
 date: '2018-02-24'
-slug: netCDF in R
-categories: ["R", "netCDF", "Data", "Time series", "satellite"]
+slug: netCDF 
+categories: ["R", "NetCDF", "Data", "Time series", "Satellite"]
 tags: ["Data wrangling"]
 draft: yes
 ---
