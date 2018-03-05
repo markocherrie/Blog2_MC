@@ -1,0 +1,111 @@
+---
+title: 'Mapping Green Space and Traffic in Glasgow'
+author: ~
+date: '2017-11-10'
+draft: no
+slug: greentraffic
+tags: ["Data visualisation", "Green space","Traffic", "Glasgow", "Neighbourhood", "Rshiny"]
+categories: ["Data visualisation"]
+---
+
+
+
+<p>The question, in relation to theories of how the quality of greenspace can affect relationships with health, might be: Do traffic events occur close to greenspaces? How does this vary spatially and temporally? How can this be visualised?</p>
+<p>First load the packages:</p>
+<pre class="r"><code>Load packages
+# allows r to work with spatial data
+library(rgdal)
+# allows r to connect with google apis
+library(googleway)
+# allows r to perform GIS operations (on vectors especially?)
+library(rgeos)
+# general purpose plotting package for r
+library(ggplot2)
+# download the greenspace map for scotland from:
+# https://www.ordnancesurvey.co.uk/opendatadownload/products.html</code></pre>
+<p>Next, read in the green space data:</p>
+<pre class="r"><code># read the data
+green&lt;-readOGR(&quot;boundaries/green&quot;, &quot;GB_GreenspaceSite&quot;)
+# Download the local authority boundary for Glasgow City from here:
+# https://saspac.org/data/2011-census/scotland-2011/
+glasgow&lt;-readOGR(&quot;boundaries/Scottish-Census-boundaries(shp)/2011_Council_Area/CA_2011_EoR_Glasgow_City&quot;, &quot;CA_2011_EoR_Glasgow_City&quot;)
+## OGR data source with driver: ESRI Shapefile 
+green_subset &lt;- green[glasgow, ]
+
+# Project Glasgow greenspace (BNG) to lat/long (WGS84)
+green_subset &lt;- spTransform(green_subset, CRS(&quot;+init=epsg:4326&quot;))
+
+# Make it a dataframe
+green_polygon&lt;-fortify(green_subset)
+
+# Tidy the coloumn names so that we can use it with the polyline encoding function
+colnames(green_polygon)[1]&lt;-&quot;lon&quot;
+green_polygon&lt;-subset(green_polygon, select=c(&quot;lon&quot;, &quot;lat&quot;, &quot;id&quot;))
+
+# Now for each group of points (vertices of polygon) we want to encode the polygon using the &quot;encode_pl&quot; function from the package googleway (comment block it do it doens&#39;t run everytime)
+
+if(FALSE) {
+polyline_df&lt;-NULL
+for (i in unique(green_polygon$id)){
+dataG&lt;-subset(green_polygon, id==i)
+polyline&lt;-encode_pl(dataG$lat, dataG$lon)
+polyline_df&lt;-rbind(df, polyline)
+}
+polyline_df&lt;-as.data.frame(polyline_df)
+colnames(polyline_df)&lt;-&quot;polyline&quot;
+}
+}
+# Let&#39;s write this out so that the end viz/application doesn&#39;t need to do this bit again
+# write.csv(polyline_df, &quot;data/polyline_df.csv&quot;)</code></pre>
+<p>Now, let’s get historic traffic data:</p>
+<pre class="r"><code># Data on historical traffic from here:
+# https://www.dft.gov.uk/traffic-counts/area.php?region=Scotland&amp;la=Glasgow+City
+# &quot;Briefly the file contains the annual traffic (otherwise known as volume of traffic) on each link of the major road network. This is calculated by multiplying the Annual average daily flow (AADF) by the corresponding length of road and by the number of days in the year&quot;&quot;
+data&lt;-read.csv(&quot;data/Glasgow+City_TRAF.csv&quot;)
+# make the data frame spatial
+coords = cbind(data$Easting, data$Northing)
+sp = SpatialPoints(coords)
+# add the data
+spdf = SpatialPointsDataFrame(coords, data)
+# Set projection to bng
+proj4string(spdf) &lt;- CRS(&quot;+init=epsg:27700&quot;)
+# project to bng
+spdf &lt;- spTransform(spdf, CRS(&quot;+init=epsg:4326&quot;))
+# Let&#39;s just look at all the motovehicles combineds
+traffichistoric&lt;-as.data.frame(spdf)
+traffichistoric&lt;-subset(traffichistoric, select=c(&quot;coords.x1&quot;, &quot;coords.x2&quot;, &quot;AllMotorVehicles&quot;))</code></pre>
+<p>We can get the relevant information from the googleway package, i.e. current traffic volume. So all that’s needed is to put it in a shiny app for the final data visualisation:</p>
+<pre class="r"><code># load packages
+library(shiny)
+library(googleway)
+library(maptools)
+
+# Read the processed data
+traffichistoric&lt;-read.csv(&quot;data/traffichistoric.csv&quot;)
+polyline_df&lt;-read.csv(&quot;data/polyline_df.csv&quot;)
+
+# Create the shiny user input specs
+ui &lt;- fluidPage(google_mapOutput(&quot;map&quot;))
+
+# Create the shiny server specs
+server &lt;- function(input, output, session){
+
+# Have to have an API key to use Google data  
+map_key &lt;- &quot;Your-key-here&quot;
+  
+# Style option not used but we can change the style of the map with the following code:
+style &lt;- &#39;[{&quot;featureType&quot;:&quot;all&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;invert_lightness&quot;:true}, {&quot;saturation&quot;:10},{&quot;lightness&quot;:30},{&quot;gamma&quot;:0.5},{&quot;hue&quot;:&quot;#435158&quot;}]}, {&quot;featureType&quot;:&quot;road.arterial&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;simplified&quot;}]}, {&quot;featureType&quot;:&quot;transit.station&quot;,&quot;elementType&quot;:&quot;labels.text&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]}]&#39;
+  
+# output the map, use glasgow lat long to centre map, play with the zoom to make it look good
+output$map &lt;-renderGoogle_map({google_map(key = map_key, location=c(55.8642, -4.2518), zoom=13) %&gt;%
+# Add a heatmap of the historical traffic counts
+add_heatmap(data = traffichistoric, lat = &#39;coords.x2&#39;, lon = &#39;coords.x1&#39;, option_opacity = 0.3) %&gt;%
+# This is the key bit to get contemporary traffic
+add_traffic() %&gt;% 
+# And to the get the polygons of greenspace
+add_polygons(data = polyline_df, polyline =&quot;polyline&quot;, stroke_weight = 3, fill_colour = &quot;green&quot;, stroke_colour = &quot;black&quot;) 
+})}
+# run the app!
+shinyApp(ui, server)</code></pre>
+<iframe src="https://thebest.shinyapps.io/test_MC/?showcase=0" width="672" height="600px">
+</iframe>

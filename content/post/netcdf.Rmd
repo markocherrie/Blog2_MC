@@ -1,21 +1,109 @@
 ---
-title: netCDF in R
+title: NetCDF in R
 author: ~
 date: '2018-02-24'
 slug: netCDF 
 categories: ["R", "NetCDF", "Data", "Time series", "Satellite"]
 tags: ["Data wrangling"]
-draft: yes
+draft: no
 ---
 
-NetCDF stands for "Network Common Data Format" which was created by unidata for geoscience data. Here's a short description on their  website (https://www.unidata.ucar.edu/netcdf/):
+NetCDF stands for "Network Common Data Format" and was created by 'unidata' for handling large geospatial data. Here's a short description from their [website](https://www.unidata.ucar.edu/netcdf/):
 
 "NetCDF is a set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-orientated scientific data."
 
-NetCDF files are containers for dimensions, variables and global atttributes.
-I've recently had to process air pollution data stored in this format (.nc/.NC). It's used for a lot of climate data from x, y and z, so it's worth learning how to use it if you might use this data in the future. Let's pick apart the definition a bit further.
+NetCDF files are containers for dimensions, variables and global atttributes. It's used to store climatology, meteorology and oceanography data by over 1300 organisations including [NOAA](https://www.esrl.noaa.gov/psd/data/gridded/data.gistemp.html) and [EUMETSAT](https://www.eumetsat.int/website/home/index.html). I think the key advantage of the format is that it is self-describing, whereby all the information required to use it correctly is supplied within the data file. So it doesn't matter if you are using Python, Perl or R, you will be able to read, manipulate and plot the data, and there is lots of information out there to help with that. 
 
-Self-describing
-This is one of the main advantages of the format, whereby all the information required to use it correctly is supplied within the data file. So it doesn't matter if you are using Python, Perl or R, you will be able to read it in and plot it.
+I was asked recently to help with processing air pollution data stored in NetCDF format (.nc/.NC) using R. I've had a first attempt at describing one of the files we are using (NO2 max for a day), plotting, batch processing daily neighbourhood (postcode unit) based exposure estimates and finally converting to .rds for upload to a postgresql database. Some considerations of the data I was using was that it had a polar stereographic projection, which can be converted to a lat/long [grid](https://stackoverflow.com/questions/23837918/convert-polar-stereographic-projection-into-lat-long-grid-in-r). I decided that this might not be required if I used the points as they were and allocate the nearest air pollution point to the centroid of the postcode. As the data size was quite large the normal rgeos::gDistance method didn't work (i.e. could not allocate vector error), so I used k-nearest neighbour (k=1), below is the code: 
+
+```{r readingnetcdf, eval=F, warning=FALSE, message=FALSE}
+# reading ncdf in R
+library(ncdf4)
+library(reshape2)
+library(dplyr)
+library(raster)
+
+# get all netcdf files
+flist <- list.files(path = ".", pattern = "^.*\\.(nc|NC|Nc|Nc)$")
+
+# Open a connection to the first file in our list
+nc <- nc_open(flist[1])
+
+# get variable names
+attributes(nc$var)$names
+
+# summary
+MaxNO2<-ncatt_get(nc, attributes(nc$var)$names[3])
+
+#projection is:
+#projection: Stereographic
+#projection_params: 90.0 -32.0 0.933013
+# got this from the nc output
+nc_close(nc)
+
+# use the info collected from attributes to get the data
+xyznames <- c("lon", "lat", "NO2_daymax")
+lon <- raster(flist[1], varname= xyznames[1])
+lat <- raster(flist[1], varname= xyznames[2])
+dat <- brick(flist[1], varname = xyznames[3])
+
+# Values drops the "raster" wrapper, just returns values in order as a vector
+d <- cbind(values(lon), values(lat), values(dat[[1]]))
+# remap arbitrary values to [0,1] for a colour table
+scl <- function(x) (x - min(x, na.rm = TRUE))/diff(range(x, na.rm = TRUE))
+# set a number for colours
+n <- 56
+# plot the data
+plot(d[,1:2], pch = 16, col = terrain.colors(n)[scl(d[,3]) * (n-1) + 1])
+
+# codepoint postcode unit points
+set1<-readRDS("C:/Users/mcherrie/boundary/Postcodeunit.rds")
+set1 <- spTransform(set1, CRS("+init=epsg:4326"))
+
+# raster vals
+coords = cbind(d[,1], d[,2])
+set2 = SpatialPoints(coords)
+proj4string(set2) = CRS("+init=epsg:4326")
+plot(set2)
+
+A <- SpatialPoints(set1)
+B <- SpatialPoints(set2)
+# library(rgeos)
+# set1$nearest_in_set2 <- apply(gDistance(set1sp, set2sp, byid=TRUE), 1, which.min)
+# doesn't work cannot allocate vector
+
+library(SearchTrees)
+# Find indices of the nearest points in B to each of the points in A
+tree <- createTree(coordinates(B))
+inds <- knnLookup(tree, newdat=coordinates(A), k=1)
+
+# create the dataframes --- need to double check this bit!
+Bdf<-as.data.frame(B)
+Bdf$ind<-seq(1,nrow(Bdf))
+colnames(Bdf)<-c("AP_long", "AP_lat", "ind")
+Adf<-as.data.frame(A)
+Adf$ind<-inds
+colnames(Adf)<-c("PU_long", "PU_lat", "ind")
+Cdf<-merge(Adf, Bdf, by="ind")
+
+# get the Air pollution coordinates for the Postcode units
+PUDF<-as.data.frame(set1)
+colnames(PUDF)<-c("PU", "Easting", "Northing", "PU_long", "PU_lat")
+PUDF2<-merge(PUDF, Cdf, by=c("PU_long", "PU_lat"), all.x=T)
+subsetAP<-subset(PUDF2, select=c("PU", "AP_long", "AP_lat"))
+
+# Let's output a year
+for(i in 1:2){
+d <- cbind(values(lon), values(lat), values(dat[[i]]))
+name<-dat[[i]]@z[[1]][1]
+colnames(d)<-c("AP_long", "AP_lat", "Value")
+d2<-merge(d, subsetAP, by=c("AP_long", "AP_lat"), all.y=T)
+saveRDS(d2, paste0("E:/airpollutiondata/",name,".rds"))
+}
+```
+
+Any feedback welcome, thanks. 
+
+
 
 
