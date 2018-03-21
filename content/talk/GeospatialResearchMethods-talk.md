@@ -10,7 +10,7 @@ selected = false
 math = true
 
 url_pdf = ""
-url_slides = "http://bit.ly/2IC1FYd"
+url_slides = "https://drive.google.com/file/d/1kz1gaiM-2K05D54rISJLmeJJZl0qYSGA/view?usp=sharing"
 url_video = ""
 
 # Optional featured image (relative to `static/img/` folder).
