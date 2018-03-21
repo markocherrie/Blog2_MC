@@ -1,5 +1,5 @@
 +++
-date = "2017-09-28T11:30:00"
+date = "2018-03-21T11:30:00"
 title = "Geospatial Research Methods"
 abstract = ""
 event = "Landscape and Wellbeing Lecture"
