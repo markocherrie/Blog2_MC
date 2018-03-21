@@ -1,7 +1,7 @@
 +++
 date = "2018-03-21T07:30:00"
 title = "Geospatial Research Methods"
-abstract = ""
+abstract = " "
 location = "Edinburgh, United Kingdom"
 
 selected = false
