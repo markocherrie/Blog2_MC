@@ -2,7 +2,7 @@
 date = "2018-03-21T11:30:00"
 title = "Geospatial Research Methods"
 abstract = ""
-event = "Landscape and Wellbeing Lecture"
+event = "Landscape and Wellbeing MSc"
 event_url = "https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&id=920"
 location = "Edinburgh, United Kingdom"
 
