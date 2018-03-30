@@ -45,7 +45,7 @@ return(df)
 }
 ```
 
-Next, the input options for the three devolved parliaments and assemblies for the 'legiscraper' function needed to be created (n.b. I was counting the number of pages that the data was on, but will look into automating this in the future):
+Next, the input options for the 'legiscraper' function were created and then the function was run for each country (n.b. I was counting the number of pages that the data was on, but will look into automating this in the future):
 
 ```{r functioninput, eval=F, message=FALSE, warning=FALSE}
 # Scotland
@@ -60,17 +60,18 @@ nidf<-data.frame(page=1:9, countrycode="nia")
 NorthernIreland<-mdply(nidf, legiscraper)
 ```
 
-Each dataframe is then binded and cleaned, before saving for each year:
+Each dataframe was then binded and cleaned, before saving for each year:
 
 ```{r cleaning, eval=F, message=FALSE, warning=FALSE}
+# cleaning
 library(stringr)
 Legislationdf<-rbind(Scotland, Wales, NorthernIreland)
 Legislationdf$Year<-as.numeric(substr(Legislationdf$X2, 1,4))
 colnames(Legislationdf)<-c("","","Legislationname", "", "Parliament", "Year")
 Legislationdf<-subset(Legislationdf, select=c("Legislationname", "Parliament", "Year"))
 Legislationdf<-Legislationdf[,c(1,3,2)]
+# write .csv files
 write.csv(Legislationdf, "LegislationAll.csv", row.names=F)
-
 for (i in 1999:2018){
   subsetdf<-subset(Legislationdf, year==i)
   write.csv(subsetdf, "Legislationdf", i, ".csv", row.names=F)
@@ -84,51 +85,40 @@ library(shiny)
 library(networkD3)
 
 ui <- fluidPage(
-  
-                titlePanel("Devolved Parliaments and Assemblies Legislation, by Year"),
-                
-                sidebarLayout(
-                  sidebarPanel(
-                  selectInput("Year", "Choose Year", choices=c("All","1999", "2000", "2001",
-                                                                  "2002", "2003", "2004", "2005"
-                                                                  , "2006", "2007", "2008", "2009",
-                                                                  "2010", "2011", "2012", "2013","2014",
-                                                                  "2015", "2016", "2017", "2018")),
-                  actionButton("click", "Render"),
-                  downloadButton("downloadData", "Download"),
-                  helpText("Data from http://www.legislation.gov.uk")
-                  ),
-                  mainPanel(forceNetworkOutput(
-                    "forced", width = "100%", height = "700px"
-                  ))
+titlePanel("Devolved Parliaments and Assemblies Legislation, by Year"),
+  sidebarLayout(
+    sidebarPanel(
+     selectInput("Year", "Choose Year", choices=c("All","1999", "2000",      "2001","2002", "2003", "2004", "2005", "2006", "2007", "2008",          "2009","2010", "2011", "2012", "2013","2014", "2015", "2016",           "2017", "2018")),
+  actionButton("click", "Render"),
+  downloadButton("downloadData", "Download"),
+  helpText("Data from http://www.legislation.gov.uk")
+    ),
+  mainPanel(forceNetworkOutput(
+  "forced", width = "100%", height = "700px"))
                 ))
 ```
 
-On the server side file, after packages and visualisation colour options were set, the data needed to be read in then subsetted based on the user's 'Year' input. The trickiest part was formatting this data for the 'networkD3' package. Luckily there was a very good post on [stackexchange post](https://bit.ly/2J7659N) by Peter Ellis on how to create the input data and modify the colour of nodes. Some difficulties did arise from formatting, (the imported csv variables were not in the same format as the in memory data) [function name conflict](https://github.com/tidyverse/dplyr/issues/1388) and order of node id's. The fixes are detailed below. Finally, with an interactive app like this, the amount of data displayed differs, and so I changed the options for display based on whether the user picked the full or subsetted input. Code below:
+Now onto the server side file. After packages and visualisation colour options were set, the data needed to be read in then subsetted based on the user's 'Year' input. The trickiest part was formatting this data for the 'networkD3' package. Luckily there was a very good post on [stackexchange](https://bit.ly/2J7659N) by Peter Ellis, on how to create the input data and modify the colour of nodes. Some difficulties did arise from formatting (the imported csv variables were not in the same format as the in memory data),a [function name conflict](https://github.com/tidyverse/dplyr/issues/1388) and the order of node id's. The fixes are detailed below. Finally, with an interactive app like this, the amount of data displayed differs, and so the options for display were based on whether the user picked the full or subsetted input. Code below:
 
 ```{r server, echo=T, message=FALSE, warning=FALSE}
 library(shiny)
 library(networkD3)
 library(dplyr)
 
-# Colour
+# Colour for the vis
 ColourScale <- 'd3.scaleOrdinal()
-            .domain(["Acts of the Scottish Parliament", 
+.domain(["Acts of the Scottish Parliament", 
   "Acts of the National Assembly for Wales", "Acts of the Northern Ireland Assembly","Year"])
   .range(["#FF6900", "#694489", "#ff0090", "#888888"]);'
 
-
 server <- function(input, output, session) {
-  
   # year subset
   subset <- reactive({input$Year})  
-  
   # on render click get the data
   data <- eventReactive(input$click, {
     read.csv(paste0("Legislationdf", subset(), ".csv"))
   })
-
-### download button
+  # download button
   output$downloadData <- downloadHandler(
     filename = function() {
       paste("DevolvedLegislation.csv", sep = "")
@@ -137,19 +127,15 @@ server <- function(input, output, session) {
       write.csv(data(), file, row.names = FALSE)
     }
   )
-  
 # Output 
   output$forced <- renderForceNetwork({
-    
     # manipulate data
     master<-data()
-    
-    # when saved as .csv formatting went out the window
+    # when saved as '.csv' formatting went out the window
     master$Legislationname<-as.character(master$Legislationname)
     master$Year<-as.double(master$Year)
     master$Parliament<-as.character(master$Parliament)
-    
-    # now onto making the network input - got lots of help from https://bit.ly/2J7659N
+    # now onto making the network input 
     src<-master[,1]
     target<-master[,2]
     networkData <- data.frame(src, target, stringsAsFactors = FALSE)
@@ -162,10 +148,10 @@ server <- function(input, output, session) {
     # edges - notice 'dplyr::' as there were some problems with rename... 
     library(dplyr)
       edges <- networkData %>%
-      dplyr::left_join(nodes, by = c("src" = "name")) %>%
+      dplyr::left_join(nodes, by = c("src" = "name"))%>%
       dplyr::select(-src) %>%
       dplyr::rename(source = id) %>%
-      dplyr::left_join(nodes, by = c("target" = "name")) %>%
+      dplyr::left_join(nodes, by = c("target" = "name"))%>%
       dplyr::select(-target) %>%
       dplyr::rename(target = id)
     
