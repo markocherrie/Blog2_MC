@@ -11,6 +11,15 @@
     <atom:link href="/talk/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Geospatial Research Methods</title>
+      <link>/talk/geospatialresearchmethods-talk/</link>
+      <pubDate>Wed, 21 Mar 2018 11:30:00 +0000</pubDate>
+      
+      <guid>/talk/geospatialresearchmethods-talk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Data, data, big not small, how can R increase efficiency for all?</title>
       <link>/talk/example-talk/</link>
       <pubDate>Thu, 28 Sep 2017 11:30:00 +0000</pubDate>

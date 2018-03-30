@@ -7,13 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Mark Cherrie</copyright>
-    <lastBuildDate>Fri, 22 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Mar 2018 00:00:00 +0000</lastBuildDate>
     <atom:link href="/categories/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>App</title>
       <link>/categories/app/</link>
-      <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/app/</guid>
       <description></description>
@@ -25,6 +25,15 @@
       <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/categories/behaviour/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Big Data</title>
+      <link>/categories/big-data/</link>
+      <pubDate>Mon, 27 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/big-data/</guid>
       <description></description>
     </item>
     
@@ -43,6 +52,15 @@
       <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/categories/data-visualisation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Devolution</title>
+      <link>/categories/devolution/</link>
+      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/devolution/</guid>
       <description></description>
     </item>
     
@@ -83,6 +101,15 @@
     </item>
     
     <item>
+      <title>Policy</title>
+      <link>/categories/policy/</link>
+      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/policy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>R</title>
       <link>/categories/r/</link>
       <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
@@ -103,7 +130,7 @@
     <item>
       <title>Rshiny</title>
       <link>/categories/rshiny/</link>
-      <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/rshiny/</guid>
       <description></description>
@@ -115,33 +142,6 @@
       <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/satellite/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Time Series</title>
-      <link>/categories/time-series/</link>
-      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/time-series/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Weather</title>
-      <link>/categories/weather/</link>
-      <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/weather/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Website</title>
-      <link>/categories/website/</link>
-      <pubDate>Thu, 07 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/website/</guid>
       <description></description>
     </item>
     

@@ -22,5 +22,15 @@
 </description>
     </item>
     
+    <item>
+      <title>OpenStreetMap in R</title>
+      <link>/post/osmr/</link>
+      <pubDate>Mon, 27 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/osmr/</guid>
+      <description>&lt;p&gt;I found a really helpful &lt;a href=&#34;https://www.r-spatial.org/2017/07/14/large_scale_osm_in_r&#34;&gt;tutorial&lt;/a&gt; on using OpenStreetMap data in R the other day.&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

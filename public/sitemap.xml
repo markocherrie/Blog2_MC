@@ -5,6 +5,24 @@
     
     <url>
     
+      <loc>/post/devolvedlegislation/</loc>
+      <lastmod>2018-03-30T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/talk/geospatialresearchmethods-talk/</loc>
+      <lastmod>2018-03-21T11:30:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/netcdf/</loc>
       <lastmod>2018-02-24T00:00:00+00:00</lastmod>
     </url>
@@ -158,6 +176,15 @@
     
     <url>
     
+      <loc>/post/osmr/</loc>
+      <lastmod>2017-03-27T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/academic/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
@@ -264,7 +291,7 @@
     <url>
     
       <loc>/categories/app/</loc>
-      <lastmod>2017-12-22T00:00:00+00:00</lastmod>
+      <lastmod>2018-03-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -293,8 +320,18 @@
     
     <url>
     
+      <loc>/categories/big-data/</loc>
+      <lastmod>2017-03-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/categories/</loc>
-      <lastmod>2017-12-22T00:00:00+00:00</lastmod>
+      <lastmod>2018-03-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -333,6 +370,16 @@
     
     <url>
     
+      <loc>/tags/data-visualisation/</loc>
+      <lastmod>2018-03-30T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/categories/data-visualisation/</loc>
       <lastmod>2017-11-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -355,6 +402,16 @@
     
       <loc>/tags/deprivation/</loc>
       <lastmod>2017-08-08T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/devolution/</loc>
+      <lastmod>2018-03-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -553,6 +610,26 @@
     
     <url>
     
+      <loc>/tags/osm/</loc>
+      <lastmod>2017-03-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/osmosis/</loc>
+      <lastmod>2017-03-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/pdf/</loc>
       <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -563,8 +640,28 @@
     
     <url>
     
+      <loc>/categories/policy/</loc>
+      <lastmod>2018-03-30T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/postgresql/</loc>
+      <lastmod>2017-03-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/</loc>
-      <lastmod>2018-02-24T00:00:00+00:00</lastmod>
+      <lastmod>2018-03-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -654,7 +751,7 @@
     <url>
     
       <loc>/categories/rshiny/</loc>
-      <lastmod>2017-12-22T00:00:00+00:00</lastmod>
+      <lastmod>2018-03-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
