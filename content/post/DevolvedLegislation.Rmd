@@ -9,6 +9,8 @@ draft: no
 ---
 
 Scotland, Wales and Northern Ireland have had devolved powers since 1997, 1997 and 1998 respectively. During this time 480 Acts have been passed, an act being defined as primary legislation which has been through several stages from:
+
+***
 1. Pre-legislative scrutiny on the draft piece of legislation (bill)
 2. First Reading - first presentation, no voting
 3. Second Reading - debate on principles, voting
