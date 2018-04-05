@@ -19,9 +19,9 @@ Scotland, Wales and Northern Ireland have had devolved powers since 1997, 1997 a
 8. Consideration of Lords/Commons Amendments
 9. Royal Assent
 
-When working with longitudinal data it might be fruitful to identify legislation that may have had an effect on the behaviour or health of study participants. In particular, if you have study participants living across the UK, the acts orginating from the devolved parliaments might be interesting as they may be the cause of any differences observed. 
+When working with longitudinal data it might be fruitful to identify legislation that may have had an effect on the behaviour or health of study participants. In particular, if you have study participants living across the UK, the acts orginating from the devolved parliaments might be interesting as they may be associated with differences in health/behaviour observed. 
 
-Data are collected on all legislation passed in the UK on the [legislation.gov.uk](http://www.legislation.gov.uk) website. Some visualisation of this data has been done over time to show years where lots of legislation has been passed. However it's quite tricky to identify when legislation has been passed across the devolved countries and how they relate to one another. The aim was to develop a visualisation to quickly identify legilsation from the devolved parliaments and assemblies. 
+Data are collected on all legislation passed in the UK on the [legislation.gov.uk](http://www.legislation.gov.uk) website. Some visualisation of this data has been done over time to show the frequency of legislation passed by year. However it's quite tricky to identify when legislation has been passed across the devolved countries and how they relate to one another. The aim was to develop a visualisation to quickly identify legilsation from the devolved parliaments and assemblies. 
 
 Firstly, the data from the website was scraped using a function called 'legiscraper':
 
@@ -212,3 +212,5 @@ Here is the final app:
 library(knitr)
 knitr::include_app("https://thebest.shinyapps.io/DevolvedLegislation/",height ="600px")
 ```
+
+Next steps are to look at whether the legilsation can be classified into groups meaninfully, or whether a node can act as a link to a webpage for more information. 
