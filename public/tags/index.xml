@@ -21,9 +21,18 @@
     </item>
     
     <item>
+      <title>Academia</title>
+      <link>/tags/academia/</link>
+      <pubDate>Thu, 05 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/academia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Admin</title>
       <link>/tags/admin/</link>
-      <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 05 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/admin/</guid>
       <description></description>
@@ -129,20 +138,11 @@
     </item>
     
     <item>
-      <title>Gis</title>
-      <link>/tags/gis/</link>
-      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      <title>Gee</title>
+      <link>/tags/gee/</link>
+      <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/gis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Glasgow</title>
-      <link>/tags/glasgow/</link>
-      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/glasgow/</guid>
+      <guid>/tags/gee/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,193 @@
+---
+title: 'Google Earth Engine: NDVI in Scotland 2001-2017'
+author: "Mark Cherrie"
+date: '2018-04-26'
+draft: no
+slug: GEE
+tags: ["GEE", "Javascript","R","GIS", "parallel computing", "remote sensing"]
+categories: ["Big data"]
+---
+
+
+
+<p>I’m interested in a continuous time-series measure of ‘green spaces’, features of the natural environment that may be important for a wide variety of health outcomes.</p>
+<div id="green-spaces-over-time" class="section level4">
+<h4>Green spaces over time</h4>
+<p>There are two major green space datasets for Scotland, <a href="http://www.greenspacescotland.org.uk/scotlands-greenspace-map.aspx">Scotland’s Greenspace Map 2011</a> and the <a href="https://www.ordnancesurvey.co.uk/business-and-government/products/os-open-greenspace.html">Ordnance Survey’s MasterMap Greenspace</a>. These maps were produced by characterising OS mastermap polygons using aerial photos, with the latter updated every 6 months from July 2017. They use the <a href="https://beta.gov.scot/publications/planning-advice-note-pan-65-planning-open-space/documents/0060935.pdf">PAN65</a> criteria to categorise all Mastermap polygons into 11 types (e.g. Private gardens or grounds) and 23 land cover classifications (e.g. School grounds). Although change in green space types over time could be undertaken due to use of the same categories, there is no pre-recession time point (2011 is earliest). Furthermore, the 2011 data only covers settlements with over 3,000 people so would not give an estimate of change for people living in rural areas.</p>
+</div>
+<div id="land-cover-over-time" class="section level4">
+<h4>Land cover over time</h4>
+<p>There a number of global, national and continental land cover datasets available over time. There are global land cover datasets from <a href="https://neo.sci.gsfc.nasa.gov/view.php?datasetId=MCD12C1_T1">NASA</a> for 2001-2011 and <a href="http://due.esrin.esa.int/page_globcover.php">ESA</a> covering 2 periods: December 2004 - June 2006 and January - December 2009. Although the classifications for the global datasets seem quite broad, possibly due to the low spatial resolution. The Centre for Hydrology and Ecology have <a href="https://www.ceh.ac.uk/services/information-products">datasets</a> for 1990, 2000, 2007 and 2015 on UK land cover but unfortunatley they can’t be compared between years due to different sampling methods being applied. Finally, there is data in between UK and global level called the <a href="https://land.copernicus.eu/pan-european/corine-land-cover">CORINE land cover series</a>, created for 1990, 2000, 2006 and 2012. Land cover is <a href="https://wiki.openstreetmap.org/wiki/Corine_Land_Cover">classified</a> into 5 categories and 44 classes. Change from 2006 and 2012 has been undertaken by researchers from the university of Leicester, available <a href="https://catalogue.ceh.ac.uk/documents/35fecd0f-b466-448b-94d1-0bba90be450e">here</a>. Whilst CORINE data will allow the analysis of subtypes of green space, there is some evidence that total green space may be more important for health outcomes (Richardson et al., 2018; Klompmaker et al., 2018). Thus measures of vegetation levels based on satellite products may be appropriate.</p>
+</div>
+<div id="vegetation-levels-over-time" class="section level4">
+<h4>Vegetation levels over time</h4>
+<p>Normalised difference vegetation index (NDVI) is a measure of vegetation greeness and photosynthetic capacity. NDVI is calculated by an equation using estimates of red (Red; 0.2-0.7µm) and near-infrared (NIR; 0.7-1.1µm) radiation:</p>
+<p><span class="math display">\[NDVI = {\frac{NIR - Red} {NIR + Red}}\]</span></p>
+<p>Green vegetation contains chlorophyll which absorbs more red light and reflects more near-infrared light. NDVI values range from -1 to 1, with values near zero as bare soil and 0.8 as temperate rainforests. Instruments, for example the Moderate Resolution Imaging Spectroradiometer (MODIS) aboard Landsat 7 (1999-) and Terra (1999-) record surface reflectance in the NIR and Red bands. The spatial resolution of Landsat 7 is 30 m but only images a scene (185 km long and wide) every 16 days. Terra has a 250 m resolution but images a scene every day. Both datasets (‘Landsat 7 ETM+ C1 Level-2’ and ‘MOS13Q1 V6’) can be acquired from the <a href="https://earthexplorer.usgs.gov">USGS EarthExplorer website</a>. It should be noted that 22% of any scene after 31st of May 2003 is invalid due to a problem with the Scan Line Corrector, which compensates for the forward motion of Landsat 7, of which the following code can provide a <a href="https://gis.stackexchange.com/questions/264061/ls7-filling-the-gaps-image-with-google-earth-engine">fix</a>.</p>
+</div>
+<div id="google-earth-enginegee" class="section level4">
+<h4>Google Earth Engine(GEE)</h4>
+<p>The USGS explorer is a Graphical User Interface; it is time consuming to download all the images corresponding to large study areas. An <a href="https://earthexplorer.usgs.gov/inventory/documentation/json-api">application programming interface</a>(API) also exists, so some data could be downloaded automatically. However once data has been downloaded, images would still need to be <a href="https://www.nceas.ucsb.edu/scicomp/usecases/createrasterimagemosaic">mosaiced</a> together to undertake analysis at a national level. An alternative is to use the <a href="https://earthengine.google.com">Google Earth Engine</a>, which provides a computing platform that allows users to run geospatial analysis on Google’s infrastructure. In other words, the massive remote sensing datasets required for large scale analyses are easily downloaded via a web API and mosaiced instantly using Google’s high performance parallel computation service. Analysis is performed using an interactive development environment (IDE), which lends itself to quick prototyping and visualisation of results. Crucially, any analysis can be scaled to another country or at a global level very easily. Some challenges arise from GEE’s terminology (e.g. mapping = applying functions) and client/server programming model (similar to Rshiny)(i.e. you cannot use external operations (loop/conditionals) on Earth engine proxy objects (‘.ee’)), although there are <a href="https://gis.stackexchange.com/questions/247297/start-a-loop-from-information-in-a-feature-property/247319?utm_medium=organic&amp;utm_source=google_rich_qa&amp;utm_campaign=google_rich_qa">ways</a> around this. A full discussion on the utility of GEE for analysis is available <a href="https://ac.els-cdn.com/S0034425717302900/1-s2.0-S0034425717302900-main.pdf?_tid=7cec4248-785f-4708-9844-fe40c74921be&amp;acdnat=1524576231_b2aebc00396ecaa4f0126fb194a509f1">here</a>.</p>
+</div>
+<div id="method" class="section level2">
+<h2>Method</h2>
+<p>The aim was to use all the available Landsat 7 images (2001-2017; image every 16 days), masking clouds and water, and calcuate the median NDVI value for all 30 m pixels within a 500 m radius of the datazone’s population weighted centroid.</p>
+<div id="creating-kml-boundary-files" class="section level4">
+<h4>Creating KML boundary files</h4>
+<p>First, download the Datazone 2011 <a href="https://data.gov.uk/dataset/data-zone-centroids-2011/resource/cc06b84c-8b55-4f15-abcf-ace1fda02679">population weighted centroids</a>, load into R and export as a .kml file.</p>
+</div>
+<div id="gee-layout" class="section level4">
+<h4>GEE layout</h4>
+<p>Sign into Google Earth Engine with your gmail account. The GEE layout is as follows:</p>
+<div class="figure">
+<img src="images/GEElayout.png" />
+
+</div>
+<p>The main panel here is the Code editor which will allow you to save code (to the script manager) and run a script.</p>
+</div>
+<div id="loading-vectors" class="section level4">
+<h4>Loading vectors</h4>
+<p>Next sign into Google Fusion, click File&gt;new table, then when the new window appears, Choose File&gt;Next and follow the instructions. Note that the maximum size of file is 250 MB (if bigger then split up). When the table has loaded successfully, then click File&gt;About this Table. Copy the Id. Now in GEE, in the Code Editor section, use the ‘ee.FeatureCollection’ function with Id you have copied to load the datazone boundaries.</p>
+</div>
+<div id="creating-vectors" class="section level4">
+<h4>Creating vectors</h4>
+<p>Note that you can define features as well by using the ‘ee.Feature’ function. There is the also the option to use the map directly. Clicking on the ‘Add a marker’ icon in the top left hand corner of the Map will import come code to the top of your code editor. If you have several features you can group them using the ‘ee.FeatureCollection’ function.</p>
+</div>
+<div id="loading-rasters" class="section level4">
+<h4>Loading rasters</h4>
+<p>We can search for GEE datasets using the search bar at the top of the GEE window. You can click the import icon, or copy the ImageCollection ID and use with the ‘ee.ImageCollection’ function. We can also import single images using ‘ee.Image’, as we have done to acquire the GEE dataset by Hansen et al., 2013.</p>
+</div>
+<div id="mapping" class="section level4">
+<h4>Mapping</h4>
+<p>GEE allows you to apply lots of GIS functions over collections of features (i.e. ‘ee.FeatureCollection’) or satellite images (i.e. ee.ImageCollection). To do so we create a function that has one argument (for the sake of simplicity named ‘feature’ for features and ‘image’ for images) that calls the ‘.map’ function, to apply another function (e.g. in the case of buffering, ‘.buffer’) to every feature/image in the collection. In our case we have done this to buffer, mask clouds, mask water and calculate NDVI. For the cloud mask function we use the ‘ee.Algorithms.Landsat.simpleCloudScore’ functions which takes input from beightness, temperature and NDSI and provides a score from 1-100 on liklihood of cloud (we use a threshold of below 25 using the ‘.lt’ function). A similar procedure is used to mask water pixels, where we only keep image pixels that equal 1 (as derived from the Hansen image). For the NDVI, we are using a function called ‘normalizedDifference’ which takes the Near Infra-red band (B4) as the first argument and the red band (B3) as the second argument.</p>
+</div>
+<div id="iterating" class="section level4">
+<h4>Iterating</h4>
+<p>If you need to calculate cumulative measures then mapping won’t work because it applies a function to each image independently, in this case you need to use <a href="https://developers.google.com/earth-engine/ic_iterating">‘.iterate’</a>.</p>
+</div>
+<div id="reducing" class="section level4">
+<h4>Reducing</h4>
+<p>Reducing it synonymous with aggregating the data and can be done using the ‘.reduce’ function. In our case I’ve first reduced all the images to one image by calculating the median of each pixel using ‘ee.Reducer.median’. We then apply the same function by over our regions (i.e. datazones), setting the scale (determined by the resolution of the image).</p>
+</div>
+<div id="printing" class="section level4">
+<h4>Printing</h4>
+<p>If you want to check that a function is running correctly, or that something has loaded, or to draw a chart, the ‘print’ command is needed. The output will appear in the console.</p>
+</div>
+<div id="visualising" class="section level4">
+<h4>Visualising</h4>
+<p>Importantly when visualising to the map any commands will start with ‘Map.’. The ‘.addlayer’ function will add the image tothe screen, with a number of options available for how it looks (e.g. ‘.setCenter’). In our case we want to see the clipped NDVI layer for each population weighted datazone centroid:</p>
+<div class="figure">
+<img src="images/greenmap.png" />
+
+</div>
+</div>
+<div id="exporting" class="section level4">
+<h4>Exporting</h4>
+<p>Importantly when exporting any commands will start with ‘Export.’. GEE is linked to your google drive so export using the ‘.table.toDrive’ function is very easy. In our case we have done some cleaning (taken out a redundant column and added an important one showing the year). The ourput is added to the Task Manager, where you need to manually click run to start the download to your drive.</p>
+</div>
+<div id="cleaning" class="section level4">
+<h4>Cleaning</h4>
+<p>The exported data can be cleaned in R. We first want to gather all the files for each year into a single file. Next we want to fill in the missing values. The missing values (~5% of which ~70% were in 2015) were imputed with a kalman smoothing using the ‘imputeTS’ package. Kalman smoothing was chosen as this (along with na.interpolation and na.seadec) will yield the best results (Moritz and Bartz-Beielstein, 2017) The NDVI values were then aggregated to datazone level and saved as csv files. They were also aggregated at a local authority level; here is the time series graph (loess smoothed line):</p>
+<iframe width="900" height="1000" src="http://rpubs.com/Marko/NDVI_LA" frameborder="0" allowfullscreen>
+</iframe>
+<p><small>For the graph if you double click on an LA name on the right-hand side then it will show that one only. Single clicking on another LA name will add that to the graph. Double clicking twice on an LA name will bring up the original graph with all the LA’s.</small></p>
+</div>
+</div>
+<div id="references" class="section level2">
+<h2>References</h2>
+<p><small> Hansen, M. C., P. V. Potapov, R. Moore, M. Hancher, S. A. Turubanova, A. Tyukavina, D. Thau, S. V. Stehman, S. J. Goetz, T. R. Loveland, A. Kommareddy, A. Egorov, L. Chini, C. O. Justice and J. R. G. Townshend (2013). “High-Resolution Global Maps of 21st-Century Forest Cover Change.” Science 342(6160): 850-853.</p>
+<p>Klompmaker, J. O., G. Hoek, L. D. Bloemsma, U. Gehring, M. Strak, A. H. Wijga, C. van den Brink, B. Brunekreef, E. Lebret and N. A. H. Janssen (2018). “Green space definition affects associations of green space with overweight and physical activity.” Environ Res 160: 531-540.</p>
+<p>Moritz S and Bartz-Beielstein T (2017). imputeTS: Time Series Missing Value Imputation in R. The R Journal, 9(1), pp. 207-218. <a href="https://journal.r-project.org/archive/2017/RJ-2017-009/index.html" class="uri">https://journal.r-project.org/archive/2017/RJ-2017-009/index.html</a>.</p>
+<p>Richardson, E. A., N. K. Shortt, R. Mitchell and J. Pearce (2018). “A sibling study of whether maternal exposure to different types of natural space is related to birthweight.” Int J Epidemiol 47(1): 146-155.</p>
+<p></small></p>
+</div>
+<div id="appendix" class="section level2">
+<h2>Appendix</h2>
+<div id="javascript-code" class="section level4">
+<h4>1. Javascript Code</h4>
+<script src="https://gist.github.com/markocherrie/b7486f8e5eb1d9a82d095280f4ef7d0d.js"></script>
+</div>
+<div id="another-gee-example" class="section level4">
+<h4>2. Another GEE example</h4>
+<p>I have lived in three places in Edinburgh during my life (childhood, undergrad. and postdoc.), and I wondered which had the highest greeness recently. We can manually set the coordinates and get the median greeness for each year from 2011-2018. The figure shows that using the daily images there is a lot of noise, but that a stable pattern arises over time (1st place childhood, 2nd place undergraduate, 3rd place postdoc):</p>
+<p><img src="images/real.png" /> But it looks like my ideal of living at the top of Ben Lomond is the clear winner: <img src="images/ideal.png" /></p>
+</div>
+<div id="r-code" class="section level4">
+<h4>3. R code</h4>
+<pre class="r"><code>## export datazone as kml
+library(rgdal)
+wgs84 = &#39;+proj=longlat +datum=WGS84&#39;
+DZcent&lt;-readOGR(&quot;boundaries/SG_DataZone_Cent_2011.shp&quot;)
+DZcent = spTransform(DZcent, CRS(wgs84))
+writeOGR(DZcent, dsn=&quot;boundaries/DZCent_2011.kml&quot;, layer= &quot;DZcent&quot;, driver=&quot;KML&quot;, dataset_options=c(&quot;NameField=name&quot;))
+
+# create on file from individual years
+files  &lt;- list.files(pattern = &#39;\\.csv&#39;)
+tables &lt;- lapply(files, read.csv, header = TRUE)
+combined.df &lt;- do.call(rbind , tables)
+DZ_NDVI&lt;-subset(combined.df, select=c(&quot;DataZone&quot;, &quot;Year&quot;, &quot;median&quot;))
+#write.csv(DZ_NDVI, &quot;DZ_green.csv&quot;, row.names=F)
+
+# read data in
+#setwd(&quot;C:/Users/mcherrie/Google Drive/GEE_output&quot;)
+data&lt;-read.csv(&quot;DZ_green.csv&quot;)
+
+# Missing
+table(is.na(data$median))
+# 6004/112588*100 (5% missing)
+
+# impute missing
+library(imputeTS)
+# levels here is the name of the datazone
+levels&lt;-levels(data$DataZone)[1:2]
+# function to fill in missing for each datazone
+tsinterp&lt;-function(x){
+x &lt;- ts(x, frequency = 1)
+y &lt;- as.data.frame(na.kalman(x)) 
+return(y)
+}
+# apply the function and collect results
+data2&lt;-tapply(data$median, data$DataZone, tsinterp)
+data2&lt;-data.frame(data2)
+data3&lt;-data.frame(t(data2))
+colnames(data3) &lt;- c(&#39;2001&#39;, &#39;2002&#39;, &#39;2003&#39;, &#39;2004&#39;, &#39;2005&#39;, &#39;2006&#39;, &#39;2007&#39;, &#39;2008&#39;, &#39;2009&#39;, &#39;2010&#39;, 
+&#39;2011&#39;, &#39;2012&#39;, &#39;2013&#39;, &#39;2014&#39;, &#39;2015&#39;, &#39;2016&#39;, &#39;2017&#39;)
+data3$DataZone&lt;-rownames(data3)
+data4&lt;-data3 %&gt;%
+  gather(&quot;Year&quot;,&quot;NDVI&quot; ,1:17)
+
+# add to the council names data 
+lookup&lt;-read.csv(&quot;lookup.csv&quot;)
+DZ_data&lt;-merge(data4, lookup, by=&quot;DataZone&quot;)
+nameLA&lt;-read.csv(&quot;councilnames.csv&quot;)
+DZ_data&lt;-merge(DZ_data, nameLA, by=&quot;Council&quot;)
+
+# get stats by LA
+library(dplyr)
+LA_data&lt;-DZ_data %&gt;%
+  group_by(.dots=c(&quot;Year&quot;,&quot;Councilname&quot;)) %&gt;%
+  summarise(NDVI=median(NDVI))
+
+## get plotly graph
+
+library(ggplot2)
+p&lt;-ggplot(LA_data,aes(x=Year,y=NDVI,colour=Councilname,group=Councilname)) + geom_smooth(se = FALSE)+
+  geom_point()
+library(plotly)
+ggplotly(p)
+
+# create datazone data
+master&lt;-NULL
+for(i in levels){
+y&lt;-read.csv(&quot;DZ_green.csv&quot;)
+y&lt;-subset(data, DataZone==i)
+x &lt;- ts(y$median, frequency = 1)
+y &lt;- as.data.frame(na.kalman(x))
+master&lt;-rbind(y, master)
+}
+
+# add to the geography lookup
+lookup&lt;-read.csv(&quot;lookup.csv&quot;)
+data_admin&lt;-merge(data, lookup, by=&quot;DataZone&quot;)</code></pre>
+</div>
+</div>

@@ -5,6 +5,24 @@
     
     <url>
     
+      <loc>/post/gee/</loc>
+      <lastmod>2018-04-26T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/post/dpi/</loc>
+      <lastmod>2018-04-05T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/devolvedlegislation/</loc>
       <lastmod>2018-03-30T00:00:00+00:00</lastmod>
     </url>
@@ -240,8 +258,18 @@
     
     <url>
     
+      <loc>/tags/academia/</loc>
+      <lastmod>2018-04-05T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/admin/</loc>
-      <lastmod>2017-11-02T00:00:00+00:00</lastmod>
+      <lastmod>2018-04-05T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -321,7 +349,7 @@
     <url>
     
       <loc>/categories/big-data/</loc>
-      <lastmod>2017-03-27T00:00:00+00:00</lastmod>
+      <lastmod>2018-04-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -430,8 +458,18 @@
     
     <url>
     
+      <loc>/tags/gee/</loc>
+      <lastmod>2018-04-26T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/gis/</loc>
-      <lastmod>2017-09-28T00:00:00+00:00</lastmod>
+      <lastmod>2018-04-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -490,8 +528,28 @@
     
     <url>
     
+      <loc>/tags/images/</loc>
+      <lastmod>2018-04-05T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/infectious-disease/</loc>
       <lastmod>2017-08-29T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/inkscape/</loc>
+      <lastmod>2018-04-05T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -512,6 +570,16 @@
     
       <loc>/tags/ivf/</loc>
       <lastmod>2017-08-29T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/javascript/</loc>
+      <lastmod>2018-04-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -630,6 +698,16 @@
     
     <url>
     
+      <loc>/tags/parallel-computing/</loc>
+      <lastmod>2018-04-26T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/pdf/</loc>
       <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -650,6 +728,16 @@
     
     <url>
     
+      <loc>/tags/posters/</loc>
+      <lastmod>2018-04-05T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/postgresql/</loc>
       <lastmod>2017-03-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -661,7 +749,7 @@
     <url>
     
       <loc>/post/</loc>
-      <lastmod>2018-03-30T00:00:00+00:00</lastmod>
+      <lastmod>2018-04-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -691,7 +779,7 @@
     <url>
     
       <loc>/tags/r/</loc>
-      <lastmod>2017-09-07T00:00:00+00:00</lastmod>
+      <lastmod>2018-04-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -710,8 +798,18 @@
     
     <url>
     
+      <loc>/tags/remote-sensing/</loc>
+      <lastmod>2018-04-26T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/categories/research-tips/</loc>
-      <lastmod>2017-11-02T00:00:00+00:00</lastmod>
+      <lastmod>2018-04-05T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
