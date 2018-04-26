@@ -8,7 +8,9 @@ tags: ["GEE", "Javascript","R","GIS", "parallel computing", "remote sensing"]
 categories: ["Big data"]
 ---
 
-I'm interested in a continuous time-series measure of 'green spaces', features of the natural environment that are important for a wide variety of health outcomes.
+
+#### Motivation
+I'm interested in a long-term small-area level measure of 'green spaces', features of the natural environment that are important for a wide variety of health outcomes.
 
 #### Green spaces over time
 There are two major green space datasets for Scotland, [Scotland's Greenspace Map 2011](http://www.greenspacescotland.org.uk/scotlands-greenspace-map.aspx) and the [Ordnance Survey's Greenspace Map 2017](https://www.ordnancesurvey.co.uk/business-and-government/products/os-open-greenspace.html). These maps were produced by characterising OS polygons using aerial photos, with the latter updated every 6 months from July 2017. They use the [PAN65](https://beta.gov.scot/publications/planning-advice-note-pan-65-planning-open-space/documents/0060935.pdf) criteria to categorise all Mastermap polygons into 11 types (e.g. Private gardens or grounds) and 23 land cover classifications (e.g. School grounds). Although change in green space types over time could be undertaken due to use of the same categories, there is no time point before 2011, which inhibits the utility to a number of cohort studies (e.g. Millenium cohort study). Furthermore, the 2011 data only covers settlements with over 3,000 people so would not give an estimate of change for people living in rural areas. 
@@ -188,3 +190,9 @@ lookup<-read.csv("lookup.csv")
 data_admin<-merge(data, lookup, by="DataZone")
 
 ```
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+

@@ -10,7 +10,10 @@ categories: ["Big data"]
 
 
 
-<p>I’m interested in a continuous time-series measure of ‘green spaces’, features of the natural environment that are important for a wide variety of health outcomes.</p>
+<div id="motivation" class="section level4">
+<h4>Motivation</h4>
+<p>I’m interested in a long-term small-area level measure of ‘green spaces’, features of the natural environment that are important for a wide variety of health outcomes.</p>
+</div>
 <div id="green-spaces-over-time" class="section level4">
 <h4>Green spaces over time</h4>
 <p>There are two major green space datasets for Scotland, <a href="http://www.greenspacescotland.org.uk/scotlands-greenspace-map.aspx">Scotland’s Greenspace Map 2011</a> and the <a href="https://www.ordnancesurvey.co.uk/business-and-government/products/os-open-greenspace.html">Ordnance Survey’s Greenspace Map 2017</a>. These maps were produced by characterising OS polygons using aerial photos, with the latter updated every 6 months from July 2017. They use the <a href="https://beta.gov.scot/publications/planning-advice-note-pan-65-planning-open-space/documents/0060935.pdf">PAN65</a> criteria to categorise all Mastermap polygons into 11 types (e.g. Private gardens or grounds) and 23 land cover classifications (e.g. School grounds). Although change in green space types over time could be undertaken due to use of the same categories, there is no time point before 2011, which inhibits the utility to a number of cohort studies (e.g. Millenium cohort study). Furthermore, the 2011 data only covers settlements with over 3,000 people so would not give an estimate of change for people living in rural areas.</p>
@@ -190,5 +193,9 @@ master&lt;-rbind(y, master)
 # add to the geography lookup
 lookup&lt;-read.csv(&quot;lookup.csv&quot;)
 data_admin&lt;-merge(data, lookup, by=&quot;DataZone&quot;)</code></pre>
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 </div>
 </div>

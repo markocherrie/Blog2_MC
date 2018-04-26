@@ -16,7 +16,10 @@
       <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/gee/</guid>
-      <description>&lt;p&gt;I’m interested in a continuous time-series measure of ‘green spaces’, features of the natural environment that are important for a wide variety of health outcomes.&lt;/p&gt;
+      <description>&lt;div id=&#34;motivation&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Motivation&lt;/h4&gt;
+&lt;p&gt;I’m interested in a long-term small-area level measure of ‘green spaces’, features of the natural environment that are important for a wide variety of health outcomes.&lt;/p&gt;
+&lt;/div&gt;
 &lt;div id=&#34;green-spaces-over-time&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Green spaces over time&lt;/h4&gt;
 &lt;p&gt;There are two major green space datasets for Scotland, &lt;a href=&#34;http://www.greenspacescotland.org.uk/scotlands-greenspace-map.aspx&#34;&gt;Scotland’s Greenspace Map 2011&lt;/a&gt; and the &lt;a href=&#34;https://www.ordnancesurvey.co.uk/business-and-government/products/os-open-greenspace.html&#34;&gt;Ordnance Survey’s Greenspace Map 2017&lt;/a&gt;. These maps were produced by characterising OS polygons using aerial photos, with the latter updated every 6 months from July 2017. They use the &lt;a href=&#34;https://beta.gov.scot/publications/planning-advice-note-pan-65-planning-open-space/documents/0060935.pdf&#34;&gt;PAN65&lt;/a&gt; criteria to categorise all Mastermap polygons into 11 types (e.g. Private gardens or grounds) and 23 land cover classifications (e.g. School grounds). Although change in green space types over time could be undertaken due to use of the same categories, there is no time point before 2011, which inhibits the utility to a number of cohort studies (e.g. Millenium cohort study). Furthermore, the 2011 data only covers settlements with over 3,000 people so would not give an estimate of change for people living in rural areas.&lt;/p&gt;
@@ -196,6 +199,10 @@ master&amp;lt;-rbind(y, master)
 # add to the geography lookup
 lookup&amp;lt;-read.csv(&amp;quot;lookup.csv&amp;quot;)
 data_admin&amp;lt;-merge(data, lookup, by=&amp;quot;DataZone&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;script src=&#34;//yihui.name/js/math-code.js&#34;&gt;&lt;/script&gt;
+&lt;script async
+src=&#34;//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&#34;&gt;
+&lt;/script&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 </description>
