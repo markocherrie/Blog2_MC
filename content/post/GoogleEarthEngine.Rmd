@@ -8,6 +8,7 @@ tags: ["GEE", "Javascript","R","GIS", "parallel computing", "remote sensing"]
 categories: ["Big data"]
 ---
 
+## Introduction
 
 #### Motivation
 I'm interested in a long-term small-area level measure of 'green spaces', features of the natural environment that are important for a wide variety of health outcomes.

@@ -16,7 +16,9 @@
       <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/gee/</guid>
-      <description>&lt;div id=&#34;motivation&#34; class=&#34;section level4&#34;&gt;
+      <description>&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;div id=&#34;motivation&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Motivation&lt;/h4&gt;
 &lt;p&gt;I’m interested in a long-term small-area level measure of ‘green spaces’, features of the natural environment that are important for a wide variety of health outcomes.&lt;/p&gt;
 &lt;/div&gt;
@@ -37,6 +39,7 @@
 &lt;div id=&#34;google-earth-enginegee&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Google Earth Engine(GEE)&lt;/h4&gt;
 &lt;p&gt;The USGS explorer is a Graphical User Interface; it is time consuming to download all the images corresponding to large study areas. An &lt;a href=&#34;https://earthexplorer.usgs.gov/inventory/documentation/json-api&#34;&gt;application programming interface&lt;/a&gt;(API) also exists, so some data could be downloaded automatically. However once data has been downloaded, images would still need to be &lt;a href=&#34;https://www.nceas.ucsb.edu/scicomp/usecases/createrasterimagemosaic&#34;&gt;mosaiced&lt;/a&gt; together to undertake analysis at a national level. An alternative is to use the &lt;a href=&#34;https://earthengine.google.com&#34;&gt;Google Earth Engine&lt;/a&gt;, which provides a computing platform that allows users to run geospatial analysis on Google’s infrastructure. In other words, the massive remote sensing datasets required for large scale analyses are easily downloaded via a web API and mosaiced instantly using Google’s high performance parallel computation service. Analysis is performed using an interactive development environment (IDE), which lends itself to quick prototyping and visualisation of results. Crucially, any analysis can be scaled to another country or at a global level very easily. Some challenges arise from GEE’s terminology (e.g. mapping = applying functions) and client/server programming model (similar to Rshiny)(i.e. you cannot use external operations (loop/conditionals) on Earth engine proxy objects (‘.ee’)), although there are &lt;a href=&#34;https://gis.stackexchange.com/questions/247297/start-a-loop-from-information-in-a-feature-property/247319?utm_medium=organic&amp;amp;utm_source=google_rich_qa&amp;amp;utm_campaign=google_rich_qa&#34;&gt;ways&lt;/a&gt; around this. A full discussion on the utility of GEE for analysis is available (Gorelick et al., 2017).&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;method&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Method&lt;/h2&gt;

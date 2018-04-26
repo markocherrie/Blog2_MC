@@ -10,6 +10,8 @@ categories: ["Big data"]
 
 
 
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
 <div id="motivation" class="section level4">
 <h4>Motivation</h4>
 <p>I’m interested in a long-term small-area level measure of ‘green spaces’, features of the natural environment that are important for a wide variety of health outcomes.</p>
@@ -31,6 +33,7 @@ categories: ["Big data"]
 <div id="google-earth-enginegee" class="section level4">
 <h4>Google Earth Engine(GEE)</h4>
 <p>The USGS explorer is a Graphical User Interface; it is time consuming to download all the images corresponding to large study areas. An <a href="https://earthexplorer.usgs.gov/inventory/documentation/json-api">application programming interface</a>(API) also exists, so some data could be downloaded automatically. However once data has been downloaded, images would still need to be <a href="https://www.nceas.ucsb.edu/scicomp/usecases/createrasterimagemosaic">mosaiced</a> together to undertake analysis at a national level. An alternative is to use the <a href="https://earthengine.google.com">Google Earth Engine</a>, which provides a computing platform that allows users to run geospatial analysis on Google’s infrastructure. In other words, the massive remote sensing datasets required for large scale analyses are easily downloaded via a web API and mosaiced instantly using Google’s high performance parallel computation service. Analysis is performed using an interactive development environment (IDE), which lends itself to quick prototyping and visualisation of results. Crucially, any analysis can be scaled to another country or at a global level very easily. Some challenges arise from GEE’s terminology (e.g. mapping = applying functions) and client/server programming model (similar to Rshiny)(i.e. you cannot use external operations (loop/conditionals) on Earth engine proxy objects (‘.ee’)), although there are <a href="https://gis.stackexchange.com/questions/247297/start-a-loop-from-information-in-a-feature-property/247319?utm_medium=organic&amp;utm_source=google_rich_qa&amp;utm_campaign=google_rich_qa">ways</a> around this. A full discussion on the utility of GEE for analysis is available (Gorelick et al., 2017).</p>
+</div>
 </div>
 <div id="method" class="section level2">
 <h2>Method</h2>
