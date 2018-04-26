@@ -8,13 +8,13 @@ tags: ["GEE", "Javascript","R","GIS", "parallel computing", "remote sensing"]
 categories: ["Big data"]
 ---
 
-I'm interested in a continuous time-series measure of 'green spaces', features of the natural environment that may be important for a wide variety of health outcomes.
+I'm interested in a continuous time-series measure of 'green spaces', features of the natural environment that are important for a wide variety of health outcomes.
 
 #### Green spaces over time
-There are two major green space datasets for Scotland, [Scotland's Greenspace Map 2011](http://www.greenspacescotland.org.uk/scotlands-greenspace-map.aspx) and the [Ordnance Survey's MasterMap Greenspace](https://www.ordnancesurvey.co.uk/business-and-government/products/os-open-greenspace.html). These maps were produced by characterising OS mastermap polygons using aerial photos, with the latter updated every 6 months from July 2017. They use the [PAN65](https://beta.gov.scot/publications/planning-advice-note-pan-65-planning-open-space/documents/0060935.pdf) criteria to categorise all Mastermap polygons into 11 types (e.g. Private gardens or grounds) and 23 land cover classifications (e.g. School grounds). Although change in green space types over time could be undertaken due to use of the same categories, there is no pre-recession time point (2011 is earliest). Furthermore, the 2011 data only covers settlements with over 3,000 people so would not give an estimate of change for people living in rural areas. 
+There are two major green space datasets for Scotland, [Scotland's Greenspace Map 2011](http://www.greenspacescotland.org.uk/scotlands-greenspace-map.aspx) and the [Ordnance Survey's Greenspace Map 2017](https://www.ordnancesurvey.co.uk/business-and-government/products/os-open-greenspace.html). These maps were produced by characterising OS polygons using aerial photos, with the latter updated every 6 months from July 2017. They use the [PAN65](https://beta.gov.scot/publications/planning-advice-note-pan-65-planning-open-space/documents/0060935.pdf) criteria to categorise all Mastermap polygons into 11 types (e.g. Private gardens or grounds) and 23 land cover classifications (e.g. School grounds). Although change in green space types over time could be undertaken due to use of the same categories, there is no time point before 2011, which inhibits the utility to a number of cohort studies (e.g. Millenium cohort study). Furthermore, the 2011 data only covers settlements with over 3,000 people so would not give an estimate of change for people living in rural areas. 
 
 #### Land cover over time
-There a number of global, national and continental land cover datasets available over time. There are global land cover datasets from [NASA](https://neo.sci.gsfc.nasa.gov/view.php?datasetId=MCD12C1_T1) for 2001-2011 and [ESA](http://due.esrin.esa.int/page_globcover.php) covering 2 periods: December 2004 - June 2006 and January - December 2009. Although the classifications for the global datasets seem quite broad, possibly due to the low spatial resolution. The Centre for Hydrology and Ecology have [datasets](https://www.ceh.ac.uk/services/information-products) for 1990, 2000, 2007 and 2015 on UK land cover but unfortunatley they can't be compared between years due to different sampling methods being applied. Finally, there is data in between UK and global level called the [CORINE land cover series](https://land.copernicus.eu/pan-european/corine-land-cover), created for 1990, 2000, 2006 and 2012. Land cover is [classified](https://wiki.openstreetmap.org/wiki/Corine_Land_Cover) into 5 categories and 44 classes. Change from 2006 and 2012 has been undertaken by researchers from the university of Leicester, available [here](https://catalogue.ceh.ac.uk/documents/35fecd0f-b466-448b-94d1-0bba90be450e). Whilst CORINE data will allow the analysis of subtypes of green space, there is some evidence that total green space may be more important for health outcomes (Richardson et al., 2018; Klompmaker et al., 2018). Thus measures of vegetation levels based on satellite products may be appropriate. 
+There are a number of global, national and continental land cover datasets available over time. There are global land cover datasets from [NASA](https://neo.sci.gsfc.nasa.gov/view.php?datasetId=MCD12C1_T1) for 2001-2011 and [ESA](http://due.esrin.esa.int/page_globcover.php) covering 2 periods: December 2004 - June 2006 and January - December 2009. Although the classifications for the global datasets seem quite broad, possibly due to the low spatial resolution. The Centre for Hydrology and Ecology have [datasets](https://www.ceh.ac.uk/services/information-products) for 1990, 2000, 2007 and 2015 on UK land cover but unfortunatley they can't be compared between years due to different sampling methods being applied. Finally, there is data in between UK and global level called the [CORINE land cover series](https://land.copernicus.eu/pan-european/corine-land-cover), created for 1990, 2000, 2006 and 2012. Land cover is [classified](https://wiki.openstreetmap.org/wiki/Corine_Land_Cover) into 5 categories and 44 classes. Change from 2006 and 2012 has been undertaken by researchers from the university of Leicester, available [here](https://catalogue.ceh.ac.uk/documents/35fecd0f-b466-448b-94d1-0bba90be450e). Whilst CORINE data will allow the analysis of subtypes of green space, there is some evidence that total green space may be more important for health outcomes (Richardson et al., 2018; Klompmaker et al., 2018). Thus measures of vegetation levels based on satellite products may be appropriate. 
 
 #### Vegetation levels over time
 
@@ -26,7 +26,7 @@ Green vegetation contains chlorophyll which absorbs more red light and reflects 
 
 #### Google Earth Engine(GEE)
 
-The USGS explorer is a Graphical User Interface; it is time consuming to download all the images corresponding to large study areas. An [application programming interface   ](https://earthexplorer.usgs.gov/inventory/documentation/json-api)(API) also exists, so some data could be downloaded automatically. However once data has been downloaded, images would still need to be [mosaiced](https://www.nceas.ucsb.edu/scicomp/usecases/createrasterimagemosaic) together to undertake analysis at a national level. An alternative is to use the [Google Earth Engine ](https://earthengine.google.com), which provides a computing platform that allows users to run geospatial analysis on Google's infrastructure. In other words, the massive remote sensing datasets required for large scale analyses are easily downloaded via a web API and mosaiced instantly using Google's high performance parallel computation service. Analysis is performed using an interactive development environment (IDE), which lends itself to quick prototyping and visualisation of results. Crucially, any analysis can be scaled to another country or at a global level very easily. Some challenges arise from GEE's terminology (e.g. mapping = applying functions) and client/server programming model (similar to Rshiny)(i.e. you cannot use external operations (loop/conditionals) on Earth engine proxy objects ('.ee')), although there are [ways](https://gis.stackexchange.com/questions/247297/start-a-loop-from-information-in-a-feature-property/247319?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa) around this. A full discussion on the utility of GEE for analysis is available [here](https://ac.els-cdn.com/S0034425717302900/1-s2.0-S0034425717302900-main.pdf?_tid=7cec4248-785f-4708-9844-fe40c74921be&acdnat=1524576231_b2aebc00396ecaa4f0126fb194a509f1).
+The USGS explorer is a Graphical User Interface; it is time consuming to download all the images corresponding to large study areas. An [application programming interface   ](https://earthexplorer.usgs.gov/inventory/documentation/json-api)(API) also exists, so some data could be downloaded automatically. However once data has been downloaded, images would still need to be [mosaiced](https://www.nceas.ucsb.edu/scicomp/usecases/createrasterimagemosaic) together to undertake analysis at a national level. An alternative is to use the [Google Earth Engine ](https://earthengine.google.com), which provides a computing platform that allows users to run geospatial analysis on Google's infrastructure. In other words, the massive remote sensing datasets required for large scale analyses are easily downloaded via a web API and mosaiced instantly using Google's high performance parallel computation service. Analysis is performed using an interactive development environment (IDE), which lends itself to quick prototyping and visualisation of results. Crucially, any analysis can be scaled to another country or at a global level very easily. Some challenges arise from GEE's terminology (e.g. mapping = applying functions) and client/server programming model (similar to Rshiny)(i.e. you cannot use external operations (loop/conditionals) on Earth engine proxy objects ('.ee')), although there are [ways](https://gis.stackexchange.com/questions/247297/start-a-loop-from-information-in-a-feature-property/247319?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa) around this. A full discussion on the utility of GEE for analysis is available (Gorelick et al., 2017).
 
 ## Method 
 
@@ -38,7 +38,7 @@ First, download the Datazone 2011 [population weighted centroids](https://data.g
 #### GEE layout
 Sign into Google Earth Engine with your gmail account. The GEE layout is as follows:
 
-![](images/GEElayout.png)
+![](img/GEE_images/GEElayout.png)
 
 The main panel here is the Code editor which will allow you to save code (to the script manager) and run a script. 
 
@@ -66,7 +66,7 @@ If you want to check that a function is running correctly, or that something has
 #### Visualising
 Importantly when visualising to the map any commands will start with 'Map.'. The '.addlayer' function will add the image tothe screen, with a number of options available for how it looks (e.g. '.setCenter'). In our case we want to see the clipped NDVI layer for each population weighted datazone centroid:
 
-![](images/greenmap.png)
+![](img/GEE_images/greenmap.png)
 
 #### Exporting
 Importantly when exporting any commands will start with 'Export.'. GEE is linked to your google drive so export using the '.table.toDrive' function is very easy. In our case we have done some cleaning (taken out a redundant column and added an important one showing the year). The ourput is added to the Task Manager, where you need to manually click run to start the download to your drive.
@@ -83,6 +83,8 @@ The exported data can be cleaned in R. We first want to gather all the files for
 ## References
 
 <small>
+Gorelick, N., M. Hancher, M. Dixon, S. Ilyushchenko, D. Thau and R. Moore (2017). "Google Earth Engine: Planetary-scale geospatial analysis for everyone." Remote Sensing of Environment 202: 18-27.
+
 Hansen, M. C., P. V. Potapov, R. Moore, M. Hancher, S. A. Turubanova, A. Tyukavina, D. Thau, S. V. Stehman, S. J. Goetz, T. R. Loveland, A. Kommareddy, A. Egorov, L. Chini, C. O. Justice and J. R. G. Townshend (2013). "High-Resolution Global Maps of 21st-Century Forest Cover Change." Science 342(6160): 850-853.
 
 Klompmaker, J. O., G. Hoek, L. D. Bloemsma, U. Gehring, M. Strak, A. H. Wijga, C. van den Brink, B. Brunekreef, E. Lebret and N. A. H. Janssen (2018). "Green space definition affects associations of green space with overweight and physical activity." Environ Res 160: 531-540.
@@ -102,9 +104,9 @@ Richardson, E. A., N. K. Shortt, R. Mitchell and J. Pearce (2018). "A sibling st
 #### 2. Another GEE example
 I have lived in three places in Edinburgh during my life (childhood, undergrad. and postdoc.), and I wondered which had the highest greeness recently. We can manually set the coordinates and get the median greeness for each year from 2011-2018. The figure shows that using the daily images there is a lot of noise, but that a stable pattern arises over time (1st place childhood, 2nd place undergraduate, 3rd place postdoc):
 
-![](images/real.png)
+![](img/GEE_images/real.png)
 But it looks like my ideal of living at the top of Ben Lomond is the clear winner:
-![](images/ideal.png)
+![](img/GEE_images/ideal.png)
 
 #### 3. R code
 
