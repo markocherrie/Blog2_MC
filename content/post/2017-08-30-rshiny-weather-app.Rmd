@@ -3,8 +3,8 @@ title: Nudging people to make healthy behaviour choices
 author: ~
 date: '2017-12-22'
 slug: rshiny-weather-app
-categories: ["Rshiny", "Weather", "Behaviour", "Nudge theory", "Intervention", "App"]
-tags: ["Ideas"]
+categories: ["Data Visualisation"]
+tags: ["Rshiny", "Weather", "Behaviour", "Nudge theory", "Intervention", "App"]
 draft: no
 ---
 

@@ -5,10 +5,17 @@ date: '2017-11-10'
 draft: no
 slug: greentraffic
 tags: ["Green space","Traffic", "Glasgow", "Neighbourhood","Rshiny"]
-categories: ["Data visualisation"]
+categories: ["Data Visualisation"]
 ---
 
 The question, in relation to theories of how the quality of greenspace can affect relationships with health, was: Do traffic events occur close to greenspaces? How does this vary spatially and temporally? How can this be visualised?
+
+Here is the final result:
+```{r app, echo=F, message=FALSE, warning=FALSE}
+library(knitr)
+knitr::include_app("https://thebest.shinyapps.io/test_MC/")
+```
+
 
 First load the packages:
 
@@ -120,9 +127,4 @@ add_polygons(data = polyline_df, polyline ="polyline", stroke_weight = 3, fill_c
 shinyApp(ui, server)
 ```
 
-Here is the final result:
-```{r app, echo=F, message=FALSE, warning=FALSE}
-library(knitr)
-knitr::include_app("https://thebest.shinyapps.io/test_MC/")
-```
   

@@ -5,7 +5,7 @@ date: '2017-09-07'
 draft: no
 slug: first-post
 tags: ["Web Development", "R", "Web Design"]
-categories: ["Website"]
+categories: ["Research Tips"]
 ---
 Welcome to my first post. As an avid R user, I was amazed at how quickly it was to setup a static website with the help from the R package: ["blogdown"](https://bookdown.org/yihui/blogdown/). I thought Yihui Xie gave a convincing argument for blogging from his personal experience (Appendix D in above website). In summary he provides three reasons in favour of blogging: 
 

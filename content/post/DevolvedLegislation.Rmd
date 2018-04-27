@@ -3,8 +3,8 @@ title: Devolved parliaments and assemblies Legislation
 author: ~
 date: '2018-03-30'
 slug: DevolvedLegislation
-categories: ["Rshiny", "Policy", "Devolution","App"]
-tags: ["Data visualisation"]
+categories: ["Data Visualisation"]
+tags: ["Rshiny", "Policy", "Devolution","App"]
 draft: no
 ---
 
