@@ -75,11 +75,29 @@
     </item>
     
     <item>
+      <title>App</title>
+      <link>/tags/app/</link>
+      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/app/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Asthma</title>
       <link>/tags/asthma/</link>
       <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/asthma/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Behaviour</title>
+      <link>/tags/behaviour/</link>
+      <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/behaviour/</guid>
       <description></description>
     </item>
     
@@ -102,20 +120,11 @@
     </item>
     
     <item>
-      <title>Data Visualisation</title>
-      <link>/tags/data-visualisation/</link>
-      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/data-visualisation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data Wrangling</title>
-      <link>/tags/data-wrangling/</link>
+      <title>Data</title>
+      <link>/tags/data/</link>
       <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/data-wrangling/</guid>
+      <guid>/tags/data/</guid>
       <description></description>
     </item>
     
@@ -129,20 +138,11 @@
     </item>
     
     <item>
-      <title>Display</title>
-      <link>/tags/display/</link>
-      <pubDate>Fri, 08 Sep 2017 00:00:00 +0000</pubDate>
+      <title>Devolution</title>
+      <link>/tags/devolution/</link>
+      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/display/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gee</title>
-      <link>/tags/gee/</link>
-      <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/gee/</guid>
+      <guid>/tags/devolution/</guid>
       <description></description>
     </item>
     

@@ -583,6 +583,7 @@ shinyServer(function(input, output) {
       
       <guid>/post/greentraffic/</guid>
       <description>&lt;p&gt;The question, in relation to theories of how the quality of greenspace can affect relationships with health, was: Do traffic events occur close to greenspaces? How does this vary spatially and temporally? How can this be visualised?&lt;/p&gt;
+&lt;p&gt;Here is the final result: &lt;iframe src=&#34;https://thebest.shinyapps.io/test_MC/?showcase=0&#34; width=&#34;672&#34; height=&#34;400px&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
 &lt;p&gt;First load the packages:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# allows r to work with spatial data
 library(rgdal)
@@ -678,7 +679,6 @@ add_polygons(data = polyline_df, polyline =&amp;quot;polyline&amp;quot;, stroke_
 })}
 # run the app!
 shinyApp(ui, server)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Here is the final result: &lt;iframe src=&#34;https://thebest.shinyapps.io/test_MC/?showcase=0&#34; width=&#34;672&#34; height=&#34;400px&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
 </description>
     </item>
     

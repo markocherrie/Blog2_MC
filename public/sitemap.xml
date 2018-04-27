@@ -318,7 +318,7 @@
     
     <url>
     
-      <loc>/categories/app/</loc>
+      <loc>/tags/app/</loc>
       <lastmod>2018-03-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -338,7 +338,7 @@
     
     <url>
     
-      <loc>/categories/behaviour/</loc>
+      <loc>/tags/behaviour/</loc>
       <lastmod>2017-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -348,18 +348,7 @@
     
     <url>
     
-      <loc>/categories/big-data/</loc>
-      <lastmod>2018-04-26T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/categories/</loc>
-      <lastmod>2018-03-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -388,7 +377,7 @@
     
     <url>
     
-      <loc>/categories/data/</loc>
+      <loc>/tags/data/</loc>
       <lastmod>2018-02-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -398,8 +387,8 @@
     
     <url>
     
-      <loc>/tags/data-visualisation/</loc>
-      <lastmod>2018-03-30T00:00:00+00:00</lastmod>
+      <loc>/categories/data-processing/</loc>
+      <lastmod>2018-04-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -409,17 +398,7 @@
     <url>
     
       <loc>/categories/data-visualisation/</loc>
-      <lastmod>2017-11-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/tags/data-wrangling/</loc>
-      <lastmod>2018-02-24T00:00:00+00:00</lastmod>
+      <lastmod>2018-03-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -438,7 +417,7 @@
     
     <url>
     
-      <loc>/categories/devolution/</loc>
+      <loc>/tags/devolution/</loc>
       <lastmod>2018-03-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -518,16 +497,6 @@
     
     <url>
     
-      <loc>/tags/ideas/</loc>
-      <lastmod>2017-12-22T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/tags/images/</loc>
       <lastmod>2018-04-05T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -558,7 +527,7 @@
     
     <url>
     
-      <loc>/categories/intervention/</loc>
+      <loc>/tags/intervention/</loc>
       <lastmod>2017-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -638,16 +607,6 @@
     
     <url>
     
-      <loc>/categories/mobility/</loc>
-      <lastmod>2017-09-28T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/tags/neighbourhood/</loc>
       <lastmod>2017-11-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -658,7 +617,7 @@
     
     <url>
     
-      <loc>/categories/netcdf/</loc>
+      <loc>/tags/netcdf/</loc>
       <lastmod>2018-02-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -668,7 +627,7 @@
     
     <url>
     
-      <loc>/categories/nudge-theory/</loc>
+      <loc>/tags/nudge-theory/</loc>
       <lastmod>2017-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -718,7 +677,7 @@
     
     <url>
     
-      <loc>/categories/policy/</loc>
+      <loc>/tags/policy/</loc>
       <lastmod>2018-03-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -788,16 +747,6 @@
     
     <url>
     
-      <loc>/categories/r/</loc>
-      <lastmod>2018-02-24T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/tags/remote-sensing/</loc>
       <lastmod>2018-04-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -839,16 +788,6 @@
     <url>
     
       <loc>/tags/rshiny/</loc>
-      <lastmod>2017-11-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/categories/rshiny/</loc>
       <lastmod>2018-03-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -858,7 +797,7 @@
     
     <url>
     
-      <loc>/categories/satellite/</loc>
+      <loc>/tags/satellite/</loc>
       <lastmod>2018-02-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -898,7 +837,7 @@
     
     <url>
     
-      <loc>/categories/time-series/</loc>
+      <loc>/tags/time-series/</loc>
       <lastmod>2018-02-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -958,7 +897,7 @@
     
     <url>
     
-      <loc>/categories/weather/</loc>
+      <loc>/tags/weather/</loc>
       <lastmod>2017-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -990,16 +929,6 @@
     
       <loc>/tags/webmap/</loc>
       <lastmod>2017-08-29T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/categories/website/</loc>
-      <lastmod>2017-09-07T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

@@ -7,114 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Mark Cherrie</copyright>
-    <lastBuildDate>Fri, 30 Mar 2018 00:00:00 +0000</lastBuildDate>
     <atom:link href="/categories/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>App</title>
-      <link>/categories/app/</link>
-      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/app/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Behaviour</title>
-      <link>/categories/behaviour/</link>
-      <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/behaviour/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Big Data</title>
-      <link>/categories/big-data/</link>
+      <title>Data Processing</title>
+      <link>/categories/data-processing/</link>
       <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/categories/big-data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data</title>
-      <link>/categories/data/</link>
-      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/data/</guid>
+      <guid>/categories/data-processing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data Visualisation</title>
       <link>/categories/data-visualisation/</link>
-      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/data-visualisation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Devolution</title>
-      <link>/categories/devolution/</link>
-      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/devolution/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Intervention</title>
-      <link>/categories/intervention/</link>
-      <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/intervention/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mobility</title>
-      <link>/categories/mobility/</link>
-      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/mobility/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Netcdf</title>
-      <link>/categories/netcdf/</link>
-      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/netcdf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nudge Theory</title>
-      <link>/categories/nudge-theory/</link>
-      <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/nudge-theory/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Policy</title>
-      <link>/categories/policy/</link>
-      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/policy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>/categories/r/</link>
-      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/r/</guid>
       <description></description>
     </item>
     
@@ -124,24 +33,6 @@
       <pubDate>Thu, 05 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/research-tips/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rshiny</title>
-      <link>/categories/rshiny/</link>
-      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/rshiny/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Satellite</title>
-      <link>/categories/satellite/</link>
-      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/satellite/</guid>
       <description></description>
     </item>
     
