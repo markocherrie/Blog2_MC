@@ -5,8 +5,35 @@
     
     <url>
     
+      <loc>/publication/asthmavitd/</loc>
+      <lastmod>2018-05-29T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/gee/</loc>
       <lastmod>2018-04-26T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/talk/gisr_mmp/</loc>
+      <lastmod>2018-04-19T12:30:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/talk/gisr_display/</loc>
+      <lastmod>2018-04-19T11:30:00+00:00</lastmod>
     </url>
     
   
@@ -194,6 +221,15 @@
     
     <url>
     
+      <loc>/talk/imgs_mmp/</loc>
+      <lastmod>2017-07-05T12:30:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/osmr/</loc>
       <lastmod>2017-03-27T00:00:00+00:00</lastmod>
     </url>
@@ -239,17 +275,8 @@
     
     <url>
     
-      <loc>/publication/asthmaendotypes/</loc>
-      <lastmod>2015-03-01T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/publication_types/2/</loc>
-      <lastmod>2018-02-01T00:00:00+00:00</lastmod>
+      <lastmod>2018-05-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -728,7 +755,7 @@
     <url>
     
       <loc>/publication_types/</loc>
-      <lastmod>2018-02-01T00:00:00+00:00</lastmod>
+      <lastmod>2018-05-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
