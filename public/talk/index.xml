@@ -11,6 +11,15 @@
     <atom:link href="/talk/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Simple Features in R</title>
+      <link>/talk/simplefeatures/</link>
+      <pubDate>Wed, 27 Jun 2018 11:30:00 +0000</pubDate>
+      
+      <guid>/talk/simplefeatures/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Transitions in frailty status in older adults: Associations with neighbourhood parks over the lifecourse</title>
       <link>/talk/gisr_mmp/</link>
       <pubDate>Thu, 19 Apr 2018 12:30:00 +0000</pubDate>
