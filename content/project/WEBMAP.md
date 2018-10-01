@@ -23,7 +23,7 @@ summary = "This Rshiny web application allows you to map alcohol and tobacco out
   
 +++
 
-[![Webmap](https://goo.gl/images/QDX2Qp)](https://creshmap.com/)
+[![Image name](webmap2.png)](https://creshmap.com/)
 
 I led the re-development of the CRESH webmap, which was originally launched in 2015. This app was designed to allow users to map tobacco and alcohol outlet density, and related health outcomes for small areas in Scotland (i.e. datazones, which represent around 5,000 residents). 
 
