@@ -23,11 +23,11 @@ summary = "This Rshiny web application allows you to map alcohol and tobacco out
   
 +++
 
-I led the re-development of the CRESH [webmap]("https://creshmap.com/"), which was originally launched in 2015. This app was designed to allow users to map tobacco and alcohol outlet density, and related health outcomes for small areas in Scotland (i.e. datazones, which represent around 5,000 residents). 
+I led the re-development of the CRESH [webmap](https://creshmap.com/), which was originally launched in 2015. This app was designed to allow users to map tobacco and alcohol outlet density, and related health outcomes for small areas in Scotland (i.e. datazones, which represent around 5,000 residents). 
 
 There is increasing evidence which shows that the density of tobacco and alcohol retailers has an effect on both smoking/drinking behaviours but also the associated morbidity/mortality. For example those living in areas with the highest density of retailers have double the alcohol-related death rate; and adolescents living in areas with the highest density of tobacco retailers are 50% more likely to smoke.  
 
-The alcohol retailer data was collected from representatives of the 32 local authorities, and required months of cleaning to have it ready for the webmap. In the redevelopment we tried to make the information accessible and presented clearly with the ability to download, to empower local communities so that they are more involved in the decisions on the built environment surrounding their homes. 
+The alcohol retailer data was collected from representatives of the 32 local authorities, and required months of cleaning to have it ready for the webmap. In the redevelopment we tried to make the information accessible and clearly presented. In addition, we really pushed to make the data easy to download, to empower local communities so that they are more involved in the decisions on the built environment surrounding their homes. 
 
 The CRESH webmap was created in partnership with Alcohol Focus Scotland (AFS) and Action on Smoking and Health Scotland (ASH Scotland). The original research was funded by the Scottish Collaboration for Public Health Research and Policy and we have received funding from the Economic and Social Research Council (ESRC) to publicise our research and make it more accessible to the public and policy makers. 
 
