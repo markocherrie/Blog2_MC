@@ -12,7 +12,7 @@ weight = 1
 # List your academic interests.
 [interests]
   interests = [
-    "UVR, greenspace, deprivation, air pollution, built environment",
+    "UVR, greenspace, air pollution, built environment, inequalities",
     "Asthma, cognitive ageing, infectious diseases, behaviour change",
     "Lifecourse epidemiology, activity spaces, exposomics, natural experiments",
     "R, GIS, web scraping, data visualisation"

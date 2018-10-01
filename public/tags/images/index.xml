@@ -7,8 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Mark Cherrie</copyright>
-    <lastBuildDate>Thu, 05 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Jul 2018 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/images/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>To inkscape and beyond</title>
+      <link>/post/dpi/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dpi/</guid>
+      <description>&lt;p&gt;Inscape is a really handy piece of software for drawing vector images.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>To inkscape and beyond</title>

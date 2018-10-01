@@ -1,0 +1,417 @@
+---
+title: 'Social Fragmentation Index'
+author: "Mark Cherrie"
+date: '2018-07-09'
+draft: no
+slug: sfi
+tags: ["macroeconomy", "recession","mental health", "admin", "inkscape"]
+categories: ["Data Processing"]
+---
+
+![](images/economy-recession.jpg)
+
+# Background
+The Social Fragmentation Index (SFI) was developed by Peter Congdon. The indicator aims to use census variables to capture (for small areas across the country) aspects of the local population that may reflect a greater collective risk of social fragmentation/lack of social cohesion. The census variables are proxies for these risk factors, rather than 'direct' indicators. It focusses on risk due to potentially high levels of isolation and residential instability of members of the population. The earliest use of this indicator was with 1991 census data, investigating the relationship with suicide risk (Congdon, 1996). It has been used in a Scottish context (1991 census), understanding how it co-varies with deprivation and urbanicity, and associates with pychoses admissions (Allardyce et al., 2005). The SFI shows some association with socioeconomic deprivation but also varies independently. It has been shown, after controlling for other socio-economic risk factors, to be associated with various health outcomes including use of care for mental illness (Curtis et al., 2006). The index is built from four census variables: 
+
+* Number of unmarried persons
+* Single-person households
+* Number of privately rented households
+* Mobility in the previous year
+
+The aim of this work was to generate SFI estimates for datazones in Scotland. We also aimed to explore the association with socio-economic deprivation.  
+
+# Method
+
+## Data
+The 2011 census data was downloaded from the [Scotland Census website](http://www.scotlandscensus.gov.uk/ods-web/data-warehouse.html), at 2001 datazone geography. Three of the indicators reside in the 'Bulk tables' files:
+
+* Number of unmarried persons - KS103SC.csv
+* Single-person households- KS104SC.csv
+* Number of privately rented households - KS402SC.csv
+
+The final table can be downloaded from the 'Additional and Commissioned Tables' section:
+
+* Mobility in the previous year - CT_0210_2011.csv
+
+I have enquired whether the same data is available for the 2001 census at the same geography (i.e. 2001 datazones). 
+
+## Data Manipulation
+
+The full code for the data manipulation is presented in supplementary material (S1). 
+
+Each CSV file was read into R and a series of generic cleaning procedures were performed (some extra formatting was required for the moves in the last year indicator):
+
+* Take out Scotland row
+* Rename of datazone column to "Datazone2001"
+* Took out commas or hypens in variables representing the number of people in the datazone
+* Converted variables to numeric
+
+Each indicator was derived in the following way:
+
+* For the unmarried indicator we subtracted  all people aged 16 and over from those that were recorded as married.
+* For the living alone indicator, we added together the number of people who were in the not living in a couple category, which included: single (never married or never registered a same-sex civil partnership), Married or in a registered same-sex civil partnership, Separated (but still legally married or still legally in a same-sex civil partnership, divorced or formerly in a same-sex civil partnership which is now legally dissolved and Widowed or surviving partner from a same-sex civil partnership.
+* For the private renting indicator, we added together the number of people in the rented categories, which included Council (Local authority), Other social rented, Private landlord or letting agency and Other. 
+* For the moved indicator, we subtracted all people in the datazone from those that lived at the same address one year ago. 
+
+**Q1: The moved indicator includes people that moved within the same datazone, should these people be non-movers?**
+
+The number of people who corresponded to each indicator was then divided by the population denominator:
+
+* For the unmarried indicator this was: All people aged 16 and over
+* For the living alone indicator this was: All people aged over 16 in the household
+* For the private rented indicator this was: All households
+* For the moved indicators this was: All people
+
+**Q2: These are the denominators supplied with the data, are these the most appropriate to use?**
+
+The percentage of people in each datazone corresponding to each indicator condition was then standardised by taking a z-score. Finally the SFI was created by adding together the indicator z-scores and then standardising once more. 
+
+**Q3: Should we be taking the z-score of the summed z-scores?**
+
+The SFI was then visualised on a map for the four largest Scottish cities: Edinburgh, Glasgow, Aberdeen and Dundee. 
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+############### Derive unmarried variable
+unmarried <- readr::read_csv("2011data_2001geog/unmarried.csv")
+# Get rid of Scotland row
+unmarried <- unmarried[-1,]
+# rename first column datazone2001
+colnames(unmarried)[1] <- "Datazone2001" 
+# column names of  table
+names(unmarried)
+# Convert any NA to zero
+unmarried[is.na(unmarried)]<-0
+# Subtract the Married people from total people to get number of unmarried people
+unmarried$unmarried<-unmarried$`All people aged 16 and over`-unmarried$Married
+# Get percentage of unmarried people
+unmarried$unmarriedPCT<-(unmarried$unmarried/unmarried$`All people aged 16 and over`)*100
+# And subset so we only have datazone and our derived variables
+unmarried<-subset(unmarried, select=c(Datazone2001, unmarried,unmarriedPCT))
+
+############### Derive living alone variable
+livingalone <- readr::read_csv("2011data_2001geog/livingalone.csv")
+# Get rid of Scotland row
+livingalone <- livingalone[-1,]
+# rename first column datazone2001
+colnames(livingalone)[1] <- "Datazone2001" 
+# look at table
+names(livingalone)
+# Note living in a couple (married or in ...) is a character var due to "-"
+# Change all -'s to NA by converting to numeric
+livingalone$`Not living in a couple: Married or in a registered same-sex civil partnership` <- as.numeric(livingalone$`Not living in a couple: Married or in a registered same-sex civil partnership`)
+# Convert any NA to zero
+livingalone[is.na(livingalone)]<-0
+# Add the not living together columns
+livingalone$livingalone<- livingalone$`Not living in a couple: Single (never married or never registered a same-sex civil partnership)` + livingalone$`Not living in a couple: Married or in a registered same-sex civil partnership` +  livingalone$`Not living in a couple: Separated (but still legally married or still legally in a same-sex civil partnership)` + livingalone$`Not living in a couple: Divorced or formerly in a same-sex civil partnership which is now legally dissolved` + livingalone$`Not living in a couple: Widowed or surviving partner from a same-sex civil partnership`
+# Get percentage of livingalone people
+livingalone$livingalonePCT<-(livingalone$livingalone/livingalone$`All people aged 16 and over in households`)*100
+# And subset so we only have datazone and our derived variables
+livingalone<-subset(livingalone, select=c(Datazone2001, livingalone,livingalonePCT))
+############### Derive renting variable
+rented <- readr::read_csv("2011data_2001geog/rented.csv")
+# Get rid of Scotland row
+rented <- rented[-1,]
+# rename first column datazone2001
+colnames(rented)[1] <- "Datazone2001" 
+# look at table
+names(rented)
+# Note Rented: Council (local authority) & Rented:Other social rented & Rented: Other are a character vars due to "-"
+# Change all -'s to NA then convert to numeric
+rented[,c(6,7,9)] <- sapply(rented[c(6,7,9)],as.numeric)
+# Convert any NA to zero
+rented[is.na(rented)]<-0
+# Add those in rented accommodation  
+rented$rented <- rented$`Rented: Council (Local authority)` + rented$`Rented: Other social rented` + rented$`Rented: Private landlord or letting agency` + rented$`Rented: Other`
+# Note I've not included 'living rent free'
+# Get percentage of people with rented accommodation
+rented$rentedPCT<-(rented$rented/rented$`All households`)*100
+# And subset so we only have datazone and our derived variables
+rented<-subset(rented, select=c(Datazone2001, rented, rentedPCT))
+############### Derive moved variable
+moved <- readr::read_csv("2011data_2001geog/moved.csv")
+# bit more formatting for this one, extract the column names
+movedcolnames<-t(moved[4,c(3:6)])
+movedcolnames2<-t(moved[5,c(7:12)])
+movedcolnames3<-c("Datazone2001", rbind(movedcolnames, movedcolnames2))
+# Get rid of the empty cells
+moved <- moved[-c(1:14),-c(2)]
+# append the colnames
+colnames(moved)<-movedcolnames3
+# We only need total people moved, not broken down by age
+moved<- moved[!is.na(moved$Datazone2001),] 
+# Get rid of the commas in the data and then make the vars numeric
+moved[,2:11] <- sapply(moved[2:11],function(x) gsub(",","",x))
+moved[,2:11] <- sapply(moved[2:11],as.numeric)
+moved<-moved[!is.na(moved$`All people`),]
+# Convert any NA to zero
+moved[is.na(moved)]<-0
+# column names of  moved
+names(moved)
+# Add those in rented accommodation  
+moved$moved<-moved$`All people`-moved$`Lived at same address one year ago`
+# Get percentage of people with rented accommodation
+moved$movedPCT<-(moved$moved/moved$`All people`)*100
+# And subset so we only have datazone and our derived variables
+moved<-subset(moved, select=c(Datazone2001, moved, movedPCT))
+
+############### Bring them all together
+socialfrag<-merge(unmarried, livingalone, by="Datazone2001")
+socialfrag<-merge(socialfrag, rented, by="Datazone2001")
+socialfrag<-merge(socialfrag, moved, by="Datazone2001")
+# generate z-scores for each var
+socialfrag$unmarriedPCTZscore<-scale(socialfrag$unmarriedPCT, center = TRUE, scale = TRUE)
+socialfrag$livingalonePCTZscore<-scale(socialfrag$livingalonePCT, center = TRUE, scale = TRUE)
+socialfrag$rentedPCTZscore<-scale(socialfrag$rentedPCT, center = TRUE, scale = TRUE)
+socialfrag$movedPCTZscore<-scale(socialfrag$movedPCT, center = TRUE, scale = TRUE)
+# Add all of the variables together now
+socialfrag$SFI<-socialfrag$unmarriedPCTZscore + 
+                    socialfrag$livingalonePCTZscore + 
+                    socialfrag$rentedPCTZscore +
+                    socialfrag$movedPCTZscore
+socialfrag$SFI<-scale(socialfrag$SFI, center = TRUE, scale = TRUE)
+# Round all the numeric data
+socialfrag[,2:14] <- sapply(socialfrag[2:14], function(x) round(x, 2))
+# column names of socialfrag 
+names(socialfrag)
+```
+
+## What is the spatial distribution in the main cities?
+
+```{r plot, echo=FALSE, message=FALSE, warning=FALSE}
+# plot options
+mapview::mapviewOptions(basemaps = c("OpenStreetMap"))
+# look up table for LA's
+lookup<-readr::read_csv("2011data_2001geog/SG_DataZoneBdry_2001/lookup.csv")
+boundary<-sf::read_sf("2011data_2001geog/SG_DataZoneBdry_2001/SG_DataZone_Bdry_2001.shp")
+boundary<-merge(boundary, socialfrag, by.x="DZ_CODE", by.y="Datazone2001")
+boundary<-merge(boundary, lookup, by.x="DZ_CODE", by.y="DataZone")
+LAnames<-readr::read_csv("2011data_2001geog/SG_DataZoneBdry_2001/LAnames.csv")
+LAnames<-unique(LAnames)
+boundary<-merge(boundary, LAnames, by.x="Council", by.y="LAcode")
+# Any missing data
+boundary[is.na(boundary$livingalone),]
+# yes: S01002296, S01003031, S01003319, S01003505, S01003548
+# Get rid of some redundant information
+boundary<-boundary[,-c(4:6, 21:29)]
+```
+
+
+* In Edinburgh the highest SFI is recorded in S01002028, which is just north-east of Newington
+
+* SFI is also higher in the Old town, Marchmont and Tollcross. 
+
+* The highest areas of SFI are clustered around the Meadows datazone (S01002066).
+
+```{r edinburgh, echo=FALSE, message=FALSE, warning=FALSE}
+# Edinburgh
+EDIboundary<-subset(boundary, Council=="S12000036")
+library(mapview)
+mapView(EDIboundary, zcol="SFI")
+```
+
+
+* In Glasgow the highest SFI is recorded in S01003368, which is just east of the Merchant City
+
+* SFI is also higher in central Glasgow but also in Townhead, Kelvinhaugh, East Park and Hillhead.
+
+```{r glasgow, echo=FALSE, message=FALSE, warning=FALSE}
+# Glasgow
+GLAboundary<-subset(boundary, Council=="S12000046")
+library(mapview)
+mapView(GLAboundary, zcol="SFI")
+```
+
+
+* In Aberdeen the highest SFI is recorded in S01000129, which is just north-west of the City Centre
+
+* SFI is also higher going northwards, with the Donside village being another high area of SFI
+
+
+```{r aberdeen, echo=FALSE, message=FALSE, warning=FALSE}
+# Aberdeen
+ABEboundary<-subset(boundary, Council=="S12000033")
+library(mapview)
+mapView(ABEboundary, zcol="SFI")
+```
+
+
+* In Dundee the highest SFI is recorded in S01001095, which is just south west of the city centre
+
+```{r dundee, echo=FALSE, message=FALSE, warning=FALSE}
+# Dundee
+DUNboundary<-subset(boundary, Council=="S12000042")
+library(mapview)
+mapView(DUNboundary, zcol="SFI")
+```
+
+
+* The key to the spatial distribution of SFI in the major cities is the location of the universities and student accommodation (Aberdeen- Hillhead Student Village, Edinburgh- Pollock Halls).
+
+## Is there a relationship with deprivation?
+
+* A scatterplot was create using SFI and SIMD score (higher score more deprived), with colour representing the local authority and marker size representing the population density. 
+
+* Double click on the local authority name on the right hand side will subset the data to just these data points.
+
+* Single clicking on another local authority name will add these data points to the graph
+
+```{r scatter, echo=FALSE, message=FALSE, warning=FALSE}
+simd<-readr::read_csv("2011data_2001geog/simd.csv")
+boundarySIMD <- merge(boundary, simd, by.x="DZ_CODE", by.y="DataZone2001")
+boundarySIMD<-as.data.frame(boundarySIMD)
+boundarySIMD$density<-boundarySIMD$total_pop_2010/boundarySIMD$Shape_Area
+boundarySIMD$densityZ<-as.numeric(scale(boundarySIMD$density, center = TRUE, scale = TRUE))
+library(plotly)
+plot_ly(boundarySIMD, x = ~SFI, y = ~simd2012score, color = ~LAname, size= ~densityZ,text = ~paste("Datazone: ", DZ_CODE, '<br>Datazone name:', DZ_NAME))
+```
+
+* If we look at Aberdeen first (double click on it), we see that there is a weak correlation between deprivation and SFI. Notice that some of the larger circles (higher population density) have low deprivation but higher social fragmentation.
+
+* If we now add Aberdeenshire (single click on it), we see that there is a clearer linear correlation: in datazones with higher SFI there is higher deprivation. Notice that the range of values is shorter (-1.55 to 1.6) compared to Aberdeen (-1.64 to 3.91), which suggests that datazones with very high SFI are not necessarily higher in deprivation. 
+
+* If we now look at the Orkney Islands (double click on it), we can see another group, where there is no correlation between SFI and deprivation. 
+
+* We can now cluster the rest of the local authorities into these three typologies: moderate-strong correlation (e.g. Aberdeenshire), low correlation (e.g. Aberdeen) and no correlation (e.g. Orkney Islands)
+
+  + Moderate-strong correlation: Aberdeenshire, Angus, Argyll and Bute, Clackmannanshire, Dumfries and Galloway, East Ayrshire, East Dunbartsonshire, East Lothian, East Renfrewshire, Falkirk, Highland, Invercylde, Midlothian, Moray, North Ayrshire, North Lanarkshire, Perth and Kinross, Renfrewshire, Scottish Borders, South Ayrshire, South Lanarkshire, West Dunbartonshire, West Lothian,  
+
+  + Low correlation: Aberdeen City, City of Edinburgh, Dundee City, Fife, Glasgow City, Stirling
+
+  + No correlation: Na h-Eileanan an Iar, Orkney Islands and Shetland
+
+* Moray is in the moderate-strong correlation group but has some outliers, namely S01004285, let's have a closer look.
+
+```{r moray, echo=FALSE, message=FALSE, warning=FALSE}
+# Dundee
+DUNboundary<-subset(boundary, Council=="S12000020")
+library(mapview)
+mapView(DUNboundary, zcol="SFI")
+```
+
+* If we click on S01004285 (East Kinloss: the small yellow polygon on the west near Kinloss), we can see that it has an exceptionally high percentage of people that have moved into the last year (75%), this gives a z-score of 8.23 and therefore skews this relatively low deprivation area to high social fragmentation. The reason for the high flux in the area is likely to be due to the nearby Kinloss barracks(north of the datazone).
+
+# Conclusions 
+
+Social fragmentation tends to increase with greater socio-economic deprivation. There are no datazones where social fragmentation is low and deprivation is high, but a number, especially in the major cities, where social fragmentation is high and deprivation is low. This is partly due to high student populations who tend to be privately renting, living alone, unmarried and have high movement within the last year, and reside in relatively affluent areas. The movement in the last year indicator is not as strongly correlated with the other indicators (ranged from r=0.44-0.60 compared to r>0.84 between the others). This was highlighted when exploring outliers in the relationship between deprivation and SFI, whereby datazones near military bases had very high flux of residents but average values for the other indicators. 
+
+# References 
+
+Allardyce, J., Gilmour, H., Atkinson, J., Rapson, T., Bishop, J., & McCreadie, R. (2005). Social fragmentation, deprivation and urbanicity: Relation to first-admission rates for psychoses. British Journal of Psychiatry, 187(5), 401-406. doi:10.1192/bjp.187.5.401
+
+Congdon, P (1996) The incidence of suicide and parasuicide: a small area study, Urban Studies, 33, 137 – 158.
+
+Curtis, S., Copeland, A., Fagg, J., Congdon, P., Almog., M, and Fitzpatrick, J. (2006) The ecological relationship between deprivation, social isolation and rates of hospital admission for acute psychiatric care; a comparison of London and New York City. Health & Place, 12,1, 19-37 
+
+# Supplementary Material
+
+## S1: Data Manipulation
+
+```{r message=FALSE, warning=FALSE}
+
+############### Derive unmarried variable
+unmarried <- readr::read_csv("2011data_2001geog/unmarried.csv")
+# Get rid of Scotland row
+unmarried <- unmarried[-1,]
+# rename first column datazone2001
+colnames(unmarried)[1] <- "Datazone2001" 
+# column names of  table
+names(unmarried)
+# Convert any NA to zero
+unmarried[is.na(unmarried)]<-0
+# Subtract the Married people from total people to get number of unmarried people
+unmarried$unmarried<-unmarried$`All people aged 16 and over`-unmarried$Married
+# Get percentage of unmarried people
+unmarried$unmarriedPCT<-(unmarried$unmarried/unmarried$`All people aged 16 and over`)*100
+# And subset so we only have datazone and our derived variables
+unmarried<-subset(unmarried, select=c(Datazone2001, unmarried,unmarriedPCT))
+
+############### Derive living alone variable
+livingalone <- readr::read_csv("2011data_2001geog/livingalone.csv")
+# Get rid of Scotland row
+livingalone <- livingalone[-1,]
+# rename first column datazone2001
+colnames(livingalone)[1] <- "Datazone2001" 
+# look at table
+names(livingalone)
+# Note living in a couple (married or in ...) is a character var due to "-"
+# Change all -'s to NA by converting to numeric
+livingalone$`Not living in a couple: Married or in a registered same-sex civil partnership` <- as.numeric(livingalone$`Not living in a couple: Married or in a registered same-sex civil partnership`)
+# Convert any NA to zero
+livingalone[is.na(livingalone)]<-0
+# Add the not living together columns
+livingalone$livingalone<- livingalone$`Not living in a couple: Single (never married or never registered a same-sex civil partnership)` + livingalone$`Not living in a couple: Married or in a registered same-sex civil partnership` +  livingalone$`Not living in a couple: Separated (but still legally married or still legally in a same-sex civil partnership)` + livingalone$`Not living in a couple: Divorced or formerly in a same-sex civil partnership which is now legally dissolved` + livingalone$`Not living in a couple: Widowed or surviving partner from a same-sex civil partnership`
+# Get percentage of livingalone people
+livingalone$livingalonePCT<-(livingalone$livingalone/livingalone$`All people aged 16 and over in households`)*100
+# And subset so we only have datazone and our derived variables
+livingalone<-subset(livingalone, select=c(Datazone2001, livingalone,livingalonePCT))
+############### Derive renting variable
+rented <- readr::read_csv("2011data_2001geog/rented.csv")
+# Get rid of Scotland row
+rented <- rented[-1,]
+# rename first column datazone2001
+colnames(rented)[1] <- "Datazone2001" 
+# look at table
+names(rented)
+# Note Rented: Council (local authority) & Rented:Other social rented & Rented: Other are a character vars due to "-"
+# Change all -'s to NA then convert to numeric
+rented[,c(6,7,9)] <- sapply(rented[c(6,7,9)],as.numeric)
+# Convert any NA to zero
+rented[is.na(rented)]<-0
+# Add those in rented accommodation  
+rented$rented <- rented$`Rented: Council (Local authority)` + rented$`Rented: Other social rented` + rented$`Rented: Private landlord or letting agency` + rented$`Rented: Other`
+# Note I've not included 'living rent free'
+# Get percentage of people with rented accommodation
+rented$rentedPCT<-(rented$rented/rented$`All households`)*100
+# And subset so we only have datazone and our derived variables
+rented<-subset(rented, select=c(Datazone2001, rented, rentedPCT))
+############### Derive moved variable
+moved <- readr::read_csv("2011data_2001geog/moved.csv")
+# bit more formatting for this one, extract the column names
+movedcolnames<-t(moved[4,c(3:6)])
+movedcolnames2<-t(moved[5,c(7:12)])
+movedcolnames3<-c("Datazone2001", rbind(movedcolnames, movedcolnames2))
+# Get rid of the empty cells
+moved <- moved[-c(1:14),-c(2)]
+# append the colnames
+colnames(moved)<-movedcolnames3
+# We only need total people moved, not broken down by age
+moved<- moved[!is.na(moved$Datazone2001),] 
+# Get rid of the commas in the data and then make the vars numeric
+moved[,2:11] <- sapply(moved[2:11],function(x) gsub(",","",x))
+moved[,2:11] <- sapply(moved[2:11],as.numeric)
+moved<-moved[!is.na(moved$`All people`),]
+# Convert any NA to zero
+moved[is.na(moved)]<-0
+# column names of  moved
+names(moved)
+# Add those in rented accommodation  
+moved$moved<-moved$`All people`-moved$`Lived at same address one year ago`
+# Get percentage of people with rented accommodation
+moved$movedPCT<-(moved$moved/moved$`All people`)*100
+# And subset so we only have datazone and our derived variables
+moved<-subset(moved, select=c(Datazone2001, moved, movedPCT))
+
+############### Bring them all together
+socialfrag<-merge(unmarried, livingalone, by="Datazone2001")
+socialfrag<-merge(socialfrag, rented, by="Datazone2001")
+socialfrag<-merge(socialfrag, moved, by="Datazone2001")
+# generate z-scores for each var
+socialfrag$unmarriedPCTZscore<-scale(socialfrag$unmarriedPCT, center = TRUE, scale = TRUE)
+socialfrag$livingalonePCTZscore<-scale(socialfrag$livingalonePCT, center = TRUE, scale = TRUE)
+socialfrag$rentedPCTZscore<-scale(socialfrag$rentedPCT, center = TRUE, scale = TRUE)
+socialfrag$movedPCTZscore<-scale(socialfrag$movedPCT, center = TRUE, scale = TRUE)
+# Add all of the variables together now
+socialfrag$SFI<-socialfrag$unmarriedPCTZscore + 
+                    socialfrag$livingalonePCTZscore + 
+                    socialfrag$rentedPCTZscore +
+                    socialfrag$movedPCTZscore
+socialfrag$SFI<-scale(socialfrag$SFI, center = TRUE, scale = TRUE)
+# Round all the numeric data
+socialfrag[,2:14] <- sapply(socialfrag[2:14], function(x) round(x, 2))
+# column names of socialfrag 
+names(socialfrag)
+```
+
+  
+  
+  
