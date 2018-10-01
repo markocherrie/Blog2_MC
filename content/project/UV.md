@@ -24,48 +24,9 @@ math = false
 # Optional featured image (relative to `static/img/` folder).
 #[header]
 #image = "headers/MMPbanner.png"
-#caption = "DISPLAY project 2012-2017"
+#caption = ""
 +++
 
-Exposure to vitamin D effective ultraviolet radiation (UVvitd) is key to the
-production of vitamin D in human skin. Ambient ultraviolet radiation, dietary intake
-of D3/D2 and 25-hydroxy vitamin D in serum and saliva have been used as a proxy
-for vitamin D status. However, these exposures have yet to yield a consistent
-effect on allergic diseases. The aim of the thesis was to determine the spatiotemporal
-distribution of UVvitd and 25(OH)D in Britain, so as to investigate the
-effect on allergic health outcomes.
+Atopic diseases are common in the UK, with eczema, asthma and allergic rhinitis typically developing sequentially during childhood, as in the theory of the 'atopic march'. Some people will 'grow out' out of these diseases but others face lifelong morbidity. Current figures from asthma UK show that the prevalence of people in the UK receiving treatment for asthma is approximately 9% in children and 8% of adults. These rates have risen since the 1970's, evidenced by the an increase in prevalence rates between the ISAAC (International Study of Asthma and Allergies in Childhood) phase one (1994) and phase three (2002/2003). The trend is the same for developing nations. Thus, it is clear that these diseases will represent a significant burden to individual families and national healthcare providers around the world for the foreseeable future. Atopic diseases have a complex aetiology, but are broadly caused by environmental and genetic factors. It is through geographical analysis of the distribution of these diseases that hypotheses can be generated. For example, in the UK, eczema has been mapped using data from the CLS’s (Centre of Longitudinal Studies) 1958 Birth Cohort, this study implicated factors such as water hardness, industrial pollution, pollen, heavy metal deposits and climate. 
 
-The relative effectiveness of known determinants of UVvitd and 25(OH)D
-(latitude and month of the year) and proposed determinants (longitude, elevation,
-urban/rural residence, coastal residence, year of blood measurement, day of
-blood measurement/year) were described. Coastal residence was shown to
-be a novel geographic determinant of higher levels of UVvitd and 25(OH)D in
-England and may help to explain previous associations with general health and
-wellbeing. Further to these results, the relationship between UVvitd and 25(OH)D
-was investigated. This stimulated the development of an instrumental variable,
-which can be used to reduce the effect of confounding in observational studies.
-Common meteorological data including sunshine duration and temperature were
-used to predict ambient UVvitd at a postcode sector level. The ambient UVvitd
-instrument was shown to linearly predict 25(OH)D, measured in the 1958 Birth
-Cohort participants aged 45, at three and six month cumulative doses before
-blood measurement. Effectiveness was attenuated by the duration of outdoor
-activity. The relationship between ambient UVvitd and 25(OH)D was used to
-estimate the effect of maternal 25(OH)D on hay fever, eczema and asthma in
-childhood. Consistent positive associations were found with hay fever only. There
-may have been beneficial differential effect on asthma by atopic status and sex
-of the participant. In males with hay fever asthma prevalence was lowest in the
-highest UVvitd quartile. However the marker of atopy was weak (i.e. parental
-reported hay fever) and the interaction was insignificant (i.e. p=0.07). Therefore,
-the association between 25(OH)D and asthma prevalence and incidence was
-investigated, with atopic status determined using a mixture of self-reported and
-biomedical data (i.e. IgE measurements) from the 1958 Birth Cohort in adulthood.
-The interaction between 25(OH)D and atopic status was highly significant and non-atopic individuals were shown to have an increased risk of asthma for
-every 10 nmol/l decrease in 25(OH)D. Given that vitamin D represents only one
-health effect of human interactions with climate, the relationship between several
-meteorological variables and GP prevalence rates of asthma was investigated.
-A combination of high UVvitd and temperature and low relative humidity and
-precipitation was associated with lower asthma prevalence.
-To summarise, the findings have determined that UVvitd varies geographically
-and temporally with 25(OH)D in Britain and higher levels could benefit specific
-subtypes of allergic disease. By utilising multiple existing meteorological data,
-the understanding of the aetiology of allergic disease can be advanced.
+The aim of my PhD [thesis](https://drive.google.com/drive/folders/1Cy1xxwsGX7nN6rMeIvkDkj2CCbbsVYIj?usp=sharing) was to investigate the association between UVR (Ultraviolet Radiation) exposure on allergic disease incidence using secondary data sources. Ultraviolet radiation is the primary contributor to vitamin D levels, often quoted to contribute 80-90% of an individual's circulating 25(OH)D. Vitamin D has been linked to several immune functions within the body including Treg production (which in turn modulates Th1/Th2 balance) and antimicrobial peptide induction, which protects against infection. Vitamin D could play an important role in reducing risk of atopic disease.
