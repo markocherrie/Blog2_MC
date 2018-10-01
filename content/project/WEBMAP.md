@@ -23,9 +23,7 @@ summary = "This Rshiny web application allows you to map alcohol and tobacco out
   
 +++
 
-[![Image name](webmap2.png)](https://creshmap.com/)
-
-I led the re-development of the CRESH webmap, which was originally launched in 2015. This app was designed to allow users to map tobacco and alcohol outlet density, and related health outcomes for small areas in Scotland (i.e. datazones, which represent around 5,000 residents). 
+I led the re-development of the CRESH [webmap]("https://creshmap.com/"), which was originally launched in 2015. This app was designed to allow users to map tobacco and alcohol outlet density, and related health outcomes for small areas in Scotland (i.e. datazones, which represent around 5,000 residents). 
 
 There is increasing evidence which shows that the density of tobacco and alcohol retailers has an effect on both smoking/drinking behaviours but also the associated morbidity/mortality. For example those living in areas with the highest density of retailers have double the alcohol-related death rate; and adolescents living in areas with the highest density of tobacco retailers are 50% more likely to smoke.  
 
