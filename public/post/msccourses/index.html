@@ -264,7 +264,208 @@
     <div class="article-style" itemprop="articleBody">
       <p>The aim was to understand more about the optional courses available for Geosciences MSc students. This meant building a dataframe that contained the interesting bits of information available on the University of Edinburgh website so that I could query it to find out answers to questions such as: How many 10 credit courses are available? Which degree cluster do the courses below to and where do they overlap? What kind of topics/skills are going to be taught? and so on.</p>
 <p>The first thing to do was to download the data from the University of Edinburgh website. Here is the code, which first builds the URL’s that we need and then scrapes the relevant info one-by-one into a dataframe:</p>
+<pre class="r"><code>############### DATA COLLECTION #########################
+
+## scaping the edinburgh university website
+library(rvest)
+# Gather the optional courses for Earth Observation and Geoinformation Management
+MScOptionsURLS&lt;-function(MSc){
+if(MSc==&quot;EOGM&quot;){
+  MSc&lt;-&quot;https://www.ed.ac.uk/geosciences/postgraduate/taught-masters/msc-earth-observation/structure-teaching-assessment/optional-courses&quot;
+  url&lt;-MSc %&gt;%
+  read_html()%&gt;%
+  html_nodes(&#39;#block-system-main p:nth-child(1) a , p+ p a&#39;)%&gt;%
+  html_attr(&#39;href&#39;)
+  } else if(MSc==&quot;GIS&quot;){
+  MSc&lt;-&quot;https://www.ed.ac.uk/geosciences/postgraduate/taught-masters/geographical-information-science/structure-teaching-assessment/optional-courses&quot;
+  url&lt;-MSc %&gt;%
+    read_html()%&gt;%
+    html_nodes(&#39;#block-system-main p:nth-child(1) a , p+ p a&#39;)%&gt;%
+    html_attr(&#39;href&#39;)
+  }else if(MSc==&quot;ARCH&quot;){
+  MSc&lt;-&quot;https://www.ed.ac.uk/geosciences/postgraduate/taught-masters/msc-gis-and-archaeology/structure-teaching-and-assessment/optional-courses&quot;
+  url&lt;-MSc %&gt;%
+    read_html()%&gt;%
+    html_nodes(&#39;.col-sm-9 , p+ p a&#39;)%&gt;%
+    html_attr(&#39;href&#39;)
+  # not perfect, but get the dpt links
+  url&lt;-url[3:10]
+  # weird, not picking up the final two, must be formatted differently, quick fix
+  url[9]&lt;-&quot;http://www.drps.ed.ac.uk/17-18/dpt/cxpghc11412.htm&quot;
+  url[10]&lt;-&quot;http://www.drps.ed.ac.uk/17-18/dpt/cxpghc11075.htm&quot;
+  }else {
+    &quot;Pick a MSc course that&#39;s in the Spatial Informatics and Earth Observation cluster&quot;
+  }
+url&lt;-as.data.frame(url)
+colnames(url)&lt;-&quot;url&quot;
+url$url&lt;-as.character(url$url)
+return(url)
+}
+
+# Let&#39;s do it for the 3 MSc courses
+EOGM_options&lt;-MScOptionsURLS(MSc = &quot;EOGM&quot;)
+GIS_options&lt;-MScOptionsURLS(MSc = &quot;GIS&quot;)
+ARCH_options&lt;-MScOptionsURLS(MSc = &quot;ARCH&quot;)
+
+# Now let&#39;s scrape the optional courses pages
+eduniscraper&lt;-function(url){
+  Urlcatch&lt;-tryCatch({
+    # Name of course
+    Name&lt;-tryCatch({
+      Name&lt;-url %&gt;%
+        read_html() %&gt;%
+        html_node(&quot;#sitspagetitle&quot;) %&gt;%
+        html_text()
+     #Name&lt;-gsub(&quot;Undergraduate Course:|Postgraduate Course: &quot;, &quot;&quot;, Name)
+    }, error=function(e){
+      Name&lt;-NA}
+    )
+    
+    # Get the whole table
+    tableinfo&lt;-url %&gt;%
+      read_html() %&gt;%
+      html_nodes(&#39;.sitstablegrid&#39;) %&gt;%
+      html_text()
+    
+    ## Credits
+    SCQFcredits&lt;-tryCatch({
+      subtable&lt;-tableinfo[gregexpr(pattern =&#39;SCQF Credits&#39;,tableinfo)&gt;1]
+      start&lt;-gregexpr(pattern =&#39;SCQF Credits&#39;,subtable)[[1]][1]+12
+      end&lt;-gregexpr(pattern =&#39;SCQF Credits&#39;,subtable)[[1]][1]+13
+      SCQFcredits&lt;-as.numeric(substring(subtable, start,end))
+    }, error=function(e){
+      SCQFcredits&lt;-NA}
+    )
+    
+    ## Time
+    Time&lt;-tryCatch({
+      subtable&lt;-tableinfo[gregexpr(pattern =&#39;Total Hours&#39;,tableinfo)&gt;1]
+      start&lt;-gregexpr(pattern =&#39;Total Hours&#39;,subtable)[[1]][1]
+      end&lt;-gregexpr(pattern =&#39;Assessment \\(Further Info\\)&#39;,subtable)[[1]][1]-1
+      Time&lt;-substring(subtable, start,end)
+      Time&lt;-gsub(&quot;[\n]|:|\\)|\\(\\)|W|Assessment|(Further Info)|&quot;, &quot;&quot;, Time)
+      Time&lt;-gsub(&quot;\\(&quot;, &quot;,&quot;, Time)
+    }, error=function(e){
+      Time&lt;-NA}
+    )
+    
+    ## Assessment
+    assessment&lt;-tryCatch({
+      subtable&lt;-tableinfo[gregexpr(pattern =&#39;Written Exam&#39;,tableinfo)&gt;1]
+      start&lt;-gregexpr(pattern =&#39;Written Exam&#39;,subtable)[[1]][1]
+      end&lt;-start+55
+      assessment&lt;-substring(subtable, start,end)
+      assessment&lt;-gsub(&quot; |[\t]|-|[\n]&quot;, &quot;&quot;, assessment)
+      assessment&lt;-gsub(&quot;WrittenExam|Coursework|PracticalExam&quot;, &quot;&quot;, assessment)
+      assessment&lt;-gsub(&quot;%&quot;, &quot;&quot;, assessment)
+      WrittenExam=as.numeric(unlist(strsplit(assessment, &quot;,&quot;))[1])
+      Coursework=as.numeric(unlist(strsplit(assessment, &quot;,&quot;))[2])
+      PracticalExam=as.numeric(unlist(strsplit(assessment, &quot;,&quot;))[3])
+    }, error=function(e){
+      WrittenExam&lt;-NA
+      Coursework&lt;-NA
+      PracticalExam&lt;-NA}
+    )
+    
+    # learning outcomes
+    learningoutcomes&lt;-tryCatch({
+      learningoutcomes&lt;-tableinfo[gregexpr(pattern =&#39;By the end of this course students will be able to|On completion of this course|On completion of the course|Students will be able to:&#39;,tableinfo)&gt;1][2]
+      #if (is.na(learningoutcomes)){
+      #learningoutcomes&lt;-tableinfo[gregexpr(pattern =&#39;On completion of this course|On completion of the course|Students will be able to:&#39;,tableinfo)&gt;1][1]
+      #}
+      learningoutcomes&lt;-gsub(&quot;Learning Outcomes|[\t]|-|[\n]&quot;, &quot;&quot;, learningoutcomes)
+    }, error=function(e){
+      learningoutcomes&lt;-NA}
+    )
+    
+    ## Skills
+    skills&lt;-tryCatch({
+      subtable&lt;-tableinfo[gregexpr(pattern =&#39;Graduate Attributes and Skills&#39;,tableinfo)&gt;1][2]
+      start&lt;-gregexpr(pattern =&#39;Graduate Attributes and Skills&#39;,subtable)[[1]][1]
+      end&lt;-gregexpr(pattern =&#39;Special Arrangements|Keywords|Additional Class Delivery Information&#39;,subtable)[[1]][1]-1
+      skills&lt;-substring(subtable, start,end)
+      skills&lt;-gsub(&quot;Graduate Attributes and Skills|[\t]|-|[\n]&quot;, &quot;&quot;, skills)
+    }, error=function(e){
+      skills&lt;-NA}
+    )
+    
+    df&lt;-data.frame(Name, url, SCQFcredits, Time, learningoutcomes, skills, WrittenExam, Coursework, PracticalExam)
+    #write.csv(df, paste0(&quot;data/&quot;, url, &quot;.csv&quot;), row.names=F)
+    return(df)
+  },error=function(e){
+    df&lt;-data.frame(Name=NA, url=url, SCQFcredits=NA, Time=NA, learningoutcomes=NA, skills=NA, WrittenExam=NA, Coursework=NA, PracticalExam=NA)}
+  )
+}
+
+# test
+url=&quot;http://www.drps.ed.ac.uk/17-18/dpt/cxpghc11412.htm&quot;
+test&lt;-eduniscraper(url)
+
+# loop
+library(plyr)
+# Technologies for Sustainable Energy, i.e. number 6, doesn&#39;t work
+#EOGM_options &lt;- subset(EOGM_options, url!= &quot;http://www.drps.ed.ac.uk/16-17/dpt/cxpgee10001.htm&quot;)
+#Put in error handling instead
+EOGM_df&lt;-mdply(EOGM_options, eduniscraper)
+GIS_df&lt;-mdply(GIS_options, eduniscraper)
+ARCH_df&lt;-mdply(ARCH_options, eduniscraper)</code></pre>
 <p>Next step was to apply some cleaning, this was a iterative process of identifying issues with the output above and applying correction. Have a look at the code comments for more details:</p>
+<pre class="r"><code>############### DATA CLEANING #########################
+
+# master data
+EOGM_df$cluster&lt;-&quot;EOGM&quot;
+GIS_df$cluster&lt;-&quot;GIS&quot;
+ARCH_df$cluster&lt;-&quot;ARCH&quot;
+master_df&lt;-rbind(EOGM_df, GIS_df, ARCH_df)
+
+# 19 courses are duplicates
+library(dplyr)
+master_df&lt;-master_df %&gt;% 
+  group_by(url) %&gt;% 
+  mutate(cluster_group = paste0(cluster, collapse = &quot;,&quot;)) 
+master_df&lt;-master_df[!duplicated(master_df$Name),]
+master_df$cluster&lt;-NULL
+
+# 3 course links don&#39;t work, but only one remains,
+# as it is considered &#39;unique in above
+master_df&lt;-master_df[!is.na(master_df$Name),]
+
+
+# Code NA to not entered
+master_df[is.na(master_df)]&lt;-&quot;Not Entered&quot;
+
+# postgrad or undergrad
+master_df$coursetype&lt;-ifelse(grepl(&quot;Undergraduate&quot;, master_df$Name), &quot;U&quot;, &quot;P&quot;)
+master_df$Name&lt;-gsub(&quot;Undergraduate Course:|Postgraduate Course:&quot;, &quot;&quot;, master_df$Name)
+
+# get time vars
+result&lt;-list()
+
+for(i in 1:33){
+Time=unlist(strsplit(master_df$Time[i], &quot;,&quot;))
+Time&lt;-gsub(&quot; &quot;, &quot;&quot;, Time)
+Time&lt;-as.data.frame(Time)
+colnames(Time)&lt;-&quot;TimeVars&quot;
+library(tidyr)
+Time&lt;-Time %&gt;%
+separate(TimeVars, 
+         into = c(&quot;text&quot;, &quot;num&quot;), 
+         sep = &quot;(?&lt;=[A-Za-z])(?=[0-9])&quot;) 
+Time$Name&lt;-master_df$Name[i]
+result[[i]] &lt;- Time
+}
+timevars = do.call(rbind.fill, result)
+timevars = timevars[1:123,]
+timevars&lt;-timevars %&gt;%
+  spread(text, num)
+timevars[is.na(timevars)]&lt;-0
+timevars&lt;-subset(timevars, Name!=&#39; Water Resource Management (PGGE11018)&#39;)
+timevars&lt;-subset(timevars, Name!=&#39; Epidemiology for Public Health (PUHR11016)&#39;)
+
+# merge with master df
+master_df&lt;-merge(master_df, timevars, by=&quot;Name&quot;, all.x=T)
+master_df$Time&lt;-NULL
+master_df$NotEntered&lt;-NULL</code></pre>
 <p>Finally, onto the fun part, querying the data and producing graphs to present answers to the questions I was interested in. First let’s see the percentage of courses that are 10 and 20 credits:</p>
 <p><img src="/post/MscCourses_files/figure-html/visualisation1-1.png" width="672" /></p>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 

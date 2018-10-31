@@ -12,7 +12,7 @@ The aim was to understand more about the optional courses available for Geoscien
 The first thing to do was to download the data from the University of Edinburgh website. Here is the code, which first builds the URL's that we need and then scrapes the relevant info one-by-one into a dataframe:
 
 
-```{r collection, echo=F, message=FALSE, warning=FALSE}
+```{r collection, echo=TRUE, message=FALSE}
 ############### DATA COLLECTION #########################
 
 ## scaping the edinburgh university website
@@ -162,7 +162,7 @@ ARCH_df<-mdply(ARCH_options, eduniscraper)
 
 Next step was to apply some cleaning, this was a iterative process of identifying issues with the output above and applying correction. Have a look at the code comments for more details:
 
-```{r cleaning, echo=F, message=FALSE, warning=FALSE}
+```{r cleaning, echo=TRUE, message=FALSE, warning=FALSE}
 
 ############### DATA CLEANING #########################
 

@@ -10,7 +10,7 @@ selected = false
 math = true
 
 url_pdf = ""
-url_slides = ""
+url_slides = "https://goo.gl/3fngtz"
 url_video = ""
 
 # Optional featured image (relative to `static/img/` folder).

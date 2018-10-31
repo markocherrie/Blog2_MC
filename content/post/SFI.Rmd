@@ -235,7 +235,7 @@ boundaryCORR$SD<-apply(boundaryCORR[2:5],1,sd)
 plot_ly(boundaryCORR, x=~SFI, y = ~SD, color = ~LAname,text = ~paste("Datazone: ", DZ_CODE))
 ```
 
-# Conclusions 
+## Conclusions 
 Social fragmentation does not associate with greater socio-economic deprivation. Spatial distribution of SFI is partly due to high student populations who tend to be privately renting, living alone, unmarried and have high movement within the last year, and reside in relatively affluent areas. Correlation between the indicators varies, with renting and movement within the last year, and unmarried and living alone, being highly correlated with each other respectively. There are some neighbourhoods with very high variation in SFI indicators. These datazones have been investigated and their high fragmentation is likely due to high high movement of people for occupation of education reasons. 
 
 ### Update on relationship with deprivation (October 2018)
