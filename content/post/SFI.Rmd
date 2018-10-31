@@ -263,7 +263,7 @@ mapView(MORboundary, zcol="SFI")
 
 # Conclusions 
 
-Social fragmentation does not associate with greater socio-economic deprivation. Spatial distribution of SFI is partly due to high student populations who tend to be privately renting, living alone, unmarried and have high movement within the last year, and reside in relatively affluent areas. Correlation between the indicators varies, with renting and movement within the last year, and unmarried and living alone highly correlated. There are some neighbourhoods with very high variation in SFI indicators. We highlighted datazones where this was the case, and noticed that high movement of people for occupation of education reasons was responsible. 
+Social fragmentation does not associate with greater socio-economic deprivation. Spatial distribution of SFI is partly due to high student populations who tend to be privately renting, living alone, unmarried and have high movement within the last year, and reside in relatively affluent areas. Correlation between the indicators varies, with renting and movement within the last year, and unmarried and living alone, being highly correlated with each other respectively. There are some neighbourhoods with very high variation in SFI indicators. These datazones have been investigated and their high fragmentation is likely due to high high movement of people for occupation of education reasons. 
 
 # Update on relationship with deprivation (October 2018)
 
