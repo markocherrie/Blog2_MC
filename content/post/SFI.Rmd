@@ -5,10 +5,10 @@ date: '2018-07-09'
 draft: no
 slug: sfi
 categories: ["Data Processing"]
-tags: ["R", "macroeconomy", "recession", "mental health", "social capital", "R"]
+tags: ["macroeconomy", "recession", "mental health", "social capital"]
 ---
 
-# Background
+## Background
 The Social Fragmentation Index (SFI) was developed by Peter Congdon. The indicator aims to use census variables to capture (for small areas across the country) aspects of the local population that may reflect a greater collective risk of social fragmentation/lack of social cohesion. The census variables are proxies for these risk factors, rather than 'direct' indicators. It focusses on risk due to potentially high levels of isolation and residential instability of members of the population. The earliest use of this indicator was with 1991 census data, investigating the relationship with suicide risk (Congdon, 1996). It has been used in a Scottish context (1991 census), understanding how it co-varies with deprivation and urbanicity, and associates with pychoses admissions (Allardyce et al., 2005). The SFI shows some association with socioeconomic deprivation but also varies independently. It has been shown, after controlling for other socio-economic risk factors, to be associated with various health outcomes including use of care for mental illness (Curtis et al., 2006). The index is built from four census variables: 
 
 * Number of unmarried persons
@@ -18,9 +18,9 @@ The Social Fragmentation Index (SFI) was developed by Peter Congdon. The indicat
 
 The aim of this work was to generate SFI estimates for datazones in Scotland. We also aimed to explore the association with socio-economic deprivation.  
 
-# Method
+## Method
 
-## Data
+### Data
 The 2011 census data was downloaded from the [Scotland Census website](http://www.scotlandscensus.gov.uk/ods-web/data-warehouse.html), at 2001 datazone geography. Three of the indicators reside in the 'Bulk tables' files:
 
 * Number of unmarried persons - KS103SC.csv
@@ -31,7 +31,7 @@ The final table can be downloaded from the 'Additional and Commissioned Tables' 
 
 * Mobility in the previous year - CT_0210_2011.csv
 
-## Data Manipulation
+### Data Manipulation
 
 Each CSV file was read into R and a series of generic cleaning procedures were performed (some extra formatting was required for the moves in the last year indicator):
 
@@ -178,7 +178,7 @@ boundary[is.na(boundary$livingalone),]
 boundary<-boundary[,-c(4:6, 25:33)]
 ```
 
-## Is there a relationship with deprivation at a single point in time (2011)?
+### Is there a relationship with deprivation?
 
 * A scatterplot was create using SFI and SIMD score (higher score more deprived), with colour representing the local authority and marker size representing the population density. 
 * Double click on the local authority name on the right hand side will subset the data to just these data points.
@@ -199,9 +199,9 @@ plot_ly(boundarySIMD, x = ~SFI, y = ~simd2012score, color = ~LAname, size= ~dens
 * The graphs show that there is no association between SFI and deprivation. From previous calculation of SFI using different criteria, we know that this association is sensitive to the way that the renting indicator is calculated (i.e. including people that are private renting, as in this defintion of SFI, only results if weak association with deprivation).
 
 
-## Unpicking the SFI indicators
+### Unpicking the SFI indicators
 
-```{r correlation, echo=FALSE, message=FALSE, warning=FALSE, include=F}
+```{r correlation, echo=FALSE, message=FALSE, warning=FALSE}
 library(ggplot2)
 library(plotly)
 library(reshape)
@@ -235,33 +235,12 @@ boundaryCORR$SD<-apply(boundaryCORR[2:5],1,sd)
 plot_ly(boundaryCORR, x=~SFI, y = ~SD, color = ~LAname,text = ~paste("Datazone: ", DZ_CODE))
 ```
 
-* Let's take a closer look at the two outliers in Stirling (S01006151) and Moray (S01004285).
-
-```{r Stirling, echo=FALSE, message=FALSE, warning=FALSE}
-# Stirling
-STIboundary<-subset(boundary, Council=="S12000030")
-library(mapview)
-mapView(STIboundary, zcol="SFI")
-```
-
-* S01006151 is located to the north of the city of Stirling and just east of the Bridge of Allan and contains the the University of Stirling main campus. The indicator which causes the high standard deviation is movement in the last year, which is extremely high at 85% of people. 
-
-```{r moray, echo=FALSE, message=FALSE, warning=FALSE}
-# Moray
-MORboundary<-subset(boundary, Council=="S12000020")
-library(mapview)
-mapView(MORboundary, zcol="SFI")
-```
-
-* S01004285 is located west of Moray, near Kinloss. This neighbourhood has a high percentage of people that have moved into the last year (75%). The reason for the high flux in the area is likely to be due to the nearby Kinloss barracks (north of the datazone).
-
 # Conclusions 
-
 Social fragmentation does not associate with greater socio-economic deprivation. Spatial distribution of SFI is partly due to high student populations who tend to be privately renting, living alone, unmarried and have high movement within the last year, and reside in relatively affluent areas. Correlation between the indicators varies, with renting and movement within the last year, and unmarried and living alone, being highly correlated with each other respectively. There are some neighbourhoods with very high variation in SFI indicators. These datazones have been investigated and their high fragmentation is likely due to high high movement of people for occupation of education reasons. 
 
-# Update on relationship with deprivation (October 2018)
+### Update on relationship with deprivation (October 2018)
 
-We have now calcualted the social fragmentation index for 2001 as well. This allows us to now understand change in social fragmentation from 2001-2011. 
+We have now calculated the social fragmentation index for 2001 as well. This allows us to now understand change in social fragmentation from 2001-2011. 
 
 ```{r change, echo=FALSE, message=FALSE, warning=FALSE}
 SFI2001 <- readr::read_csv("2011data_2001geog/SFI2001.csv")
@@ -282,11 +261,11 @@ library(plotly)
 plot_ly(SFIchange, x = ~change, y = ~simd2012score, color = ~LAname,text = ~paste("Datazone: ", Datazone2001, '<br>Datazone name:', DZ_NAME))
 ```
 
-* There seems to be a positive relationship between deprivation and change in SFI from 2001-2011 in most local authorities. 
+* This plot shows a positive relationship between deprivation and change in SFI from 2001-2011 in most local authorities. 
 
-* The next steps are to build a model using deprivation and SFI at both time points. 
+* We are building a model to understand the relationship between deprivation and SFI at both time points. 
 
-# References 
+## References 
 
 Allardyce, J., Gilmour, H., Atkinson, J., Rapson, T., Bishop, J., & McCreadie, R. (2005). Social fragmentation, deprivation and urbanicity: Relation to first-admission rates for psychoses. British Journal of Psychiatry, 187(5), 401-406. doi:10.1192/bjp.187.5.401
 
