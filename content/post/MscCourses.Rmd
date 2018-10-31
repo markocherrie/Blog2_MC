@@ -1,5 +1,5 @@
 ---
-title: What are the optional courses like for UoE Geosciences Msc students?
+title: What are the optional courses like for UoE Geosciences MSc students?
 author: ~
 date: '2018-05-22'
 slug: MscCourses
