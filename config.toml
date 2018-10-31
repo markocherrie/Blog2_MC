@@ -8,7 +8,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown", "_files$", "_cache$"]
 math = true
 
 # Enable comments by entering your Disqus shortname
-disqusShortname = ""
+disqusShortname = "https-www-markcherrie-net"
 
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = "UA-104259166-1"

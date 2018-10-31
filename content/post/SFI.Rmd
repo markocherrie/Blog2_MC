@@ -33,8 +33,6 @@ The final table can be downloaded from the 'Additional and Commissioned Tables' 
 
 * Mobility in the previous year - CT_0210_2011.csv
 
-I have enquired whether the same data is available for the 2001 census at the same geography (i.e. 2001 datazones). 
-
 ## Data Manipulation
 
 The full code for the data manipulation is presented in supplementary material (S1). 
