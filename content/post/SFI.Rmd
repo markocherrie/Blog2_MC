@@ -53,6 +53,8 @@ Each indicator was derived in the following way:
 
 **Q1: The moved indicator includes people that moved within the same datazone, should these people be non-movers?**
 
+**A1: We reason that high levels of short range movement would seem to be an aspect of high population transience in general. **
+
 The number of people who corresponded to each indicator was then divided by the population denominator:
 
 * For the unmarried indicator this was: All people aged 16 and over
@@ -62,9 +64,13 @@ The number of people who corresponded to each indicator was then divided by the 
 
 **Q2: These are the denominators supplied with the data, are these the most appropriate to use?**
 
+**A2: These seem to be the most appropriate for each indicator. **
+
 The percentage of people in each datazone corresponding to each indicator condition was then standardised by taking a z-score. Finally the SFI was created by adding together the indicator z-scores and then standardising once more. 
 
 **Q3: Should we be taking the z-score of the summed z-scores?**
+
+**A3: This is not shown in the data spreadsheet but is written in the data manipulation code below. We believe that this is appropriate and aides interepretation.**
 
 The SFI was then visualised on a map for the four largest Scottish cities: Edinburgh, Glasgow, Aberdeen and Dundee. 
 
@@ -84,7 +90,7 @@ unmarried$unmarried<-unmarried$`All people aged 16 and over`-unmarried$Married
 # Get percentage of unmarried people
 unmarried$unmarriedPCT<-(unmarried$unmarried/unmarried$`All people aged 16 and over`)*100
 # And subset so we only have datazone and our derived variables
-unmarried<-subset(unmarried, select=c(Datazone2001, unmarried,unmarriedPCT))
+unmarried<-subset(unmarried, select=c(Datazone2001, unmarried,unmarriedPCT, `All people aged 16 and over`))
 
 ############### Derive living alone variable
 livingalone <- readr::read_csv("2011data_2001geog/livingalone.csv")
@@ -104,7 +110,7 @@ livingalone$livingalone<- livingalone$`Not living in a couple: Single (never mar
 # Get percentage of livingalone people
 livingalone$livingalonePCT<-(livingalone$livingalone/livingalone$`All people aged 16 and over in households`)*100
 # And subset so we only have datazone and our derived variables
-livingalone<-subset(livingalone, select=c(Datazone2001, livingalone,livingalonePCT))
+livingalone<-subset(livingalone, select=c(Datazone2001, livingalone,livingalonePCT, `All people aged 16 and over in households`))
 ############### Derive renting variable
 rented <- readr::read_csv("2011data_2001geog/rented.csv")
 # Get rid of Scotland row
@@ -119,12 +125,12 @@ rented[,c(6,7,9)] <- sapply(rented[c(6,7,9)],as.numeric)
 # Convert any NA to zero
 rented[is.na(rented)]<-0
 # Add those in rented accommodation  
-rented$rented <- rented$`Rented: Council (Local authority)` + rented$`Rented: Other social rented` + rented$`Rented: Private landlord or letting agency` + rented$`Rented: Other`
+rented$rented <- rented$`Rented: Private landlord or letting agency`
 # Note I've not included 'living rent free'
 # Get percentage of people with rented accommodation
 rented$rentedPCT<-(rented$rented/rented$`All households`)*100
 # And subset so we only have datazone and our derived variables
-rented<-subset(rented, select=c(Datazone2001, rented, rentedPCT))
+rented<-subset(rented, select=c(Datazone2001, rented, rentedPCT, `All households`))
 ############### Derive moved variable
 moved <- readr::read_csv("2011data_2001geog/moved.csv")
 # bit more formatting for this one, extract the column names
@@ -150,7 +156,7 @@ moved$moved<-moved$`All people`-moved$`Lived at same address one year ago`
 # Get percentage of people with rented accommodation
 moved$movedPCT<-(moved$moved/moved$`All people`)*100
 # And subset so we only have datazone and our derived variables
-moved<-subset(moved, select=c(Datazone2001, moved, movedPCT))
+moved<-subset(moved, select=c(Datazone2001, moved, movedPCT, `All people`))
 
 ############### Bring them all together
 socialfrag<-merge(unmarried, livingalone, by="Datazone2001")
@@ -190,7 +196,7 @@ boundary<-merge(boundary, LAnames, by.x="Council", by.y="LAcode")
 boundary[is.na(boundary$livingalone),]
 # yes: S01002296, S01003031, S01003319, S01003505, S01003548
 # Get rid of some redundant information
-boundary<-boundary[,-c(4:6, 21:29)]
+boundary<-boundary[,-c(4:6, 25:33)]
 ```
 
 
@@ -245,52 +251,113 @@ mapView(DUNboundary, zcol="SFI")
 
 * The key to the spatial distribution of SFI in the major cities is the location of the universities and student accommodation (Aberdeen- Hillhead Student Village, Edinburgh- Pollock Halls).
 
-## Is there a relationship with deprivation?
+## Is there a relationship with deprivation at a single point in time (2011)?
 
 * A scatterplot was create using SFI and SIMD score (higher score more deprived), with colour representing the local authority and marker size representing the population density. 
-
 * Double click on the local authority name on the right hand side will subset the data to just these data points.
 
 * Single clicking on another local authority name will add these data points to the graph
 
 ```{r scatter, echo=FALSE, message=FALSE, warning=FALSE}
-simd<-readr::read_csv("2011data_2001geog/simd.csv")
-boundarySIMD <- merge(boundary, simd, by.x="DZ_CODE", by.y="DataZone2001")
-boundarySIMD<-as.data.frame(boundarySIMD)
-boundarySIMD$density<-boundarySIMD$total_pop_2010/boundarySIMD$Shape_Area
-boundarySIMD$densityZ<-as.numeric(scale(boundarySIMD$density, center = TRUE, scale = TRUE))
+boundarySIMD<-readr::read_csv("SFI_SIMD_data.csv")
+#boundarySIMD <- merge(boundary, simd, by.x="DZ_CODE", by.y="DataZone2001")
+#boundarySIMD<-as.data.frame(boundarySIMD)
+#boundarySIMD$density<-boundarySIMD$total_pop_2010/boundarySIMD$Shape_Area
+#boundarySIMD$densityZ<-as.numeric(scale(boundarySIMD$density, center = TRUE, scale = TRUE))
+#boundarySIMD<-subset(boundarySIMD, select=c("LAname", "densityZ", "simd2012score", "SFI", "DZ_CODE", "DZ_NAME"))
 library(plotly)
 plot_ly(boundarySIMD, x = ~SFI, y = ~simd2012score, color = ~LAname, size= ~densityZ,text = ~paste("Datazone: ", DZ_CODE, '<br>Datazone name:', DZ_NAME))
 ```
 
-* If we look at Aberdeen first (double click on it), we see that there is a weak correlation between deprivation and SFI. Notice that some of the larger circles (higher population density) have low deprivation but higher social fragmentation.
+* The graphs show that there is no association between SFI and deprivation. From previous calculation of SFI using different criteria, we know that this association is sensitive to the way that the renting indicator is calculated (i.e. including people that are private renting, as in this defintion of SFI, only results if weak association with deprivation).
 
-* If we now add Aberdeenshire (single click on it), we see that there is a clearer linear correlation: in datazones with higher SFI there is higher deprivation. Notice that the range of values is shorter (-1.55 to 1.6) compared to Aberdeen (-1.64 to 3.91), which suggests that datazones with very high SFI are not necessarily higher in deprivation. 
 
-* If we now look at the Orkney Islands (double click on it), we can see another group, where there is no correlation between SFI and deprivation. 
+## Unpicking the SFI indicators
 
-* We can now cluster the rest of the local authorities into these three typologies: moderate-strong correlation (e.g. Aberdeenshire), low correlation (e.g. Aberdeen) and no correlation (e.g. Orkney Islands)
-
-  + Moderate-strong correlation: Aberdeenshire, Angus, Argyll and Bute, Clackmannanshire, Dumfries and Galloway, East Ayrshire, East Dunbartsonshire, East Lothian, East Renfrewshire, Falkirk, Highland, Invercylde, Midlothian, Moray, North Ayrshire, North Lanarkshire, Perth and Kinross, Renfrewshire, Scottish Borders, South Ayrshire, South Lanarkshire, West Dunbartonshire, West Lothian,  
-
-  + Low correlation: Aberdeen City, City of Edinburgh, Dundee City, Fife, Glasgow City, Stirling
-
-  + No correlation: Na h-Eileanan an Iar, Orkney Islands and Shetland
-
-* Moray is in the moderate-strong correlation group but has some outliers, namely S01004285, let's have a closer look.
-
-```{r moray, echo=FALSE, message=FALSE, warning=FALSE}
-# Dundee
-DUNboundary<-subset(boundary, Council=="S12000020")
-library(mapview)
-mapView(DUNboundary, zcol="SFI")
+```{r correlation, echo=FALSE, message=FALSE, warning=FALSE, include=F}
+library(ggplot2)
+library(plotly)
+library(reshape)
+library(Hmisc)
+boundaryCORR<-subset(boundary, select=grep("*Zscore", names(boundary)))
+boundaryCORR$geometry<-NULL
+y <- as.matrix(boundaryCORR)
+rt <- rcorr(y)
+mtlr <- melt(rt$r)
+mtlp <- melt(rt$P) 
+p.value <- mtlp$value
+gx <- ggplot(mtlr, aes(X1, X2, fill = value, label=p.value)) + geom_tile() + 
+  scale_fill_gradient(low = "cyan",  high = "red")
+ggplotly(gx)
 ```
 
-* If we click on S01004285 (East Kinloss: the small yellow polygon on the west near Kinloss), we can see that it has an exceptionally high percentage of people that have moved into the last year (75%), this gives a z-score of 8.23 and therefore skews this relatively low deprivation area to high social fragmentation. The reason for the high flux in the area is likely to be due to the nearby Kinloss barracks(north of the datazone).
+* The correlation between the indicators was calculated using Pearson's rank correlation coefficients. We found high correlation between rented and moved (r=0.77), and unmarried and living alone (r=0.95) indicators.
+
+* Variation in the indicator z-scores was then calculated the standard deviation of the z-scores for each datazone, and the results plotted against the SFI below.
+
+```{r variation, echo=FALSE, message=FALSE, warning=FALSE}
+#boundaryCORR<-subset(boundary, select=grep("SFI|LAname|DZ_CODE|*Zscore", names(boundary)))
+#boundaryCORR<-as.data.frame(boundaryCORR)
+#boundaryCORR$geometry<-NULL
+#write.csv(boundaryCORR, "indicatorCORR.csv", row.names=F)
+
+boundaryCORR<-read.csv("indicatorCORR.csv")
+#boundaryCORR$geometry<-NULL
+library(matrixStats)
+boundaryCORR$SD<-apply(boundaryCORR[2:5],1,sd)
+plot_ly(boundaryCORR, x=~SFI, y = ~SD, color = ~LAname,text = ~paste("Datazone: ", DZ_CODE))
+```
+
+* Let's take a closer look at the two outliers in Stirling (S01006151) and Moray (S01004285).
+
+```{r Stirling, echo=FALSE, message=FALSE, warning=FALSE}
+# Stirling
+STIboundary<-subset(boundary, Council=="S12000030")
+library(mapview)
+mapView(STIboundary, zcol="SFI")
+```
+
+* S01006151 is located to the north of the city of Stirling and just east of the Bridge of Allan and contains the the University of Stirling main campus. The indicator which causes the high standard deviation is movement in the last year, which is extremely high at 85% of people. 
+
+```{r moray, echo=FALSE, message=FALSE, warning=FALSE}
+# Moray
+MORboundary<-subset(boundary, Council=="S12000020")
+library(mapview)
+mapView(MORboundary, zcol="SFI")
+```
+
+* S01004285 is located west of Moray, near Kinloss. This neighbourhood has a high percentage of people that have moved into the last year (75%). The reason for the high flux in the area is likely to be due to the nearby Kinloss barracks (north of the datazone).
 
 # Conclusions 
 
-Social fragmentation tends to increase with greater socio-economic deprivation. There are no datazones where social fragmentation is low and deprivation is high, but a number, especially in the major cities, where social fragmentation is high and deprivation is low. This is partly due to high student populations who tend to be privately renting, living alone, unmarried and have high movement within the last year, and reside in relatively affluent areas. The movement in the last year indicator is not as strongly correlated with the other indicators (ranged from r=0.44-0.60 compared to r>0.84 between the others). This was highlighted when exploring outliers in the relationship between deprivation and SFI, whereby datazones near military bases had very high flux of residents but average values for the other indicators. 
+Social fragmentation does not associate with greater socio-economic deprivation. Spatial distribution of SFI is partly due to high student populations who tend to be privately renting, living alone, unmarried and have high movement within the last year, and reside in relatively affluent areas. Correlation between the indicators varies, with renting and movement within the last year, and unmarried and living alone highly correlated. There are some neighbourhoods with very high variation in SFI indicators. We highlighted datazones where this was the case, and noticed that high movement of people for occupation of education reasons was responsible. 
+
+# Update (October 2018)
+
+We have now calcualted the social fragmentation index for 2001 as well. This allows us to now understand change in social fragmentation from 2001-2011. 
+
+```{r change, echo=FALSE, message=FALSE, warning=FALSE}
+SFI2001 <- readr::read_csv("SFI2001.csv")
+SFI2011 <- readr::read_csv("SFI2011.csv")
+
+SFIchange<-merge(SFI2001, SFI2011, by="Datazone2001")
+SFIchange$change<-SFIchange$SFI- SFIchange$`SFI 2001`
+SFIchange<-subset(SFIchange, select=c("Datazone2001", "change"))
+
+SFIchange$Normalized = (SFIchange$change-min(SFIchange$change))/(max(SFIchange$change)-min(SFIchange$change))
+
+SFIchange$Normalized1000<-round(SFIchange$Normalized*1000, 0)
+
+SIMD2012<-read.csv("SFI_SIMD_data.csv")
+SFIchange<-merge(SFIchange, SIMD2012, by.x="Datazone2001", by.y="DZ_CODE")
+
+library(plotly)
+plot_ly(SFIchange, x = ~simd2012score, y = ~change, color = ~LAname,text = ~paste("Datazone: ", Datazone2001, '<br>Datazone name:', DZ_NAME))
+```
+
+* There seems to be a positive relationship between deprivation and change in SFI from 2001-2011 in most local authorities. 
+
+* The next steps are to build a model using deprivation and SFI at both time points. 
 
 # References 
 
@@ -356,7 +423,7 @@ rented[,c(6,7,9)] <- sapply(rented[c(6,7,9)],as.numeric)
 # Convert any NA to zero
 rented[is.na(rented)]<-0
 # Add those in rented accommodation  
-rented$rented <- rented$`Rented: Council (Local authority)` + rented$`Rented: Other social rented` + rented$`Rented: Private landlord or letting agency` + rented$`Rented: Other`
+rented$rented <- rented$`Rented: Private landlord or letting agency` 
 # Note I've not included 'living rent free'
 # Get percentage of people with rented accommodation
 rented$rentedPCT<-(rented$rented/rented$`All households`)*100
@@ -408,7 +475,13 @@ socialfrag$SFI<-scale(socialfrag$SFI, center = TRUE, scale = TRUE)
 socialfrag[,2:14] <- sapply(socialfrag[2:14], function(x) round(x, 2))
 # column names of socialfrag 
 names(socialfrag)
+# Create Deciles
+socialfrag$SFI_deciles<-gtools::quantcut(socialfrag$SFI, 10)
+socialfrag$SFI_decilesnum<-as.numeric(socialfrag$SFI_deciles)
+socialfrag<-subset(socialfrag, select=c("Datazone2001", "SFI_decilesnum"))
+write.csv(socialfrag, "SFI_datazone2001_deciles.csv", row.names=F)
 ```
+
 
   
   
