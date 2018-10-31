@@ -11,7 +11,7 @@
     <atom:link href="/tags/education/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>What are the optional courses like for UoE Geosciences Msc students?</title>
+      <title>What are the optional courses like for UoE Geosciences MSc students?</title>
       <link>/post/msccourses/</link>
       <pubDate>Tue, 22 May 2018 00:00:00 +0000</pubDate>
       
@@ -220,7 +220,7 @@ timevars&amp;lt;-subset(timevars, Name!=&amp;#39; Epidemiology for Public Health
 master_df&amp;lt;-merge(master_df, timevars, by=&amp;quot;Name&amp;quot;, all.x=T)
 master_df$Time&amp;lt;-NULL
 master_df$NotEntered&amp;lt;-NULL&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Finally, onto the fun part, querying the data and producing graphs to present answers to the questions I was interested in. First let’s see the percentage of courses that are 10 and 20 credits:&lt;/p&gt;
+&lt;p&gt;Finally, onto the fun part, querying the data and producing graphs to present answers to the questions I was interested in. First let’s see the proportion of courses that are 10 and 20 credits:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/MscCourses_files/figure-html/visualisation1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##    10.0    10.0    20.0    16.3    20.0    20.0&lt;/code&gt;&lt;/pre&gt;
@@ -239,6 +239,10 @@ master_df$NotEntered&amp;lt;-NULL&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 
 ## C0W100P0 C100W0P0 C40W60P0 C50W50P0 
 ##        2       18        2        5&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Two thirds of the courses are assessed via coursework only&lt;/li&gt;
+&lt;li&gt;The second most common option is a 50/50 split between coursework and a Written exam&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Finally, let’s have a look at the learning outcomes, which will give me an understanding of the topics and skills that the student will have experience of by the end:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/MscCourses_files/figure-html/visualisation4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;There is probably a lot more that can be done with the data but this is a just a taster. In addition, these are the optional course for Geosciences but this could be applied to other schools.&lt;/p&gt;

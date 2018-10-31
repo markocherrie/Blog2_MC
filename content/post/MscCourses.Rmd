@@ -222,12 +222,12 @@ master_df$Time<-NULL
 master_df$NotEntered<-NULL
 ```
 
-Finally, onto the fun part, querying the data and producing graphs to present answers to the questions I was interested in. First let's see the percentage of courses that are 10 and 20 credits:
+Finally, onto the fun part, querying the data and producing graphs to present answers to the questions I was interested in. First let's see the proportion of courses that are 10 and 20 credits:
 
 ```{r visualisation1, echo=F, message=FALSE, warning=FALSE}
 # credits
 library(ggplot2)
-ggplot(master_df) + stat_count(mapping = aes(x=SCQFcredits, y=..prop.., group=1))
+ggplot(master_df) + stat_count(mapping = aes(x=as.factor(SCQFcredits), y=..prop.., group=1))
 summary(master_df$SCQFcredits)
 ```
 
@@ -255,9 +255,11 @@ master_df$assessmentbreakdown<-paste0("C", master_df$Coursework,
                                       "P", master_df$PracticalExam)
 ggplot(master_df) + stat_count(mapping = aes(x=assessmentbreakdown, y=..prop.., group=1))
 table(master_df$assessmentbreakdown)
-# 22/33; 2/3 of the courses only assess via coursework
-# Notable other, would be to split 50/50 with Written exam
 ```
+
+* Two thirds of the courses are assessed via coursework only
+* The second most common option is a 50/50 split between coursework and a Written exam
+
 
 Finally, let's have a look at the learning outcomes, which will give me an understanding of the topics and skills that the student will have experience of by the end: 
 
