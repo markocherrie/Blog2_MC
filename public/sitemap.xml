@@ -5,7 +5,25 @@
     
     <url>
     
-      <loc>/post/dpi/</loc>
+      <loc>/publication/pathogen/</loc>
+      <lastmod>2018-08-28T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/publication/sdai/</loc>
+      <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/post/sfi/</loc>
       <lastmod>2018-07-09T00:00:00+00:00</lastmod>
     </url>
     
@@ -52,15 +70,6 @@
     
       <loc>/talk/gisr_display/</loc>
       <lastmod>2018-04-19T11:30:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/post/dpi/</loc>
-      <lastmod>2018-04-05T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -115,6 +124,15 @@
     
       <loc>/post/rshiny-weather-app/</loc>
       <lastmod>2017-12-22T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/post/greentraffic/</loc>
+      <lastmod>2017-11-10T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -294,17 +312,7 @@
     <url>
     
       <loc>/publication_types/2/</loc>
-      <lastmod>2018-05-29T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/tags/academia/</loc>
-      <lastmod>2018-07-09T00:00:00+00:00</lastmod>
+      <lastmod>2018-08-28T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -314,7 +322,7 @@
     <url>
     
       <loc>/tags/admin/</loc>
-      <lastmod>2018-07-09T00:00:00+00:00</lastmod>
+      <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -354,7 +362,7 @@
     <url>
     
       <loc>/tags/api/</loc>
-      <lastmod>2017-09-28T00:00:00+00:00</lastmod>
+      <lastmod>2017-11-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -393,6 +401,16 @@
     
     <url>
     
+      <loc>/tags/built-environment/</loc>
+      <lastmod>2017-11-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/categories/</loc>
       <priority>0</priority>
     </url>
@@ -404,6 +422,16 @@
     
       <loc>/tags/childhood/</loc>
       <lastmod>2017-09-08T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/cloud-vision/</loc>
+      <lastmod>2017-11-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -432,8 +460,28 @@
     
     <url>
     
+      <loc>/categories/data-analysis/</loc>
+      <lastmod>2017-11-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/categories/data-processing/</loc>
-      <lastmod>2018-04-26T00:00:00+00:00</lastmod>
+      <lastmod>2018-07-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/</loc>
+      <lastmod>2017-08-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -512,6 +560,16 @@
     
     <url>
     
+      <loc>/tags/google/</loc>
+      <lastmod>2017-11-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/green-space/</loc>
       <lastmod>2017-11-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -542,28 +600,8 @@
     
     <url>
     
-      <loc>/tags/images/</loc>
-      <lastmod>2018-07-09T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/tags/infectious-disease/</loc>
       <lastmod>2017-08-29T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/tags/inkscape/</loc>
-      <lastmod>2018-07-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -612,6 +650,16 @@
     
     <url>
     
+      <loc>/tags/macroeconomy/</loc>
+      <lastmod>2018-07-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/maps/</loc>
       <lastmod>2017-09-28T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -634,6 +682,16 @@
     
       <loc>/tags/medmi/</loc>
       <lastmod>2017-08-29T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/mental-health/</loc>
+      <lastmod>2018-07-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -722,8 +780,8 @@
     
     <url>
     
-      <loc>/tags/policy/</loc>
-      <lastmod>2018-03-30T00:00:00+00:00</lastmod>
+      <loc>/tags/places/</loc>
+      <lastmod>2017-11-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -732,8 +790,8 @@
     
     <url>
     
-      <loc>/tags/posters/</loc>
-      <lastmod>2018-07-09T00:00:00+00:00</lastmod>
+      <loc>/tags/policy/</loc>
+      <lastmod>2018-03-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -773,7 +831,7 @@
     <url>
     
       <loc>/publication_types/</loc>
-      <lastmod>2018-05-29T00:00:00+00:00</lastmod>
+      <lastmod>2018-08-28T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -783,7 +841,17 @@
     <url>
     
       <loc>/tags/r/</loc>
-      <lastmod>2018-04-26T00:00:00+00:00</lastmod>
+      <lastmod>2018-07-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/recession/</loc>
+      <lastmod>2018-07-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -803,17 +871,7 @@
     <url>
     
       <loc>/categories/research-tips/</loc>
-      <lastmod>2018-07-09T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/</loc>
-      <lastmod>2017-08-29T00:00:00+00:00</lastmod>
+      <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -854,6 +912,16 @@
     
       <loc>/tags/seasonality/</loc>
       <lastmod>2017-08-29T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/social-capital/</loc>
+      <lastmod>2018-07-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

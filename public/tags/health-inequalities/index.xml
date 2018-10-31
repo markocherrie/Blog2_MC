@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Health Inequalities on Researcher</title>
+    <title>Health Inequalities on Data Scientist</title>
     <link>/tags/health-inequalities/</link>
-    <description>Recent content in Health Inequalities on Researcher</description>
+    <description>Recent content in Health Inequalities on Data Scientist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Mark Cherrie</copyright>
@@ -16,7 +16,14 @@
       <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/project/webmap/</guid>
-      <description></description>
+      <description>&lt;p&gt;I led the re-development of the CRESH &lt;a href=&#34;https://creshmap.com/&#34; target=&#34;_blank&#34;&gt;webmap&lt;/a&gt;, which was originally launched in 2015. This app was designed to allow users to map tobacco and alcohol outlet density, and related health outcomes for small areas in Scotland (i.e. datazones, which represent around 5,000 residents).&lt;/p&gt;
+
+&lt;p&gt;There is increasing evidence which shows that the density of tobacco and alcohol retailers has an effect on both smoking/drinking behaviours but also the associated morbidity/mortality. For example those living in areas with the highest density of retailers have double the alcohol-related death rate; and adolescents living in areas with the highest density of tobacco retailers are 50% more likely to smoke.&lt;/p&gt;
+
+&lt;p&gt;The alcohol retailer data was collected from representatives of the 32 local authorities, and required months of cleaning to have it ready for the webmap. In the redevelopment we tried to make the information accessible and clearly presented. In addition, we really pushed to make the data easy to download, to empower local communities so that they are more involved in the decisions on the built environment surrounding their homes.&lt;/p&gt;
+
+&lt;p&gt;The CRESH webmap was created in partnership with Alcohol Focus Scotland (AFS) and Action on Smoking and Health Scotland (ASH Scotland). The original research was funded by the Scottish Collaboration for Public Health Research and Policy and we have received funding from the Economic and Social Research Council (ESRC) to publicise our research and make it more accessible to the public and policy makers.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

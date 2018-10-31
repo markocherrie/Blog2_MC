@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Researcher</title>
+    <title>Categories on Data Scientist</title>
     <link>/categories/</link>
-    <description>Recent content in Categories on Researcher</description>
+    <description>Recent content in Categories on Data Scientist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Mark Cherrie</copyright>
     <atom:link href="/categories/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Data Analysis</title>
+      <link>/categories/data-analysis/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/data-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Data Processing</title>
       <link>/categories/data-processing/</link>
-      <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/data-processing/</guid>
       <description></description>
@@ -30,7 +39,7 @@
     <item>
       <title>Research Tips</title>
       <link>/categories/research-tips/</link>
-      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/categories/research-tips/</guid>
       <description></description>

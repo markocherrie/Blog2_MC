@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Researcher</title>
+    <title>Tags on Data Scientist</title>
     <link>/tags/</link>
-    <description>Recent content in Tags on Researcher</description>
+    <description>Recent content in Tags on Data Scientist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Mark Cherrie</copyright>
@@ -21,18 +21,9 @@
     </item>
     
     <item>
-      <title>Academia</title>
-      <link>/tags/academia/</link>
-      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/academia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Admin</title>
       <link>/tags/admin/</link>
-      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/admin/</guid>
       <description></description>
@@ -68,7 +59,7 @@
     <item>
       <title>Api</title>
       <link>/tags/api/</link>
-      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/api/</guid>
       <description></description>
@@ -102,11 +93,29 @@
     </item>
     
     <item>
+      <title>Built Environment</title>
+      <link>/tags/built-environment/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/built-environment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Childhood</title>
       <link>/tags/childhood/</link>
       <pubDate>Fri, 08 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/childhood/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cloud Vision</title>
+      <link>/tags/cloud-vision/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/cloud-vision/</guid>
       <description></description>
     </item>
     
@@ -134,15 +143,6 @@
       <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/deprivation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Devolution</title>
-      <link>/tags/devolution/</link>
-      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/devolution/</guid>
       <description></description>
     </item>
     

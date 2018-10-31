@@ -1,11 +1,11 @@
 ---
-title: Social Fragmentation Index
-author: ~
+title: "Social Fragmentation Index"
+author: "Mark Cherrie"
 date: '2018-07-09'
+draft: no
 slug: sfi
 categories: ["Data Processing"]
-tags: ["macroeconomy", "recession","mental health", "social capital", "environment", "R"]
-draft: no
+tags: ["R", "macroeconomy", "recession", "mental health", "social capital", "R"]
 ---
 
 ![](images/economy-recession.jpg)
@@ -259,7 +259,7 @@ mapView(DUNboundary, zcol="SFI")
 * Single clicking on another local authority name will add these data points to the graph
 
 ```{r scatter, echo=FALSE, message=FALSE, warning=FALSE}
-boundarySIMD<-readr::read_csv("SFI_SIMD_data.csv")
+boundarySIMD<-readr::read_csv("2011data_2001geog/SFI_SIMD_data.csv")
 #boundarySIMD <- merge(boundary, simd, by.x="DZ_CODE", by.y="DataZone2001")
 #boundarySIMD<-as.data.frame(boundarySIMD)
 #boundarySIMD$density<-boundarySIMD$total_pop_2010/boundarySIMD$Shape_Area
@@ -301,7 +301,7 @@ ggplotly(gx)
 #boundaryCORR$geometry<-NULL
 #write.csv(boundaryCORR, "indicatorCORR.csv", row.names=F)
 
-boundaryCORR<-read.csv("indicatorCORR.csv")
+boundaryCORR<-read.csv("2011data_2001geog/indicatorCORR.csv")
 #boundaryCORR$geometry<-NULL
 library(matrixStats)
 boundaryCORR$SD<-apply(boundaryCORR[2:5],1,sd)
@@ -337,8 +337,8 @@ Social fragmentation does not associate with greater socio-economic deprivation.
 We have now calcualted the social fragmentation index for 2001 as well. This allows us to now understand change in social fragmentation from 2001-2011. 
 
 ```{r change, echo=FALSE, message=FALSE, warning=FALSE}
-SFI2001 <- readr::read_csv("SFI2001.csv")
-SFI2011 <- readr::read_csv("SFI2011.csv")
+SFI2001 <- readr::read_csv("2011data_2001geog/SFI2001.csv")
+SFI2011 <- readr::read_csv("2011data_2001geog/SFI2011.csv")
 
 SFIchange<-merge(SFI2001, SFI2011, by="Datazone2001")
 SFIchange$change<-SFIchange$SFI- SFIchange$`SFI 2001`
@@ -348,7 +348,7 @@ SFIchange$Normalized = (SFIchange$change-min(SFIchange$change))/(max(SFIchange$c
 
 SFIchange$Normalized1000<-round(SFIchange$Normalized*1000, 0)
 
-SIMD2012<-read.csv("SFI_SIMD_data.csv")
+SIMD2012<-read.csv("2011data_2001geog/SFI_SIMD_data.csv")
 SFIchange<-merge(SFIchange, SIMD2012, by.x="Datazone2001", by.y="DZ_CODE")
 
 library(plotly)

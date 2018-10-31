@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2 on Researcher</title>
+    <title>2 on Data Scientist</title>
     <link>/publication_types/2/</link>
-    <description>Recent content in 2 on Researcher</description>
+    <description>Recent content in 2 on Data Scientist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Mark Cherrie</copyright>
-    <lastBuildDate>Tue, 29 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Aug 2018 00:00:00 +0000</lastBuildDate>
     <atom:link href="/publication_types/2/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Pathogen seasonality and links with weather in England and Wales: a big data time series analysis</title>
+      <link>/publication/pathogen/</link>
+      <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/pathogen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Changing labour market conditions during the ‘great recession’ and mental health in Scotland 2007–2011: an example using the Scottish Longitudinal Study and data for local areas in Scotland</title>
+      <link>/publication/sdai/</link>
+      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/sdai/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Association between Serum 25-Hydroxy Vitamin D Levels and the Prevalence of Adult-Onset Asthma</title>

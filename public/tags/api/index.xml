@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Api on Researcher</title>
+    <title>Api on Data Scientist</title>
     <link>/tags/api/</link>
-    <description>Recent content in Api on Researcher</description>
+    <description>Recent content in Api on Data Scientist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Mark Cherrie</copyright>
-    <lastBuildDate>Thu, 28 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Nov 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/api/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Mapping Green Space and Traffic in Glasgow</title>
+      <link>/post/greentraffic/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/greentraffic/</guid>
+      <description>&lt;p&gt;How can we estimate exposure to the natural environment day-to-day?&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Mapzen Isochrone Maps</title>
