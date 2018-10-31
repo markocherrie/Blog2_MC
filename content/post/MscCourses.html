@@ -1,5 +1,5 @@
 ---
-title: What are the optional courses like for UoE Geosciences MSc students?
+title: What are the optional courses like for UoE MSc students?
 author: ~
 date: '2018-05-22'
 slug: MscCourses
@@ -10,7 +10,7 @@ draft: no
 
 
 
-<p>The aim was to understand more about the optional courses available for Geosciences MSc students. This meant building a dataframe that contained the interesting bits of information available on the University of Edinburgh website so that I could query it to find out answers to questions such as: How many 10 credit courses are available? Which degree cluster do the courses below to and where do they overlap? What kind of topics/skills are going to be taught? and so on.</p>
+<p>The aim was to understand more about the optional courses available for MSc students in the school of Geosciences. This meant building a dataframe that contained the interesting bits of information available on the University of Edinburgh website so that I could query it to find out answers to questions such as: How many 10 credit courses are available? Which degree cluster do the courses belong to and is there any overlap? What kind of topics/skills are going to be taught? and so on.</p>
 <p>The first thing to do was to download the data from the University of Edinburgh website. Here is the code, which first builds the URL’s that we need and then scrapes the relevant info one-by-one into a dataframe:</p>
 <pre class="r"><code>############### DATA COLLECTION #########################
 
@@ -203,7 +203,7 @@ Time$Name&lt;-master_df$Name[i]
 result[[i]] &lt;- Time
 }
 timevars = do.call(rbind.fill, result)
-timevars = timevars[1:123,]
+timevars = timevars[!is.na(timevars$text),]
 timevars&lt;-timevars %&gt;%
   spread(text, num)
 timevars[is.na(timevars)]&lt;-0
@@ -239,4 +239,4 @@ master_df$NotEntered&lt;-NULL</code></pre>
 </ul>
 <p>Finally, let’s have a look at the learning outcomes, which will give me an understanding of the topics and skills that the student will have experience of by the end:</p>
 <p><img src="/post/MscCourses_files/figure-html/visualisation4-1.png" width="672" /></p>
-<p>There is probably a lot more that can be done with the data but this is a just a taster. In addition, these are the optional course for Geosciences but this could be applied to other schools.</p>
+<p>There is probably a lot more that can be done with the data but this is a just a taster. In addition, this method could be applied to other schools (not just geosciences).</p>

@@ -1,5 +1,5 @@
 ---
-title: What are the optional courses like for UoE Geosciences MSc students?
+title: What are the optional courses like for UoE MSc students?
 author: ~
 date: '2018-05-22'
 slug: MscCourses
@@ -7,7 +7,7 @@ categories: ["Data Processing"]
 tags: ["R", "Web Scraping", "Education", "Admin"]
 draft: no
 ---
-The aim was to understand more about the optional courses available for Geosciences MSc students. This meant building a dataframe that contained the interesting bits of information available on the University of Edinburgh website so that I could query it to find out answers to questions such as: How many 10 credit courses are available? Which degree cluster do the courses below to and where do they overlap? What kind of topics/skills are going to be taught? and so on. 
+The aim was to understand more about the optional courses available for MSc students in the school of Geosciences. This meant building a dataframe that contained the interesting bits of information available on the University of Edinburgh website so that I could query it to find out answers to questions such as: How many 10 credit courses are available? Which degree cluster do the courses belong to and is there any overlap? What kind of topics/skills are going to be taught? and so on. 
 
 The first thing to do was to download the data from the University of Edinburgh website. Here is the code, which first builds the URL's that we need and then scrapes the relevant info one-by-one into a dataframe:
 
@@ -209,7 +209,7 @@ Time$Name<-master_df$Name[i]
 result[[i]] <- Time
 }
 timevars = do.call(rbind.fill, result)
-timevars = timevars[1:123,]
+timevars = timevars[!is.na(timevars$text),]
 timevars<-timevars %>%
   spread(text, num)
 timevars[is.na(timevars)]<-0
@@ -290,7 +290,7 @@ wordcloud(text_corpus_clean, min.freq = 2, random.order = FALSE,
           colors=brewer.pal(8, "Dark2"))
 ```
 
-There is probably a lot more that can be done with the data but this is a just a taster. In addition, these are the optional course for Geosciences but this could be applied to other schools.
+There is probably a lot more that can be done with the data but this is a just a taster. In addition, this method could be applied to other schools (not just geosciences).
 
 
 

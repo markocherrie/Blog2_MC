@@ -162,12 +162,12 @@
     </item>
     
     <item>
-      <title>What are the optional courses like for UoE Geosciences MSc students?</title>
+      <title>What are the optional courses like for UoE MSc students?</title>
       <link>/post/msccourses/</link>
       <pubDate>Tue, 22 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/msccourses/</guid>
-      <description>&lt;p&gt;The aim was to understand more about the optional courses available for Geosciences MSc students. This meant building a dataframe that contained the interesting bits of information available on the University of Edinburgh website so that I could query it to find out answers to questions such as: How many 10 credit courses are available? Which degree cluster do the courses below to and where do they overlap? What kind of topics/skills are going to be taught? and so on.&lt;/p&gt;
+      <description>&lt;p&gt;The aim was to understand more about the optional courses available for MSc students in the school of Geosciences. This meant building a dataframe that contained the interesting bits of information available on the University of Edinburgh website so that I could query it to find out answers to questions such as: How many 10 credit courses are available? Which degree cluster do the courses belong to and is there any overlap? What kind of topics/skills are going to be taught? and so on.&lt;/p&gt;
 &lt;p&gt;The first thing to do was to download the data from the University of Edinburgh website. Here is the code, which first builds the URL’s that we need and then scrapes the relevant info one-by-one into a dataframe:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;############### DATA COLLECTION #########################
 
@@ -360,7 +360,7 @@ Time$Name&amp;lt;-master_df$Name[i]
 result[[i]] &amp;lt;- Time
 }
 timevars = do.call(rbind.fill, result)
-timevars = timevars[1:123,]
+timevars = timevars[!is.na(timevars$text),]
 timevars&amp;lt;-timevars %&amp;gt;%
   spread(text, num)
 timevars[is.na(timevars)]&amp;lt;-0
@@ -396,7 +396,7 @@ master_df$NotEntered&amp;lt;-NULL&lt;/code&gt;&lt;/pre&gt;
 &lt;/ul&gt;
 &lt;p&gt;Finally, let’s have a look at the learning outcomes, which will give me an understanding of the topics and skills that the student will have experience of by the end:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/MscCourses_files/figure-html/visualisation4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;There is probably a lot more that can be done with the data but this is a just a taster. In addition, these are the optional course for Geosciences but this could be applied to other schools.&lt;/p&gt;
+&lt;p&gt;There is probably a lot more that can be done with the data but this is a just a taster. In addition, this method could be applied to other schools (not just geosciences).&lt;/p&gt;
 </description>
     </item>
     
