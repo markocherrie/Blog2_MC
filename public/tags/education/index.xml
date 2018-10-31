@@ -7,13 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018 Mark Cherrie</copyright>
-    <lastBuildDate>Fri, 22 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 May 2018 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/education/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>What are the optional courses like for Edinburgh University Msc students?</title>
+      <title>What are the optional courses like for UoE Geosciences Msc students?</title>
       <link>/post/msccourses/</link>
-      <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 22 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/msccourses/</guid>
       <description>&lt;p&gt;The aim was to understand more about the optional courses available for Geosciences MSc students. This meant building a dataframe that contained the interesting bits of information available on the University of Edinburgh website so that I could query it to find out answers to questions such as: How many 10 credit courses are available? Which degree cluster do the courses below to and where do they overlap? What kind of topics/skills are going to be taught? and so on.&lt;/p&gt;

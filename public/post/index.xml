@@ -126,6 +126,40 @@
     </item>
     
     <item>
+      <title>What are the optional courses like for UoE Geosciences Msc students?</title>
+      <link>/post/msccourses/</link>
+      <pubDate>Tue, 22 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/msccourses/</guid>
+      <description>&lt;p&gt;The aim was to understand more about the optional courses available for Geosciences MSc students. This meant building a dataframe that contained the interesting bits of information available on the University of Edinburgh website so that I could query it to find out answers to questions such as: How many 10 credit courses are available? Which degree cluster do the courses below to and where do they overlap? What kind of topics/skills are going to be taught? and so on.&lt;/p&gt;
+&lt;p&gt;The first thing to do was to download the data from the University of Edinburgh website. Here is the code, which first builds the URL’s that we need and then scrapes the relevant info one-by-one into a dataframe:&lt;/p&gt;
+&lt;p&gt;Next step was to apply some cleaning, this was a iterative process of identifying issues with the output above and applying correction. Have a look at the code comments for more details:&lt;/p&gt;
+&lt;p&gt;Finally, onto the fun part, querying the data and producing graphs to present answers to the questions I was interested in. First let’s see the percentage of courses that are 10 and 20 credits:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/MscCourses_files/figure-html/visualisation1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    10.0    10.0    20.0    16.3    20.0    20.0&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;So we can see that 1/3 of the optional courses are currently 10 credits&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Next, I want to see how they relate to the degree clusters:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/MscCourses_files/figure-html/visualisation2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;EOGM has the most unique master courses (10)&lt;/li&gt;
+&lt;li&gt;EOGM and GIS share 11 courses&lt;/li&gt;
+&lt;li&gt;There is only one course listed in all of the masters (Principles and Practice of Remote Sensing (PGGE11233))&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Next, I’m interested in the assessment breakdown (coursework, written exam and practical exam):&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/MscCourses_files/figure-html/visualisation3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## C0W100P0 C100W0P0 C40W60P0 C50W50P0 
+##        2       18        2        5&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Finally, let’s have a look at the learning outcomes, which will give me an understanding of the topics and skills that the student will have experience of by the end:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/MscCourses_files/figure-html/visualisation4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;There is probably a lot more that can be done with the data but this is a just a taster. In addition, these are the optional course for Geosciences but this could be applied to other schools.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Google Earth Engine: NDVI in Scotland 2001-2017</title>
       <link>/post/gee/</link>
       <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
@@ -678,40 +712,6 @@ shinyServer(function(input, output) {
 &lt;p&gt;Here is the final app:&lt;/p&gt;
 &lt;iframe src=&#34;https://thebest.shinyapps.io/shortstowork/?showcase=0&#34; width=&#34;672&#34; height=&#34;600px&#34;&gt;
 &lt;/iframe&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>What are the optional courses like for Edinburgh University Msc students?</title>
-      <link>/post/msccourses/</link>
-      <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/msccourses/</guid>
-      <description>&lt;p&gt;The aim was to understand more about the optional courses available for Geosciences MSc students. This meant building a dataframe that contained the interesting bits of information available on the University of Edinburgh website so that I could query it to find out answers to questions such as: How many 10 credit courses are available? Which degree cluster do the courses below to and where do they overlap? What kind of topics/skills are going to be taught? and so on.&lt;/p&gt;
-&lt;p&gt;The first thing to do was to download the data from the University of Edinburgh website. Here is the code, which first builds the URL’s that we need and then scrapes the relevant info one-by-one into a dataframe:&lt;/p&gt;
-&lt;p&gt;Next step was to apply some cleaning, this was a iterative process of identifying issues with the output above and applying correction. Have a look at the code comments for more details:&lt;/p&gt;
-&lt;p&gt;Finally, onto the fun part, querying the data and producing graphs to present answers to the questions I was interested in. First let’s see the percentage of courses that are 10 and 20 credits:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/MscCourses_files/figure-html/visualisation1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    10.0    10.0    20.0    16.3    20.0    20.0&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;So we can see that 1/3 of the optional courses are currently 10 credits&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Next, I want to see how they relate to the degree clusters:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/MscCourses_files/figure-html/visualisation2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;EOGM has the most unique master courses (10)&lt;/li&gt;
-&lt;li&gt;EOGM and GIS share 11 courses&lt;/li&gt;
-&lt;li&gt;There is only one course listed in all of the masters (Principles and Practice of Remote Sensing (PGGE11233))&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Next, I’m interested in the assessment breakdown (coursework, written exam and practical exam):&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/MscCourses_files/figure-html/visualisation3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## 
-## C0W100P0 C100W0P0 C40W60P0 C50W50P0 
-##        2       18        2        5&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Finally, let’s have a look at the learning outcomes, which will give me an understanding of the topics and skills that the student will have experience of by the end:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/MscCourses_files/figure-html/visualisation4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;There is probably a lot more that can be done with the data but this is a just a taster. In addition, these are the optional course for Geosciences but this could be applied to other schools.&lt;/p&gt;
 </description>
     </item>
     
