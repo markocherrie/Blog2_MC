@@ -51,10 +51,6 @@ Each indicator was derived in the following way:
 * For the private renting indicator, we added together the number of people in the rented categories, which included Council (Local authority), Other social rented, Private landlord or letting agency and Other. 
 * For the moved indicator, we subtracted all people in the datazone from those that lived at the same address one year ago. 
 
-**Q1: The moved indicator includes people that moved within the same datazone, should these people be non-movers?**
-
-**A1: We reason that high levels of short range movement would seem to be an aspect of high population transience in general. **
-
 The number of people who corresponded to each indicator was then divided by the population denominator:
 
 * For the unmarried indicator this was: All people aged 16 and over
@@ -62,15 +58,7 @@ The number of people who corresponded to each indicator was then divided by the 
 * For the private rented indicator this was: All households
 * For the moved indicators this was: All people
 
-**Q2: These are the denominators supplied with the data, are these the most appropriate to use?**
-
-**A2: These seem to be the most appropriate for each indicator. **
-
 The percentage of people in each datazone corresponding to each indicator condition was then standardised by taking a z-score. Finally the SFI was created by adding together the indicator z-scores and then standardising once more. 
-
-**Q3: Should we be taking the z-score of the summed z-scores?**
-
-**A3: This is not shown in the data spreadsheet but is written in the data manipulation code below. We believe that this is appropriate and aides interepretation.**
 
 The SFI was then visualised on a map for the four largest Scottish cities: Edinburgh, Glasgow, Aberdeen and Dundee. 
 
@@ -178,9 +166,6 @@ socialfrag[,2:14] <- sapply(socialfrag[2:14], function(x) round(x, 2))
 # column names of socialfrag 
 names(socialfrag)
 ```
-
-## What is the spatial distribution in the main cities?
-
 ```{r plot, echo=FALSE, message=FALSE, warning=FALSE}
 # plot options
 mapview::mapviewOptions(basemaps = c("OpenStreetMap"))
@@ -198,58 +183,6 @@ boundary[is.na(boundary$livingalone),]
 # Get rid of some redundant information
 boundary<-boundary[,-c(4:6, 25:33)]
 ```
-
-
-* In Edinburgh the highest SFI is recorded in S01002028, which is just north-east of Newington
-
-* SFI is also higher in the Old town, Marchmont and Tollcross. 
-
-* The highest areas of SFI are clustered around the Meadows datazone (S01002066).
-
-```{r edinburgh, echo=FALSE, message=FALSE, warning=FALSE}
-# Edinburgh
-EDIboundary<-subset(boundary, Council=="S12000036")
-library(mapview)
-mapView(EDIboundary, zcol="SFI")
-```
-
-
-* In Glasgow the highest SFI is recorded in S01003368, which is just east of the Merchant City
-
-* SFI is also higher in central Glasgow but also in Townhead, Kelvinhaugh, East Park and Hillhead.
-
-```{r glasgow, echo=FALSE, message=FALSE, warning=FALSE}
-# Glasgow
-GLAboundary<-subset(boundary, Council=="S12000046")
-library(mapview)
-mapView(GLAboundary, zcol="SFI")
-```
-
-
-* In Aberdeen the highest SFI is recorded in S01000129, which is just north-west of the City Centre
-
-* SFI is also higher going northwards, with the Donside village being another high area of SFI
-
-
-```{r aberdeen, echo=FALSE, message=FALSE, warning=FALSE}
-# Aberdeen
-ABEboundary<-subset(boundary, Council=="S12000033")
-library(mapview)
-mapView(ABEboundary, zcol="SFI")
-```
-
-
-* In Dundee the highest SFI is recorded in S01001095, which is just south west of the city centre
-
-```{r dundee, echo=FALSE, message=FALSE, warning=FALSE}
-# Dundee
-DUNboundary<-subset(boundary, Council=="S12000042")
-library(mapview)
-mapView(DUNboundary, zcol="SFI")
-```
-
-
-* The key to the spatial distribution of SFI in the major cities is the location of the universities and student accommodation (Aberdeen- Hillhead Student Village, Edinburgh- Pollock Halls).
 
 ## Is there a relationship with deprivation at a single point in time (2011)?
 
@@ -332,7 +265,7 @@ mapView(MORboundary, zcol="SFI")
 
 Social fragmentation does not associate with greater socio-economic deprivation. Spatial distribution of SFI is partly due to high student populations who tend to be privately renting, living alone, unmarried and have high movement within the last year, and reside in relatively affluent areas. Correlation between the indicators varies, with renting and movement within the last year, and unmarried and living alone highly correlated. There are some neighbourhoods with very high variation in SFI indicators. We highlighted datazones where this was the case, and noticed that high movement of people for occupation of education reasons was responsible. 
 
-# Update (October 2018)
+# Update on relationship with deprivation (October 2018)
 
 We have now calcualted the social fragmentation index for 2001 as well. This allows us to now understand change in social fragmentation from 2001-2011. 
 
@@ -352,7 +285,7 @@ SIMD2012<-read.csv("2011data_2001geog/SFI_SIMD_data.csv")
 SFIchange<-merge(SFIchange, SIMD2012, by.x="Datazone2001", by.y="DZ_CODE")
 
 library(plotly)
-plot_ly(SFIchange, x = ~simd2012score, y = ~change, color = ~LAname,text = ~paste("Datazone: ", Datazone2001, '<br>Datazone name:', DZ_NAME))
+plot_ly(SFIchange, x = ~change, y = ~simd2012score, color = ~LAname,text = ~paste("Datazone: ", Datazone2001, '<br>Datazone name:', DZ_NAME))
 ```
 
 * There seems to be a positive relationship between deprivation and change in SFI from 2001-2011 in most local authorities. 
