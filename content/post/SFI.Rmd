@@ -35,8 +35,6 @@ The final table can be downloaded from the 'Additional and Commissioned Tables' 
 
 ## Data Manipulation
 
-The full code for the data manipulation is presented in supplementary material (S1). 
-
 Each CSV file was read into R and a series of generic cleaning procedures were performed (some extra formatting was required for the moves in the last year indicator):
 
 * Take out Scotland row
@@ -59,8 +57,6 @@ The number of people who corresponded to each indicator was then divided by the 
 * For the moved indicators this was: All people
 
 The percentage of people in each datazone corresponding to each indicator condition was then standardised by taking a z-score. Finally the SFI was created by adding together the indicator z-scores and then standardising once more. 
-
-The SFI was then visualised on a map for the four largest Scottish cities: Edinburgh, Glasgow, Aberdeen and Dundee. 
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 ############### Derive unmarried variable
@@ -166,7 +162,7 @@ socialfrag[,2:14] <- sapply(socialfrag[2:14], function(x) round(x, 2))
 # column names of socialfrag 
 names(socialfrag)
 ```
-```{r plot, echo=FALSE, message=FALSE, warning=FALSE}
+```{r plot, message=FALSE, warning=FALSE, include=FALSE}
 # plot options
 mapview::mapviewOptions(basemaps = c("OpenStreetMap"))
 # look up table for LA's
@@ -299,123 +295,3 @@ Allardyce, J., Gilmour, H., Atkinson, J., Rapson, T., Bishop, J., & McCreadie, R
 Congdon, P (1996) The incidence of suicide and parasuicide: a small area study, Urban Studies, 33, 137 – 158.
 
 Curtis, S., Copeland, A., Fagg, J., Congdon, P., Almog., M, and Fitzpatrick, J. (2006) The ecological relationship between deprivation, social isolation and rates of hospital admission for acute psychiatric care; a comparison of London and New York City. Health & Place, 12,1, 19-37 
-
-# Supplementary Material
-
-## S1: Data Manipulation
-
-```{r message=FALSE, warning=FALSE}
-
-############### Derive unmarried variable
-unmarried <- readr::read_csv("2011data_2001geog/unmarried.csv")
-# Get rid of Scotland row
-unmarried <- unmarried[-1,]
-# rename first column datazone2001
-colnames(unmarried)[1] <- "Datazone2001" 
-# column names of  table
-names(unmarried)
-# Convert any NA to zero
-unmarried[is.na(unmarried)]<-0
-# Subtract the Married people from total people to get number of unmarried people
-unmarried$unmarried<-unmarried$`All people aged 16 and over`-unmarried$Married
-# Get percentage of unmarried people
-unmarried$unmarriedPCT<-(unmarried$unmarried/unmarried$`All people aged 16 and over`)*100
-# And subset so we only have datazone and our derived variables
-unmarried<-subset(unmarried, select=c(Datazone2001, unmarried,unmarriedPCT))
-
-############### Derive living alone variable
-livingalone <- readr::read_csv("2011data_2001geog/livingalone.csv")
-# Get rid of Scotland row
-livingalone <- livingalone[-1,]
-# rename first column datazone2001
-colnames(livingalone)[1] <- "Datazone2001" 
-# look at table
-names(livingalone)
-# Note living in a couple (married or in ...) is a character var due to "-"
-# Change all -'s to NA by converting to numeric
-livingalone$`Not living in a couple: Married or in a registered same-sex civil partnership` <- as.numeric(livingalone$`Not living in a couple: Married or in a registered same-sex civil partnership`)
-# Convert any NA to zero
-livingalone[is.na(livingalone)]<-0
-# Add the not living together columns
-livingalone$livingalone<- livingalone$`Not living in a couple: Single (never married or never registered a same-sex civil partnership)` + livingalone$`Not living in a couple: Married or in a registered same-sex civil partnership` +  livingalone$`Not living in a couple: Separated (but still legally married or still legally in a same-sex civil partnership)` + livingalone$`Not living in a couple: Divorced or formerly in a same-sex civil partnership which is now legally dissolved` + livingalone$`Not living in a couple: Widowed or surviving partner from a same-sex civil partnership`
-# Get percentage of livingalone people
-livingalone$livingalonePCT<-(livingalone$livingalone/livingalone$`All people aged 16 and over in households`)*100
-# And subset so we only have datazone and our derived variables
-livingalone<-subset(livingalone, select=c(Datazone2001, livingalone,livingalonePCT))
-############### Derive renting variable
-rented <- readr::read_csv("2011data_2001geog/rented.csv")
-# Get rid of Scotland row
-rented <- rented[-1,]
-# rename first column datazone2001
-colnames(rented)[1] <- "Datazone2001" 
-# look at table
-names(rented)
-# Note Rented: Council (local authority) & Rented:Other social rented & Rented: Other are a character vars due to "-"
-# Change all -'s to NA then convert to numeric
-rented[,c(6,7,9)] <- sapply(rented[c(6,7,9)],as.numeric)
-# Convert any NA to zero
-rented[is.na(rented)]<-0
-# Add those in rented accommodation  
-rented$rented <- rented$`Rented: Private landlord or letting agency` 
-# Note I've not included 'living rent free'
-# Get percentage of people with rented accommodation
-rented$rentedPCT<-(rented$rented/rented$`All households`)*100
-# And subset so we only have datazone and our derived variables
-rented<-subset(rented, select=c(Datazone2001, rented, rentedPCT))
-############### Derive moved variable
-moved <- readr::read_csv("2011data_2001geog/moved.csv")
-# bit more formatting for this one, extract the column names
-movedcolnames<-t(moved[4,c(3:6)])
-movedcolnames2<-t(moved[5,c(7:12)])
-movedcolnames3<-c("Datazone2001", rbind(movedcolnames, movedcolnames2))
-# Get rid of the empty cells
-moved <- moved[-c(1:14),-c(2)]
-# append the colnames
-colnames(moved)<-movedcolnames3
-# We only need total people moved, not broken down by age
-moved<- moved[!is.na(moved$Datazone2001),] 
-# Get rid of the commas in the data and then make the vars numeric
-moved[,2:11] <- sapply(moved[2:11],function(x) gsub(",","",x))
-moved[,2:11] <- sapply(moved[2:11],as.numeric)
-moved<-moved[!is.na(moved$`All people`),]
-# Convert any NA to zero
-moved[is.na(moved)]<-0
-# column names of  moved
-names(moved)
-# Add those in rented accommodation  
-moved$moved<-moved$`All people`-moved$`Lived at same address one year ago`
-# Get percentage of people with rented accommodation
-moved$movedPCT<-(moved$moved/moved$`All people`)*100
-# And subset so we only have datazone and our derived variables
-moved<-subset(moved, select=c(Datazone2001, moved, movedPCT))
-
-############### Bring them all together
-socialfrag<-merge(unmarried, livingalone, by="Datazone2001")
-socialfrag<-merge(socialfrag, rented, by="Datazone2001")
-socialfrag<-merge(socialfrag, moved, by="Datazone2001")
-# generate z-scores for each var
-socialfrag$unmarriedPCTZscore<-scale(socialfrag$unmarriedPCT, center = TRUE, scale = TRUE)
-socialfrag$livingalonePCTZscore<-scale(socialfrag$livingalonePCT, center = TRUE, scale = TRUE)
-socialfrag$rentedPCTZscore<-scale(socialfrag$rentedPCT, center = TRUE, scale = TRUE)
-socialfrag$movedPCTZscore<-scale(socialfrag$movedPCT, center = TRUE, scale = TRUE)
-# Add all of the variables together now
-socialfrag$SFI<-socialfrag$unmarriedPCTZscore + 
-                    socialfrag$livingalonePCTZscore + 
-                    socialfrag$rentedPCTZscore +
-                    socialfrag$movedPCTZscore
-socialfrag$SFI<-scale(socialfrag$SFI, center = TRUE, scale = TRUE)
-# Round all the numeric data
-socialfrag[,2:14] <- sapply(socialfrag[2:14], function(x) round(x, 2))
-# column names of socialfrag 
-names(socialfrag)
-# Create Deciles
-socialfrag$SFI_deciles<-gtools::quantcut(socialfrag$SFI, 10)
-socialfrag$SFI_decilesnum<-as.numeric(socialfrag$SFI_deciles)
-socialfrag<-subset(socialfrag, select=c("Datazone2001", "SFI_decilesnum"))
-write.csv(socialfrag, "SFI_datazone2001_deciles.csv", row.names=F)
-```
-
-
-  
-  
-  
