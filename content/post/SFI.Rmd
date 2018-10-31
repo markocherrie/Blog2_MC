@@ -1,11 +1,11 @@
 ---
-title: 'Social Fragmentation Index'
-author: "Mark Cherrie"
+title: Social Fragmentation Index
+author: ~
 date: '2018-07-09'
-draft: no
 slug: sfi
-tags: ["macroeconomy", "recession","mental health", "admin", "inkscape"]
 categories: ["Data Processing"]
+tags: ["macroeconomy", "recession","mental health", "social capital", "environment", "R"]
+draft: no
 ---
 
 ![](images/economy-recession.jpg)
