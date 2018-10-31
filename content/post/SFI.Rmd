@@ -263,7 +263,7 @@ plot_ly(SFIchange, x = ~change, y = ~simd2012score, color = ~LAname,text = ~past
 
 * This plot shows a positive relationship between deprivation and change in SFI from 2001-2011 in most local authorities. 
 
-* We are building a model to understand the relationship between deprivation and SFI at both time points. 
+* We are currently building a model to understand the relationship between deprivation and SFI at both time points. 
 
 ## References 
 
