@@ -8,8 +8,6 @@ categories: ["Data Processing"]
 tags: ["R", "macroeconomy", "recession", "mental health", "social capital", "R"]
 ---
 
-![](images/economy-recession.jpg)
-
 # Background
 The Social Fragmentation Index (SFI) was developed by Peter Congdon. The indicator aims to use census variables to capture (for small areas across the country) aspects of the local population that may reflect a greater collective risk of social fragmentation/lack of social cohesion. The census variables are proxies for these risk factors, rather than 'direct' indicators. It focusses on risk due to potentially high levels of isolation and residential instability of members of the population. The earliest use of this indicator was with 1991 census data, investigating the relationship with suicide risk (Congdon, 1996). It has been used in a Scottish context (1991 census), understanding how it co-varies with deprivation and urbanicity, and associates with pychoses admissions (Allardyce et al., 2005). The SFI shows some association with socioeconomic deprivation but also varies independently. It has been shown, after controlling for other socio-economic risk factors, to be associated with various health outcomes including use of care for mental illness (Curtis et al., 2006). The index is built from four census variables: 
 

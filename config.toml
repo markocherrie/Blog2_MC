@@ -1,6 +1,6 @@
 baseurl = "http://www.markcherrie.net/"  # End your URL with a `/` trailing slash.
 title = "Data Scientist"
-copyright = "&copy; 2017 Mark Cherrie"
+copyright = "&copy; 2018 Mark Cherrie"
 theme = "hugo-academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
@@ -31,7 +31,7 @@ defaultContentLanguageInSubdir = false
   address = "School of Geosciences, Drummond Street, Edinburgh, EH8 9XP"
   office_hours = ""
   phone = ""
-  skype = ""
+  skype = "mark.cherrie.mc"
   telegram = ""
 
   # Enable Keybase in Contact section by entering your keybase.io username.
