@@ -26,3 +26,4 @@ math = false
 image = "headers/MMPbanner.png"
 +++
 
+Our health and mobility are intrinsically linked with the quality of our local environment. All sorts of things affect us, from housing density and neighbourhood deprivation to access to green space. In Topic 3, we have explored how physical, built and social environments evolve over time and how they impact on inequalities in health in older age, related to mobility throughout life. We have used data from just under 600 people in their 70’s, together with long term, area-level measures of their childhood, adulthood and current environment.
