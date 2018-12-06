@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Built Environment on Data Scientist</title>
+    <title>Built Environment on Researcher</title>
     <link>/tags/built-environment/</link>
-    <description>Recent content in Built Environment on Data Scientist</description>
+    <description>Recent content in Built Environment on Researcher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018 Mark Cherrie</copyright>
     <lastBuildDate>Fri, 10 Nov 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/built-environment/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/tags/built-environment/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Mapping Green Space and Traffic in Glasgow</title>
@@ -16,8 +18,7 @@
       <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/greentraffic/</guid>
-      <description>&lt;p&gt;How can we estimate exposure to the natural environment day-to-day?&lt;/p&gt;
-</description>
+      <description>How can we estimate exposure to the natural environment day-to-day?</description>
     </item>
     
   </channel>

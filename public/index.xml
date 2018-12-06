@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Data Scientist on Data Scientist</title>
+    <title>Researcher on Researcher</title>
     <link>/</link>
-    <description>Recent content in Data Scientist on Data Scientist</description>
+    <description>Recent content in Researcher on Researcher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018 Mark Cherrie</copyright>
@@ -34,7 +34,8 @@
       <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/sfi/</guid>
-      <description>&lt;script src=&#34;/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;/rmarkdown-libs/plotly-binding/plotly.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;/rmarkdown-libs/typedarray/typedarray.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;/rmarkdown-libs/jquery/jquery.min.js&#34;&gt;&lt;/script&gt;
@@ -167,7 +168,10 @@
       <pubDate>Tue, 22 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/msccourses/</guid>
-      <description>&lt;p&gt;The aim was to understand more about the optional courses available for MSc students in the school of Geosciences. This meant building a dataframe that contained the interesting bits of information available on the University of Edinburgh website so that I could query it to find out answers to questions such as: How many 10 credit courses are available? Which degree cluster do the courses belong to and is there any overlap? What kind of topics/skills are going to be taught? and so on.&lt;/p&gt;
+      <description>
+
+
+&lt;p&gt;The aim was to understand more about the optional courses available for MSc students in the school of Geosciences. This meant building a dataframe that contained the interesting bits of information available on the University of Edinburgh website so that I could query it to find out answers to questions such as: How many 10 credit courses are available? Which degree cluster do the courses belong to and is there any overlap? What kind of topics/skills are going to be taught? and so on.&lt;/p&gt;
 &lt;p&gt;The first thing to do was to download the data from the University of Edinburgh website. Here is the code, which first builds the URL’s that we need and then scrapes the relevant info one-by-one into a dataframe:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;############### DATA COLLECTION #########################
 
@@ -406,7 +410,10 @@ master_df$NotEntered&amp;lt;-NULL&lt;/code&gt;&lt;/pre&gt;
       <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/gee/</guid>
-      <description>&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+      <description>
+
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;div id=&#34;motivation&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Motivation&lt;/h4&gt;
@@ -625,7 +632,10 @@ src=&#34;//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&#34;
       <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/devolvedlegislation/</guid>
-      <description>&lt;p&gt;Scotland, Wales and Northern Ireland have had devolved powers since 1997, 1997 and 1998 respectively. During this time 480 Acts have been passed, an act being defined as primary legislation which has been through several stages from:&lt;/p&gt;
+      <description>
+
+
+&lt;p&gt;Scotland, Wales and Northern Ireland have had devolved powers since 1997, 1997 and 1998 respectively. During this time 480 Acts have been passed, an act being defined as primary legislation which has been through several stages from:&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
 &lt;li&gt;Pre-legislative scrutiny on the draft piece of legislation (bill)&lt;/li&gt;
@@ -825,7 +835,10 @@ if(nrow(master)==480){
       <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/netcdf/</guid>
-      <description>&lt;p&gt;NetCDF stands for “Network Common Data Format” and was created by ‘unidata’ for handling large geospatial data. Here’s a short description from their &lt;a href=&#34;https://www.unidata.ucar.edu/netcdf/&#34;&gt;website&lt;/a&gt;:&lt;/p&gt;
+      <description>
+
+
+&lt;p&gt;NetCDF stands for “Network Common Data Format” and was created by ‘unidata’ for handling large geospatial data. Here’s a short description from their &lt;a href=&#34;https://www.unidata.ucar.edu/netcdf/&#34;&gt;website&lt;/a&gt;:&lt;/p&gt;
 &lt;p&gt;“NetCDF is a set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-orientated scientific data.”&lt;/p&gt;
 &lt;p&gt;NetCDF files are containers for dimensions, variables and global atttributes. It’s used to store climatology, meteorology and oceanography data by over 1,300 organisations including &lt;a href=&#34;https://www.esrl.noaa.gov/psd/data/gridded/data.gistemp.html&#34;&gt;NOAA&lt;/a&gt; and &lt;a href=&#34;https://www.eumetsat.int/website/home/index.html&#34;&gt;EUMETSAT&lt;/a&gt;. I think the key advantage of the format is that all the information required to use it correctly is supplied within the data file. So it doesn’t matter if you are using Python, Perl or R, you will be able to read, manipulate and plot the data, and there is lots of information out there to help with that.&lt;/p&gt;
 &lt;p&gt;I was asked recently to help with processing air pollution data stored in NetCDF format (.nc/.NC) using R. I’ve had a first attempt at describing one of the files we are using (NO2 max for a day), plotting, batch processing daily neighbourhood (postcode unit) based exposure estimates and finally converting to .rds for upload to a postgresql database. Some considerations of the data I was using was that it had a polar stereographic projection, which can be converted to a lat/long &lt;a href=&#34;https://stackoverflow.com/questions/23837918/convert-polar-stereographic-projection-into-lat-long-grid-in-r&#34;&gt;grid&lt;/a&gt;. I decided that this might not be required if I used the points as they were and allocate the nearest air pollution point to the centroid of the postcode. As the data size was quite large (all postcode units in britain) the normal rgeos::gDistance method didn’t work (i.e. could not allocate vector error), so I used k-nearest neighbour (k=1), below is the code:&lt;/p&gt;
@@ -940,7 +953,10 @@ saveRDS(d2, paste0(&amp;quot;E:/airpollutiondata/&amp;quot;,name,&amp;quot;.rds&
       <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/rshiny-weather-app/</guid>
-      <description>&lt;p&gt;Nudge theory made it big after the 2008 book by Thaler and Sunstein gathered some high profile readers (Obama, Cameron etc). Alongside public health officials and politicians, researchers have been interested in using the theory to influence people to make ‘healthy’ behaviour choices. The central tenant of the theory is based around libertarian paternalism, or influencing an individual’s ‘choice architecture’ without coercion. Nudge-type interventions (e.g. nutritional labeling, size of serving dishes) have been used to tackle &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4967524/&#34;&gt;obesity&lt;/a&gt; and were found to increase ‘healthy’ behaviours by 15.3%.&lt;/p&gt;
+      <description>
+
+
+&lt;p&gt;Nudge theory made it big after the 2008 book by Thaler and Sunstein gathered some high profile readers (Obama, Cameron etc). Alongside public health officials and politicians, researchers have been interested in using the theory to influence people to make ‘healthy’ behaviour choices. The central tenant of the theory is based around libertarian paternalism, or influencing an individual’s ‘choice architecture’ without coercion. Nudge-type interventions (e.g. nutritional labeling, size of serving dishes) have been used to tackle &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4967524/&#34;&gt;obesity&lt;/a&gt; and were found to increase ‘healthy’ behaviours by 15.3%.&lt;/p&gt;
 &lt;p&gt;Biometerology is the study of the impacts of the weather and climate on human health. The Met Office provide a cold weather &lt;a href=&#34;https://www.metoffice.gov.uk/public/weather/cold-weather-alert/#?tab=coldWeatherAlert&#34;&gt;alert&lt;/a&gt; to ensure that people with conditions susceptible to the cold (e.g. COPD) can take precautions, based on evidence of spikes in hospital admissions in weeks of &lt;a href=&#34;http://err.ersjournals.com/content/15/101/185.full&#34;&gt;cold weather - below 0°C&lt;/a&gt;. This kind of thing seems to be becoming more popular, with Facebook recently implementing weather information on their users’ timelines. I wondered whether I could replicate this type of nudge in an R Shiny application.&lt;/p&gt;
 &lt;p&gt;In terms of data sources, the &lt;a href=&#34;https://www.metoffice.gov.uk/datapoint&#34;&gt;datapoint API&lt;/a&gt; available from the UK Met Office provides 3 hourly forecasts for a range of weather (e.g. temperature, UV, wind speed) for 5,000 UK sites (i.e. requires a script to determine closest station). Data from the Met Office goes through many rigorous checks and is reliable. Functions to query the datapoint API have been written in &lt;a href=&#34;https://pypi.python.org/pypi/datapoint/&#34;&gt;python&lt;/a&gt; and porting this to R is not a small task. Also, the datapoint API has been taken offline in recent months so that it can be updated (UPDATE 02/02/2018, it is now back online, and will be used in the future).&lt;/p&gt;
 &lt;p&gt;In the interim I used weather data from the &lt;a href=&#34;https://www.wunderground.com/weather/api/&#34;&gt;Weather Underground API&lt;/a&gt;. This provides hourly weather forecasts for a given latitude and longitude and is available for locations around the world. The latitude and longitude was determined by the user’s smartphone or computer &lt;a href=&#34;https://github.com/AugustT/shiny_geolocation&#34;&gt;location&lt;/a&gt;. As this is a test, and I want to do a full literature review to ensure the best weather thresholds, I started with a trivial example - whether it is warm enough to wear shorts to work (arbitrarily set at over 15°C).&lt;/p&gt;

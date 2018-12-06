@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Data Scientist</title>
+    <title>Tags on Researcher</title>
     <link>/tags/</link>
-    <description>Recent content in Tags on Data Scientist</description>
+    <description>Recent content in Tags on Researcher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018 Mark Cherrie</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Content tagged as &#39;Academic&#39;</title>
@@ -16,8 +18,7 @@
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/academic/</guid>
-      <description>&lt;p&gt;Here is a list of all the content that has been tagged as &lt;em&gt;academic&lt;/em&gt;.&lt;/p&gt;
-</description>
+      <description>Here is a list of all the content that has been tagged as academic.</description>
     </item>
     
     <item>
@@ -143,6 +144,465 @@
       <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/deprivation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Devolution</title>
+      <link>/tags/devolution/</link>
+      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/devolution/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Display</title>
+      <link>/tags/display/</link>
+      <pubDate>Fri, 08 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/display/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Education</title>
+      <link>/tags/education/</link>
+      <pubDate>Tue, 22 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/education/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gee</title>
+      <link>/tags/gee/</link>
+      <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/gee/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gis</title>
+      <link>/tags/gis/</link>
+      <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/gis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Glasgow</title>
+      <link>/tags/glasgow/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/glasgow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google</title>
+      <link>/tags/google/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/google/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Green Space</title>
+      <link>/tags/green-space/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/green-space/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Greenspace</title>
+      <link>/tags/greenspace/</link>
+      <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/greenspace/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Health Inequalities</title>
+      <link>/tags/health-inequalities/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/health-inequalities/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Infectious Disease</title>
+      <link>/tags/infectious-disease/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/infectious-disease/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Intervention</title>
+      <link>/tags/intervention/</link>
+      <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/intervention/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ivf</title>
+      <link>/tags/ivf/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ivf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>/tags/javascript/</link>
+      <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lifecourse</title>
+      <link>/tags/lifecourse/</link>
+      <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/lifecourse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Macroeconomy</title>
+      <link>/tags/macroeconomy/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/macroeconomy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maps</title>
+      <link>/tags/maps/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/maps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mapzen</title>
+      <link>/tags/mapzen/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/mapzen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Medmi</title>
+      <link>/tags/medmi/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/medmi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mental Health</title>
+      <link>/tags/mental-health/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/mental-health/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mmp</title>
+      <link>/tags/mmp/</link>
+      <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/mmp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Neighbourhood</title>
+      <link>/tags/neighbourhood/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/neighbourhood/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Netcdf</title>
+      <link>/tags/netcdf/</link>
+      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/netcdf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nudge Theory</title>
+      <link>/tags/nudge-theory/</link>
+      <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/nudge-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Osm</title>
+      <link>/tags/osm/</link>
+      <pubDate>Mon, 27 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/osm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Osmosis</title>
+      <link>/tags/osmosis/</link>
+      <pubDate>Mon, 27 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/osmosis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Parallel Computing</title>
+      <link>/tags/parallel-computing/</link>
+      <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/parallel-computing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pdf</title>
+      <link>/tags/pdf/</link>
+      <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/pdf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Places</title>
+      <link>/tags/places/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/places/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Policy</title>
+      <link>/tags/policy/</link>
+      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/policy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Postgresql</title>
+      <link>/tags/postgresql/</link>
+      <pubDate>Mon, 27 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/tags/r/</link>
+      <pubDate>Tue, 22 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recession</title>
+      <link>/tags/recession/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/recession/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Remote Sensing</title>
+      <link>/tags/remote-sensing/</link>
+      <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/remote-sensing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Routing</title>
+      <link>/tags/routing/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/routing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rshiny</title>
+      <link>/tags/rshiny/</link>
+      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/rshiny/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Satellite</title>
+      <link>/tags/satellite/</link>
+      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/satellite/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Seasonality</title>
+      <link>/tags/seasonality/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/seasonality/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Social Capital</title>
+      <link>/tags/social-capital/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/social-capital/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software</title>
+      <link>/tags/software/</link>
+      <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Time Series</title>
+      <link>/tags/time-series/</link>
+      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/time-series/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tobacco</title>
+      <link>/tags/tobacco/</link>
+      <pubDate>Fri, 08 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tobacco/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Traffic</title>
+      <link>/tags/traffic/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/traffic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Uv</title>
+      <link>/tags/uv/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/uv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Uvr</title>
+      <link>/tags/uvr/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/uvr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vitamin D</title>
+      <link>/tags/vitamin-d/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/vitamin-d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Weather</title>
+      <link>/tags/weather/</link>
+      <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/weather/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Design</title>
+      <link>/tags/web-design/</link>
+      <pubDate>Thu, 07 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/web-design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Development</title>
+      <link>/tags/web-development/</link>
+      <pubDate>Thu, 07 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/web-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Scraping</title>
+      <link>/tags/web-scraping/</link>
+      <pubDate>Tue, 22 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/web-scraping/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Webmap</title>
+      <link>/tags/webmap/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/webmap/</guid>
       <description></description>
     </item>
     

@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mapzen on Data Scientist</title>
+    <title>Mapzen on Researcher</title>
     <link>/tags/mapzen/</link>
-    <description>Recent content in Mapzen on Data Scientist</description>
+    <description>Recent content in Mapzen on Researcher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018 Mark Cherrie</copyright>
     <lastBuildDate>Thu, 28 Sep 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/mapzen/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/tags/mapzen/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Mapzen Isochrone Maps</title>
@@ -16,10 +18,7 @@
       <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/isochrone/</guid>
-      <description>&lt;p&gt;I have just come across Mapzen’s routing engine (Valhalla), which can be used to produce incredible isochrone maps, mentioned in this &lt;a href=&#34;https://mapzen.com/blog/introducing-isochrone-service/&#34;&gt;blog post&lt;/a&gt;. If you’ve not heard of &lt;a href=&#34;https://mapzen.com/&#34;&gt;Mapzen&lt;/a&gt; they provide mapping tools for developers so that their websites can be converted to the spatial side. The neat thing about isochrone lines is that they show the boundary around a point where travel time is equal. So you can ask some interesting proximity based questions (e.g. What types of greenspace do I have within a 5 minute walk from my home?). I’ve been eager to create isochrone maps since seeing &lt;a href=&#34;https://www.rome2rio.com/blog/2016/01/08/time-flies-according-to-these-maps-it-does/&#34;&gt;Rome2Rio’s set&lt;/a&gt;, which show isochrones from London for 1914 and 2016. Below I have used the &lt;a href=&#34;https://mapzen.com/mobility/explorer/&#34;&gt;mobility explorer&lt;/a&gt; to generate isochrones boundaries (in 15 minute bands) for where I live, for several different travel options (walking, cycling, public transport and driving). Have a go!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/mapzenimages/walking.png&#34; alt=&#34;Walking&#34; /&gt; &lt;img src=&#34;img/mapzenimages/cycling.png&#34; alt=&#34;Cycling&#34; /&gt; &lt;img src=&#34;img/mapzenimages/transit.png&#34; alt=&#34;Public Transport&#34; /&gt; &lt;img src=&#34;img/mapzenimages/driving.png&#34; alt=&#34;Driving&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;As with all my posts, I’m writing from memory, from my own experiences, which may have not been remembered correctly or do not include the full picture. If you think there should be an improvement to the post then please get in touch and I’ll update it, I’m always willing to learn!&lt;/p&gt;
-</description>
+      <description>I have just come across Mapzen’s routing engine (Valhalla), which can be used to produce incredible isochrone maps, mentioned in this blog post. If you’ve not heard of Mapzen they provide mapping tools for developers so that their websites can be converted to the spatial side. The neat thing about isochrone lines is that they show the boundary around a point where travel time is equal. So you can ask some interesting proximity based questions (e.</description>
     </item>
     
   </channel>

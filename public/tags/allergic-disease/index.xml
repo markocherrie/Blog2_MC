@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Allergic Disease on Data Scientist</title>
+    <title>Allergic Disease on Researcher</title>
     <link>/tags/allergic-disease/</link>
-    <description>Recent content in Allergic Disease on Data Scientist</description>
+    <description>Recent content in Allergic Disease on Researcher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018 Mark Cherrie</copyright>
     <lastBuildDate>Tue, 29 Aug 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/allergic-disease/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/tags/allergic-disease/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Analysing the Association between Ultraviolet Radiation, Vitamin D and Allergic Disease</title>
@@ -16,10 +18,7 @@
       <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/project/uv/</guid>
-      <description>&lt;p&gt;Atopic diseases are common in the UK, with eczema, asthma and allergic rhinitis typically developing sequentially during childhood, as in the theory of the &amp;lsquo;atopic march&amp;rsquo;. Some people will &amp;lsquo;grow out&amp;rsquo; out of these diseases but others face lifelong morbidity. Current figures from asthma UK show that the prevalence of people in the UK receiving treatment for asthma is approximately 9% in children and 8% of adults. These rates have risen since the 1970&amp;rsquo;s, evidenced by the an increase in prevalence rates between the ISAAC (International Study of Asthma and Allergies in Childhood) phase one (1994) and phase three (&lt;sup&gt;2002&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2003&lt;/sub&gt;). The trend is the same for developing nations. Thus, it is clear that these diseases will represent a significant burden to individual families and national healthcare providers around the world for the foreseeable future. Atopic diseases have a complex aetiology, but are broadly caused by environmental and genetic factors. It is through geographical analysis of the distribution of these diseases that hypotheses can be generated. For example, in the UK, eczema has been mapped using data from the CLS’s (Centre of Longitudinal Studies) 1958 Birth Cohort, this study implicated factors such as water hardness, industrial pollution, pollen, heavy metal deposits and climate.&lt;/p&gt;
-
-&lt;p&gt;The aim of my PhD &lt;a href=&#34;https://drive.google.com/drive/folders/1Cy1xxwsGX7nN6rMeIvkDkj2CCbbsVYIj?usp=sharing&#34; target=&#34;_blank&#34;&gt;thesis&lt;/a&gt; was to investigate the association between UVR (&lt;a href=&#34;https://www.mindmeister.com/172005637?t=CCFm9l6zxY&#34; target=&#34;_blank&#34;&gt;Ultraviolet Radiation&lt;/a&gt;) exposure on allergic disease incidence using secondary data sources. Ultraviolet radiation is the primary contributor to vitamin D levels, often quoted to contribute 80-90% of an individual&amp;rsquo;s circulating 25(OH)D. Vitamin D has been linked to several immune functions within the body including Treg production (which in turn modulates Th1/Th2 balance) and antimicrobial peptide induction, which protects against infection. Vitamin D could play an important role in reducing risk of atopic disease.&lt;/p&gt;
-</description>
+      <description>Atopic diseases are common in the UK, with eczema, asthma and allergic rhinitis typically developing sequentially during childhood, as in the theory of the &amp;lsquo;atopic march&amp;rsquo;. Some people will &amp;lsquo;grow out&amp;rsquo; out of these diseases but others face lifelong morbidity. Current figures from asthma UK show that the prevalence of people in the UK receiving treatment for asthma is approximately 9% in children and 8% of adults. These rates have risen since the 1970&amp;rsquo;s, evidenced by the an increase in prevalence rates between the ISAAC (International Study of Asthma and Allergies in Childhood) phase one (1994) and phase three (2002&amp;frasl;2003).</description>
     </item>
     
   </channel>

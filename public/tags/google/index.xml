@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Google on Data Scientist</title>
+    <title>Google on Researcher</title>
     <link>/tags/google/</link>
-    <description>Recent content in Google on Data Scientist</description>
+    <description>Recent content in Google on Researcher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018 Mark Cherrie</copyright>
     <lastBuildDate>Fri, 10 Nov 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/google/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/tags/google/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Mapping Green Space and Traffic in Glasgow</title>
@@ -16,8 +18,7 @@
       <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/greentraffic/</guid>
-      <description>&lt;p&gt;How can we estimate exposure to the natural environment day-to-day?&lt;/p&gt;
-</description>
+      <description>How can we estimate exposure to the natural environment day-to-day?</description>
     </item>
     
   </channel>

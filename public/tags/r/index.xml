@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>R on Data Scientist</title>
+    <title>R on Researcher</title>
     <link>/tags/r/</link>
-    <description>Recent content in R on Data Scientist</description>
+    <description>Recent content in R on Researcher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018 Mark Cherrie</copyright>
     <lastBuildDate>Tue, 22 May 2018 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/r/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>What are the optional courses like for UoE MSc students?</title>
@@ -16,237 +18,7 @@
       <pubDate>Tue, 22 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/msccourses/</guid>
-      <description>&lt;p&gt;The aim was to understand more about the optional courses available for MSc students in the school of Geosciences. This meant building a dataframe that contained the interesting bits of information available on the University of Edinburgh website so that I could query it to find out answers to questions such as: How many 10 credit courses are available? Which degree cluster do the courses belong to and is there any overlap? What kind of topics/skills are going to be taught? and so on.&lt;/p&gt;
-&lt;p&gt;The first thing to do was to download the data from the University of Edinburgh website. Here is the code, which first builds the URL’s that we need and then scrapes the relevant info one-by-one into a dataframe:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;############### DATA COLLECTION #########################
-
-## scaping the edinburgh university website
-library(rvest)
-# Gather the optional courses for Earth Observation and Geoinformation Management
-MScOptionsURLS&amp;lt;-function(MSc){
-if(MSc==&amp;quot;EOGM&amp;quot;){
-  MSc&amp;lt;-&amp;quot;https://www.ed.ac.uk/geosciences/postgraduate/taught-masters/msc-earth-observation/structure-teaching-assessment/optional-courses&amp;quot;
-  url&amp;lt;-MSc %&amp;gt;%
-  read_html()%&amp;gt;%
-  html_nodes(&amp;#39;#block-system-main p:nth-child(1) a , p+ p a&amp;#39;)%&amp;gt;%
-  html_attr(&amp;#39;href&amp;#39;)
-  } else if(MSc==&amp;quot;GIS&amp;quot;){
-  MSc&amp;lt;-&amp;quot;https://www.ed.ac.uk/geosciences/postgraduate/taught-masters/geographical-information-science/structure-teaching-assessment/optional-courses&amp;quot;
-  url&amp;lt;-MSc %&amp;gt;%
-    read_html()%&amp;gt;%
-    html_nodes(&amp;#39;#block-system-main p:nth-child(1) a , p+ p a&amp;#39;)%&amp;gt;%
-    html_attr(&amp;#39;href&amp;#39;)
-  }else if(MSc==&amp;quot;ARCH&amp;quot;){
-  MSc&amp;lt;-&amp;quot;https://www.ed.ac.uk/geosciences/postgraduate/taught-masters/msc-gis-and-archaeology/structure-teaching-and-assessment/optional-courses&amp;quot;
-  url&amp;lt;-MSc %&amp;gt;%
-    read_html()%&amp;gt;%
-    html_nodes(&amp;#39;.col-sm-9 , p+ p a&amp;#39;)%&amp;gt;%
-    html_attr(&amp;#39;href&amp;#39;)
-  # not perfect, but get the dpt links
-  url&amp;lt;-url[3:10]
-  # weird, not picking up the final two, must be formatted differently, quick fix
-  url[9]&amp;lt;-&amp;quot;http://www.drps.ed.ac.uk/17-18/dpt/cxpghc11412.htm&amp;quot;
-  url[10]&amp;lt;-&amp;quot;http://www.drps.ed.ac.uk/17-18/dpt/cxpghc11075.htm&amp;quot;
-  }else {
-    &amp;quot;Pick a MSc course that&amp;#39;s in the Spatial Informatics and Earth Observation cluster&amp;quot;
-  }
-url&amp;lt;-as.data.frame(url)
-colnames(url)&amp;lt;-&amp;quot;url&amp;quot;
-url$url&amp;lt;-as.character(url$url)
-return(url)
-}
-
-# Let&amp;#39;s do it for the 3 MSc courses
-EOGM_options&amp;lt;-MScOptionsURLS(MSc = &amp;quot;EOGM&amp;quot;)
-GIS_options&amp;lt;-MScOptionsURLS(MSc = &amp;quot;GIS&amp;quot;)
-ARCH_options&amp;lt;-MScOptionsURLS(MSc = &amp;quot;ARCH&amp;quot;)
-
-# Now let&amp;#39;s scrape the optional courses pages
-eduniscraper&amp;lt;-function(url){
-  Urlcatch&amp;lt;-tryCatch({
-    # Name of course
-    Name&amp;lt;-tryCatch({
-      Name&amp;lt;-url %&amp;gt;%
-        read_html() %&amp;gt;%
-        html_node(&amp;quot;#sitspagetitle&amp;quot;) %&amp;gt;%
-        html_text()
-     #Name&amp;lt;-gsub(&amp;quot;Undergraduate Course:|Postgraduate Course: &amp;quot;, &amp;quot;&amp;quot;, Name)
-    }, error=function(e){
-      Name&amp;lt;-NA}
-    )
-    
-    # Get the whole table
-    tableinfo&amp;lt;-url %&amp;gt;%
-      read_html() %&amp;gt;%
-      html_nodes(&amp;#39;.sitstablegrid&amp;#39;) %&amp;gt;%
-      html_text()
-    
-    ## Credits
-    SCQFcredits&amp;lt;-tryCatch({
-      subtable&amp;lt;-tableinfo[gregexpr(pattern =&amp;#39;SCQF Credits&amp;#39;,tableinfo)&amp;gt;1]
-      start&amp;lt;-gregexpr(pattern =&amp;#39;SCQF Credits&amp;#39;,subtable)[[1]][1]+12
-      end&amp;lt;-gregexpr(pattern =&amp;#39;SCQF Credits&amp;#39;,subtable)[[1]][1]+13
-      SCQFcredits&amp;lt;-as.numeric(substring(subtable, start,end))
-    }, error=function(e){
-      SCQFcredits&amp;lt;-NA}
-    )
-    
-    ## Time
-    Time&amp;lt;-tryCatch({
-      subtable&amp;lt;-tableinfo[gregexpr(pattern =&amp;#39;Total Hours&amp;#39;,tableinfo)&amp;gt;1]
-      start&amp;lt;-gregexpr(pattern =&amp;#39;Total Hours&amp;#39;,subtable)[[1]][1]
-      end&amp;lt;-gregexpr(pattern =&amp;#39;Assessment \\(Further Info\\)&amp;#39;,subtable)[[1]][1]-1
-      Time&amp;lt;-substring(subtable, start,end)
-      Time&amp;lt;-gsub(&amp;quot;[\n]|:|\\)|\\(\\)|W|Assessment|(Further Info)|&amp;quot;, &amp;quot;&amp;quot;, Time)
-      Time&amp;lt;-gsub(&amp;quot;\\(&amp;quot;, &amp;quot;,&amp;quot;, Time)
-    }, error=function(e){
-      Time&amp;lt;-NA}
-    )
-    
-    ## Assessment
-    assessment&amp;lt;-tryCatch({
-      subtable&amp;lt;-tableinfo[gregexpr(pattern =&amp;#39;Written Exam&amp;#39;,tableinfo)&amp;gt;1]
-      start&amp;lt;-gregexpr(pattern =&amp;#39;Written Exam&amp;#39;,subtable)[[1]][1]
-      end&amp;lt;-start+55
-      assessment&amp;lt;-substring(subtable, start,end)
-      assessment&amp;lt;-gsub(&amp;quot; |[\t]|-|[\n]&amp;quot;, &amp;quot;&amp;quot;, assessment)
-      assessment&amp;lt;-gsub(&amp;quot;WrittenExam|Coursework|PracticalExam&amp;quot;, &amp;quot;&amp;quot;, assessment)
-      assessment&amp;lt;-gsub(&amp;quot;%&amp;quot;, &amp;quot;&amp;quot;, assessment)
-      WrittenExam=as.numeric(unlist(strsplit(assessment, &amp;quot;,&amp;quot;))[1])
-      Coursework=as.numeric(unlist(strsplit(assessment, &amp;quot;,&amp;quot;))[2])
-      PracticalExam=as.numeric(unlist(strsplit(assessment, &amp;quot;,&amp;quot;))[3])
-    }, error=function(e){
-      WrittenExam&amp;lt;-NA
-      Coursework&amp;lt;-NA
-      PracticalExam&amp;lt;-NA}
-    )
-    
-    # learning outcomes
-    learningoutcomes&amp;lt;-tryCatch({
-      learningoutcomes&amp;lt;-tableinfo[gregexpr(pattern =&amp;#39;By the end of this course students will be able to|On completion of this course|On completion of the course|Students will be able to:&amp;#39;,tableinfo)&amp;gt;1][2]
-      #if (is.na(learningoutcomes)){
-      #learningoutcomes&amp;lt;-tableinfo[gregexpr(pattern =&amp;#39;On completion of this course|On completion of the course|Students will be able to:&amp;#39;,tableinfo)&amp;gt;1][1]
-      #}
-      learningoutcomes&amp;lt;-gsub(&amp;quot;Learning Outcomes|[\t]|-|[\n]&amp;quot;, &amp;quot;&amp;quot;, learningoutcomes)
-    }, error=function(e){
-      learningoutcomes&amp;lt;-NA}
-    )
-    
-    ## Skills
-    skills&amp;lt;-tryCatch({
-      subtable&amp;lt;-tableinfo[gregexpr(pattern =&amp;#39;Graduate Attributes and Skills&amp;#39;,tableinfo)&amp;gt;1][2]
-      start&amp;lt;-gregexpr(pattern =&amp;#39;Graduate Attributes and Skills&amp;#39;,subtable)[[1]][1]
-      end&amp;lt;-gregexpr(pattern =&amp;#39;Special Arrangements|Keywords|Additional Class Delivery Information&amp;#39;,subtable)[[1]][1]-1
-      skills&amp;lt;-substring(subtable, start,end)
-      skills&amp;lt;-gsub(&amp;quot;Graduate Attributes and Skills|[\t]|-|[\n]&amp;quot;, &amp;quot;&amp;quot;, skills)
-    }, error=function(e){
-      skills&amp;lt;-NA}
-    )
-    
-    df&amp;lt;-data.frame(Name, url, SCQFcredits, Time, learningoutcomes, skills, WrittenExam, Coursework, PracticalExam)
-    #write.csv(df, paste0(&amp;quot;data/&amp;quot;, url, &amp;quot;.csv&amp;quot;), row.names=F)
-    return(df)
-  },error=function(e){
-    df&amp;lt;-data.frame(Name=NA, url=url, SCQFcredits=NA, Time=NA, learningoutcomes=NA, skills=NA, WrittenExam=NA, Coursework=NA, PracticalExam=NA)}
-  )
-}
-
-# test
-url=&amp;quot;http://www.drps.ed.ac.uk/17-18/dpt/cxpghc11412.htm&amp;quot;
-test&amp;lt;-eduniscraper(url)
-
-# loop
-library(plyr)
-# Technologies for Sustainable Energy, i.e. number 6, doesn&amp;#39;t work
-#EOGM_options &amp;lt;- subset(EOGM_options, url!= &amp;quot;http://www.drps.ed.ac.uk/16-17/dpt/cxpgee10001.htm&amp;quot;)
-#Put in error handling instead
-EOGM_df&amp;lt;-mdply(EOGM_options, eduniscraper)
-GIS_df&amp;lt;-mdply(GIS_options, eduniscraper)
-ARCH_df&amp;lt;-mdply(ARCH_options, eduniscraper)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Next step was to apply some cleaning, this was a iterative process of identifying issues with the output above and applying correction. Have a look at the code comments for more details:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;############### DATA CLEANING #########################
-
-# master data
-EOGM_df$cluster&amp;lt;-&amp;quot;EOGM&amp;quot;
-GIS_df$cluster&amp;lt;-&amp;quot;GIS&amp;quot;
-ARCH_df$cluster&amp;lt;-&amp;quot;ARCH&amp;quot;
-master_df&amp;lt;-rbind(EOGM_df, GIS_df, ARCH_df)
-
-# 19 courses are duplicates
-library(dplyr)
-master_df&amp;lt;-master_df %&amp;gt;% 
-  group_by(url) %&amp;gt;% 
-  mutate(cluster_group = paste0(cluster, collapse = &amp;quot;,&amp;quot;)) 
-master_df&amp;lt;-master_df[!duplicated(master_df$Name),]
-master_df$cluster&amp;lt;-NULL
-
-# 3 course links don&amp;#39;t work, but only one remains,
-# as it is considered &amp;#39;unique in above
-master_df&amp;lt;-master_df[!is.na(master_df$Name),]
-
-
-# Code NA to not entered
-master_df[is.na(master_df)]&amp;lt;-&amp;quot;Not Entered&amp;quot;
-
-# postgrad or undergrad
-master_df$coursetype&amp;lt;-ifelse(grepl(&amp;quot;Undergraduate&amp;quot;, master_df$Name), &amp;quot;U&amp;quot;, &amp;quot;P&amp;quot;)
-master_df$Name&amp;lt;-gsub(&amp;quot;Undergraduate Course:|Postgraduate Course:&amp;quot;, &amp;quot;&amp;quot;, master_df$Name)
-
-# get time vars
-result&amp;lt;-list()
-
-for(i in 1:33){
-Time=unlist(strsplit(master_df$Time[i], &amp;quot;,&amp;quot;))
-Time&amp;lt;-gsub(&amp;quot; &amp;quot;, &amp;quot;&amp;quot;, Time)
-Time&amp;lt;-as.data.frame(Time)
-colnames(Time)&amp;lt;-&amp;quot;TimeVars&amp;quot;
-library(tidyr)
-Time&amp;lt;-Time %&amp;gt;%
-separate(TimeVars, 
-         into = c(&amp;quot;text&amp;quot;, &amp;quot;num&amp;quot;), 
-         sep = &amp;quot;(?&amp;lt;=[A-Za-z])(?=[0-9])&amp;quot;) 
-Time$Name&amp;lt;-master_df$Name[i]
-result[[i]] &amp;lt;- Time
-}
-timevars = do.call(rbind.fill, result)
-timevars = timevars[!is.na(timevars$text),]
-timevars&amp;lt;-timevars %&amp;gt;%
-  spread(text, num)
-timevars[is.na(timevars)]&amp;lt;-0
-timevars&amp;lt;-subset(timevars, Name!=&amp;#39; Water Resource Management (PGGE11018)&amp;#39;)
-timevars&amp;lt;-subset(timevars, Name!=&amp;#39; Epidemiology for Public Health (PUHR11016)&amp;#39;)
-
-# merge with master df
-master_df&amp;lt;-merge(master_df, timevars, by=&amp;quot;Name&amp;quot;, all.x=T)
-master_df$Time&amp;lt;-NULL
-master_df$NotEntered&amp;lt;-NULL&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Finally, onto the fun part, querying the data and producing graphs to present answers to the questions I was interested in. First let’s see the proportion of courses that are 10 and 20 credits:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/MscCourses_files/figure-html/visualisation1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    10.0    10.0    20.0    16.3    20.0    20.0&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;So we can see that 1/3 of the optional courses are currently 10 credits&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Next, I want to see how they relate to the degree clusters:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/MscCourses_files/figure-html/visualisation2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;EOGM has the most unique master courses (10)&lt;/li&gt;
-&lt;li&gt;EOGM and GIS share 11 courses&lt;/li&gt;
-&lt;li&gt;There is only one course listed in all of the masters (Principles and Practice of Remote Sensing (PGGE11233))&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Next, I’m interested in the assessment breakdown (coursework, written exam and practical exam):&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/MscCourses_files/figure-html/visualisation3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## 
-## C0W100P0 C100W0P0 C40W60P0 C50W50P0 
-##        2       18        2        5&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;Two thirds of the courses are assessed via coursework only&lt;/li&gt;
-&lt;li&gt;The second most common option is a 50/50 split between coursework and a Written exam&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Finally, let’s have a look at the learning outcomes, which will give me an understanding of the topics and skills that the student will have experience of by the end:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/MscCourses_files/figure-html/visualisation4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;There is probably a lot more that can be done with the data but this is a just a taster. In addition, this method could be applied to other schools (not just geosciences).&lt;/p&gt;
-</description>
+      <description>The aim was to understand more about the optional courses available for MSc students in the school of Geosciences. This meant building a dataframe that contained the interesting bits of information available on the University of Edinburgh website so that I could query it to find out answers to questions such as: How many 10 credit courses are available? Which degree cluster do the courses belong to and is there any overlap?</description>
     </item>
     
     <item>
@@ -255,199 +27,8 @@ master_df$NotEntered&amp;lt;-NULL&lt;/code&gt;&lt;/pre&gt;
       <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/gee/</guid>
-      <description>&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Introduction&lt;/h2&gt;
-&lt;div id=&#34;motivation&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Motivation&lt;/h4&gt;
-&lt;p&gt;I’m interested in a long-term small-area level measure of ‘green spaces’, features of the natural environment that are important for a wide variety of health outcomes.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;green-spaces-over-time&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Green spaces over time&lt;/h4&gt;
-&lt;p&gt;There are two major green space datasets for Scotland, &lt;a href=&#34;http://www.greenspacescotland.org.uk/scotlands-greenspace-map.aspx&#34;&gt;Scotland’s Greenspace Map 2011&lt;/a&gt; and the &lt;a href=&#34;https://www.ordnancesurvey.co.uk/business-and-government/products/os-open-greenspace.html&#34;&gt;Ordnance Survey’s Greenspace Map 2017&lt;/a&gt;. These maps were produced by characterising OS polygons using aerial photos, with the latter updated every 6 months from July 2017. They use the &lt;a href=&#34;https://beta.gov.scot/publications/planning-advice-note-pan-65-planning-open-space/documents/0060935.pdf&#34;&gt;PAN65&lt;/a&gt; criteria to categorise all Mastermap polygons into 11 types (e.g. Private gardens or grounds) and 23 land cover classifications (e.g. School grounds). Although change in green space types over time could be undertaken due to use of the same categories, there is no time point before 2011, which inhibits the utility to a number of cohort studies (e.g. Millenium cohort study). Furthermore, the 2011 data only covers settlements with over 3,000 people so would not give an estimate of change for people living in rural areas.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;land-cover-over-time&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Land cover over time&lt;/h4&gt;
-&lt;p&gt;There are a number of global, national and continental land cover datasets available over time. There are global land cover datasets from &lt;a href=&#34;https://neo.sci.gsfc.nasa.gov/view.php?datasetId=MCD12C1_T1&#34;&gt;NASA&lt;/a&gt; for 2001-2011 and &lt;a href=&#34;http://due.esrin.esa.int/page_globcover.php&#34;&gt;ESA&lt;/a&gt; covering 2 periods: December 2004 - June 2006 and January - December 2009. Although the classifications for the global datasets seem quite broad, possibly due to the low spatial resolution. The Centre for Hydrology and Ecology have &lt;a href=&#34;https://www.ceh.ac.uk/services/information-products&#34;&gt;datasets&lt;/a&gt; for 1990, 2000, 2007 and 2015 on UK land cover but unfortunatley they can’t be compared between years due to different sampling methods being applied. Finally, there is data in between UK and global level called the &lt;a href=&#34;https://land.copernicus.eu/pan-european/corine-land-cover&#34;&gt;CORINE land cover series&lt;/a&gt;, created for 1990, 2000, 2006 and 2012. Land cover is &lt;a href=&#34;https://wiki.openstreetmap.org/wiki/Corine_Land_Cover&#34;&gt;classified&lt;/a&gt; into 5 categories and 44 classes. Change from 2006 and 2012 has been undertaken by researchers from the university of Leicester, available &lt;a href=&#34;https://catalogue.ceh.ac.uk/documents/35fecd0f-b466-448b-94d1-0bba90be450e&#34;&gt;here&lt;/a&gt;. Whilst CORINE data will allow the analysis of subtypes of green space, there is some evidence that total green space may be more important for health outcomes (Richardson et al., 2018; Klompmaker et al., 2018). Thus measures of vegetation levels based on satellite products may be appropriate.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;vegetation-levels-over-time&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Vegetation levels over time&lt;/h4&gt;
-&lt;p&gt;Normalised difference vegetation index (NDVI) is a measure of vegetation greeness and photosynthetic capacity. NDVI is calculated by an equation using estimates of red (Red; 0.2-0.7µm) and near-infrared (NIR; 0.7-1.1µm) radiation:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[NDVI = {\frac{NIR - Red} {NIR + Red}}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Green vegetation contains chlorophyll which absorbs more red light and reflects more near-infrared light. NDVI values range from -1 to 1, with values near zero as bare soil and 0.8 as temperate rainforests. Instruments, for example the Moderate Resolution Imaging Spectroradiometer (MODIS) aboard Landsat 7 (1999-) and Terra (1999-) record surface reflectance in the NIR and Red bands. The spatial resolution of Landsat 7 is 30 m but only images a scene (185 km long and wide) every 16 days. Terra has a 250 m resolution but images a scene every day. Both datasets (‘Landsat 7 ETM+ C1 Level-2’ and ‘MOS13Q1 V6’) can be acquired from the &lt;a href=&#34;https://earthexplorer.usgs.gov&#34;&gt;USGS EarthExplorer website&lt;/a&gt;. It should be noted that 22% of any scene after 31st of May 2003 is invalid due to a problem with the Scan Line Corrector, which compensates for the forward motion of Landsat 7, of which the following code can provide a &lt;a href=&#34;https://gis.stackexchange.com/questions/264061/ls7-filling-the-gaps-image-with-google-earth-engine&#34;&gt;fix&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;google-earth-enginegee&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Google Earth Engine(GEE)&lt;/h4&gt;
-&lt;p&gt;The USGS explorer is a Graphical User Interface; it is time consuming to download all the images corresponding to large study areas. An &lt;a href=&#34;https://earthexplorer.usgs.gov/inventory/documentation/json-api&#34;&gt;application programming interface&lt;/a&gt;(API) also exists, so some data could be downloaded automatically. However once data has been downloaded, images would still need to be &lt;a href=&#34;https://www.nceas.ucsb.edu/scicomp/usecases/createrasterimagemosaic&#34;&gt;mosaiced&lt;/a&gt; together to undertake analysis at a national level. An alternative is to use the &lt;a href=&#34;https://earthengine.google.com&#34;&gt;Google Earth Engine&lt;/a&gt;, which provides a computing platform that allows users to run geospatial analysis on Google’s infrastructure. In other words, the massive remote sensing datasets required for large scale analyses are easily downloaded via a web API and mosaiced instantly using Google’s high performance parallel computation service. Analysis is performed using an interactive development environment (IDE), which lends itself to quick prototyping and visualisation of results. Crucially, any analysis can be scaled to another country or at a global level very easily. Some challenges arise from GEE’s terminology (e.g. mapping = applying functions) and client/server programming model (similar to Rshiny)(i.e. you cannot use external operations (loop/conditionals) on Earth engine proxy objects (‘.ee’)), although there are &lt;a href=&#34;https://gis.stackexchange.com/questions/247297/start-a-loop-from-information-in-a-feature-property/247319?utm_medium=organic&amp;amp;utm_source=google_rich_qa&amp;amp;utm_campaign=google_rich_qa&#34;&gt;ways&lt;/a&gt; around this. A full discussion on the utility of GEE for analysis is available (Gorelick et al., 2017).&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;method&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Method&lt;/h2&gt;
-&lt;p&gt;The aim was to use all the available Landsat 7 images (2001-2017; image every 16 days), masking clouds and water, and calcuate the median NDVI value for all 30 m pixels within a 500 m radius of the datazone’s population weighted centroid.&lt;/p&gt;
-&lt;div id=&#34;creating-kml-boundary-files&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Creating KML boundary files&lt;/h4&gt;
-&lt;p&gt;First, download the Datazone 2011 &lt;a href=&#34;https://data.gov.uk/dataset/data-zone-centroids-2011/resource/cc06b84c-8b55-4f15-abcf-ace1fda02679&#34;&gt;population weighted centroids&lt;/a&gt;, load into R and export as a .kml file.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;gee-layout&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;GEE layout&lt;/h4&gt;
-&lt;p&gt;Sign into Google Earth Engine with your gmail account. The GEE layout is as follows:&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;img/GEE_images/GEElayout.png&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;The main panel here is the Code editor which will allow you to save code (to the script manager) and run a script.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;loading-vectors&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Loading vectors&lt;/h4&gt;
-&lt;p&gt;Next sign into Google Fusion, click File&amp;gt;new table, then when the new window appears, Choose File&amp;gt;Next and follow the instructions. Note that the maximum size of file is 250 MB (if bigger then split up). When the table has loaded successfully, then click File&amp;gt;About this Table. Copy the Id. Now in GEE, in the Code Editor section, use the ‘ee.FeatureCollection’ function with Id you have copied to load the datazone boundaries.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;creating-vectors&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Creating vectors&lt;/h4&gt;
-&lt;p&gt;Note that you can define features as well by using the ‘ee.Feature’ function. There is the also the option to use the map directly. Clicking on the ‘Add a marker’ icon in the top left hand corner of the Map will import come code to the top of your code editor. If you have several features you can group them using the ‘ee.FeatureCollection’ function.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;loading-rasters&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Loading rasters&lt;/h4&gt;
-&lt;p&gt;We can search for GEE datasets using the search bar at the top of the GEE window. You can click the import icon, or copy the ImageCollection ID and use with the ‘ee.ImageCollection’ function. We can also import single images using ‘ee.Image’, as we have done to acquire the GEE dataset by Hansen et al., 2013.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;mapping&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Mapping&lt;/h4&gt;
-&lt;p&gt;GEE allows you to apply lots of GIS functions over collections of features (i.e. ‘ee.FeatureCollection’) or satellite images (i.e. ee.ImageCollection). To do so we create a function that has one argument (for the sake of simplicity named ‘feature’ for features and ‘image’ for images) that calls the ‘.map’ function, to apply another function (e.g. in the case of buffering, ‘.buffer’) to every feature/image in the collection. In our case we have done this to buffer, mask clouds, mask water and calculate NDVI. For the cloud mask function we use the ‘ee.Algorithms.Landsat.simpleCloudScore’ functions which takes input from beightness, temperature and NDSI and provides a score from 1-100 on liklihood of cloud (we use a threshold of below 25 using the ‘.lt’ function). A similar procedure is used to mask water pixels, where we only keep image pixels that equal 1 (as derived from the Hansen image). For the NDVI, we are using a function called ‘normalizedDifference’ which takes the Near Infra-red band (B4) as the first argument and the red band (B3) as the second argument.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;iterating&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Iterating&lt;/h4&gt;
-&lt;p&gt;If you need to calculate cumulative measures then mapping won’t work because it applies a function to each image independently, in this case you need to use &lt;a href=&#34;https://developers.google.com/earth-engine/ic_iterating&#34;&gt;‘.iterate’&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;reducing&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Reducing&lt;/h4&gt;
-&lt;p&gt;Reducing it synonymous with aggregating the data and can be done using the ‘.reduce’ function. In our case I’ve first reduced all the images to one image by calculating the median of each pixel using ‘ee.Reducer.median’. We then apply the same function by over our regions (i.e. datazones), setting the scale (determined by the resolution of the image).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;printing&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Printing&lt;/h4&gt;
-&lt;p&gt;If you want to check that a function is running correctly, or that something has loaded, or to draw a chart, the ‘print’ command is needed. The output will appear in the console.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;visualising&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Visualising&lt;/h4&gt;
-&lt;p&gt;Importantly when visualising to the map any commands will start with ‘Map.’. The ‘.addlayer’ function will add the image tothe screen, with a number of options available for how it looks (e.g. ‘.setCenter’). In our case we want to see the clipped NDVI layer for each population weighted datazone centroid:&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;img/GEE_images/greenmap.png&#34; /&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;exporting&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Exporting&lt;/h4&gt;
-&lt;p&gt;Importantly when exporting any commands will start with ‘Export.’. GEE is linked to your google drive so export using the ‘.table.toDrive’ function is very easy. In our case we have done some cleaning (taken out a redundant column and added an important one showing the year). The ourput is added to the Task Manager, where you need to manually click run to start the download to your drive.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;cleaning&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Cleaning&lt;/h4&gt;
-&lt;p&gt;The exported data can be cleaned in R. We first want to gather all the files for each year into a single file. Next we want to fill in the missing values. The missing values (~5% of which ~70% were in 2015) were imputed with a kalman smoothing using the ‘imputeTS’ package. Kalman smoothing was chosen as this (along with na.interpolation and na.seadec) will yield the best results (Moritz and Bartz-Beielstein, 2017) The NDVI values were then aggregated to datazone level and saved as csv files. They were also aggregated at a local authority level; here is the time series graph (loess smoothed line):&lt;/p&gt;
-&lt;iframe width=&#34;900&#34; height=&#34;1000&#34; src=&#34;http://rpubs.com/Marko/NDVI_LA&#34; frameborder=&#34;0&#34; allowfullscreen&gt;
-&lt;/iframe&gt;
-&lt;p&gt;&lt;small&gt;For the graph if you double click on an LA name on the right-hand side then it will show that one only. Single clicking on another LA name will add that to the graph. Double clicking twice on an LA name will bring up the original graph with all the LA’s.&lt;/small&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;references&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;References&lt;/h2&gt;
-&lt;p&gt;&lt;small&gt; Gorelick, N., M. Hancher, M. Dixon, S. Ilyushchenko, D. Thau and R. Moore (2017). “Google Earth Engine: Planetary-scale geospatial analysis for everyone.” Remote Sensing of Environment 202: 18-27.&lt;/p&gt;
-&lt;p&gt;Hansen, M. C., P. V. Potapov, R. Moore, M. Hancher, S. A. Turubanova, A. Tyukavina, D. Thau, S. V. Stehman, S. J. Goetz, T. R. Loveland, A. Kommareddy, A. Egorov, L. Chini, C. O. Justice and J. R. G. Townshend (2013). “High-Resolution Global Maps of 21st-Century Forest Cover Change.” Science 342(6160): 850-853.&lt;/p&gt;
-&lt;p&gt;Klompmaker, J. O., G. Hoek, L. D. Bloemsma, U. Gehring, M. Strak, A. H. Wijga, C. van den Brink, B. Brunekreef, E. Lebret and N. A. H. Janssen (2018). “Green space definition affects associations of green space with overweight and physical activity.” Environ Res 160: 531-540.&lt;/p&gt;
-&lt;p&gt;Moritz S and Bartz-Beielstein T (2017). imputeTS: Time Series Missing Value Imputation in R. The R Journal, 9(1), pp. 207-218. &lt;a href=&#34;https://journal.r-project.org/archive/2017/RJ-2017-009/index.html&#34; class=&#34;uri&#34;&gt;https://journal.r-project.org/archive/2017/RJ-2017-009/index.html&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Richardson, E. A., N. K. Shortt, R. Mitchell and J. Pearce (2018). “A sibling study of whether maternal exposure to different types of natural space is related to birthweight.” Int J Epidemiol 47(1): 146-155.&lt;/p&gt;
-&lt;p&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;appendix&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Appendix&lt;/h2&gt;
-&lt;div id=&#34;javascript-code&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;1. Javascript Code&lt;/h4&gt;
-&lt;script src=&#34;https://gist.github.com/markocherrie/b7486f8e5eb1d9a82d095280f4ef7d0d.js&#34;&gt;&lt;/script&gt;
-&lt;/div&gt;
-&lt;div id=&#34;another-gee-example&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;2. Another GEE example&lt;/h4&gt;
-&lt;p&gt;I have lived in three places in Edinburgh during my life (childhood, undergrad. and postdoc.), and I wondered which had the highest greeness recently. We can manually set the coordinates and get the median greeness for each year from 2011-2018. The figure shows that using the daily images there is a lot of noise, but that a stable pattern arises over time (1st place childhood, 2nd place undergraduate, 3rd place postdoc):&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/GEE_images/real.png&#34; /&gt; But it looks like my ideal of living at the top of Ben Lomond is the clear winner: &lt;img src=&#34;img/GEE_images/ideal.png&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;r-code&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;3. R code&lt;/h4&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;## export datazone as kml
-library(rgdal)
-wgs84 = &amp;#39;+proj=longlat +datum=WGS84&amp;#39;
-DZcent&amp;lt;-readOGR(&amp;quot;boundaries/SG_DataZone_Cent_2011.shp&amp;quot;)
-DZcent = spTransform(DZcent, CRS(wgs84))
-writeOGR(DZcent, dsn=&amp;quot;boundaries/DZCent_2011.kml&amp;quot;, layer= &amp;quot;DZcent&amp;quot;, driver=&amp;quot;KML&amp;quot;, dataset_options=c(&amp;quot;NameField=name&amp;quot;))
-
-# create on file from individual years
-files  &amp;lt;- list.files(pattern = &amp;#39;\\.csv&amp;#39;)
-tables &amp;lt;- lapply(files, read.csv, header = TRUE)
-combined.df &amp;lt;- do.call(rbind , tables)
-DZ_NDVI&amp;lt;-subset(combined.df, select=c(&amp;quot;DataZone&amp;quot;, &amp;quot;Year&amp;quot;, &amp;quot;median&amp;quot;))
-#write.csv(DZ_NDVI, &amp;quot;DZ_green.csv&amp;quot;, row.names=F)
-
-# read data in
-#setwd(&amp;quot;C:/Users/mcherrie/Google Drive/GEE_output&amp;quot;)
-data&amp;lt;-read.csv(&amp;quot;DZ_green.csv&amp;quot;)
-
-# Missing
-table(is.na(data$median))
-# 6004/112588*100 (5% missing)
-
-# impute missing
-library(imputeTS)
-# levels here is the name of the datazone
-levels&amp;lt;-levels(data$DataZone)[1:2]
-# function to fill in missing for each datazone
-tsinterp&amp;lt;-function(x){
-x &amp;lt;- ts(x, frequency = 1)
-y &amp;lt;- as.data.frame(na.kalman(x)) 
-return(y)
-}
-# apply the function and collect results
-data2&amp;lt;-tapply(data$median, data$DataZone, tsinterp)
-data2&amp;lt;-data.frame(data2)
-data3&amp;lt;-data.frame(t(data2))
-colnames(data3) &amp;lt;- c(&amp;#39;2001&amp;#39;, &amp;#39;2002&amp;#39;, &amp;#39;2003&amp;#39;, &amp;#39;2004&amp;#39;, &amp;#39;2005&amp;#39;, &amp;#39;2006&amp;#39;, &amp;#39;2007&amp;#39;, &amp;#39;2008&amp;#39;, &amp;#39;2009&amp;#39;, &amp;#39;2010&amp;#39;, 
-&amp;#39;2011&amp;#39;, &amp;#39;2012&amp;#39;, &amp;#39;2013&amp;#39;, &amp;#39;2014&amp;#39;, &amp;#39;2015&amp;#39;, &amp;#39;2016&amp;#39;, &amp;#39;2017&amp;#39;)
-data3$DataZone&amp;lt;-rownames(data3)
-data4&amp;lt;-data3 %&amp;gt;%
-  gather(&amp;quot;Year&amp;quot;,&amp;quot;NDVI&amp;quot; ,1:17)
-
-# add to the council names data 
-lookup&amp;lt;-read.csv(&amp;quot;lookup.csv&amp;quot;)
-DZ_data&amp;lt;-merge(data4, lookup, by=&amp;quot;DataZone&amp;quot;)
-nameLA&amp;lt;-read.csv(&amp;quot;councilnames.csv&amp;quot;)
-DZ_data&amp;lt;-merge(DZ_data, nameLA, by=&amp;quot;Council&amp;quot;)
-
-# get stats by LA
-library(dplyr)
-LA_data&amp;lt;-DZ_data %&amp;gt;%
-  group_by(.dots=c(&amp;quot;Year&amp;quot;,&amp;quot;Councilname&amp;quot;)) %&amp;gt;%
-  summarise(NDVI=median(NDVI))
-
-## get plotly graph
-
-library(ggplot2)
-p&amp;lt;-ggplot(LA_data,aes(x=Year,y=NDVI,colour=Councilname,group=Councilname)) + geom_smooth(se = FALSE)+
-  geom_point()
-library(plotly)
-ggplotly(p)
-
-# create datazone data
-master&amp;lt;-NULL
-for(i in levels){
-y&amp;lt;-read.csv(&amp;quot;DZ_green.csv&amp;quot;)
-y&amp;lt;-subset(data, DataZone==i)
-x &amp;lt;- ts(y$median, frequency = 1)
-y &amp;lt;- as.data.frame(na.kalman(x))
-master&amp;lt;-rbind(y, master)
-}
-
-# add to the geography lookup
-lookup&amp;lt;-read.csv(&amp;quot;lookup.csv&amp;quot;)
-data_admin&amp;lt;-merge(data, lookup, by=&amp;quot;DataZone&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;script src=&#34;//yihui.name/js/math-code.js&#34;&gt;&lt;/script&gt;
-&lt;script async
-src=&#34;//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&#34;&gt;
-&lt;/script&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
+      <description>IntroductionMotivationI’m interested in a long-term small-area level measure of ‘green spaces’, features of the natural environment that are important for a wide variety of health outcomes.
+Green spaces over timeThere are two major green space datasets for Scotland, Scotland’s Greenspace Map 2011 and the Ordnance Survey’s Greenspace Map 2017. These maps were produced by characterising OS polygons using aerial photos, with the latter updated every 6 months from July 2017.</description>
     </item>
     
     <item>
@@ -456,95 +37,9 @@ src=&#34;//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&#34;
       <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/netcdf/</guid>
-      <description>&lt;p&gt;NetCDF stands for “Network Common Data Format” and was created by ‘unidata’ for handling large geospatial data. Here’s a short description from their &lt;a href=&#34;https://www.unidata.ucar.edu/netcdf/&#34;&gt;website&lt;/a&gt;:&lt;/p&gt;
-&lt;p&gt;“NetCDF is a set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-orientated scientific data.”&lt;/p&gt;
-&lt;p&gt;NetCDF files are containers for dimensions, variables and global atttributes. It’s used to store climatology, meteorology and oceanography data by over 1,300 organisations including &lt;a href=&#34;https://www.esrl.noaa.gov/psd/data/gridded/data.gistemp.html&#34;&gt;NOAA&lt;/a&gt; and &lt;a href=&#34;https://www.eumetsat.int/website/home/index.html&#34;&gt;EUMETSAT&lt;/a&gt;. I think the key advantage of the format is that all the information required to use it correctly is supplied within the data file. So it doesn’t matter if you are using Python, Perl or R, you will be able to read, manipulate and plot the data, and there is lots of information out there to help with that.&lt;/p&gt;
-&lt;p&gt;I was asked recently to help with processing air pollution data stored in NetCDF format (.nc/.NC) using R. I’ve had a first attempt at describing one of the files we are using (NO2 max for a day), plotting, batch processing daily neighbourhood (postcode unit) based exposure estimates and finally converting to .rds for upload to a postgresql database. Some considerations of the data I was using was that it had a polar stereographic projection, which can be converted to a lat/long &lt;a href=&#34;https://stackoverflow.com/questions/23837918/convert-polar-stereographic-projection-into-lat-long-grid-in-r&#34;&gt;grid&lt;/a&gt;. I decided that this might not be required if I used the points as they were and allocate the nearest air pollution point to the centroid of the postcode. As the data size was quite large (all postcode units in britain) the normal rgeos::gDistance method didn’t work (i.e. could not allocate vector error), so I used k-nearest neighbour (k=1), below is the code:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# reading ncdf in R
-library(ncdf4)
-library(reshape2)
-library(dplyr)
-library(raster)
-
-# get all netcdf files
-flist &amp;lt;- list.files(path = &amp;quot;.&amp;quot;, pattern = &amp;quot;^.*\\.(nc|NC|Nc|Nc)$&amp;quot;)
-
-# Open a connection to the first file in our list
-nc &amp;lt;- nc_open(flist[1])
-
-# get variable names
-attributes(nc$var)$names
-
-# summary
-MaxNO2&amp;lt;-ncatt_get(nc, attributes(nc$var)$names[3])
-
-#projection is:
-#projection: Stereographic
-#projection_params: 90.0 -32.0 0.933013
-# got this from the nc output
-nc_close(nc)
-
-# use the info collected from attributes to get the data
-xyznames &amp;lt;- c(&amp;quot;lon&amp;quot;, &amp;quot;lat&amp;quot;, &amp;quot;NO2_daymax&amp;quot;)
-lon &amp;lt;- raster(flist[1], varname= xyznames[1])
-lat &amp;lt;- raster(flist[1], varname= xyznames[2])
-dat &amp;lt;- brick(flist[1], varname = xyznames[3])
-
-# Values drops the &amp;quot;raster&amp;quot; wrapper, just returns values in order as a vector
-d &amp;lt;- cbind(values(lon), values(lat), values(dat[[1]]))
-# remap arbitrary values to [0,1] for a colour table
-scl &amp;lt;- function(x) (x - min(x, na.rm = TRUE))/diff(range(x, na.rm = TRUE))
-# set a number for colours
-n &amp;lt;- 56
-# plot the data
-plot(d[,1:2], pch = 16, col = terrain.colors(n)[scl(d[,3]) * (n-1) + 1])
-
-# codepoint postcode unit points
-set1&amp;lt;-readRDS(&amp;quot;C:/Users/mcherrie/boundary/Postcodeunit.rds&amp;quot;)
-set1 &amp;lt;- spTransform(set1, CRS(&amp;quot;+init=epsg:4326&amp;quot;))
-
-# raster vals
-coords = cbind(d[,1], d[,2])
-set2 = SpatialPoints(coords)
-proj4string(set2) = CRS(&amp;quot;+init=epsg:4326&amp;quot;)
-plot(set2)
-
-A &amp;lt;- SpatialPoints(set1)
-B &amp;lt;- SpatialPoints(set2)
-# library(rgeos)
-# set1$nearest_in_set2 &amp;lt;- apply(gDistance(set1sp, set2sp, byid=TRUE), 1, which.min)
-# doesn&amp;#39;t work cannot allocate vector
-
-library(SearchTrees)
-# Find indices of the nearest points in B to each of the points in A
-tree &amp;lt;- createTree(coordinates(B))
-inds &amp;lt;- knnLookup(tree, newdat=coordinates(A), k=1)
-
-# create the dataframes --- need to double check this bit!
-Bdf&amp;lt;-as.data.frame(B)
-Bdf$ind&amp;lt;-seq(1,nrow(Bdf))
-colnames(Bdf)&amp;lt;-c(&amp;quot;AP_long&amp;quot;, &amp;quot;AP_lat&amp;quot;, &amp;quot;ind&amp;quot;)
-Adf&amp;lt;-as.data.frame(A)
-Adf$ind&amp;lt;-inds
-colnames(Adf)&amp;lt;-c(&amp;quot;PU_long&amp;quot;, &amp;quot;PU_lat&amp;quot;, &amp;quot;ind&amp;quot;)
-Cdf&amp;lt;-merge(Adf, Bdf, by=&amp;quot;ind&amp;quot;)
-
-# get the Air pollution coordinates for the Postcode units
-PUDF&amp;lt;-as.data.frame(set1)
-colnames(PUDF)&amp;lt;-c(&amp;quot;PU&amp;quot;, &amp;quot;Easting&amp;quot;, &amp;quot;Northing&amp;quot;, &amp;quot;PU_long&amp;quot;, &amp;quot;PU_lat&amp;quot;)
-PUDF2&amp;lt;-merge(PUDF, Cdf, by=c(&amp;quot;PU_long&amp;quot;, &amp;quot;PU_lat&amp;quot;), all.x=T)
-subsetAP&amp;lt;-subset(PUDF2, select=c(&amp;quot;PU&amp;quot;, &amp;quot;AP_long&amp;quot;, &amp;quot;AP_lat&amp;quot;))
-
-# Let&amp;#39;s output a year
-for(i in 1:2){
-d &amp;lt;- cbind(values(lon), values(lat), values(dat[[i]]))
-name&amp;lt;-dat[[i]]@z[[1]][1]
-colnames(d)&amp;lt;-c(&amp;quot;AP_long&amp;quot;, &amp;quot;AP_lat&amp;quot;, &amp;quot;Value&amp;quot;)
-d2&amp;lt;-merge(d, subsetAP, by=c(&amp;quot;AP_long&amp;quot;, &amp;quot;AP_lat&amp;quot;), all.y=T)
-saveRDS(d2, paste0(&amp;quot;E:/airpollutiondata/&amp;quot;,name,&amp;quot;.rds&amp;quot;))
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Any feedback welcome, thanks.&lt;/p&gt;
-</description>
+      <description>NetCDF stands for “Network Common Data Format” and was created by ‘unidata’ for handling large geospatial data. Here’s a short description from their website:
+“NetCDF is a set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-orientated scientific data.”
+NetCDF files are containers for dimensions, variables and global atttributes. It’s used to store climatology, meteorology and oceanography data by over 1,300 organisations including NOAA and EUMETSAT.</description>
     </item>
     
     <item>
@@ -553,16 +48,8 @@ saveRDS(d2, paste0(&amp;quot;E:/airpollutiondata/&amp;quot;,name,&amp;quot;.rds&
       <pubDate>Thu, 07 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/first-post/</guid>
-      <description>&lt;p&gt;Welcome to my first post. As an avid R user, I was amazed at how quickly it was to setup a static website with the help from the R package: &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34;&gt;“blogdown”&lt;/a&gt;. I thought Yihui Xie gave a convincing argument for blogging from his personal experience (Appendix D in above website). In summary he provides three reasons in favour of blogging:&lt;/p&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;To consolidate thoughts and create a clearer argument for topics that are important to you.&lt;/li&gt;
-&lt;li&gt;To engage with other people and get helpful feedback.&lt;/li&gt;
-&lt;li&gt;To remember things that you have done so that they can be re-used in new applications.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;These are things that I already try to do, albeit unsystematically. I find that the things I do in this respect are either quite time consuming (e.g. giving a tutorial or presentation) or fleeting (e.g. conversations with friends and family). With respect to the third point I have a github repository for &lt;a href=&#34;https://github.com/markocherrie/Helpful_Code&#34;&gt;helpful code&lt;/a&gt;, however this tends to be more of a dump of code snippets rather than a thoughtful write-up of what I was doing. So this website fits in nicely.&lt;/p&gt;
-&lt;p&gt;I mentioned that this is a static website in the first paragraph. This terminology was completely new to me when I started to set this site up. A static website is one that has every webpage stored as a single file on the server, e.g. this post has it’s own HTML (Hypertext Markup Language) file associated with it. Hugo, Jeykll and Hexo are the static site generators that you pass these files to. The main advantage to static websites is that you can hit the ground running, a little bit of HTML and CSS (Cascading Style Sheets) knowledge can go a long way. There is no requirement to know any server side scripting languages such a PHP (Hypertext Preprocessor) or SQL (Structured Query Language), which means there is no server-host interaction and therefore load times are very quick. There are drawbacks though. If you intend to change something on every page, then this can be very time consuming. There is also a lot less functionality comapared to a dynamic page which gives you the ability to add features such as shopping carts and social media interactions. Another option would have been to use a CMS (Content Management System) such as Joomla or Wordpress, beating both static and dynamic on ease of setup and time to update. Although I feel that their functionality is a black box and if you want to deviate from the default template then you may get unstuck. CMS’s have got around this by adding plugins. However I have found that often these aren’t available on the cheaper pricing tiers. For example Wordpress does not allow you to use iframe (a webpage inside another webpage…webception) and adding a plugin is only available on the business pricing tier (£20.83 a month). So I’d argue that a static website for a blog is a good option, which allows the website to grow as the webmaster’s skills do.&lt;/p&gt;
-&lt;p&gt;As with all my posts, I’m writing from memory, from my own experiences, which may have not been remembered correctly or do not include the full picture. If you think there should be an improvement to the post then please get in touch and I’ll update it, I’m always willing to learn!&lt;/p&gt;
-</description>
+      <description>Welcome to my first post. As an avid R user, I was amazed at how quickly it was to setup a static website with the help from the R package: “blogdown”. I thought Yihui Xie gave a convincing argument for blogging from his personal experience (Appendix D in above website). In summary he provides three reasons in favour of blogging:
+To consolidate thoughts and create a clearer argument for topics that are important to you.</description>
     </item>
     
     <item>
@@ -571,8 +58,7 @@ saveRDS(d2, paste0(&amp;quot;E:/airpollutiondata/&amp;quot;,name,&amp;quot;.rds&
       <pubDate>Mon, 27 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/osmr/</guid>
-      <description>&lt;p&gt;I found a really helpful &lt;a href=&#34;https://www.r-spatial.org/2017/07/14/large_scale_osm_in_r&#34;&gt;tutorial&lt;/a&gt; on using OpenStreetMap data in R the other day.&lt;/p&gt;
-</description>
+      <description>I found a really helpful tutorial on using OpenStreetMap data in R the other day.</description>
     </item>
     
   </channel>

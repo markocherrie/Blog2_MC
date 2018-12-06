@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Intervention on Data Scientist</title>
+    <title>Intervention on Researcher</title>
     <link>/tags/intervention/</link>
-    <description>Recent content in Intervention on Data Scientist</description>
+    <description>Recent content in Intervention on Researcher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018 Mark Cherrie</copyright>
     <lastBuildDate>Fri, 22 Dec 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/intervention/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/tags/intervention/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Nudging people to make healthy behaviour choices</title>
@@ -16,65 +18,7 @@
       <pubDate>Fri, 22 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/rshiny-weather-app/</guid>
-      <description>&lt;p&gt;Nudge theory made it big after the 2008 book by Thaler and Sunstein gathered some high profile readers (Obama, Cameron etc). Alongside public health officials and politicians, researchers have been interested in using the theory to influence people to make ‘healthy’ behaviour choices. The central tenant of the theory is based around libertarian paternalism, or influencing an individual’s ‘choice architecture’ without coercion. Nudge-type interventions (e.g. nutritional labeling, size of serving dishes) have been used to tackle &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4967524/&#34;&gt;obesity&lt;/a&gt; and were found to increase ‘healthy’ behaviours by 15.3%.&lt;/p&gt;
-&lt;p&gt;Biometerology is the study of the impacts of the weather and climate on human health. The Met Office provide a cold weather &lt;a href=&#34;https://www.metoffice.gov.uk/public/weather/cold-weather-alert/#?tab=coldWeatherAlert&#34;&gt;alert&lt;/a&gt; to ensure that people with conditions susceptible to the cold (e.g. COPD) can take precautions, based on evidence of spikes in hospital admissions in weeks of &lt;a href=&#34;http://err.ersjournals.com/content/15/101/185.full&#34;&gt;cold weather - below 0°C&lt;/a&gt;. This kind of thing seems to be becoming more popular, with Facebook recently implementing weather information on their users’ timelines. I wondered whether I could replicate this type of nudge in an R Shiny application.&lt;/p&gt;
-&lt;p&gt;In terms of data sources, the &lt;a href=&#34;https://www.metoffice.gov.uk/datapoint&#34;&gt;datapoint API&lt;/a&gt; available from the UK Met Office provides 3 hourly forecasts for a range of weather (e.g. temperature, UV, wind speed) for 5,000 UK sites (i.e. requires a script to determine closest station). Data from the Met Office goes through many rigorous checks and is reliable. Functions to query the datapoint API have been written in &lt;a href=&#34;https://pypi.python.org/pypi/datapoint/&#34;&gt;python&lt;/a&gt; and porting this to R is not a small task. Also, the datapoint API has been taken offline in recent months so that it can be updated (UPDATE 02/02/2018, it is now back online, and will be used in the future).&lt;/p&gt;
-&lt;p&gt;In the interim I used weather data from the &lt;a href=&#34;https://www.wunderground.com/weather/api/&#34;&gt;Weather Underground API&lt;/a&gt;. This provides hourly weather forecasts for a given latitude and longitude and is available for locations around the world. The latitude and longitude was determined by the user’s smartphone or computer &lt;a href=&#34;https://github.com/AugustT/shiny_geolocation&#34;&gt;location&lt;/a&gt;. As this is a test, and I want to do a full literature review to ensure the best weather thresholds, I started with a trivial example - whether it is warm enough to wear shorts to work (arbitrarily set at over 15°C).&lt;/p&gt;
-&lt;p&gt;Below is the code for the UI:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(shiny)
-library(rwunderground)
-shinyUI(fluidPage(
-  titlePanel(&amp;quot;Shorts to work?&amp;quot;),
-    tags$script(&amp;#39;
-                $(document).ready(function () {
-                navigator.geolocation.getCurrentPosition(onSuccess, onError);
-                
-                function onError (err) {
-                Shiny.onInputChange(&amp;quot;geolocation&amp;quot;, false);
-                }
-                
-                function onSuccess (position) {
-                setTimeout(function () {
-                var coords = position.coords;
-                console.log(coords.latitude + &amp;quot;, &amp;quot; + coords.longitude);
-                Shiny.onInputChange(&amp;quot;geolocation&amp;quot;, true);
-                Shiny.onInputChange(&amp;quot;lat&amp;quot;, coords.latitude);
-                Shiny.onInputChange(&amp;quot;long&amp;quot;, coords.longitude);
-                }, 1100)
-                }
-                });
-                &amp;#39;),
-    
-    # output message
-    fluidRow(column(width = 2,
-                    textOutput(&amp;quot;message&amp;quot;))
-    ),
-  tags$head(tags$style(HTML(&amp;quot;
-                            #message {
-                            font-size: 100px;
-                            }
-                            &amp;quot;)))
-  
-  )
-)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Here is the code for the server:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(shiny)
-library(rwunderground)
-
-shinyServer(function(input, output) {
-  observe({
-    if(!is.null(input$lat)){
-    output$message &amp;lt;- renderText({
-      location&amp;lt;-as.character(paste0(input$lat,&amp;quot;,&amp;quot;, input$long))
-      ifelse(hourly(set_location(lat_long = location ), use_metric = TRUE, key = &amp;quot;&amp;quot;, raw = FALSE, message = FALSE)[2,2]&amp;gt;15, &amp;quot;YES&amp;quot;, &amp;quot;NO&amp;quot;)
-      })
-    }
-      })
-})&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Here is the final app:&lt;/p&gt;
-&lt;iframe src=&#34;https://thebest.shinyapps.io/shortstowork/?showcase=0&#34; width=&#34;672&#34; height=&#34;600px&#34;&gt;
-&lt;/iframe&gt;
-</description>
+      <description>Nudge theory made it big after the 2008 book by Thaler and Sunstein gathered some high profile readers (Obama, Cameron etc). Alongside public health officials and politicians, researchers have been interested in using the theory to influence people to make ‘healthy’ behaviour choices. The central tenant of the theory is based around libertarian paternalism, or influencing an individual’s ‘choice architecture’ without coercion. Nudge-type interventions (e.g. nutritional labeling, size of serving dishes) have been used to tackle obesity and were found to increase ‘healthy’ behaviours by 15.</description>
     </item>
     
   </channel>
