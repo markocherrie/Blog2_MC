@@ -33,7 +33,7 @@ weight = 1
 
 # Biography
 
-I love working with all kinds of data, problem solving and presenting ideas to promote public well-being. In that capacity, I am currently working on several exciting projects at the Centre for Research on Environment, Society and Health <a href="https://cresh.org.uk/">(CRESH)</a>. On this site you'll find a record of my work and current interests which will be updated monthly. Download my full CV [here](https://goo.gl/ZPwqRr). 
+I love working with all kinds of data, problem solving and presenting ideas to promote public well-being. In that capacity, I am currently working on several exciting projects at the Centre for Research on Environment, Society and Health <a href="https://cresh.org.uk/">(CRESH)</a>. On this site you'll find a record of my work and current interests which will be updated monthly. Download my full CV [here](https://drive.google.com/file/d/1PQY0JeUiYeNw1C0EHZBsgn5dBuxMsYPy/view?usp=sharing). 
 
 
 
