@@ -11,6 +11,15 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Geospatial Research Methods</title>
+      <link>/talk/geospatialresearchmethods-2019/</link>
+      <pubDate>Thu, 07 Mar 2019 12:00:00 +0000</pubDate>
+      
+      <guid>/talk/geospatialresearchmethods-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Association between activity space exposure to parks in childhood and adolescence and cognitive ageing in later life</title>
       <link>/publication/activityspace/</link>
       <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
@@ -944,15 +953,6 @@ saveRDS(d2, paste0(&amp;quot;E:/airpollutiondata/&amp;quot;,name,&amp;quot;.rds&
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/publication/lifecourseplacemental/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>A randomised control crossover trial of a theory based intervention to improve sun-safe and healthy behaviours in construction workers: study protocol</title>
-      <link>/publication/nudgeuv/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/nudgeuv/</guid>
       <description></description>
     </item>
     
