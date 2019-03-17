@@ -11,6 +11,19 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>How can we measure everyday exposure to greenspaces?</title>
+      <link>/post/everydaygreen/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/everydaygreen/</guid>
+      <description>
+
+
+&lt;p&gt;How can we estimate exposure to the natural environment day-to-day?&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Geospatial Research Methods</title>
       <link>/talk/geospatialresearchmethods-2019/</link>
       <pubDate>Thu, 07 Mar 2019 12:00:00 +0000</pubDate>
@@ -945,15 +958,6 @@ saveRDS(d2, paste0(&amp;quot;E:/airpollutiondata/&amp;quot;,name,&amp;quot;.rds&
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Any feedback welcome, thanks.&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Life course of place: a longitudinal study of mental health and place</title>
-      <link>/publication/lifecourseplacemental/</link>
-      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/lifecourseplacemental/</guid>
-      <description></description>
     </item>
     
   </channel>

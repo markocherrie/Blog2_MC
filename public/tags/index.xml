@@ -60,7 +60,7 @@
     <item>
       <title>Api</title>
       <link>/tags/api/</link>
-      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/api/</guid>
       <description></description>
@@ -72,6 +72,15 @@
       <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/app/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Arc</title>
+      <link>/tags/arc/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/arc/</guid>
       <description></description>
     </item>
     
@@ -96,7 +105,7 @@
     <item>
       <title>Built Environment</title>
       <link>/tags/built-environment/</link>
-      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/built-environment/</guid>
       <description></description>
@@ -108,15 +117,6 @@
       <pubDate>Fri, 08 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/childhood/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cloud Vision</title>
-      <link>/tags/cloud-vision/</link>
-      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/cloud-vision/</guid>
       <description></description>
     </item>
     
@@ -202,18 +202,18 @@
     </item>
     
     <item>
-      <title>Google</title>
-      <link>/tags/google/</link>
-      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      <title>Gps</title>
+      <link>/tags/gps/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/google/</guid>
+      <guid>/tags/gps/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Green Space</title>
       <link>/tags/green-space/</link>
-      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/green-space/</guid>
       <description></description>
@@ -396,15 +396,6 @@
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/pdf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Places</title>
-      <link>/tags/places/</link>
-      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/places/</guid>
       <description></description>
     </item>
     

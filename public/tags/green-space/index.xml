@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018 Mark Cherrie</copyright>
-    <lastBuildDate>Fri, 10 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/green-space/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How can we measure everyday exposure to greenspaces?</title>
+      <link>/post/everydaygreen/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/everydaygreen/</guid>
+      <description>How can we estimate exposure to the natural environment day-to-day?</description>
+    </item>
     
     <item>
       <title>Mapping Green Space and Traffic in Glasgow</title>
@@ -22,15 +31,6 @@
 Here is the final result: 
 First load the packages:
 # allows r to work with spatial datalibrary(rgdal)# allows r to connect with google apislibrary(googleway)# allows r to perform GIS operations (on vectors especially?</description>
-    </item>
-    
-    <item>
-      <title>Mapping Green Space and Traffic in Glasgow</title>
-      <link>/post/greentraffic/</link>
-      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/greentraffic/</guid>
-      <description>How can we estimate exposure to the natural environment day-to-day?</description>
     </item>
     
   </channel>
