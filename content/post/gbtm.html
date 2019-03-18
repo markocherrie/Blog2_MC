@@ -13,7 +13,7 @@ categories: ["Data Analysis"]
 <div id="background" class="section level2">
 <h2>Background</h2>
 <p>Group-based trajectory modelling (GBMT) is a way of identifying latent patterns of change from multiple individual trajectories. It is widely used within the field of economics and also becoming popular in health geography. The process of deciding the number of classes is not transparent and tends to be based on one or two model fit statistics. <a href="http://journals.sagepub.com/doi/pdf/10.1177/0962280215598665">Klijn et al</a>., created a fit-criteria assessment plot (F-CAP) that accepts universal data input to aid the decision on the number of classes (2017).</p>
-<p>As we have several date of the macroeconomy, it is important to visually inspect the model fit statistics and to decide the number of classes before applying in a model with the mental health outcomes. These stages (classify and analyse) are normally done seperately, so the units of analysis are classfied, then class membership is taken as known in the subsequent analysis with the health outcome (i.e. deterministic instead of probabilistic).</p>
+<p>As we have several data of the macroeconomy, it is important to visually inspect the model fit statistics and to decide the number of classes before applying in a model with the mental health outcomes. These stages (classify and analyse) are normally done seperately, so the units of analysis are classfied, then class membership is taken as known in the subsequent analysis with the health outcome (i.e. deterministic instead of probabilistic).</p>
 <p>This document describes the process of using F-CAP’s with the example of trajectories of employment (2006-2015) at the Scottish local authority level (n=32).</p>
 </div>
 <div id="method" class="section level2">
@@ -169,7 +169,7 @@ ggplot(traj, aes(x, y, group=id, colour=group2)) + geom_line() + geom_smooth(aes
 # Put in the F-CAP best model here
 plottraj(&quot;x&quot;, 4, &quot;linear&quot;, &quot;plot&quot;)</code></pre>
 <pre><code>## Be patient, lcmm is running ... 
-## The program took 1.42 seconds 
+## The program took 1.38 seconds 
 ##  
 ## Posterior classification: 
 ##   class1 class2 class3 class4

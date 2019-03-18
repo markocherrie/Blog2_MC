@@ -62,7 +62,7 @@
 &lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Background&lt;/h2&gt;
 &lt;p&gt;Group-based trajectory modelling (GBMT) is a way of identifying latent patterns of change from multiple individual trajectories. It is widely used within the field of economics and also becoming popular in health geography. The process of deciding the number of classes is not transparent and tends to be based on one or two model fit statistics. &lt;a href=&#34;http://journals.sagepub.com/doi/pdf/10.1177/0962280215598665&#34;&gt;Klijn et al&lt;/a&gt;., created a fit-criteria assessment plot (F-CAP) that accepts universal data input to aid the decision on the number of classes (2017).&lt;/p&gt;
-&lt;p&gt;As we have several date of the macroeconomy, it is important to visually inspect the model fit statistics and to decide the number of classes before applying in a model with the mental health outcomes. These stages (classify and analyse) are normally done seperately, so the units of analysis are classfied, then class membership is taken as known in the subsequent analysis with the health outcome (i.e. deterministic instead of probabilistic).&lt;/p&gt;
+&lt;p&gt;As we have several data of the macroeconomy, it is important to visually inspect the model fit statistics and to decide the number of classes before applying in a model with the mental health outcomes. These stages (classify and analyse) are normally done seperately, so the units of analysis are classfied, then class membership is taken as known in the subsequent analysis with the health outcome (i.e. deterministic instead of probabilistic).&lt;/p&gt;
 &lt;p&gt;This document describes the process of using F-CAP’s with the example of trajectories of employment (2006-2015) at the Scottish local authority level (n=32).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;method&#34; class=&#34;section level2&#34;&gt;
@@ -218,7 +218,7 @@ ggplot(traj, aes(x, y, group=id, colour=group2)) + geom_line() + geom_smooth(aes
 # Put in the F-CAP best model here
 plottraj(&amp;quot;x&amp;quot;, 4, &amp;quot;linear&amp;quot;, &amp;quot;plot&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Be patient, lcmm is running ... 
-## The program took 1.42 seconds 
+## The program took 1.38 seconds 
 ##  
 ## Posterior classification: 
 ##   class1 class2 class3 class4
