@@ -1,5 +1,5 @@
 ---
-title: 'How to find the best number of groups in Group Based Trajectory Modelling?'
+title: 'How to find the optimal number of groups in GBTM?'
 author: ~
 date: '2018-09-03'
 draft: yes
@@ -129,22 +129,22 @@ We then take the model fit output and use it as input to the F-CAP function that
 
 The next step is to look at the F-CAPs and make a decision on the number of classes. Note, where there are + or - signs after some of the model fit statistics, this is the highest and lowest per group, as opposed to the mean. The first plot shows the AIC and BIC (penalises model complexity to a higher degree than AIC). Generally for these two, the lower the number the better the model fit. Six classes has the lowest BIC, but there could be an argument for 4 clases being the elbow. 
 
-![](Traj_files/AICBIC.png)
+![](img/Trajimages/AICBIC.png)
 
 The average posterior probability of assignment (APPA) shows the probability of belonging to a certain class. Generally, over 70% for APPA is defined as sufficient. The SD is standard deviation of group
 membership probabilities and is generally lower when model fit is better. The mismatch between estimated and assigned group probabilities (Mismatch) in a perfect model is zero. In this case, all of the classes have over 70%, with the highest probabilities for 2, then 4 and 5 classes. The mismatch is close to zero for all classes, with slight increasing trend with increasing number of classes. The SD is lowest for 2 groups and is noticebly higher after 5 classes. 
 
 
-![](Traj_files/PP.png)
+![](img/Trajimages/PP.png)
 
 The Odds of Correct Classification (OCC) compares the average posterior probability assignment, correcting for OCC based on random assignment. Generally, higher OCC's indicate better model fit with a threshold of 5 used to show good assignment accuracy. In this case, all classes have sufficient accuracy in class assignment but especially so for classes 3 to 9.   
 
 
-![](Traj_files/OCC.png)
+![](img/Trajimages/OCC.png)
 
 We tend not to want classes that contain a very small number of units. A common threshold to apply is that each group will have at least 1% of the sample. However this should be modified if total number of units in the sample are low. In this case, although we are above the 1% threshold in all models with under 6 classes, because we have so few in the sample (N=32), a suitable number of classes would 2,3 or 4, given that at least ~10% of the sample are in each class.
 
-![](Traj_files/Small.png)
+![](img/Trajimages/Small.png)
 
 In conclusion, the best number of classes in the model of LA employment trajectories from 2006-2015 is four. Although some of the criteria showed little variation between the classes (OCC, Mismatch), we arrived at as this number of classes using the following criteria:
 
