@@ -221,7 +221,7 @@ ggplot(traj, aes(x, y, group=id, colour=group2)) + geom_line() + geom_smooth(aes
 # Put in the F-CAP best model here
 plottraj(&amp;quot;x&amp;quot;, 4, &amp;quot;linear&amp;quot;, &amp;quot;plot&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Be patient, lcmm is running ... 
-## The program took 1.47 seconds 
+## The program took 1.38 seconds 
 ##  
 ## Posterior classification: 
 ##   class1 class2 class3 class4

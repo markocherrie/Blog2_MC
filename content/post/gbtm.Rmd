@@ -2,7 +2,7 @@
 title: 'How to find the best number of groups in Group Based Trajectory Modelling?'
 author: ~
 date: '2018-09-03'
-draft: yes
+draft: no
 slug: gbtm
 tags: ["Macroeconomy","Employment", "Statistics", "Modelling"]
 categories: ["Data Analysis"]
