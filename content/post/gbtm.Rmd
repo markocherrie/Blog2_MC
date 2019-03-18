@@ -29,7 +29,6 @@ library(gridExtra)
 library(lcmm)
 
 # STEP 1: LOAD EMPLOYMENT DATA
-#setwd("/Users/markcherrimacbook/Google Drive/ProjectFiles/sdai_MC/SDAIdata_SC")
 data<-readr::read_csv("Traj_files/LAemployment.csv")
 
 # STEP 2 FORMAT DATA FOR LCMM
@@ -145,7 +144,6 @@ The Odds of Correct Classification (OCC) compares the average posterior probabil
 We tend not to want classes that contain a very small number of units. A common threshold to apply is that each group will have at least 1% of the sample. However this should be modified if total number of units in the sample are low. In this case, although we are above the 1% threshold in all models with under 6 classes, because we have so few in the sample (N=32), a suitable number of classes would 2,3 or 4, given that at least ~10% of the sample are in each class.
 
 ![](img/Traj_images/Small.png)
-img/GEE_images/GEElayout.png
 
 In conclusion, the best number of classes in the model of LA employment trajectories from 2006-2015 is four. Although some of the criteria showed little variation between the classes (OCC, Mismatch), we arrived at as this number of classes using the following criteria:
 
@@ -181,10 +179,10 @@ plottraj<-function(formula, numberofgroups, link, output){
 if (output=="plot"){
 ggplot(traj, aes(x, y, group=id, colour=group2)) + geom_line() + geom_smooth(aes(group=group2), method="loess", size=2, se=F) + labs(x="x",y="y",colour="Latent Class")
   pl<-ggplot(traj, aes(as.factor(x), y, group=id, colour=TRAJGROUP)) + geom_smooth(aes(group=id, colour=TRAJGROUP),size=0.5, se=F) + geom_smooth(aes(group=TRAJGROUP), method="loess", size=2, se=T) + labs(x="Date",y="% Employed",colour="Latent Class")
-#  ggsave(paste0("C:/Users/mcherrie/Google #Drive/ProjectFiles/sdai_MC/SDAIdata_SC/trajectories/fcap/plots/",formula, #numberofgroups, link,".png"), plot=pl)
+#  ggsave(paste0("plots/",formula, #numberofgroups, link,".png"), plot=pl)
   pl
 
-} else if (output=="file"){write.csv(traj, paste0("C:/Users/mcherrie/Google Drive/ProjectFiles/sdai_MC/SDAIdata_SC/trajectories/fcap/data/",formula, numberofgroups, link,".csv"),row.names=F)}
+} else if (output=="file"){write.csv(traj, paste0("data/",formula, numberofgroups, link,".csv"),row.names=F)}
 }
 
 # Put in the F-CAP best model here

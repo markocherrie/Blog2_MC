@@ -76,7 +76,6 @@ library(gridExtra)
 library(lcmm)
 
 # STEP 1: LOAD EMPLOYMENT DATA
-#setwd(&amp;quot;/Users/markcherrimacbook/Google Drive/ProjectFiles/sdai_MC/SDAIdata_SC&amp;quot;)
 data&amp;lt;-readr::read_csv(&amp;quot;Traj_files/LAemployment.csv&amp;quot;)
 
 # STEP 2 FORMAT DATA FOR LCMM
@@ -178,7 +177,10 @@ library(plyr)
 
 &lt;/div&gt;
 &lt;p&gt;We tend not to want classes that contain a very small number of units. A common threshold to apply is that each group will have at least 1% of the sample. However this should be modified if total number of units in the sample are low. In this case, although we are above the 1% threshold in all models with under 6 classes, because we have so few in the sample (N=32), a suitable number of classes would 2,3 or 4, given that at least ~10% of the sample are in each class.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/Traj_images/Small.png&#34; /&gt; img/GEE_images/GEElayout.png&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;img/Traj_images/Small.png&#34; /&gt;
+
+&lt;/div&gt;
 &lt;p&gt;In conclusion, the best number of classes in the model of LA employment trajectories from 2006-2015 is four. Although some of the criteria showed little variation between the classes (OCC, Mismatch), we arrived at as this number of classes using the following criteria:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;BIC elbow&lt;/li&gt;
@@ -209,16 +211,16 @@ plottraj&amp;lt;-function(formula, numberofgroups, link, output){
 if (output==&amp;quot;plot&amp;quot;){
 ggplot(traj, aes(x, y, group=id, colour=group2)) + geom_line() + geom_smooth(aes(group=group2), method=&amp;quot;loess&amp;quot;, size=2, se=F) + labs(x=&amp;quot;x&amp;quot;,y=&amp;quot;y&amp;quot;,colour=&amp;quot;Latent Class&amp;quot;)
   pl&amp;lt;-ggplot(traj, aes(as.factor(x), y, group=id, colour=TRAJGROUP)) + geom_smooth(aes(group=id, colour=TRAJGROUP),size=0.5, se=F) + geom_smooth(aes(group=TRAJGROUP), method=&amp;quot;loess&amp;quot;, size=2, se=T) + labs(x=&amp;quot;Date&amp;quot;,y=&amp;quot;% Employed&amp;quot;,colour=&amp;quot;Latent Class&amp;quot;)
-#  ggsave(paste0(&amp;quot;C:/Users/mcherrie/Google #Drive/ProjectFiles/sdai_MC/SDAIdata_SC/trajectories/fcap/plots/&amp;quot;,formula, #numberofgroups, link,&amp;quot;.png&amp;quot;), plot=pl)
+#  ggsave(paste0(&amp;quot;plots/&amp;quot;,formula, #numberofgroups, link,&amp;quot;.png&amp;quot;), plot=pl)
   pl
 
-} else if (output==&amp;quot;file&amp;quot;){write.csv(traj, paste0(&amp;quot;C:/Users/mcherrie/Google Drive/ProjectFiles/sdai_MC/SDAIdata_SC/trajectories/fcap/data/&amp;quot;,formula, numberofgroups, link,&amp;quot;.csv&amp;quot;),row.names=F)}
+} else if (output==&amp;quot;file&amp;quot;){write.csv(traj, paste0(&amp;quot;data/&amp;quot;,formula, numberofgroups, link,&amp;quot;.csv&amp;quot;),row.names=F)}
 }
 
 # Put in the F-CAP best model here
 plottraj(&amp;quot;x&amp;quot;, 4, &amp;quot;linear&amp;quot;, &amp;quot;plot&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Be patient, lcmm is running ... 
-## The program took 1.38 seconds 
+## The program took 1.46 seconds 
 ##  
 ## Posterior classification: 
 ##   class1 class2 class3 class4
