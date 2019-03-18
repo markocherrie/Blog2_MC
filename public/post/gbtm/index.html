@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.54.0" />
+  <meta name="author" content="Mark Cherrie">
+  <meta name="description" content="Postdoctoral Researcher in Environment and Health">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.0/css/academicons.min.css" integrity="sha512-GGGNUPDhnG8LEAEDsjqYIQns+Gu8RBs4j5XGlxl7UfRaZBhCCm5jenJkeJL8uPuOXGqgl8/H1gjlWQDRjd3cUQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-104259166-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Researcher">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Researcher">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="/post/gbtm/">
+
+  
+
+  <title>How to find the best number of groups in Group Based Trajectory Modelling? | Researcher</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Researcher</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#publications_selected">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#talks">
+            
+            <span>Presentations</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">How to find the best number of groups in Group Based Trajectory Modelling?</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2018-09-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Mon, Sep 3, 2018
+    </time>
+  </span>
+
+  
+  
+  
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/data-analysis">Data Analysis</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/macroeconomy">Macroeconomy</a
+    >, 
+    
+    <a href="/tags/employment">Employment</a
+    >, 
+    
+    <a href="/tags/statistics">Statistics</a
+    >, 
+    
+    <a href="/tags/modelling">Modelling</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2fgbtm%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=How%20to%20find%20the%20best%20number%20of%20groups%20in%20Group%20Based%20Trajectory%20Modelling%3f&amp;url=%2fpost%2fgbtm%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fgbtm%2f&amp;title=How%20to%20find%20the%20best%20number%20of%20groups%20in%20Group%20Based%20Trajectory%20Modelling%3f"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2fgbtm%2f&amp;title=How%20to%20find%20the%20best%20number%20of%20groups%20in%20Group%20Based%20Trajectory%20Modelling%3f"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=How%20to%20find%20the%20best%20number%20of%20groups%20in%20Group%20Based%20Trajectory%20Modelling%3f&amp;body=%2fpost%2fgbtm%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+
+<div id="background" class="section level2">
+<h2>Background</h2>
+<p>Group-based trajectory modelling (GBMT) is a way of identifying latent patterns of change from multiple individual trajectories. It is widely used within the field of economics and also becoming popular in health geography. The process of deciding the number of classes is not transparent and tends to be based on one or two model fit statistics. <a href="http://journals.sagepub.com/doi/pdf/10.1177/0962280215598665">Klijn et al</a>., created a fit-criteria assessment plot (F-CAP) that accepts universal data input to aid the decision on the number of classes (2017).</p>
+<p>As we have several date of the macroeconomy, it is important to visually inspect the model fit statistics and to decide the number of classes before applying in a model with the mental health outcomes. These stages (classify and analyse) are normally done seperately, so the units of analysis are classfied, then class membership is taken as known in the subsequent analysis with the health outcome (i.e. deterministic instead of probabilistic).</p>
+<p>This document describes the process of using F-CAP’s with the example of trajectories of employment (2006-2015) at the Scottish local authority level (n=32).</p>
+</div>
+<div id="method" class="section level2">
+<h2>Method</h2>
+<p>We firstly load the employment data that was processed in the macroeconomy document. Some processing is required to get this data ready for the linear class mixed model. The first figure shows a simple visualisation of the employment trajectories for each LA over the time period:</p>
+<pre class="r"><code>##################### EMPLOYMENT #######################################
+# Load packages
+library(ggplot2)
+library(catspec)
+library(gridExtra)
+library(lcmm)
+
+# STEP 1: LOAD EMPLOYMENT DATA
+#setwd(&quot;/Users/markcherrimacbook/Google Drive/ProjectFiles/sdai_MC/SDAIdata_SC&quot;)
+data&lt;-readr::read_csv(&quot;Traj_files/LAemployment.csv&quot;)
+
+# STEP 2 FORMAT DATA FOR LCMM
+datamanip&lt;-function(Indicator, scale){
+  data&lt;-subset(data, IndSub==Indicator)
+  
+  # Subset for latent class model
+  traj &lt;- data
+  traj$id &lt;- as.factor(traj$Council)
+  traj$x&lt;-traj$Year
+  traj$y&lt;-as.numeric(traj$Value)
+  traj&lt;-subset(traj, select=c(&quot;id&quot;, &quot;x&quot;, &quot;y&quot;))
+  traj$x2&lt;-traj$x^2
+  traj$x3&lt;-traj$x^3
+  
+  # scale by geographic unit!
+  library(dplyr)
+  if(scale==TRUE){
+  traj&lt;-traj %&gt;%
+    group_by(id) %&gt;%
+    mutate(y=scale(y, center = TRUE, scale = TRUE))
+  return(traj)
+} else(
+  return(traj))
+  }
+traj&lt;-datamanip(&quot;pct&quot;, &quot;FALSE&quot;)
+
+# viz
+ggplot(traj, aes(as.factor(x), y, group=id)) + 
+  geom_line(aes(colour=id, group=id)) + 
+  labs(x = &quot;Year&quot;, y = &quot;% Employed&quot;, title = &quot;Plot of all LA trajectories&quot;)</code></pre>
+<p><img src="/post/gbtm_files/figure-html/STEP1and2-1.png" width="672" /></p>
+<p>Next, we need to fit the LCMM models (this is a batch process taking arguments of ‘formula’, ‘number of groups’ and ‘model’). In this example we are using the linear specification of the employment variables (i.e. we believe that trajectories over time are best modelled by linear terms rather than higher terms), a maximum of 10 latent classes and a linear link (as the employment data is continuous). The model fit statistics are then written into a .csv file that has been formatted to be accepted as universal input by the F-CAP R code.</p>
+<pre class="r"><code>##### STEP 3: FIT THE LCMM MODELS AND OUTPUT MODEL FIT
+
+# Create the file for running the procedure from 2-10 groups
+batchit&lt;-function(formula, groups, model){
+  batch&lt;-expand.grid(formula, rep(2:groups))
+  colnames(batch)&lt;-c(&quot;formula&quot;, &quot;numberofgroups&quot;)
+  batch$link&lt;-model
+  batch$formula&lt;-as.character(batch$formula)
+  batch$numberofgroups&lt;-as.numeric(as.character(batch$numberofgroups))
+  return(batch)
+}
+batch&lt;-batchit(&quot;x&quot;, 10, &quot;linear&quot;)
+
+# Model Fit output function
+#file.remove(list.files(&quot;trajectories/fcap/input/&quot;, pattern=&quot;Universal_*&quot;, full.names = T))
+modelfittraj&lt;-function(formula, numberofgroups, link){
+  d4&lt;-lcmm(as.formula(paste0(&quot;y~&quot;, formula)),
+           as.formula(paste0(&quot;mixture=~&quot;, formula)),
+           #as.formula(paste0(&quot;random=~&quot;, formula)),
+           # whether to include random effects is quite a talking point
+           subject=&#39;id&#39;,
+           ng=numberofgroups,
+           idiag=TRUE, 
+           data=traj,
+           link=link)
+  postprob(d4)
+  conv&lt;-ifelse(d4$conv==1, &quot;TRUE&quot;, &quot;FALSE&quot;)
+  k&lt;-paste(d4$AIC, d4$BIC, exp(d4$loglik), conv)
+  k&lt;-gsub(&quot; &quot;, &quot;,&quot;, k)
+  pp&lt;-d4$pprob
+  pp&lt;-cbind(pp[,3:(ncol(pp))], d4$pprob$class)
+  sink(paste0(&quot;trajectories/fcap/input/&quot;,formula, numberofgroups, link,&quot;.txt&quot;))
+  cat(k, &quot;\n&quot;)
+  # Stop writing to the file
+  sink()
+  write.table(pp, paste0(&quot;trajectories/fcap/input/&quot;,formula, numberofgroups, link,&quot;.txt&quot;), 
+              append=TRUE, 
+              sep = &quot;,&quot;,
+              row.names = F,
+              col.names = F)
+  output&lt;-read.table(paste0(&quot;trajectories/fcap/input/&quot;,formula, numberofgroups, link,&quot;.txt&quot;), row.names=NULL, sep=&quot;,&quot;, fill=T, header=F)
+  file.remove(paste0(&quot;trajectories/fcap/input/&quot;,formula, numberofgroups, link,&quot;.txt&quot;))
+  output[is.na(output)]&lt;-&quot;&quot;
+  readr::write_csv(output, paste0(&quot;trajectories/fcap/input/&quot;,&quot;Universal_&quot;, numberofgroups,&quot;.csv&quot;), col_names = F)
+}
+# Batch it
+library(plyr)
+#mdply(batch,modelfittraj)</code></pre>
+<p>We then take the model fit output and use it as input to the F-CAP function that was supplied by Valeria Lima Passos (co-author of the paper above).</p>
+<pre class="r"><code>##### STEP 4 - Run the CSV files through F-CAP
+
+#source(paste0(&quot;trajectories/fcap/fcap_base_12_PC.R&quot;), echo=TRUE)</code></pre>
+<p>The next step is to look at the F-CAPs and make a decision on the number of classes. Note, where there are + or - signs after some of the model fit statistics, this is the highest and lowest per group, as opposed to the mean. The first plot shows the AIC and BIC (penalises model complexity to a higher degree than AIC). Generally for these two, the lower the number the better the model fit. Six classes has the lowest BIC, but there could be an argument for 4 clases being the elbow.</p>
+<div class="figure">
+<img src="Traj_files/AICBIC.png" />
+
+</div>
+<p>The average posterior probability of assignment (APPA) shows the probability of belonging to a certain class. Generally, over 70% for APPA is defined as sufficient. The SD is standard deviation of group membership probabilities and is generally lower when model fit is better. The mismatch between estimated and assigned group probabilities (Mismatch) in a perfect model is zero. In this case, all of the classes have over 70%, with the highest probabilities for 2, then 4 and 5 classes. The mismatch is close to zero for all classes, with slight increasing trend with increasing number of classes. The SD is lowest for 2 groups and is noticebly higher after 5 classes.</p>
+<div class="figure">
+<img src="Traj_files/PP.png" />
+
+</div>
+<p>The Odds of Correct Classification (OCC) compares the average posterior probability assignment, correcting for OCC based on random assignment. Generally, higher OCC’s indicate better model fit with a threshold of 5 used to show good assignment accuracy. In this case, all classes have sufficient accuracy in class assignment but especially so for classes 3 to 9.</p>
+<div class="figure">
+<img src="Traj_files/OCC.png" />
+
+</div>
+<p>We tend not to want classes that contain a very small number of units. A common threshold to apply is that each group will have at least 1% of the sample. However this should be modified if total number of units in the sample are low. In this case, although we are above the 1% threshold in all models with under 6 classes, because we have so few in the sample (N=32), a suitable number of classes would 2,3 or 4, given that at least ~10% of the sample are in each class.</p>
+<div class="figure">
+<img src="Traj_files/Small.png" />
+
+</div>
+<p>In conclusion, the best number of classes in the model of LA employment trajectories from 2006-2015 is four. Although some of the criteria showed little variation between the classes (OCC, Mismatch), we arrived at as this number of classes using the following criteria:</p>
+<ul>
+<li>BIC elbow</li>
+<li>High posterior probabilities (&gt;90%)</li>
+<li>Relatively low standard deviation of PP within each class</li>
+<li>Had at least ~10% of the sample in any one class</li>
+</ul>
+<p>The next step is to then see whether changing the polynomial order gives any improvement in these model fit statistics (although in R I can only seem to change all the clusters at once rather than individually). For brevity, this is not shown in this document.</p>
+<pre class="r"><code>## What&#39;s the best model?
+
+##### STEP 5 - Finalise the group membership and plot
+
+# plot traj
+plottraj&lt;-function(formula, numberofgroups, link, output){
+  k&lt;-NULL
+  traj$id &lt;- as.factor(traj$id)
+  d4&lt;-lcmm(as.formula(paste0(&quot;y~&quot;, formula)),
+           as.formula(paste0(&quot;mixture=~&quot;, formula)),
+           subject=&#39;id&#39;,
+           ng=numberofgroups,
+           idiag=TRUE, 
+           data=traj,
+           link=link)
+  postprob(d4)
+  traj$id2 &lt;- as.numeric(traj$id)
+  groups &lt;- as.data.frame(d4$pprob[,1:2])
+  traj$TRAJGROUP &lt;- factor(groups$class[sapply(traj$id2, function(x) which(groups$id==x))])
+if (output==&quot;plot&quot;){
+ggplot(traj, aes(x, y, group=id, colour=group2)) + geom_line() + geom_smooth(aes(group=group2), method=&quot;loess&quot;, size=2, se=F) + labs(x=&quot;x&quot;,y=&quot;y&quot;,colour=&quot;Latent Class&quot;)
+  pl&lt;-ggplot(traj, aes(as.factor(x), y, group=id, colour=TRAJGROUP)) + geom_smooth(aes(group=id, colour=TRAJGROUP),size=0.5, se=F) + geom_smooth(aes(group=TRAJGROUP), method=&quot;loess&quot;, size=2, se=T) + labs(x=&quot;Date&quot;,y=&quot;% Employed&quot;,colour=&quot;Latent Class&quot;)
+#  ggsave(paste0(&quot;C:/Users/mcherrie/Google #Drive/ProjectFiles/sdai_MC/SDAIdata_SC/trajectories/fcap/plots/&quot;,formula, #numberofgroups, link,&quot;.png&quot;), plot=pl)
+  pl
+
+} else if (output==&quot;file&quot;){write.csv(traj, paste0(&quot;C:/Users/mcherrie/Google Drive/ProjectFiles/sdai_MC/SDAIdata_SC/trajectories/fcap/data/&quot;,formula, numberofgroups, link,&quot;.csv&quot;),row.names=F)}
+}
+
+# Put in the F-CAP best model here
+plottraj(&quot;x&quot;, 4, &quot;linear&quot;, &quot;plot&quot;)</code></pre>
+<pre><code>## Be patient, lcmm is running ... 
+## The program took 1.47 seconds 
+##  
+## Posterior classification: 
+##   class1 class2 class3 class4
+## N   3.00  15.00   3.00  11.00
+## %   9.38  46.88   9.38  34.38
+##  
+## Posterior classification table: 
+##      --&gt; mean of posterior probabilities in each class 
+##         prob1  prob2  prob3  prob4
+## class1 0.9993 0.0007 0.0000 0.0000
+## class2 0.0000 0.9976 0.0000 0.0024
+## class3 0.0000 0.0000 0.9998 0.0002
+## class4 0.0000 0.0476 0.0005 0.9519
+##  
+## Posterior probabilities above a threshold (%): 
+##          class1 class2 class3 class4
+## prob&gt;0.7    100    100    100  90.91
+## prob&gt;0.8    100    100    100  90.91
+## prob&gt;0.9    100    100    100  90.91
+## </code></pre>
+<p><img src="/post/gbtm_files/figure-html/STEP5-1.png" width="672" /></p>
+<p>The groups are as follows:</p>
+<ul>
+<li>Group 1: Orkney Islands, Shetland Islands, Aberdeenshire</li>
+<li>Group 2: East Lothian, East Renfrewshire, Eilean Siar, Falkirk, Fife, Highland, Midlothian, Moray, Perth and Kinross, Scottish Borders, Aberdeen City, Argyll and Bute , West Lothian, Angus, East Dunbartonshire</li>
+<li>Group 3: North Ayrshire, Dundee City, Glasgow City</li>
+<li>Group 4: Clackmannanshire, Dumfries and Galloway, East Ayrshire, Inverclyde, South Ayrshire, South Lanarkshire, Stirling, City of Edinburgh, Renfrewshire, West Dunbartonshire, North Lanarkshire</li>
+</ul>
+<p>n.b We do not include random effects in the above models. These are not included in the the SAS and Stata procedures for GBTM. The implication is that we do not allow variation within or between classes. The practical implication is that this will result in a greater number of latent classes being selected (Further discussion in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3085403/">Saunders</a>, 2011).</p>
+</div>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="/post/sfi/"><span
+      aria-hidden="true">&larr;</span> Social Fragmentation Index</a></li>
+    
+
+    
+    <li class="next"><a href="/post/everydaygreen/">How can we measure everyday exposure to greenspaces? <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-www-markcherrie-net" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</section>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2018 Mark Cherrie &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min.js" integrity="sha512-iHzEu7GbSc705hE2skyH6/AlTpOfBmkx7nUqTLGzPYR+C1tRaItbRlJ7hT/D3YQ9SV0fqLKzp4XY9wKulTBGTw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" integrity="sha512-Z5heTz36xTemt1TbtbfXtTq5lMfYnOkXM2/eWcTTiLU01+Sw4ku1i7vScDc8fWhrP2abz9GQzgKH5NGBLoYlAw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js" integrity="sha512-CDeU7pRtkPX6XJtF/gcFWlEwyaX7mcAp5sO3VIu/ylsdR74wEw4wmBpD5yYTrmMAiAboi9thyBUr1vXRPA7t0Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+

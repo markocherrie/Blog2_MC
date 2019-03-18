@@ -51,6 +51,211 @@
     </item>
     
     <item>
+      <title>How to find the best number of groups in Group Based Trajectory Modelling?</title>
+      <link>/post/gbtm/</link>
+      <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbtm/</guid>
+      <description>
+
+
+&lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;Group-based trajectory modelling (GBMT) is a way of identifying latent patterns of change from multiple individual trajectories. It is widely used within the field of economics and also becoming popular in health geography. The process of deciding the number of classes is not transparent and tends to be based on one or two model fit statistics. &lt;a href=&#34;http://journals.sagepub.com/doi/pdf/10.1177/0962280215598665&#34;&gt;Klijn et al&lt;/a&gt;., created a fit-criteria assessment plot (F-CAP) that accepts universal data input to aid the decision on the number of classes (2017).&lt;/p&gt;
+&lt;p&gt;As we have several date of the macroeconomy, it is important to visually inspect the model fit statistics and to decide the number of classes before applying in a model with the mental health outcomes. These stages (classify and analyse) are normally done seperately, so the units of analysis are classfied, then class membership is taken as known in the subsequent analysis with the health outcome (i.e. deterministic instead of probabilistic).&lt;/p&gt;
+&lt;p&gt;This document describes the process of using F-CAP’s with the example of trajectories of employment (2006-2015) at the Scottish local authority level (n=32).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;method&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Method&lt;/h2&gt;
+&lt;p&gt;We firstly load the employment data that was processed in the macroeconomy document. Some processing is required to get this data ready for the linear class mixed model. The first figure shows a simple visualisation of the employment trajectories for each LA over the time period:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;##################### EMPLOYMENT #######################################
+# Load packages
+library(ggplot2)
+library(catspec)
+library(gridExtra)
+library(lcmm)
+
+# STEP 1: LOAD EMPLOYMENT DATA
+#setwd(&amp;quot;/Users/markcherrimacbook/Google Drive/ProjectFiles/sdai_MC/SDAIdata_SC&amp;quot;)
+data&amp;lt;-readr::read_csv(&amp;quot;Traj_files/LAemployment.csv&amp;quot;)
+
+# STEP 2 FORMAT DATA FOR LCMM
+datamanip&amp;lt;-function(Indicator, scale){
+  data&amp;lt;-subset(data, IndSub==Indicator)
+  
+  # Subset for latent class model
+  traj &amp;lt;- data
+  traj$id &amp;lt;- as.factor(traj$Council)
+  traj$x&amp;lt;-traj$Year
+  traj$y&amp;lt;-as.numeric(traj$Value)
+  traj&amp;lt;-subset(traj, select=c(&amp;quot;id&amp;quot;, &amp;quot;x&amp;quot;, &amp;quot;y&amp;quot;))
+  traj$x2&amp;lt;-traj$x^2
+  traj$x3&amp;lt;-traj$x^3
+  
+  # scale by geographic unit!
+  library(dplyr)
+  if(scale==TRUE){
+  traj&amp;lt;-traj %&amp;gt;%
+    group_by(id) %&amp;gt;%
+    mutate(y=scale(y, center = TRUE, scale = TRUE))
+  return(traj)
+} else(
+  return(traj))
+  }
+traj&amp;lt;-datamanip(&amp;quot;pct&amp;quot;, &amp;quot;FALSE&amp;quot;)
+
+# viz
+ggplot(traj, aes(as.factor(x), y, group=id)) + 
+  geom_line(aes(colour=id, group=id)) + 
+  labs(x = &amp;quot;Year&amp;quot;, y = &amp;quot;% Employed&amp;quot;, title = &amp;quot;Plot of all LA trajectories&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/gbtm_files/figure-html/STEP1and2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Next, we need to fit the LCMM models (this is a batch process taking arguments of ‘formula’, ‘number of groups’ and ‘model’). In this example we are using the linear specification of the employment variables (i.e. we believe that trajectories over time are best modelled by linear terms rather than higher terms), a maximum of 10 latent classes and a linear link (as the employment data is continuous). The model fit statistics are then written into a .csv file that has been formatted to be accepted as universal input by the F-CAP R code.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;##### STEP 3: FIT THE LCMM MODELS AND OUTPUT MODEL FIT
+
+# Create the file for running the procedure from 2-10 groups
+batchit&amp;lt;-function(formula, groups, model){
+  batch&amp;lt;-expand.grid(formula, rep(2:groups))
+  colnames(batch)&amp;lt;-c(&amp;quot;formula&amp;quot;, &amp;quot;numberofgroups&amp;quot;)
+  batch$link&amp;lt;-model
+  batch$formula&amp;lt;-as.character(batch$formula)
+  batch$numberofgroups&amp;lt;-as.numeric(as.character(batch$numberofgroups))
+  return(batch)
+}
+batch&amp;lt;-batchit(&amp;quot;x&amp;quot;, 10, &amp;quot;linear&amp;quot;)
+
+# Model Fit output function
+#file.remove(list.files(&amp;quot;trajectories/fcap/input/&amp;quot;, pattern=&amp;quot;Universal_*&amp;quot;, full.names = T))
+modelfittraj&amp;lt;-function(formula, numberofgroups, link){
+  d4&amp;lt;-lcmm(as.formula(paste0(&amp;quot;y~&amp;quot;, formula)),
+           as.formula(paste0(&amp;quot;mixture=~&amp;quot;, formula)),
+           #as.formula(paste0(&amp;quot;random=~&amp;quot;, formula)),
+           # whether to include random effects is quite a talking point
+           subject=&amp;#39;id&amp;#39;,
+           ng=numberofgroups,
+           idiag=TRUE, 
+           data=traj,
+           link=link)
+  postprob(d4)
+  conv&amp;lt;-ifelse(d4$conv==1, &amp;quot;TRUE&amp;quot;, &amp;quot;FALSE&amp;quot;)
+  k&amp;lt;-paste(d4$AIC, d4$BIC, exp(d4$loglik), conv)
+  k&amp;lt;-gsub(&amp;quot; &amp;quot;, &amp;quot;,&amp;quot;, k)
+  pp&amp;lt;-d4$pprob
+  pp&amp;lt;-cbind(pp[,3:(ncol(pp))], d4$pprob$class)
+  sink(paste0(&amp;quot;trajectories/fcap/input/&amp;quot;,formula, numberofgroups, link,&amp;quot;.txt&amp;quot;))
+  cat(k, &amp;quot;\n&amp;quot;)
+  # Stop writing to the file
+  sink()
+  write.table(pp, paste0(&amp;quot;trajectories/fcap/input/&amp;quot;,formula, numberofgroups, link,&amp;quot;.txt&amp;quot;), 
+              append=TRUE, 
+              sep = &amp;quot;,&amp;quot;,
+              row.names = F,
+              col.names = F)
+  output&amp;lt;-read.table(paste0(&amp;quot;trajectories/fcap/input/&amp;quot;,formula, numberofgroups, link,&amp;quot;.txt&amp;quot;), row.names=NULL, sep=&amp;quot;,&amp;quot;, fill=T, header=F)
+  file.remove(paste0(&amp;quot;trajectories/fcap/input/&amp;quot;,formula, numberofgroups, link,&amp;quot;.txt&amp;quot;))
+  output[is.na(output)]&amp;lt;-&amp;quot;&amp;quot;
+  readr::write_csv(output, paste0(&amp;quot;trajectories/fcap/input/&amp;quot;,&amp;quot;Universal_&amp;quot;, numberofgroups,&amp;quot;.csv&amp;quot;), col_names = F)
+}
+# Batch it
+library(plyr)
+#mdply(batch,modelfittraj)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We then take the model fit output and use it as input to the F-CAP function that was supplied by Valeria Lima Passos (co-author of the paper above).&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;##### STEP 4 - Run the CSV files through F-CAP
+
+#source(paste0(&amp;quot;trajectories/fcap/fcap_base_12_PC.R&amp;quot;), echo=TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The next step is to look at the F-CAPs and make a decision on the number of classes. Note, where there are + or - signs after some of the model fit statistics, this is the highest and lowest per group, as opposed to the mean. The first plot shows the AIC and BIC (penalises model complexity to a higher degree than AIC). Generally for these two, the lower the number the better the model fit. Six classes has the lowest BIC, but there could be an argument for 4 clases being the elbow.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;Traj_files/AICBIC.png&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;The average posterior probability of assignment (APPA) shows the probability of belonging to a certain class. Generally, over 70% for APPA is defined as sufficient. The SD is standard deviation of group membership probabilities and is generally lower when model fit is better. The mismatch between estimated and assigned group probabilities (Mismatch) in a perfect model is zero. In this case, all of the classes have over 70%, with the highest probabilities for 2, then 4 and 5 classes. The mismatch is close to zero for all classes, with slight increasing trend with increasing number of classes. The SD is lowest for 2 groups and is noticebly higher after 5 classes.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;Traj_files/PP.png&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;The Odds of Correct Classification (OCC) compares the average posterior probability assignment, correcting for OCC based on random assignment. Generally, higher OCC’s indicate better model fit with a threshold of 5 used to show good assignment accuracy. In this case, all classes have sufficient accuracy in class assignment but especially so for classes 3 to 9.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;Traj_files/OCC.png&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;We tend not to want classes that contain a very small number of units. A common threshold to apply is that each group will have at least 1% of the sample. However this should be modified if total number of units in the sample are low. In this case, although we are above the 1% threshold in all models with under 6 classes, because we have so few in the sample (N=32), a suitable number of classes would 2,3 or 4, given that at least ~10% of the sample are in each class.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;Traj_files/Small.png&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;In conclusion, the best number of classes in the model of LA employment trajectories from 2006-2015 is four. Although some of the criteria showed little variation between the classes (OCC, Mismatch), we arrived at as this number of classes using the following criteria:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;BIC elbow&lt;/li&gt;
+&lt;li&gt;High posterior probabilities (&amp;gt;90%)&lt;/li&gt;
+&lt;li&gt;Relatively low standard deviation of PP within each class&lt;/li&gt;
+&lt;li&gt;Had at least ~10% of the sample in any one class&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The next step is to then see whether changing the polynomial order gives any improvement in these model fit statistics (although in R I can only seem to change all the clusters at once rather than individually). For brevity, this is not shown in this document.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;## What&amp;#39;s the best model?
+
+##### STEP 5 - Finalise the group membership and plot
+
+# plot traj
+plottraj&amp;lt;-function(formula, numberofgroups, link, output){
+  k&amp;lt;-NULL
+  traj$id &amp;lt;- as.factor(traj$id)
+  d4&amp;lt;-lcmm(as.formula(paste0(&amp;quot;y~&amp;quot;, formula)),
+           as.formula(paste0(&amp;quot;mixture=~&amp;quot;, formula)),
+           subject=&amp;#39;id&amp;#39;,
+           ng=numberofgroups,
+           idiag=TRUE, 
+           data=traj,
+           link=link)
+  postprob(d4)
+  traj$id2 &amp;lt;- as.numeric(traj$id)
+  groups &amp;lt;- as.data.frame(d4$pprob[,1:2])
+  traj$TRAJGROUP &amp;lt;- factor(groups$class[sapply(traj$id2, function(x) which(groups$id==x))])
+if (output==&amp;quot;plot&amp;quot;){
+ggplot(traj, aes(x, y, group=id, colour=group2)) + geom_line() + geom_smooth(aes(group=group2), method=&amp;quot;loess&amp;quot;, size=2, se=F) + labs(x=&amp;quot;x&amp;quot;,y=&amp;quot;y&amp;quot;,colour=&amp;quot;Latent Class&amp;quot;)
+  pl&amp;lt;-ggplot(traj, aes(as.factor(x), y, group=id, colour=TRAJGROUP)) + geom_smooth(aes(group=id, colour=TRAJGROUP),size=0.5, se=F) + geom_smooth(aes(group=TRAJGROUP), method=&amp;quot;loess&amp;quot;, size=2, se=T) + labs(x=&amp;quot;Date&amp;quot;,y=&amp;quot;% Employed&amp;quot;,colour=&amp;quot;Latent Class&amp;quot;)
+#  ggsave(paste0(&amp;quot;C:/Users/mcherrie/Google #Drive/ProjectFiles/sdai_MC/SDAIdata_SC/trajectories/fcap/plots/&amp;quot;,formula, #numberofgroups, link,&amp;quot;.png&amp;quot;), plot=pl)
+  pl
+
+} else if (output==&amp;quot;file&amp;quot;){write.csv(traj, paste0(&amp;quot;C:/Users/mcherrie/Google Drive/ProjectFiles/sdai_MC/SDAIdata_SC/trajectories/fcap/data/&amp;quot;,formula, numberofgroups, link,&amp;quot;.csv&amp;quot;),row.names=F)}
+}
+
+# Put in the F-CAP best model here
+plottraj(&amp;quot;x&amp;quot;, 4, &amp;quot;linear&amp;quot;, &amp;quot;plot&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Be patient, lcmm is running ... 
+## The program took 1.47 seconds 
+##  
+## Posterior classification: 
+##   class1 class2 class3 class4
+## N   3.00  15.00   3.00  11.00
+## %   9.38  46.88   9.38  34.38
+##  
+## Posterior classification table: 
+##      --&amp;gt; mean of posterior probabilities in each class 
+##         prob1  prob2  prob3  prob4
+## class1 0.9993 0.0007 0.0000 0.0000
+## class2 0.0000 0.9976 0.0000 0.0024
+## class3 0.0000 0.0000 0.9998 0.0002
+## class4 0.0000 0.0476 0.0005 0.9519
+##  
+## Posterior probabilities above a threshold (%): 
+##          class1 class2 class3 class4
+## prob&amp;gt;0.7    100    100    100  90.91
+## prob&amp;gt;0.8    100    100    100  90.91
+## prob&amp;gt;0.9    100    100    100  90.91
+## &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/gbtm_files/figure-html/STEP5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The groups are as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Group 1: Orkney Islands, Shetland Islands, Aberdeenshire&lt;/li&gt;
+&lt;li&gt;Group 2: East Lothian, East Renfrewshire, Eilean Siar, Falkirk, Fife, Highland, Midlothian, Moray, Perth and Kinross, Scottish Borders, Aberdeen City, Argyll and Bute , West Lothian, Angus, East Dunbartonshire&lt;/li&gt;
+&lt;li&gt;Group 3: North Ayrshire, Dundee City, Glasgow City&lt;/li&gt;
+&lt;li&gt;Group 4: Clackmannanshire, Dumfries and Galloway, East Ayrshire, Inverclyde, South Ayrshire, South Lanarkshire, Stirling, City of Edinburgh, Renfrewshire, West Dunbartonshire, North Lanarkshire&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;n.b We do not include random effects in the above models. These are not included in the the SAS and Stata procedures for GBTM. The implication is that we do not allow variation within or between classes. The practical implication is that this will result in a greater number of latent classes being selected (Further discussion in &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3085403/&#34;&gt;Saunders&lt;/a&gt;, 2011).&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Pathogen seasonality and links with weather in England and Wales: a big data time series analysis</title>
       <link>/publication/pathogen/</link>
       <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
@@ -858,15 +1063,6 @@ if(nrow(master)==480){
 &lt;/iframe&gt;
 &lt;p&gt;Next steps are to look at whether the legilsation can be classified into groups meaninfully, or whether a node can act as a link to a webpage for more information.&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Geospatial Research Methods</title>
-      <link>/talk/geospatialresearchmethods-talk/</link>
-      <pubDate>Wed, 21 Mar 2018 11:30:00 +0000</pubDate>
-      
-      <guid>/talk/geospatialresearchmethods-talk/</guid>
-      <description></description>
     </item>
     
   </channel>

@@ -175,6 +175,15 @@
     </item>
     
     <item>
+      <title>Employment</title>
+      <link>/tags/employment/</link>
+      <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/employment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Gee</title>
       <link>/tags/gee/</link>
       <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
@@ -285,7 +294,7 @@
     <item>
       <title>Macroeconomy</title>
       <link>/tags/macroeconomy/</link>
-      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/macroeconomy/</guid>
       <description></description>
@@ -333,6 +342,15 @@
       <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/mmp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modelling</title>
+      <link>/tags/modelling/</link>
+      <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/modelling/</guid>
       <description></description>
     </item>
     
@@ -495,6 +513,15 @@
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Statistics</title>
+      <link>/tags/statistics/</link>
+      <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/statistics/</guid>
       <description></description>
     </item>
     

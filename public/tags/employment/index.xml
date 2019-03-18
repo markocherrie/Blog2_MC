@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Macroeconomy on Researcher</title>
-    <link>/tags/macroeconomy/</link>
-    <description>Recent content in Macroeconomy on Researcher</description>
+    <title>Employment on Researcher</title>
+    <link>/tags/employment/</link>
+    <description>Recent content in Employment on Researcher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018 Mark Cherrie</copyright>
     <lastBuildDate>Mon, 03 Sep 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/macroeconomy/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/employment/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       
       <guid>/post/gbtm/</guid>
       <description>Background Group-based trajectory modelling (GBMT) is a way of identifying latent patterns of change from multiple individual trajectories. It is widely used within the field of economics and also becoming popular in health geography. The process of deciding the number of classes is not transparent and tends to be based on one or two model fit statistics. Klijn et al., created a fit-criteria assessment plot (F-CAP) that accepts universal data input to aid the decision on the number of classes (2017).</description>
-    </item>
-    
-    <item>
-      <title>Social Fragmentation Index</title>
-      <link>/post/sfi/</link>
-      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/sfi/</guid>
-      <description>BackgroundThe Social Fragmentation Index (SFI) was developed by Peter Congdon. The indicator aims to use census variables to capture (for small areas across the country) aspects of the local population that may reflect a greater collective risk of social fragmentation/lack of social cohesion. The census variables are proxies for these risk factors, rather than ‘direct’ indicators. It focusses on risk due to potentially high levels of isolation and residential instability of members of the population.</description>
     </item>
     
   </channel>

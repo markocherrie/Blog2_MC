@@ -22,15 +22,6 @@
     </item>
     
     <item>
-      <title>How to find the best number of groups in Group Based Trajectory Modelling?</title>
-      <link>/post/gbtm/</link>
-      <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/gbtm/</guid>
-      <description>Background Group-based trajectory modelling (GBMT) is a way of identifying latent patterns of change from multiple individual trajectories. It is widely used within the field of economics and also becoming popular in health geography. The process of deciding the number of classes is not transparent and tends to be based on one or two model fit statistics. Klijn et al., created a fit-criteria assessment plot (F-CAP) that accepts universal data input to aid the decision on the number of classes (2017).</description>
-    </item>
-    
-    <item>
       <title>Social Fragmentation Index</title>
       <link>/post/sfi/</link>
       <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
