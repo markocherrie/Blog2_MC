@@ -343,7 +343,7 @@ summary(fit, fit.measures=TRUE)</code></pre>
 <p>The next stage is to check the modification indices to understand whether adding pathways in your model would improve the fit. Crucially, these need to be validated by the literature.</p>
 <pre class="r"><code>mi &lt;- modindices(fit)
 mi</code></pre>
-<p>In our example we did not originally include a residual correlation between sister and brother smoking status which probably would have had a high ‘mi’ value and therefore worthy of closer inspection. Once we have a model that we are happy with we can check the model fit and whether the statistics are considered satisfactory using the guidelines in the references of this post.</p>
+<p>In our example we did not originally include a residual correlation between sister and brother smoking status which probably would have had a high ‘mi’ value and therefore worthy of closer inspection. Once we have a model that we are happy with we can check the model fit. The model fit is calculated by comparing the sample variance/covariance matrix to the derived population sample variance/covariance matrix. There are a number statistics to determine goodness-of-fit (see references at the end of this post).</p>
 </div>
 <div id="moderation" class="section level2">
 <h2>Moderation</h2>
