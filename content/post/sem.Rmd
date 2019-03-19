@@ -150,8 +150,8 @@ You may also be interested to plot the model as a figure using ['semPlot'](http:
 
 ## Resources
 
-What is sem? https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2987867/
-Why sem? https://academic.oup.com/ije/article/38/2/549/657330
-Reporting sem: https://www.tandfonline.com/doi/abs/10.3200/JOER.99.6.323-338 
-Model fit guidelines: https://www.cscu.cornell.edu/news/Handouts/SEM_fit.pdf
-Lavaan syntax: http://jeromyanglim.tumblr.com/post/33556941601/lavaan-cheat-sheet
+* What is sem? https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2987867/
+* Why sem? https://academic.oup.com/ije/article/38/2/549/657330
+* Reporting sem: https://www.tandfonline.com/doi/abs/10.3200/JOER.99.6.323-338 
+* Model fit guidelines: https://www.cscu.cornell.edu/news/Handouts/SEM_fit.pdf
+* Lavaan syntax: http://jeromyanglim.tumblr.com/post/33556941601/lavaan-cheat-sheet

@@ -196,7 +196,13 @@ summary(fit, fit.measures=TRUE)&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;resources&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Resources&lt;/h2&gt;
-&lt;p&gt;What is sem? &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2987867/&#34; class=&#34;uri&#34;&gt;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2987867/&lt;/a&gt; Why sem? &lt;a href=&#34;https://academic.oup.com/ije/article/38/2/549/657330&#34; class=&#34;uri&#34;&gt;https://academic.oup.com/ije/article/38/2/549/657330&lt;/a&gt; Reporting sem: &lt;a href=&#34;https://www.tandfonline.com/doi/abs/10.3200/JOER.99.6.323-338&#34; class=&#34;uri&#34;&gt;https://www.tandfonline.com/doi/abs/10.3200/JOER.99.6.323-338&lt;/a&gt; Model fit guidelines: &lt;a href=&#34;https://www.cscu.cornell.edu/news/Handouts/SEM_fit.pdf&#34; class=&#34;uri&#34;&gt;https://www.cscu.cornell.edu/news/Handouts/SEM_fit.pdf&lt;/a&gt; Lavaan syntax: &lt;a href=&#34;http://jeromyanglim.tumblr.com/post/33556941601/lavaan-cheat-sheet&#34; class=&#34;uri&#34;&gt;http://jeromyanglim.tumblr.com/post/33556941601/lavaan-cheat-sheet&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What is sem? &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2987867/&#34; class=&#34;uri&#34;&gt;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2987867/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Why sem? &lt;a href=&#34;https://academic.oup.com/ije/article/38/2/549/657330&#34; class=&#34;uri&#34;&gt;https://academic.oup.com/ije/article/38/2/549/657330&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Reporting sem: &lt;a href=&#34;https://www.tandfonline.com/doi/abs/10.3200/JOER.99.6.323-338&#34; class=&#34;uri&#34;&gt;https://www.tandfonline.com/doi/abs/10.3200/JOER.99.6.323-338&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Model fit guidelines: &lt;a href=&#34;https://www.cscu.cornell.edu/news/Handouts/SEM_fit.pdf&#34; class=&#34;uri&#34;&gt;https://www.cscu.cornell.edu/news/Handouts/SEM_fit.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lavaan syntax: &lt;a href=&#34;http://jeromyanglim.tumblr.com/post/33556941601/lavaan-cheat-sheet&#34; class=&#34;uri&#34;&gt;http://jeromyanglim.tumblr.com/post/33556941601/lavaan-cheat-sheet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 </description>
     </item>
