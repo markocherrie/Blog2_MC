@@ -51,6 +51,42 @@
     </item>
     
     <item>
+      <title>How can we understand patterns of prescription use?</title>
+      <link>/post/sequence/</link>
+      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/sequence/</guid>
+      <description>
+
+
+&lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;Longituinal analysis is important as due to the temporal sequence of exposure then outcome, we can make a stronger case for causality. A derivivative of a class of models that fit into the ‘data-mining’ family is sequence analysis. One use of this model is to understand life time states, e.g. being employed, being in education, being retired. By understanding these state sequences we can understand how the duration and timing of a state can affect health in the long term. An excellent R package which allows you to conduct sequence analysis is the &lt;a href=&#34;https://cran.r-project.org/web/packages/TraMineR/index.html&#34;&gt;TraMineR&lt;/a&gt; package. Here I’m going to describe how traminer can be used to understand patterns in prescription use.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;sequence-analysis&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Sequence Analysis&lt;/h2&gt;
+&lt;p&gt;The first step in sequence analysis is to format the dataset into wide format (time as columns and unit of oberervation as rows). The function in R to define the sequence is ‘seqdef’. Once we have this object, step 2 is to create visualisations using ‘seqplot’. There are many to choose from, I like the index plot (use argument, ‘type=I’), which shows you all the sequences, so is a raw look at the diversity of sequences (n.b I recommend using the argument ‘sort=“from.start”’ to get a clearer picture). I also like the distribution plot (‘type=d’), this is a summary of the percentages for each time point that correspond to each state. You can then use the group argument to understand difference by the covariates (refer to your original dataframe with the information on for example, sex, age etc). There are a number of metrics that can be calculated on the sequence including length, duration of distinct states, transition rates, Shannon entropy and turbulence. These are all descriptive statistics to understand the stability of the sequences over time. Step 3 is to understand sequence dissimilarity, that is to calculate how close two sequences are. There are a number of dissimilarity measures (e.g. longest commmon prefix, optimal matching). The latter is commonly used and is based on how many edits, deletions and substitutions it takes fot get from one sequence to another, the result is a ‘cost’ of transformation. Generally there tends to be measures that favour sequencing (e.g. when and what order) or timing (e.g. how long in a state). Step 4 is is to use the dissimilarity measure with one of two families for clustering (e.g. hierarchical clustering and partitioning around medoids; using ‘WeightedCluster’ package). The researcher has to specify the number of groups and then assess the cluster quality by looking at several measures (e.g. average silhoutee width; -1 to 1; higher is better), and interpret them in relation to the literature. The final stage is to use the cluster groups in a regression analysis as covariates or outcome variables.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;summary&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Define sequence&lt;/li&gt;
+&lt;li&gt;Visualise and descriptive statistics&lt;/li&gt;
+&lt;li&gt;Sequence dissimilarity&lt;/li&gt;
+&lt;li&gt;Clustering (create clusters, assess quality of clusters, interpret them)&lt;/li&gt;
+&lt;li&gt;Regression with cluster groups&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Example&lt;/h2&gt;
+&lt;p&gt;This example is a simulated dataset on 6 month status of prescription use. If the participant has had a prescription in the last 6 months they are defined as a cases, and subdivided by old/new (whether they had prescriptions in the first 6 months), relapse/norelapse (whether they have come off prescriptions for 6 months and then back on), recurrence/remission (whether on/off prescriptions by the end of the time period); If they have never been prescribed they are classified as “Never”. The app first gives a description of the simulated dataset, the state distribution, state index and state distributions by cluster group.&lt;/p&gt;
+&lt;iframe src=&#34;https://thebest.shinyapps.io/Sequence/?showcase=0&#34; width=&#34;672&#34; height=&#34;400px&#34;&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>How to find the optimal number of groups in GBTM?</title>
       <link>/post/gbtm/</link>
       <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
@@ -868,200 +904,6 @@ src=&#34;//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&#34;
       
       <guid>/talk/gisr_display/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Devolved parliaments and assemblies Legislation</title>
-      <link>/post/devolvedlegislation/</link>
-      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/devolvedlegislation/</guid>
-      <description>
-
-
-&lt;p&gt;Scotland, Wales and Northern Ireland have had devolved powers since 1997, 1997 and 1998 respectively. During this time 480 Acts have been passed, an act being defined as primary legislation which has been through several stages from:&lt;/p&gt;
-&lt;hr /&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;Pre-legislative scrutiny on the draft piece of legislation (bill)&lt;/li&gt;
-&lt;li&gt;First Reading - first presentation, no voting&lt;/li&gt;
-&lt;li&gt;Second Reading - debate on principles, voting&lt;/li&gt;
-&lt;li&gt;Committee Stage - Considers bill clauses&lt;/li&gt;
-&lt;li&gt;Consideration or report stage - Consider further amendments&lt;/li&gt;
-&lt;li&gt;Third Reading - Consider final text&lt;/li&gt;
-&lt;li&gt;Passage - Sent to other house (i.e. if created in commons to lords, vice versa)&lt;/li&gt;
-&lt;li&gt;Consideration of Lords/Commons Amendments&lt;/li&gt;
-&lt;li&gt;Royal Assent&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;When working with longitudinal data it might be fruitful to identify legislation that may have had an effect on the behaviour or health of study participants. In particular, if you have study participants living across the UK, the acts orginating from the devolved parliaments might be interesting as they may be associated with differences in health/behaviour observed.&lt;/p&gt;
-&lt;p&gt;Data are collected on all legislation passed in the UK on the &lt;a href=&#34;http://www.legislation.gov.uk&#34;&gt;legislation.gov.uk&lt;/a&gt; website. Some visualisation of this data has been done over time to show the frequency of legislation passed by year. However it’s quite tricky to identify when legislation has been passed across the devolved countries and how they relate to one another. The aim was to develop a visualisation to quickly identify legilsation from the devolved parliaments and assemblies.&lt;/p&gt;
-&lt;p&gt;Firstly, the data from the website was scraped using a function called ‘legiscraper’:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(httr)
-library(rvest)
-
-# legislation scraper
-legiscraper&amp;lt;-function(page, countrycode){
-test&amp;lt;-read_html(paste0(&amp;quot;http://www.legislation.gov.uk/&amp;quot;, countrycode, &amp;quot;?page=&amp;quot;, page))
-tableinfo &amp;lt;- html_nodes(test,&amp;#39;#content td&amp;#39;)
-tableinfo &amp;lt;- html_text(tableinfo)
-# Delete Welsh names which are causing problems
-if(countrycode==&amp;quot;anaw&amp;quot;){
-  toDelete &amp;lt;- seq(0, length(tableinfo), 4)
-  tableinfo &amp;lt;- tableinfo[-toDelete]
-} 
-nrow&amp;lt;-length(grep(&amp;quot;^[0-9]&amp;quot;, tableinfo))
-df &amp;lt;- data.frame(matrix(unlist(tableinfo), nrow=nrow, byrow=T),stringsAsFactors=FALSE)
-return(df)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Next, the input options for the ‘legiscraper’ function were created and then the function was run for each country (n.b. I was counting the number of pages that the data was on, but will look into automating this in the future):&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Scotland
-library(plyr)
-scotdf&amp;lt;-data.frame(page=1:14, countrycode=&amp;quot;asp&amp;quot;)
-Scotland&amp;lt;-mdply(scotdf, legiscraper)
-# Wales
-walesdf&amp;lt;-data.frame(page=1:2, countrycode=&amp;quot;anaw&amp;quot;)
-Wales&amp;lt;-mdply(walesdf, legiscraper)
-# Northern Ireland 
-nidf&amp;lt;-data.frame(page=1:9, countrycode=&amp;quot;nia&amp;quot;)
-NorthernIreland&amp;lt;-mdply(nidf, legiscraper)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Each dataframe was then binded and cleaned, before saving for each year:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# cleaning
-library(stringr)
-Legislationdf&amp;lt;-rbind(Scotland, Wales, NorthernIreland)
-Legislationdf$Year&amp;lt;-as.numeric(substr(Legislationdf$X2, 1,4))
-colnames(Legislationdf)&amp;lt;-c(&amp;quot;&amp;quot;,&amp;quot;&amp;quot;,&amp;quot;Legislationname&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;Parliament&amp;quot;, &amp;quot;Year&amp;quot;)
-Legislationdf&amp;lt;-subset(Legislationdf, select=c(&amp;quot;Legislationname&amp;quot;, &amp;quot;Parliament&amp;quot;, &amp;quot;Year&amp;quot;))
-Legislationdf&amp;lt;-Legislationdf[,c(1,3,2)]
-# write .csv files
-write.csv(Legislationdf, &amp;quot;LegislationAll.csv&amp;quot;, row.names=F)
-for (i in 1999:2018){
-  subsetdf&amp;lt;-subset(Legislationdf, year==i)
-  write.csv(subsetdf, &amp;quot;Legislationdf&amp;quot;, i, &amp;quot;.csv&amp;quot;, row.names=F)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;To create the shiny app, the user interface was defined as follows:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(shiny)
-library(networkD3)
-
-ui &amp;lt;- fluidPage(
-titlePanel(&amp;quot;Devolved Parliaments and Assemblies Legislation, by Year&amp;quot;),
-  sidebarLayout(
-    sidebarPanel(
-     selectInput(&amp;quot;Year&amp;quot;, &amp;quot;Choose Year&amp;quot;, choices=c(&amp;quot;All&amp;quot;,&amp;quot;1999&amp;quot;, &amp;quot;2000&amp;quot;,      &amp;quot;2001&amp;quot;,&amp;quot;2002&amp;quot;, &amp;quot;2003&amp;quot;, &amp;quot;2004&amp;quot;, &amp;quot;2005&amp;quot;, &amp;quot;2006&amp;quot;, &amp;quot;2007&amp;quot;, &amp;quot;2008&amp;quot;,          &amp;quot;2009&amp;quot;,&amp;quot;2010&amp;quot;, &amp;quot;2011&amp;quot;, &amp;quot;2012&amp;quot;, &amp;quot;2013&amp;quot;,&amp;quot;2014&amp;quot;, &amp;quot;2015&amp;quot;, &amp;quot;2016&amp;quot;,           &amp;quot;2017&amp;quot;, &amp;quot;2018&amp;quot;)),
-  actionButton(&amp;quot;click&amp;quot;, &amp;quot;Render&amp;quot;),
-  downloadButton(&amp;quot;downloadData&amp;quot;, &amp;quot;Download&amp;quot;),
-  helpText(&amp;quot;Data from http://www.legislation.gov.uk&amp;quot;)
-    ),
-  mainPanel(forceNetworkOutput(
-  &amp;quot;forced&amp;quot;, width = &amp;quot;100%&amp;quot;, height = &amp;quot;700px&amp;quot;))
-                ))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now onto the server side file. After packages and visualisation colour options were set, the data needed to be read in then subsetted based on the user’s ‘Year’ input. The trickiest part was formatting this data for the ‘networkD3’ package. Luckily there was a very good post on &lt;a href=&#34;https://bit.ly/2J7659N&#34;&gt;stackexchange&lt;/a&gt; by Peter Ellis, on how to create the input data and modify the colour of nodes. Some difficulties did arise from formatting (the imported csv variables were not in the same format as the in memory data), a &lt;a href=&#34;https://github.com/tidyverse/dplyr/issues/1388&#34;&gt;function name conflict&lt;/a&gt; and the order of node id’s. The fixes are detailed below. Finally, with an interactive app like this, the amount of data displayed differs, and so the options for display were based on whether the user picked the full or subsetted input. Code below:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(shiny)
-library(networkD3)
-library(dplyr)
-
-# Colour for the vis
-ColourScale &amp;lt;- &amp;#39;d3.scaleOrdinal()
-.domain([&amp;quot;Acts of the Scottish Parliament&amp;quot;, 
-  &amp;quot;Acts of the National Assembly for Wales&amp;quot;, &amp;quot;Acts of the Northern Ireland Assembly&amp;quot;,&amp;quot;Year&amp;quot;])
-  .range([&amp;quot;#FF6900&amp;quot;, &amp;quot;#694489&amp;quot;, &amp;quot;#ff0090&amp;quot;, &amp;quot;#888888&amp;quot;]);&amp;#39;
-
-server &amp;lt;- function(input, output, session) {
-  # year subset
-  subset &amp;lt;- reactive({input$Year})  
-  # on render click get the data
-  data &amp;lt;- eventReactive(input$click, {
-    read.csv(paste0(&amp;quot;Legislationdf&amp;quot;, subset(), &amp;quot;.csv&amp;quot;))
-  })
-  # download button
-  output$downloadData &amp;lt;- downloadHandler(
-    filename = function() {
-      paste(&amp;quot;DevolvedLegislation.csv&amp;quot;, sep = &amp;quot;&amp;quot;)
-    },
-    content = function(file) {
-      write.csv(data(), file, row.names = FALSE)
-    }
-  )
-# Output 
-  output$forced &amp;lt;- renderForceNetwork({
-    # manipulate data
-    master&amp;lt;-data()
-    # when saved as &amp;#39;.csv&amp;#39; formatting went out the window
-    master$Legislationname&amp;lt;-as.character(master$Legislationname)
-    master$Year&amp;lt;-as.double(master$Year)
-    master$Parliament&amp;lt;-as.character(master$Parliament)
-    # now onto making the network input 
-    src&amp;lt;-master[,1]
-    target&amp;lt;-master[,2]
-    networkData &amp;lt;- data.frame(src, target, stringsAsFactors = FALSE)
-    networkData$target&amp;lt;-as.character(networkData$target)
-    
-    # nodes
-    nodes &amp;lt;- data.frame(name = unique(c(as.character(src), target)), stringsAsFactors = FALSE)
-    nodes$id &amp;lt;- 0:(nrow(nodes) - 1)
-    
-    # edges - notice &amp;#39;dplyr::&amp;#39; as there were some problems with rename... 
-    library(dplyr)
-      edges &amp;lt;- networkData %&amp;gt;%
-      dplyr::left_join(nodes, by = c(&amp;quot;src&amp;quot; = &amp;quot;name&amp;quot;))%&amp;gt;%
-      dplyr::select(-src) %&amp;gt;%
-      dplyr::rename(source = id) %&amp;gt;%
-      dplyr::left_join(nodes, by = c(&amp;quot;target&amp;quot; = &amp;quot;name&amp;quot;))%&amp;gt;%
-      dplyr::select(-target) %&amp;gt;%
-      dplyr::rename(target = id)
-    
-    edges$width &amp;lt;- 1
-
-    # make a grouping variable that will match to colours
-    mergenodes&amp;lt;-master[,c(1,3)]
-    colnames(mergenodes)&amp;lt;-c(&amp;quot;name&amp;quot;, &amp;quot;Parliament&amp;quot;)
-    nodes&amp;lt;-merge(nodes, mergenodes, by=&amp;quot;name&amp;quot;, all.x=T)
-    nodes$Parliament[is.na(nodes$Parliament)]&amp;lt;-&amp;quot;Year&amp;quot;
-    
-    ##### This is CRUCIAL, they have to be ordered by id, or you won&amp;#39;t get what you expect...
-    nodes &amp;lt;- nodes[order(nodes$id),] 
-
-    # different display for all of the data vs year subset
-if(nrow(master)==480){
-  
-  add=data.frame(source=c(499:481), target=c(498:480), width=0.5)
-  edges&amp;lt;-rbind(edges, add)
-  forceNetwork(Links = edges, Nodes = nodes, 
-               Source = &amp;quot;source&amp;quot;,
-               Target = &amp;quot;target&amp;quot;,
-               linkDistance=100,
-               NodeID =&amp;quot;name&amp;quot;,
-               Group = &amp;quot;Parliament&amp;quot;,
-               Value = &amp;quot;width&amp;quot;,
-               opacity = 0.9,
-               zoom = TRUE,
-               charge=-5,
-               legend=T,
-               fontSize = 12,
-               colourScale = JS(ColourScale))
-}else{
-    #### And for yearly subset 
-    forceNetwork(Links = edges, Nodes = nodes, 
-                 Source = &amp;quot;source&amp;quot;,
-                 Target = &amp;quot;target&amp;quot;,
-                 NodeID =&amp;quot;name&amp;quot;,
-                 Group = &amp;quot;Parliament&amp;quot;,
-                 Value = &amp;quot;width&amp;quot;,
-                 opacity = 0.9,
-                 linkDistance = 240,
-                 fontSize = 15,
-                 charge=-2,
-                 zoom = TRUE,
-                 opacityNoHover = 1,
-                 legend=T,
-                 colourScale = JS(ColourScale))
-}
-  })
-  
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Here is the final app:&lt;/p&gt;
-&lt;iframe src=&#34;https://thebest.shinyapps.io/DevolvedLegislation/?showcase=0&#34; width=&#34;672&#34; height=&#34;600px&#34;&gt;
-&lt;/iframe&gt;
-&lt;p&gt;Next steps are to look at whether the legilsation can be classified into groups meaninfully, or whether a node can act as a link to a webpage for more information.&lt;/p&gt;
-</description>
     </item>
     
   </channel>

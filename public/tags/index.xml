@@ -121,6 +121,15 @@
     </item>
     
     <item>
+      <title>Clustering</title>
+      <link>/tags/clustering/</link>
+      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/clustering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Cognitive Function</title>
       <link>/tags/cognitive-function/</link>
       <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
@@ -348,7 +357,7 @@
     <item>
       <title>Modelling</title>
       <link>/tags/modelling/</link>
-      <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/modelling/</guid>
       <description></description>
@@ -436,9 +445,18 @@
     </item>
     
     <item>
+      <title>Prescriptions</title>
+      <link>/tags/prescriptions/</link>
+      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/prescriptions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Tue, 22 May 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
       <description></description>
@@ -499,6 +517,15 @@
     </item>
     
     <item>
+      <title>Sequence</title>
+      <link>/tags/sequence/</link>
+      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/sequence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Social Capital</title>
       <link>/tags/social-capital/</link>
       <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
@@ -519,7 +546,7 @@
     <item>
       <title>Statistics</title>
       <link>/tags/statistics/</link>
-      <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/statistics/</guid>
       <description></description>
@@ -549,6 +576,15 @@
       <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/traffic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Traminer</title>
+      <link>/tags/traminer/</link>
+      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/traminer/</guid>
       <description></description>
     </item>
     
