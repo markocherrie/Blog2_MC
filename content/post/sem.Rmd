@@ -4,12 +4,12 @@ author: ~
 date: '2019-01-17'
 draft: no
 slug: sem
-tags: ["Statistics","Modelling", "SEM", "Causality", "Lavaan", "Moderation", "Mediation"]
+tags: ["Statistics","Modelling", "SEM", "Causality", "Lavaan", "Moderation", "Mediation", "R"]
 categories: ["Data Analysis"]
 ---
 
 ## Background
-I went on a course in Cambridge over the summer of 2018. This was to get me up to speed on structural equation modelling (SEM), which has a lot of potential applications in scenarios where the pathways between variables are the central focus of the research question. 
+I went on a course in Cambridge over the summer of 2018. This was to get me up to speed on structural equation modelling (SEM), which has a lot of potential applications in scenarios where the pathways between measured and unmeasured variables are the central focus of the research question. 
 
 ## What is SEM?
 SEM is a mixture of confirmatory factor analysis (CFA) and path analysis. Another way to describe that, is that you have a measurement part and a structural part. They relate to two questions: 
@@ -17,7 +17,7 @@ SEM is a mixture of confirmatory factor analysis (CFA) and path analysis. Anothe
 1. How can we measure latent concepts?
 2. What is the relationship between the variables in our models?
 
-The key point to structural equation modelling is that is splits measurement error and the correlation between the residuals from the structural coefficients. I recommend the Lavaan [tutorial](http://lavaan.ugent.be/tutorial/est.html), below is my workflow for building a mediation/moderation model in Lavaan.  
+The key point to structural equation modelling is that is splits measurement error and the correlation between the residuals from the structural coefficients. I recommend the Lavaan [tutorial](http://lavaan.ugent.be/tutorial/est.html); below is my workflow for building a mediation/moderation model in Lavaan.  
 
 ## Lavaan syntax
 
@@ -138,7 +138,7 @@ From here, you will want to get standardized estimates for the models using the 
 standardizedSolution(fit)
 ```
 
-You may also be interested to plot the model as a figure using ['semPlot'](http://sachaepskamp.com/semPlot/examples), an alternative is to construct it yourself using [Yed](https://www.yworks.com/products/yed), with the output that you have generated. 
+You may also be interested to plot the model as a figure using ['semPlot'](http://sachaepskamp.com/semPlot/examples); an alternative is to construct it yourself using [Yed](https://www.yworks.com/products/yed), with the output that you have generated. 
 
 ## Summary 
 1. Review literature and sketch out proposed relationships

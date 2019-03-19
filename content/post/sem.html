@@ -4,7 +4,7 @@ author: ~
 date: '2019-01-17'
 draft: no
 slug: sem
-tags: ["Statistics","Modelling", "SEM", "Causality", "Lavaan", "Moderation", "Mediation"]
+tags: ["Statistics","Modelling", "SEM", "Causality", "Lavaan", "Moderation", "Mediation", "R"]
 categories: ["Data Analysis"]
 ---
 
@@ -12,7 +12,7 @@ categories: ["Data Analysis"]
 
 <div id="background" class="section level2">
 <h2>Background</h2>
-<p>I went on a course in Cambridge over the summer of 2018. This was to get me up to speed on structural equation modelling (SEM), which has a lot of potential applications in scenarios where the pathways between variables are the central focus of the research question.</p>
+<p>I went on a course in Cambridge over the summer of 2018. This was to get me up to speed on structural equation modelling (SEM), which has a lot of potential applications in scenarios where the pathways between measured and unmeasured variables are the central focus of the research question.</p>
 </div>
 <div id="what-is-sem" class="section level2">
 <h2>What is SEM?</h2>
@@ -21,7 +21,7 @@ categories: ["Data Analysis"]
 <li>How can we measure latent concepts?</li>
 <li>What is the relationship between the variables in our models?</li>
 </ol>
-<p>The key point to structural equation modelling is that is splits measurement error and the correlation between the residuals from the structural coefficients. I recommend the Lavaan <a href="http://lavaan.ugent.be/tutorial/est.html">tutorial</a>, below is my workflow for building a mediation/moderation model in Lavaan.</p>
+<p>The key point to structural equation modelling is that is splits measurement error and the correlation between the residuals from the structural coefficients. I recommend the Lavaan <a href="http://lavaan.ugent.be/tutorial/est.html">tutorial</a>; below is my workflow for building a mediation/moderation model in Lavaan.</p>
 </div>
 <div id="lavaan-syntax" class="section level2">
 <h2>Lavaan syntax</h2>
@@ -132,7 +132,7 @@ summary(fit, fit.measures=TRUE)</code></pre>
 <h2>Standardized estimates and plotting</h2>
 <p>From here, you will want to get standardized estimates for the models using the following code:</p>
 <pre class="r"><code>standardizedSolution(fit)</code></pre>
-<p>You may also be interested to plot the model as a figure using <a href="http://sachaepskamp.com/semPlot/examples">‘semPlot’</a>, an alternative is to construct it yourself using <a href="https://www.yworks.com/products/yed">Yed</a>, with the output that you have generated.</p>
+<p>You may also be interested to plot the model as a figure using <a href="http://sachaepskamp.com/semPlot/examples">‘semPlot’</a>; an alternative is to construct it yourself using <a href="https://www.yworks.com/products/yed">Yed</a>, with the output that you have generated.</p>
 </div>
 <div id="summary" class="section level2">
 <h2>Summary</h2>

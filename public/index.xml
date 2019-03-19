@@ -61,7 +61,7 @@
 
 &lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Background&lt;/h2&gt;
-&lt;p&gt;I went on a course in Cambridge over the summer of 2018. This was to get me up to speed on structural equation modelling (SEM), which has a lot of potential applications in scenarios where the pathways between variables are the central focus of the research question.&lt;/p&gt;
+&lt;p&gt;I went on a course in Cambridge over the summer of 2018. This was to get me up to speed on structural equation modelling (SEM), which has a lot of potential applications in scenarios where the pathways between measured and unmeasured variables are the central focus of the research question.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;what-is-sem&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;What is SEM?&lt;/h2&gt;
@@ -70,7 +70,7 @@
 &lt;li&gt;How can we measure latent concepts?&lt;/li&gt;
 &lt;li&gt;What is the relationship between the variables in our models?&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;The key point to structural equation modelling is that is splits measurement error and the correlation between the residuals from the structural coefficients. I recommend the Lavaan &lt;a href=&#34;http://lavaan.ugent.be/tutorial/est.html&#34;&gt;tutorial&lt;/a&gt;, below is my workflow for building a mediation/moderation model in Lavaan.&lt;/p&gt;
+&lt;p&gt;The key point to structural equation modelling is that is splits measurement error and the correlation between the residuals from the structural coefficients. I recommend the Lavaan &lt;a href=&#34;http://lavaan.ugent.be/tutorial/est.html&#34;&gt;tutorial&lt;/a&gt;; below is my workflow for building a mediation/moderation model in Lavaan.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;lavaan-syntax&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Lavaan syntax&lt;/h2&gt;
@@ -181,7 +181,7 @@ summary(fit, fit.measures=TRUE)&lt;/code&gt;&lt;/pre&gt;
 &lt;h2&gt;Standardized estimates and plotting&lt;/h2&gt;
 &lt;p&gt;From here, you will want to get standardized estimates for the models using the following code:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;standardizedSolution(fit)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You may also be interested to plot the model as a figure using &lt;a href=&#34;http://sachaepskamp.com/semPlot/examples&#34;&gt;‘semPlot’&lt;/a&gt;, an alternative is to construct it yourself using &lt;a href=&#34;https://www.yworks.com/products/yed&#34;&gt;Yed&lt;/a&gt;, with the output that you have generated.&lt;/p&gt;
+&lt;p&gt;You may also be interested to plot the model as a figure using &lt;a href=&#34;http://sachaepskamp.com/semPlot/examples&#34;&gt;‘semPlot’&lt;/a&gt;; an alternative is to construct it yourself using &lt;a href=&#34;https://www.yworks.com/products/yed&#34;&gt;Yed&lt;/a&gt;, with the output that you have generated.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;summary&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Summary&lt;/h2&gt;
