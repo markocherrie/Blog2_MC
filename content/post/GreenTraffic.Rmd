@@ -8,15 +8,15 @@ tags: ["Green space","Traffic", "Glasgow", "Neighbourhood","Rshiny"]
 categories: ["Data Visualisation"]
 ---
 
-The question, in relation to theories of how the quality of greenspace can affect relationships with health, was: Do traffic events occur close to greenspaces? How does this vary spatially and temporally? How can this be visualised?
+## Background
 
-Here is the final result:
-```{r app, echo=F, message=FALSE, warning=FALSE}
-library(knitr)
-knitr::include_app("https://thebest.shinyapps.io/test_MC/")
-```
+The health benefit of greater availability of greenspaces is mediated by the quality of spaces [Zhang et al., 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5451986/). Recently there quality was associated with psychological distress, whereas availability had no effect [Feng and Astell-Burt, 2018](https://bmcpsychiatry.biomedcentral.com/articles/10.1186/s12888-018-1926-1). Both of these measures of quality were self-reported. Another method to determine quality is from GIS derived measures of land use. Perhaps the optimal method is using questionnaire self-report and GIS-derived measures as has been developed by [Stessens et al., 2017](https://www.sciencedirect.com/science/article/pii/S2212041616303898). Their measure of quality had the following subdomains and weightings: Naturalness and biodiversity (0.10), Spaciousness (0.16), Quietness (0.14) which were GIS derived; cleanliness and maintenence (0.31), facilities (0.20) and feelings of safety (0.20) which were questionnaire derived. In this work, I hypothesised that heavy traffic and accidents would influence quietness, and feelings of safety, thus reducing the quality of the greenspace. The first step then was to understand how traffic events and greenspaces covary, in Glasgow as a case study. 
 
+## Research Questions
+Do traffic events occur close to greenspaces? How does this vary spatially and temporally? 
 
+## Method
+I will describe the process of building a data visualisation to answer these questions. 
 First load the packages:
 
 ```{r packages, eval=F, message=FALSE, warning=FALSE}
@@ -126,5 +126,13 @@ add_polygons(data = polyline_df, polyline ="polyline", stroke_weight = 3, fill_c
 # run the app!
 shinyApp(ui, server)
 ```
+
+## Visualisation
+Here is the final result:
+```{r app, echo=F, message=FALSE, warning=FALSE}
+library(knitr)
+knitr::include_app("https://thebest.shinyapps.io/test_MC/")
+```
+
 
   

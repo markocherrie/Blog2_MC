@@ -6,7 +6,7 @@
     <description>Recent content in Researcher on Researcher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018 Mark Cherrie</copyright>
+    <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
     <lastBuildDate>Tue, 29 Aug 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
@@ -70,7 +70,7 @@
 
 &lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Background&lt;/h2&gt;
-&lt;p&gt;I went on a course in Cambridge over the summer of 2018. This was to get me up to speed on structural equation modelling (SEM), which has a lot of potential applications in scenarios where the pathways between measured and unmeasured variables are the central focus of the research question.&lt;/p&gt;
+&lt;p&gt;I went on a &lt;a href=&#34;https://www.psychometrics.cam.ac.uk/trainingworkshops/structural-equation-modelling-in-r-4-day-course&#34;&gt;course&lt;/a&gt; in Cambridge over the summer of 2018. This was to get me up to speed on structural equation modelling (SEM), which has a lot of potential applications in scenarios where the pathways between measured and unmeasured variables are the central focus of the research question.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;what-is-sem&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;What is SEM?&lt;/h2&gt;
@@ -265,11 +265,11 @@ Once you like the look of your visualisation, there are options to share as an i
 
 &lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Background&lt;/h2&gt;
-&lt;p&gt;I am keen to employ technology to assist in teaching. I went to the &lt;a href=&#34;https://socsocmed.org.uk/annual-scientific-meeting/&#34;&gt;Social Science and Medicine Annual Scientific meeting&lt;/a&gt; in Glasgow, last September and noticed that they were using software to get responses from the audience. The software was called &lt;a href=&#34;https://www.mentimeter.com/&#34;&gt;Mentimeter&lt;/a&gt;. I did some investigating and set out a plan on using it for upcoming teaching and outreach. It turns out there has been a paper published by researchers from the University of Glasgow on the merits of interactive polling for teaching, see &lt;a href=&#34;http://evs.psy.gla.ac.uk/papers/draperbrown.pdf&#34;&gt;here&lt;/a&gt;. The authors summarise that experiences of this technology are generally positive but caution that future use should focus first on the pedagogical approach. Two approaches are put forward: one, launching student discussion, and two to focus on developing teaching aligned to the students questions and needs. I’ll now give a brief description on how to carry out a Mentimeter polling session and how I have used it in teaching and outreach.&lt;/p&gt;
+&lt;p&gt;I am keen to employ technology to assist in teaching. I went to the &lt;a href=&#34;https://socsocmed.org.uk/annual-scientific-meeting/&#34;&gt;Social Science and Medicine Annual Scientific meeting&lt;/a&gt; in Glasgow last September and noticed that they were using software to get responses from the audience. The software was called &lt;a href=&#34;https://www.mentimeter.com/&#34;&gt;Mentimeter&lt;/a&gt;. It turns out there has been a &lt;a href=&#34;http://evs.psy.gla.ac.uk/papers/draperbrown.pdf&#34;&gt;paper&lt;/a&gt; published by researchers from the University of Glasgow on the merits of interactive polling for teaching. The authors summarise that experiences of this technology are generally positive but caution that future use should focus first on the pedagogical approach. Two approaches are put forward: 1) launching student discussion, and 2) to focus on developing teaching aligned to the students questions and needs. I’ll now give a brief description on how to carry out a Mentimeter polling session and how I have used it in teaching and outreach.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;mentimeter&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Mentimeter&lt;/h2&gt;
-&lt;p&gt;Mentimeter is proprietary cloud-based software that can collect, record and visualise participant responses via interaction with a webpage. The teacher first asks the students to go onto the webpage and input a code to get to the right question (questions are created on the Mentimeter site, which is very intuitive). The teacher then activates the voting and results are visualised in real-time on the screen. I’ve found that the easiest way to include this in presentations is to use the Powerpoint &lt;a href=&#34;https://www.mentimeter.com/powerpoint&#34;&gt;plugin&lt;/a&gt;. The plots and data can then be downloaded and are useful for reports and modifying future material.&lt;/p&gt;
+&lt;p&gt;Mentimeter is proprietary cloud-based software that can collect, record and visualise participant responses via interaction with a webpage. The teacher first asks the students to go onto the webpage and input a code to get to the right question (questions are created on the Mentimeter site, which is very intuitive). The teacher then activates the voting and results are visualised in real-time on the screen. I’ve found the easiest way to include polls in a presentation is to use the Powerpoint &lt;a href=&#34;https://www.mentimeter.com/powerpoint&#34;&gt;plugin&lt;/a&gt;. The plots and data can then be downloaded and are useful for reports after the event.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;examples-of-use&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Examples of use&lt;/h2&gt;

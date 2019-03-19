@@ -9,7 +9,7 @@ categories: ["Data Analysis"]
 ---
 
 ## Background
-I went on a course in Cambridge over the summer of 2018. This was to get me up to speed on structural equation modelling (SEM), which has a lot of potential applications in scenarios where the pathways between measured and unmeasured variables are the central focus of the research question. 
+I went on a [course](https://www.psychometrics.cam.ac.uk/trainingworkshops/structural-equation-modelling-in-r-4-day-course) in Cambridge over the summer of 2018. This was to get me up to speed on structural equation modelling (SEM), which has a lot of potential applications in scenarios where the pathways between measured and unmeasured variables are the central focus of the research question. 
 
 ## What is SEM?
 SEM is a mixture of confirmatory factor analysis (CFA) and path analysis. Another way to describe that, is that you have a measurement part and a structural part. They relate to two questions: 

@@ -6,7 +6,7 @@
     <description>Recent content in Data Visualisation on Researcher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018 Mark Cherrie</copyright>
+    <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
     <lastBuildDate>Sat, 22 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/data-visualisation/index.xml" rel="self" type="application/rss+xml" />
@@ -46,10 +46,7 @@ Pre-legislative scrutiny on the draft piece of legislation (bill)First Reading 
       <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/greentraffic/</guid>
-      <description>The question, in relation to theories of how the quality of greenspace can affect relationships with health, was: Do traffic events occur close to greenspaces? How does this vary spatially and temporally? How can this be visualised?
-Here is the final result: 
-First load the packages:
-# allows r to work with spatial datalibrary(rgdal)# allows r to connect with google apislibrary(googleway)# allows r to perform GIS operations (on vectors especially?</description>
+      <description>Background The health benefit of greater availability of greenspaces is mediated by the quality of spaces Zhang et al., 2017. Recently there quality was associated with psychological distress, whereas availability had no effect Feng and Astell-Burt, 2018. Both of these measures of quality were self-reported. Another method to determine quality is from GIS derived measures of land use. Perhaps the optimal method is using questionnaire self-report and GIS-derived measures as has been developed by Stessens et al.</description>
     </item>
     
     <item>

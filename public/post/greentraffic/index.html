@@ -268,9 +268,17 @@
       
 
 
-<p>The question, in relation to theories of how the quality of greenspace can affect relationships with health, was: Do traffic events occur close to greenspaces? How does this vary spatially and temporally? How can this be visualised?</p>
-<p>Here is the final result: <iframe src="https://thebest.shinyapps.io/test_MC/?showcase=0" width="672" height="400px"></iframe></p>
-<p>First load the packages:</p>
+<div id="background" class="section level2">
+<h2>Background</h2>
+<p>The health benefit of greater availability of greenspaces is mediated by the quality of spaces <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5451986/">Zhang et al., 2017</a>. Recently there quality was associated with psychological distress, whereas availability had no effect <a href="https://bmcpsychiatry.biomedcentral.com/articles/10.1186/s12888-018-1926-1">Feng and Astell-Burt, 2018</a>. Both of these measures of quality were self-reported. Another method to determine quality is from GIS derived measures of land use. Perhaps the optimal method is using questionnaire self-report and GIS-derived measures as has been developed by <a href="https://www.sciencedirect.com/science/article/pii/S2212041616303898">Stessens et al., 2017</a>. Their measure of quality had the following subdomains and weightings: Naturalness and biodiversity (0.10), Spaciousness (0.16), Quietness (0.14) which were GIS derived; cleanliness and maintenence (0.31), facilities (0.20) and feelings of safety (0.20) which were questionnaire derived. In this work, I hypothesised that heavy traffic and accidents would influence quietness, and feelings of safety, thus reducing the quality of the greenspace. The first step then was to understand how traffic events and greenspaces covary, in Glasgow as a case study.</p>
+</div>
+<div id="research-questions" class="section level2">
+<h2>Research Questions</h2>
+<p>Do traffic events occur close to greenspaces? How does this vary spatially and temporally?</p>
+</div>
+<div id="method" class="section level2">
+<h2>Method</h2>
+<p>I will describe the process of building a data visualisation to answer these questions. First load the packages:</p>
 <pre class="r"><code># allows r to work with spatial data
 library(rgdal)
 # allows r to connect with google apis
@@ -365,6 +373,11 @@ add_polygons(data = polyline_df, polyline =&quot;polyline&quot;, stroke_weight =
 })}
 # run the app!
 shinyApp(ui, server)</code></pre>
+</div>
+<div id="visualisation" class="section level2">
+<h2>Visualisation</h2>
+<p>Here is the final result: <iframe src="https://thebest.shinyapps.io/test_MC/?showcase=0" width="672" height="400px"></iframe></p>
+</div>
 
     </div>
   </div>
@@ -422,7 +435,7 @@ shinyApp(ui, server)</code></pre>
   <div class="container">
     <p class="powered-by">
 
-      &copy; 2018 Mark Cherrie &middot; 
+      &copy; 2019 Mark Cherrie &middot; 
 
       Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
       theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
