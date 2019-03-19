@@ -23,10 +23,10 @@ The key point to structural equation modelling is that is splits measurement err
 
 First of all the syntax for Lavaan models is as follows:
 
-~  Define regression formula
-~~ Define correlated residual variances (two observed variables)
-~= Define latent variable
-:= Define effect (i.e. indirect or total)
+* ~  Define regression formula
+* ~~ Define correlated residual variances (two observed variables)
+* ~= Define latent variable
+* := Define effect (i.e. indirect or total)
 
 Remember, you'll need to define the model in speech marks and then use it as the model argument in the lavaan functions: cfa and sem. 
 

@@ -16,7 +16,7 @@ categories: ["Data Analysis"]
 </div>
 <div id="what-is-sem" class="section level2">
 <h2>What is SEM?</h2>
-<p>SEM is a mixture of confirmatory factor analysis (CFA) and path analysis. Another way to describe that, is that you have a measurement part (CFA) and a structural part (PA). They relate to two questions:</p>
+<p>SEM is a mixture of confirmatory factor analysis (CFA) and path analysis. Another way to describe that, is that you have a measurement part and a structural part. They relate to two questions:</p>
 <ol style="list-style-type: decimal">
 <li>How can we measure latent concepts?</li>
 <li>What is the relationship between the variables in our models?</li>
@@ -25,11 +25,13 @@ categories: ["Data Analysis"]
 </div>
 <div id="lavaan-syntax" class="section level2">
 <h2>Lavaan syntax</h2>
-<dl>
-<dt>First of all the syntax for Lavaan models is as follows:</dt>
-<dd><p>Define regression formula ~~ Define correlated residual variances (two observed variables) ~= Define latent variable := Define effect (i.e. indirect or total)</p>
-</dd>
-</dl>
+<p>First of all the syntax for Lavaan models is as follows:</p>
+<ul>
+<li>~ Define regression formula</li>
+<li>~~ Define correlated residual variances (two observed variables)</li>
+<li>~= Define latent variable</li>
+<li>:= Define effect (i.e. indirect or total)</li>
+</ul>
 <p>Remember, you’ll need to define the model in speech marks and then use it as the model argument in the lavaan functions: cfa and sem.</p>
 </div>
 <div id="example" class="section level2">
