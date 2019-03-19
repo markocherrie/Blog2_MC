@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018 Mark Cherrie</copyright>
-    <lastBuildDate>Fri, 30 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/data-visualisation/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to quickly visualise massive spatio-temporal data? Experiences with Kepler.gl</title>
+      <link>/post/kepler/</link>
+      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/kepler/</guid>
+      <description>Background Are you collecting lots of geospatial data and need a way to quickly visualise what you’ve got? Read on!
+I had this problem; I was collecting a lot of information on my daily movements from Arc App: Location and Activity (more on the use of Arc for research later). Additionally, I wanted to quickly see what features of the urban environment (e.g. greenspaces) I was being ‘exposed’ to. The solution was Uber’s open source geospatial analysis tool: Kepler.</description>
+    </item>
     
     <item>
       <title>Devolved parliaments and assemblies Legislation</title>

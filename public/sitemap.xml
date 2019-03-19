@@ -41,6 +41,15 @@
     
     <url>
     
+      <loc>/post/kepler/</loc>
+      <lastmod>2018-12-22T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/talk/foss/</loc>
       <lastmod>2018-11-07T11:30:00+00:00</lastmod>
     </url>
@@ -402,6 +411,16 @@
     
     <url>
     
+      <loc>/tags/activity-space/</loc>
+      <lastmod>2018-12-22T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/admin/</loc>
       <lastmod>2018-05-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -464,6 +483,16 @@
     
       <loc>/tags/arc/</loc>
       <lastmod>2019-03-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/arc-app/</loc>
+      <lastmod>2018-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -572,7 +601,7 @@
     <url>
     
       <loc>/categories/data-visualisation/</loc>
-      <lastmod>2018-03-30T00:00:00+00:00</lastmod>
+      <lastmod>2018-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -682,7 +711,7 @@
     <url>
     
       <loc>/tags/greenspace/</loc>
-      <lastmod>2017-08-08T00:00:00+00:00</lastmod>
+      <lastmod>2018-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -833,6 +862,26 @@
     
       <loc>/tags/modelling/</loc>
       <lastmod>2018-10-03T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/movement/</loc>
+      <lastmod>2018-12-22T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/natural-environment/</loc>
+      <lastmod>2018-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1203,6 +1252,16 @@
     
       <loc>/tags/traminer/</loc>
       <lastmod>2018-10-03T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/ugcp/</loc>
+      <lastmod>2018-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
