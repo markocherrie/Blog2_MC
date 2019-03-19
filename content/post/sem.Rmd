@@ -1,5 +1,5 @@
 ---
-title: 'How to build a structural equation model in Lavaan?'
+title: 'How to build a structural equation model in Lavaan'
 author: ~
 date: '2019-01-17'
 draft: no
@@ -31,7 +31,7 @@ First of all the syntax for Lavaan models is as follows:
 Remember, you'll need to define the model in speech marks and then use it as the model argument in the lavaan functions: cfa and sem. 
 
 ## Example
-This example is on understanding the pathways to smoking in adolescents. The density of tobacco retailers in an adolescents' residential neighbourhood predicts propensity to smoke; the greater the retailers the more likely smoking is [(Shortt et al., 2014)](https://tobaccocontrol.bmj.com/content/25/1/75.info). However we know that density also predicts whether a family member will smoke and that if a family member is a smoker, the adolescent is more likely to smoke. Also, we know that the relationship between density of retailer and smoking is stronger when the individual has a lower socioeconomic status or lives in an area of higher deprivation [(Chuang et al., 2005)](https://www.ncbi.nlm.nih.gov/pubmed/15965140). How can we model these latent contructs (family smoking) and complex relationships? This hypothetical dataset called 'smokingdata' has the following variables:
+This example is on understanding the pathways to smoking in adolescents. The density of tobacco retailers in an adolescents' residential neighbourhood predicts propensity to smoke; the greater the density of retailers the more likely smoking is [(Shortt et al., 2014)](https://tobaccocontrol.bmj.com/content/25/1/75.info). However we know that density also predicts whether a family member will smoke and that if a family member is a smoker, the adolescent is more likely to smoke. Also, we know that the relationship between density of retailer and smoking is stronger when the individual has a lower socioeconomic status or lives in an area of higher deprivation [(Chuang et al., 2005)](https://www.ncbi.nlm.nih.gov/pubmed/15965140). How can we model these latent contructs (family smoking) and complex relationships? This hypothetical dataset called 'smokingdata' has the following variables:
 
 * density: continuous density of tobacco retailers
 * smoking: binary smoking status

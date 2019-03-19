@@ -60,7 +60,7 @@
     </item>
     
     <item>
-      <title>How to build a structural equation model in Lavaan?</title>
+      <title>How to build a structural equation model in Lavaan</title>
       <link>/post/sem/</link>
       <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
       
@@ -94,7 +94,7 @@
 &lt;/div&gt;
 &lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Example&lt;/h2&gt;
-&lt;p&gt;This example is on understanding the pathways to smoking in adolescents. The density of tobacco retailers in an adolescents’ residential neighbourhood predicts propensity to smoke; the greater the retailers the more likely smoking is &lt;a href=&#34;https://tobaccocontrol.bmj.com/content/25/1/75.info&#34;&gt;(Shortt et al., 2014)&lt;/a&gt;. However we know that density also predicts whether a family member will smoke and that if a family member is a smoker, the adolescent is more likely to smoke. Also, we know that the relationship between density of retailer and smoking is stronger when the individual has a lower socioeconomic status or lives in an area of higher deprivation &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/15965140&#34;&gt;(Chuang et al., 2005)&lt;/a&gt;. How can we model these latent contructs (family smoking) and complex relationships? This hypothetical dataset called ‘smokingdata’ has the following variables:&lt;/p&gt;
+&lt;p&gt;This example is on understanding the pathways to smoking in adolescents. The density of tobacco retailers in an adolescents’ residential neighbourhood predicts propensity to smoke; the greater the density of retailers the more likely smoking is &lt;a href=&#34;https://tobaccocontrol.bmj.com/content/25/1/75.info&#34;&gt;(Shortt et al., 2014)&lt;/a&gt;. However we know that density also predicts whether a family member will smoke and that if a family member is a smoker, the adolescent is more likely to smoke. Also, we know that the relationship between density of retailer and smoking is stronger when the individual has a lower socioeconomic status or lives in an area of higher deprivation &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/15965140&#34;&gt;(Chuang et al., 2005)&lt;/a&gt;. How can we model these latent contructs (family smoking) and complex relationships? This hypothetical dataset called ‘smokingdata’ has the following variables:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;density: continuous density of tobacco retailers&lt;/li&gt;
 &lt;li&gt;smoking: binary smoking status&lt;/li&gt;
@@ -217,7 +217,7 @@ summary(fit, fit.measures=TRUE)&lt;/code&gt;&lt;/pre&gt;
     </item>
     
     <item>
-      <title>How to quickly visualise massive spatio-temporal data?</title>
+      <title>How to quickly visualise massive spatio-temporal data</title>
       <link>/post/kepler/</link>
       <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
       
@@ -255,7 +255,7 @@ Once you like the look of your visualisation, there are options to share as an i
     </item>
     
     <item>
-      <title>How to make teaching/outreach more interactive?</title>
+      <title>How to make teaching/outreach more interactive</title>
       <link>/post/mentimeter/</link>
       <pubDate>Sat, 03 Nov 2018 00:00:00 +0000</pubDate>
       
@@ -330,7 +330,7 @@ Once you like the look of your visualisation, there are options to share as an i
     </item>
     
     <item>
-      <title>How to find the optimal number of groups in GBTM?</title>
+      <title>How to find the optimal number of groups in GBTM</title>
       <link>/post/gbtm/</link>
       <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
       
