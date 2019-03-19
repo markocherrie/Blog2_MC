@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Outreach on Researcher</title>
+    <link>/tags/outreach/</link>
+    <description>Recent content in Outreach on Researcher</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018 Mark Cherrie</copyright>
+    <lastBuildDate>Sat, 03 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/outreach/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to make teaching/outreach more interactive? Experiences with Mentimeter</title>
+      <link>/post/mentimeter/</link>
+      <pubDate>Sat, 03 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/mentimeter/</guid>
+      <description>Background I am keen to employ technology to assist in teaching. I went to the Social Science and Medicine Annual Scientific meeting in Glasgow, last September and noticed that they were using software to get responses from the audience. The software was called Mentimeter and I at that point I planned to use it in future teaching and outreach. It turns out there has been a paper published from researchers from the University of Glasgow on the merits of interactive polling for teaching, see here.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -41,6 +41,24 @@
     
     <url>
     
+      <loc>/talk/foss/</loc>
+      <lastmod>2018-11-07T11:30:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/post/mentimeter/</loc>
+      <lastmod>2018-11-03T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/sequence/</loc>
       <lastmod>2018-10-03T00:00:00+00:00</lastmod>
     </url>
@@ -693,6 +711,16 @@
     
     <url>
     
+      <loc>/tags/interactive-polling/</loc>
+      <lastmod>2018-11-03T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/intervention/</loc>
       <lastmod>2017-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -783,6 +811,16 @@
     
     <url>
     
+      <loc>/tags/mentimeter/</loc>
+      <lastmod>2018-11-03T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/mmp/</loc>
       <lastmod>2017-08-08T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -853,6 +891,16 @@
     
     <url>
     
+      <loc>/tags/outreach/</loc>
+      <lastmod>2018-11-03T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/parallel-computing/</loc>
       <lastmod>2018-04-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -865,6 +913,16 @@
     
       <loc>/tags/pdf/</loc>
       <lastmod>2017-11-02T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/pedagogy/</loc>
+      <lastmod>2018-11-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -895,6 +953,16 @@
     
       <loc>/post/</loc>
       <lastmod>2019-03-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/powerpoint/</loc>
+      <lastmod>2018-11-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1073,6 +1141,36 @@
     
     <url>
     
+      <loc>/tags/teaching/</loc>
+      <lastmod>2018-11-03T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/teaching-tips/</loc>
+      <lastmod>2018-11-03T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/technology/</loc>
+      <lastmod>2018-11-03T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/time-series/</loc>
       <lastmod>2018-02-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -1185,6 +1283,16 @@
     
       <loc>/tags/webmap/</loc>
       <lastmod>2017-08-29T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/workshop/</loc>
+      <lastmod>2018-11-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
