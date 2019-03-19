@@ -15,7 +15,7 @@ I went on a course in Cambridge over the summer of 2018. This was to get me up t
 SEM is a mixture of confirmatory factor analysis (CFA) and path analysis. Another way to describe that, is that you have a measurement part and a structural part. They relate to two questions: 
 
 1. How can we measure latent concepts?
-2. What is the relationship between the variables in our models?
+2. What is the relationship between the variables in our model?
 
 The key point to structural equation modelling is that is splits measurement error and the correlation between the residuals from the structural coefficients. I recommend the Lavaan [tutorial](http://lavaan.ugent.be/tutorial/est.html); below is my workflow for building a mediation/moderation model in Lavaan.  
 
