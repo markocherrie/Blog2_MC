@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Causality on Researcher</title>
+    <link>/tags/causality/</link>
+    <description>Recent content in Causality on Researcher</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018 Mark Cherrie</copyright>
+    <lastBuildDate>Thu, 17 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/causality/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to build a structural equation model in Lavaan?</title>
+      <link>/post/sem/</link>
+      <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/sem/</guid>
+      <description>Background I went on a course in Cambridge over the summer of 2018. This was to get me up to speed on structural equation modelling (SEM), which has a lot of potential applications in scenarios where the pathways between variables are the central focus of the research question.
+ What is SEM? SEM is a mixture of confirmatory factor analysis (CFA) and path analysis. Another way to describe that, is that you have a measurement part (CFA) and a structural part (PA).</description>
+    </item>
+    
+  </channel>
+</rss>

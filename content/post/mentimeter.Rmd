@@ -1,5 +1,5 @@
 ---
-title: 'How to make teaching/outreach more interactive? Experiences with Mentimeter'
+title: 'How to make teaching/outreach more interactive?'
 author: ~
 date: '2018-11-03'
 draft: no

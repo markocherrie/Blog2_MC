@@ -22,7 +22,17 @@
     </item>
     
     <item>
-      <title>How to quickly visualise massive spatio-temporal data? Experiences with Kepler.gl</title>
+      <title>How to build a structural equation model in Lavaan?</title>
+      <link>/post/sem/</link>
+      <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/sem/</guid>
+      <description>Background I went on a course in Cambridge over the summer of 2018. This was to get me up to speed on structural equation modelling (SEM), which has a lot of potential applications in scenarios where the pathways between variables are the central focus of the research question.
+ What is SEM? SEM is a mixture of confirmatory factor analysis (CFA) and path analysis. Another way to describe that, is that you have a measurement part (CFA) and a structural part (PA).</description>
+    </item>
+    
+    <item>
+      <title>How to quickly visualise massive spatio-temporal data?</title>
       <link>/post/kepler/</link>
       <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
       
@@ -32,7 +42,7 @@ I had this problem; I was collecting a lot of information on my daily movements 
     </item>
     
     <item>
-      <title>How to make teaching/outreach more interactive? Experiences with Mentimeter</title>
+      <title>How to make teaching/outreach more interactive?</title>
       <link>/post/mentimeter/</link>
       <pubDate>Sat, 03 Nov 2018 00:00:00 +0000</pubDate>
       

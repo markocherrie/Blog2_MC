@@ -1,5 +1,5 @@
 ---
-title: 'How to quickly visualise massive spatio-temporal data? Experiences with Kepler.gl'
+title: 'How to quickly visualise massive spatio-temporal data?'
 author: ~
 date: '2018-12-22'
 draft: no

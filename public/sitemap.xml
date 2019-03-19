@@ -41,6 +41,15 @@
     
     <url>
     
+      <loc>/post/sem/</loc>
+      <lastmod>2019-01-17T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/kepler/</loc>
       <lastmod>2018-12-22T00:00:00+00:00</lastmod>
     </url>
@@ -540,6 +549,16 @@
     
     <url>
     
+      <loc>/tags/causality/</loc>
+      <lastmod>2019-01-17T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/childhood/</loc>
       <lastmod>2017-09-08T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -780,6 +799,16 @@
     
     <url>
     
+      <loc>/tags/lavaan/</loc>
+      <lastmod>2019-01-17T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/lifecourse/</loc>
       <lastmod>2017-08-08T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -812,6 +841,16 @@
     
       <loc>/tags/mapzen/</loc>
       <lastmod>2017-09-28T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/mediation/</loc>
+      <lastmod>2019-01-17T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -861,7 +900,17 @@
     <url>
     
       <loc>/tags/modelling/</loc>
-      <lastmod>2018-10-03T00:00:00+00:00</lastmod>
+      <lastmod>2019-01-17T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/moderation/</loc>
+      <lastmod>2019-01-17T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1140,6 +1189,16 @@
     
     <url>
     
+      <loc>/tags/sem/</loc>
+      <lastmod>2019-01-17T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/sequence/</loc>
       <lastmod>2018-10-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -1171,7 +1230,7 @@
     <url>
     
       <loc>/tags/statistics/</loc>
-      <lastmod>2018-10-03T00:00:00+00:00</lastmod>
+      <lastmod>2019-01-17T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

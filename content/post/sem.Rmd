@@ -1,0 +1,158 @@
+---
+title: 'How to build a structural equation model in Lavaan?'
+author: ~
+date: '2019-01-17'
+draft: yes
+slug: sem
+tags: ["Statistics","Modelling", "SEM", "Causality", "Lavaan", "Moderation", "Mediation"]
+categories: ["Data Analysis"]
+---
+
+## Background
+I went on a course in Cambridge over the summer of 2018. This was to get me up to speed on structural equation modelling (SEM), which has a lot of potential applications in scenarios where the pathways between variables are the central focus of the research question. 
+
+## What is SEM?
+SEM is a mixture of confirmatory factor analysis (CFA) and path analysis. Another way to describe that, is that you have a measurement part (CFA) and a structural part (PA). They relate to two questions: 
+
+1. How can we measure latent concepts?
+2. What is the relationship between the variables in our models?
+
+The key point to structural equation modelling is that is splits measurement error and the correlation between the residuals from the structural coefficients. I recommend the Lavaan [tutorial](http://lavaan.ugent.be/tutorial/est.html), below is my workflow for building a mediation/moderation model in Lavaan.  
+
+## Lavaan syntax
+
+First of all the syntax for Lavaan models is as follows:
+
+~  Define regression formula
+~~ Define correlated residual variances (two observed variables)
+~= Define latent variable
+:= Define effect (i.e. indirect or total)
+
+Remember, you'll need to define the model in speech marks and then use it as the model argument in the lavaan functions: cfa and sem. 
+
+## Example
+This example is on understanding the pathways to smoking in adolescents. The density of tobacco retailers in an adolescents' residential neighbourhood predicts propensity to smoke; the greater the retailers the more likely smoking is [(Shortt et al., 2014)](https://tobaccocontrol.bmj.com/content/25/1/75.info). However we know that density also predicts whether a family member will smoke and that if a family member is a smoker, the adolescent is more likely to smoke. Also, we know that the relationship between density of retailer and smoking is stronger when the individual has a lower socioeconomic status or lives in an area of higher deprivation [(Chuang et al., 2005)](https://www.ncbi.nlm.nih.gov/pubmed/15965140). How can we model these latent contructs (family smoking) and complex relationships? This hypothetical dataset called 'smokingdata' has the following variables:
+
+density: continuous density of tobacco retailers
+smoking: binary smoking status
+family: family smoking latent variable
+brother: measured variable on smoking status in brother
+mother: measured variable on smoking status in mother
+sister: measured variable on smoking status in sister
+father: measured variable on smoking status in father
+deprivation: binary variable of deprivation in local neighbourhood
+
+## Perform CFA 
+The first stage is to identify the latent constructs and the variables, which will be used to predict it (3 variables is minimum). Compare the model fit (use 'fit.measures=T') of several models and with what you expected given your reading of the literature. 
+
+```{r cfa, eval=FALSE}
+library(lavaan)
+cfa.model <- 
+           ' 
+           # Measurement model
+             family  =~ brother + mother + father + sister
+           '
+fit <- cfa(cfa.model, data = smokingdata, ordered=c("brother","mother","father","sister"))
+summary(fit, fit.measures=TRUE)
+```
+
+## Build in the mediation 
+The key to building a mediation model is to make sure the regressions are in the correct order. In the example above, we need to make sure density is regressed with smoking and family, and family is regressed with smoking. Additionally in Lavaan, we use labels (e.g. a, b, c) to define effects, which we can then manipulate to get the direct (density on smoking) and indirect effects (density on smoking through family smoking).
+
+```{r mediation, eval=FALSE}
+mediation.model <- 
+           ' 
+           # Measurement model
+             family  =~ brother + mother + father + sister
+           # Residual correlations
+             brother ~~ father
+             brother ~~ mother
+             sister  ~~ mother
+             sister  ~~ father
+           # direct effect
+             smoking ~ c*density
+           # mediator
+             family ~  a*density
+             smoking ~ b*family
+           # indirect effect 
+             ab := a*b
+           # total effect
+             total := c + (a*b)
+         '
+fit <- sem(mediation.model, data = smokingdata, ordered="smoking")
+summary(fit, fit.measures=TRUE)
+```
+
+## Modification indices & Model fit
+The next stage is to check the modification indices to understand whether adding pathways in your model would improve the fit. Crucially, these need to be validated by the literature. 
+
+```{r modindic, eval=FALSE}
+mi <- modindices(fit)
+mi
+```
+
+In our example we did not originally include a residual correlation between sister and brother smoking status which probably would have had a high 'mi' value and therefore worthy of closer inspection.  Once we have a model that we are happy with we can check the model fit and whether the statistics are considered satisfactory using the guidelines in the references of this post. 
+
+## Moderation
+In the example we want to know if there are significant differences in the association between density and smoking by deprivation. This can be done by running a stratified model, and comparing the coefficients using the [Sobel test](https://en.wikipedia.org/wiki/Sobel_test). 
+
+```{r moderation, eval=FALSE}
+moderation.model <- 
+           ' 
+           # Measurement model
+             family  =~ brother + mother + father + sister
+           # Residual correlations
+             brother ~~ father
+             brother ~~ mother
+             sister  ~~ mother
+             sister  ~~ father
+           # direct effect
+             smoking ~ c(c1,c2)*density
+           # mediator
+             family ~  c(a1,a2)*density
+             smoking ~ c(b1,b2)*family
+          
+           # Group 1 - low deprivation
+             DirectLOW:= c1
+             IndirectLOW:= (a1*b1)
+             TotalLOW:= c1 + (a1*b1)
+            
+           # Group 2 - High deprivation 
+             DirectHIGH:= c2
+             IndirectHIGH:= (a2*b2)
+             TotalHIGH:= c2 + (a2*b2)
+
+           # Sobel test
+            DirectDIFF := DirectLOW-DirectHIGH
+            IndirectDIFF := IndirectLOW-IndirectHIGH
+            TotalDIFF := TotalLOW-TotalHIGH
+         '
+fit <- sem(moderation.model, data = smokingdata, ordered="smoking", group="deprivation")
+summary(fit, fit.measures=TRUE)
+```
+
+## Next steps
+From here, you will want to get standardized estimates for the models using the following code:
+
+```{r standard, eval=FALSE}
+standardizedSolution(fit)
+```
+
+You may also be interested to plot the model as a figure using ['semPlot'](http://sachaepskamp.com/semPlot/examples), an alternative is to construct it yourself using [Yed](https://www.yworks.com/products/yed), with the output that you have generated. 
+
+## Summary 
+1. Review literature and sketch out proposed relationships
+2. Construct latent variable using CFA
+3. Mediation Model
+4. Modification Indices 
+5. Model fit statistics
+6. Moderation Model
+7. Standardized estimates and plotting
+
+## Resources
+
+What is sem? https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2987867/
+Why sem? https://academic.oup.com/ije/article/38/2/549/657330
+Reporting sem: https://www.tandfonline.com/doi/abs/10.3200/JOER.99.6.323-338 
+Model fit guidelines: https://www.cscu.cornell.edu/news/Handouts/SEM_fit.pdf
+Lavaan syntax: http://jeromyanglim.tumblr.com/post/33556941601/lavaan-cheat-sheet

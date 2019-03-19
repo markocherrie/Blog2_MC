@@ -51,7 +51,148 @@
     </item>
     
     <item>
-      <title>How to quickly visualise massive spatio-temporal data? Experiences with Kepler.gl</title>
+      <title>How to build a structural equation model in Lavaan?</title>
+      <link>/post/sem/</link>
+      <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/sem/</guid>
+      <description>
+
+
+&lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;I went on a course in Cambridge over the summer of 2018. This was to get me up to speed on structural equation modelling (SEM), which has a lot of potential applications in scenarios where the pathways between variables are the central focus of the research question.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-is-sem&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;What is SEM?&lt;/h2&gt;
+&lt;p&gt;SEM is a mixture of confirmatory factor analysis (CFA) and path analysis. Another way to describe that, is that you have a measurement part (CFA) and a structural part (PA). They relate to two questions:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;How can we measure latent concepts?&lt;/li&gt;
+&lt;li&gt;What is the relationship between the variables in our models?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The key point to structural equation modelling is that is splits measurement error and the correlation between the residuals from the structural coefficients. I recommend the Lavaan &lt;a href=&#34;http://lavaan.ugent.be/tutorial/est.html&#34;&gt;tutorial&lt;/a&gt;, below is my workflow for building a mediation/moderation model in Lavaan.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;lavaan-syntax&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Lavaan syntax&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;First of all the syntax for Lavaan models is as follows:&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;Define regression formula ~~ Define correlated residual variances (two observed variables) ~= Define latent variable := Define effect (i.e. indirect or total)&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;Remember, you’ll need to define the model in speech marks and then use it as the model argument in the lavaan functions: cfa and sem.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Example&lt;/h2&gt;
+&lt;p&gt;This example is on understanding the pathways to smoking in adolescents. The density of tobacco retailers in an adolescents’ residential neighbourhood predicts propensity to smoke; the greater the retailers the more likely smoking is &lt;a href=&#34;https://tobaccocontrol.bmj.com/content/25/1/75.info&#34;&gt;(Shortt et al., 2014)&lt;/a&gt;. However we know that density also predicts whether a family member will smoke and that if a family member is a smoker, the adolescent is more likely to smoke. Also, we know that the relationship between density of retailer and smoking is stronger when the individual has a lower socioeconomic status or lives in an area of higher deprivation &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/15965140&#34;&gt;(Chuang et al., 2005)&lt;/a&gt;. How can we model these latent contructs (family smoking) and complex relationships? This hypothetical dataset called ‘smokingdata’ has the following variables:&lt;/p&gt;
+&lt;p&gt;density: continuous density of tobacco retailers smoking: binary smoking status family: family smoking latent variable brother: measured variable on smoking status in brother mother: measured variable on smoking status in mother sister: measured variable on smoking status in sister father: measured variable on smoking status in father deprivation: binary variable of deprivation in local neighbourhood&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;perform-cfa&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Perform CFA&lt;/h2&gt;
+&lt;p&gt;The first stage is to identify the latent constructs and the variables, which will be used to predict it (3 variables is minimum). Compare the model fit (use ‘fit.measures=T’) of several models and with what you expected given your reading of the literature.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(lavaan)
+cfa.model &amp;lt;- 
+           &amp;#39; 
+           # Measurement model
+             family  =~ brother + mother + father + sister
+           &amp;#39;
+fit &amp;lt;- cfa(cfa.model, data = smokingdata, ordered=c(&amp;quot;brother&amp;quot;,&amp;quot;mother&amp;quot;,&amp;quot;father&amp;quot;,&amp;quot;sister&amp;quot;))
+summary(fit, fit.measures=TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;build-in-the-mediation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Build in the mediation&lt;/h2&gt;
+&lt;p&gt;The key to building a mediation model is to make sure the regressions are in the correct order. In the example above, we need to make sure density is regressed with smoking and family, and family is regressed with smoking. Additionally in Lavaan, we use labels (e.g. a, b, c) to define effects, which we can then manipulate to get the direct (density on smoking) and indirect effects (density on smoking through family smoking).&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mediation.model &amp;lt;- 
+           &amp;#39; 
+           # Measurement model
+             family  =~ brother + mother + father + sister
+           # Residual correlations
+             brother ~~ father
+             brother ~~ mother
+             sister  ~~ mother
+             sister  ~~ father
+           # direct effect
+             smoking ~ c*density
+           # mediator
+             family ~  a*density
+             smoking ~ b*family
+           # indirect effect 
+             ab := a*b
+           # total effect
+             total := c + (a*b)
+         &amp;#39;
+fit &amp;lt;- sem(mediation.model, data = smokingdata, ordered=&amp;quot;smoking&amp;quot;)
+summary(fit, fit.measures=TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;modification-indices-model-fit&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Modification indices &amp;amp; Model fit&lt;/h2&gt;
+&lt;p&gt;The next stage is to check the modification indices to understand whether adding pathways in your model would improve the fit. Crucially, these need to be validated by the literature.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mi &amp;lt;- modindices(fit)
+mi&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In our example we did not originally include a residual correlation between sister and brother smoking status which probably would have had a high ‘mi’ value and therefore worthy of closer inspection. Once we have a model that we are happy with we can check the model fit and whether the statistics are considered satisfactory using the guidelines in the references of this post.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;moderation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Moderation&lt;/h2&gt;
+&lt;p&gt;In the example we want to know if there are significant differences in the association between density and smoking by deprivation. This can be done by running a stratified model, and comparing the coefficients using the &lt;a href=&#34;https://en.wikipedia.org/wiki/Sobel_test&#34;&gt;Sobel test&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;moderation.model &amp;lt;- 
+           &amp;#39; 
+           # Measurement model
+             family  =~ brother + mother + father + sister
+           # Residual correlations
+             brother ~~ father
+             brother ~~ mother
+             sister  ~~ mother
+             sister  ~~ father
+           # direct effect
+             smoking ~ c(c1,c2)*density
+           # mediator
+             family ~  c(a1,a2)*density
+             smoking ~ c(b1,b2)*family
+          
+           # Group 1 - low deprivation
+             DirectLOW:= c1
+             IndirectLOW:= (a1*b1)
+             TotalLOW:= c1 + (a1*b1)
+            
+           # Group 2 - High deprivation 
+             DirectHIGH:= c2
+             IndirectHIGH:= (a2*b2)
+             TotalHIGH:= c2 + (a2*b2)
+
+           # Sobel test
+            DirectDIFF := DirectLOW-DirectHIGH
+            IndirectDIFF := IndirectLOW-IndirectHIGH
+            TotalDIFF := TotalLOW-TotalHIGH
+         &amp;#39;
+fit &amp;lt;- sem(moderation.model, data = smokingdata, ordered=&amp;quot;smoking&amp;quot;, group=&amp;quot;deprivation&amp;quot;)
+summary(fit, fit.measures=TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;next-steps&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Next steps&lt;/h2&gt;
+&lt;p&gt;From here, you will want to get standardized estimates for the models using the following code:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;standardizedSolution(fit)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You may also be interested to plot the model as a figure using &lt;a href=&#34;http://sachaepskamp.com/semPlot/examples&#34;&gt;‘semPlot’&lt;/a&gt;, an alternative is to construct it yourself using &lt;a href=&#34;https://www.yworks.com/products/yed&#34;&gt;Yed&lt;/a&gt;, with the output that you have generated.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;summary&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Review literature and sketch out proposed relationships&lt;/li&gt;
+&lt;li&gt;Construct latent variable using CFA&lt;/li&gt;
+&lt;li&gt;Mediation Model&lt;/li&gt;
+&lt;li&gt;Modification Indices&lt;/li&gt;
+&lt;li&gt;Model fit statistics&lt;/li&gt;
+&lt;li&gt;Moderation Model&lt;/li&gt;
+&lt;li&gt;Standardized estimates and plotting&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;resources&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;p&gt;What is sem? &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2987867/&#34; class=&#34;uri&#34;&gt;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2987867/&lt;/a&gt; Why sem? &lt;a href=&#34;https://academic.oup.com/ije/article/38/2/549/657330&#34; class=&#34;uri&#34;&gt;https://academic.oup.com/ije/article/38/2/549/657330&lt;/a&gt; Reporting sem: &lt;a href=&#34;https://www.tandfonline.com/doi/abs/10.3200/JOER.99.6.323-338&#34; class=&#34;uri&#34;&gt;https://www.tandfonline.com/doi/abs/10.3200/JOER.99.6.323-338&lt;/a&gt; Model fit guidelines: &lt;a href=&#34;https://www.cscu.cornell.edu/news/Handouts/SEM_fit.pdf&#34; class=&#34;uri&#34;&gt;https://www.cscu.cornell.edu/news/Handouts/SEM_fit.pdf&lt;/a&gt; Lavaan syntax: &lt;a href=&#34;http://jeromyanglim.tumblr.com/post/33556941601/lavaan-cheat-sheet&#34; class=&#34;uri&#34;&gt;http://jeromyanglim.tumblr.com/post/33556941601/lavaan-cheat-sheet&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to quickly visualise massive spatio-temporal data?</title>
       <link>/post/kepler/</link>
       <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
       
@@ -85,7 +226,7 @@
     </item>
     
     <item>
-      <title>How to make teaching/outreach more interactive? Experiences with Mentimeter</title>
+      <title>How to make teaching/outreach more interactive?</title>
       <link>/post/mentimeter/</link>
       <pubDate>Sat, 03 Nov 2018 00:00:00 +0000</pubDate>
       
@@ -513,248 +654,6 @@ plottraj(&amp;quot;x&amp;quot;, 4, &amp;quot;linear&amp;quot;, &amp;quot;plot&am
       
       <guid>/publication/asthmavitd/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>What are the optional courses like for UoE MSc students?</title>
-      <link>/post/msccourses/</link>
-      <pubDate>Tue, 22 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/msccourses/</guid>
-      <description>
-
-
-&lt;p&gt;The aim was to understand more about the optional courses available for MSc students in the school of Geosciences. This meant building a dataframe that contained the interesting bits of information available on the University of Edinburgh website so that I could query it to find out answers to questions such as: How many 10 credit courses are available? Which degree cluster do the courses belong to and is there any overlap? What kind of topics/skills are going to be taught? and so on.&lt;/p&gt;
-&lt;p&gt;The first thing to do was to download the data from the University of Edinburgh website. Here is the code, which first builds the URL’s that we need and then scrapes the relevant info one-by-one into a dataframe:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;############### DATA COLLECTION #########################
-
-## scaping the edinburgh university website
-library(rvest)
-# Gather the optional courses for Earth Observation and Geoinformation Management
-MScOptionsURLS&amp;lt;-function(MSc){
-if(MSc==&amp;quot;EOGM&amp;quot;){
-  MSc&amp;lt;-&amp;quot;https://www.ed.ac.uk/geosciences/postgraduate/taught-masters/msc-earth-observation/structure-teaching-assessment/optional-courses&amp;quot;
-  url&amp;lt;-MSc %&amp;gt;%
-  read_html()%&amp;gt;%
-  html_nodes(&amp;#39;#block-system-main p:nth-child(1) a , p+ p a&amp;#39;)%&amp;gt;%
-  html_attr(&amp;#39;href&amp;#39;)
-  } else if(MSc==&amp;quot;GIS&amp;quot;){
-  MSc&amp;lt;-&amp;quot;https://www.ed.ac.uk/geosciences/postgraduate/taught-masters/geographical-information-science/structure-teaching-assessment/optional-courses&amp;quot;
-  url&amp;lt;-MSc %&amp;gt;%
-    read_html()%&amp;gt;%
-    html_nodes(&amp;#39;#block-system-main p:nth-child(1) a , p+ p a&amp;#39;)%&amp;gt;%
-    html_attr(&amp;#39;href&amp;#39;)
-  }else if(MSc==&amp;quot;ARCH&amp;quot;){
-  MSc&amp;lt;-&amp;quot;https://www.ed.ac.uk/geosciences/postgraduate/taught-masters/msc-gis-and-archaeology/structure-teaching-and-assessment/optional-courses&amp;quot;
-  url&amp;lt;-MSc %&amp;gt;%
-    read_html()%&amp;gt;%
-    html_nodes(&amp;#39;.col-sm-9 , p+ p a&amp;#39;)%&amp;gt;%
-    html_attr(&amp;#39;href&amp;#39;)
-  # not perfect, but get the dpt links
-  url&amp;lt;-url[3:10]
-  # weird, not picking up the final two, must be formatted differently, quick fix
-  url[9]&amp;lt;-&amp;quot;http://www.drps.ed.ac.uk/17-18/dpt/cxpghc11412.htm&amp;quot;
-  url[10]&amp;lt;-&amp;quot;http://www.drps.ed.ac.uk/17-18/dpt/cxpghc11075.htm&amp;quot;
-  }else {
-    &amp;quot;Pick a MSc course that&amp;#39;s in the Spatial Informatics and Earth Observation cluster&amp;quot;
-  }
-url&amp;lt;-as.data.frame(url)
-colnames(url)&amp;lt;-&amp;quot;url&amp;quot;
-url$url&amp;lt;-as.character(url$url)
-return(url)
-}
-
-# Let&amp;#39;s do it for the 3 MSc courses
-EOGM_options&amp;lt;-MScOptionsURLS(MSc = &amp;quot;EOGM&amp;quot;)
-GIS_options&amp;lt;-MScOptionsURLS(MSc = &amp;quot;GIS&amp;quot;)
-ARCH_options&amp;lt;-MScOptionsURLS(MSc = &amp;quot;ARCH&amp;quot;)
-
-# Now let&amp;#39;s scrape the optional courses pages
-eduniscraper&amp;lt;-function(url){
-  Urlcatch&amp;lt;-tryCatch({
-    # Name of course
-    Name&amp;lt;-tryCatch({
-      Name&amp;lt;-url %&amp;gt;%
-        read_html() %&amp;gt;%
-        html_node(&amp;quot;#sitspagetitle&amp;quot;) %&amp;gt;%
-        html_text()
-     #Name&amp;lt;-gsub(&amp;quot;Undergraduate Course:|Postgraduate Course: &amp;quot;, &amp;quot;&amp;quot;, Name)
-    }, error=function(e){
-      Name&amp;lt;-NA}
-    )
-    
-    # Get the whole table
-    tableinfo&amp;lt;-url %&amp;gt;%
-      read_html() %&amp;gt;%
-      html_nodes(&amp;#39;.sitstablegrid&amp;#39;) %&amp;gt;%
-      html_text()
-    
-    ## Credits
-    SCQFcredits&amp;lt;-tryCatch({
-      subtable&amp;lt;-tableinfo[gregexpr(pattern =&amp;#39;SCQF Credits&amp;#39;,tableinfo)&amp;gt;1]
-      start&amp;lt;-gregexpr(pattern =&amp;#39;SCQF Credits&amp;#39;,subtable)[[1]][1]+12
-      end&amp;lt;-gregexpr(pattern =&amp;#39;SCQF Credits&amp;#39;,subtable)[[1]][1]+13
-      SCQFcredits&amp;lt;-as.numeric(substring(subtable, start,end))
-    }, error=function(e){
-      SCQFcredits&amp;lt;-NA}
-    )
-    
-    ## Time
-    Time&amp;lt;-tryCatch({
-      subtable&amp;lt;-tableinfo[gregexpr(pattern =&amp;#39;Total Hours&amp;#39;,tableinfo)&amp;gt;1]
-      start&amp;lt;-gregexpr(pattern =&amp;#39;Total Hours&amp;#39;,subtable)[[1]][1]
-      end&amp;lt;-gregexpr(pattern =&amp;#39;Assessment \\(Further Info\\)&amp;#39;,subtable)[[1]][1]-1
-      Time&amp;lt;-substring(subtable, start,end)
-      Time&amp;lt;-gsub(&amp;quot;[\n]|:|\\)|\\(\\)|W|Assessment|(Further Info)|&amp;quot;, &amp;quot;&amp;quot;, Time)
-      Time&amp;lt;-gsub(&amp;quot;\\(&amp;quot;, &amp;quot;,&amp;quot;, Time)
-    }, error=function(e){
-      Time&amp;lt;-NA}
-    )
-    
-    ## Assessment
-    assessment&amp;lt;-tryCatch({
-      subtable&amp;lt;-tableinfo[gregexpr(pattern =&amp;#39;Written Exam&amp;#39;,tableinfo)&amp;gt;1]
-      start&amp;lt;-gregexpr(pattern =&amp;#39;Written Exam&amp;#39;,subtable)[[1]][1]
-      end&amp;lt;-start+55
-      assessment&amp;lt;-substring(subtable, start,end)
-      assessment&amp;lt;-gsub(&amp;quot; |[\t]|-|[\n]&amp;quot;, &amp;quot;&amp;quot;, assessment)
-      assessment&amp;lt;-gsub(&amp;quot;WrittenExam|Coursework|PracticalExam&amp;quot;, &amp;quot;&amp;quot;, assessment)
-      assessment&amp;lt;-gsub(&amp;quot;%&amp;quot;, &amp;quot;&amp;quot;, assessment)
-      WrittenExam=as.numeric(unlist(strsplit(assessment, &amp;quot;,&amp;quot;))[1])
-      Coursework=as.numeric(unlist(strsplit(assessment, &amp;quot;,&amp;quot;))[2])
-      PracticalExam=as.numeric(unlist(strsplit(assessment, &amp;quot;,&amp;quot;))[3])
-    }, error=function(e){
-      WrittenExam&amp;lt;-NA
-      Coursework&amp;lt;-NA
-      PracticalExam&amp;lt;-NA}
-    )
-    
-    # learning outcomes
-    learningoutcomes&amp;lt;-tryCatch({
-      learningoutcomes&amp;lt;-tableinfo[gregexpr(pattern =&amp;#39;By the end of this course students will be able to|On completion of this course|On completion of the course|Students will be able to:&amp;#39;,tableinfo)&amp;gt;1][2]
-      #if (is.na(learningoutcomes)){
-      #learningoutcomes&amp;lt;-tableinfo[gregexpr(pattern =&amp;#39;On completion of this course|On completion of the course|Students will be able to:&amp;#39;,tableinfo)&amp;gt;1][1]
-      #}
-      learningoutcomes&amp;lt;-gsub(&amp;quot;Learning Outcomes|[\t]|-|[\n]&amp;quot;, &amp;quot;&amp;quot;, learningoutcomes)
-    }, error=function(e){
-      learningoutcomes&amp;lt;-NA}
-    )
-    
-    ## Skills
-    skills&amp;lt;-tryCatch({
-      subtable&amp;lt;-tableinfo[gregexpr(pattern =&amp;#39;Graduate Attributes and Skills&amp;#39;,tableinfo)&amp;gt;1][2]
-      start&amp;lt;-gregexpr(pattern =&amp;#39;Graduate Attributes and Skills&amp;#39;,subtable)[[1]][1]
-      end&amp;lt;-gregexpr(pattern =&amp;#39;Special Arrangements|Keywords|Additional Class Delivery Information&amp;#39;,subtable)[[1]][1]-1
-      skills&amp;lt;-substring(subtable, start,end)
-      skills&amp;lt;-gsub(&amp;quot;Graduate Attributes and Skills|[\t]|-|[\n]&amp;quot;, &amp;quot;&amp;quot;, skills)
-    }, error=function(e){
-      skills&amp;lt;-NA}
-    )
-    
-    df&amp;lt;-data.frame(Name, url, SCQFcredits, Time, learningoutcomes, skills, WrittenExam, Coursework, PracticalExam)
-    #write.csv(df, paste0(&amp;quot;data/&amp;quot;, url, &amp;quot;.csv&amp;quot;), row.names=F)
-    return(df)
-  },error=function(e){
-    df&amp;lt;-data.frame(Name=NA, url=url, SCQFcredits=NA, Time=NA, learningoutcomes=NA, skills=NA, WrittenExam=NA, Coursework=NA, PracticalExam=NA)}
-  )
-}
-
-# test
-url=&amp;quot;http://www.drps.ed.ac.uk/17-18/dpt/cxpghc11412.htm&amp;quot;
-test&amp;lt;-eduniscraper(url)
-
-# loop
-library(plyr)
-# Technologies for Sustainable Energy, i.e. number 6, doesn&amp;#39;t work
-#EOGM_options &amp;lt;- subset(EOGM_options, url!= &amp;quot;http://www.drps.ed.ac.uk/16-17/dpt/cxpgee10001.htm&amp;quot;)
-#Put in error handling instead
-EOGM_df&amp;lt;-mdply(EOGM_options, eduniscraper)
-GIS_df&amp;lt;-mdply(GIS_options, eduniscraper)
-ARCH_df&amp;lt;-mdply(ARCH_options, eduniscraper)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Next step was to apply some cleaning, this was a iterative process of identifying issues with the output above and applying correction. Have a look at the code comments for more details:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;############### DATA CLEANING #########################
-
-# master data
-EOGM_df$cluster&amp;lt;-&amp;quot;EOGM&amp;quot;
-GIS_df$cluster&amp;lt;-&amp;quot;GIS&amp;quot;
-ARCH_df$cluster&amp;lt;-&amp;quot;ARCH&amp;quot;
-master_df&amp;lt;-rbind(EOGM_df, GIS_df, ARCH_df)
-
-# 19 courses are duplicates
-library(dplyr)
-master_df&amp;lt;-master_df %&amp;gt;% 
-  group_by(url) %&amp;gt;% 
-  mutate(cluster_group = paste0(cluster, collapse = &amp;quot;,&amp;quot;)) 
-master_df&amp;lt;-master_df[!duplicated(master_df$Name),]
-master_df$cluster&amp;lt;-NULL
-
-# 3 course links don&amp;#39;t work, but only one remains,
-# as it is considered &amp;#39;unique in above
-master_df&amp;lt;-master_df[!is.na(master_df$Name),]
-
-
-# Code NA to not entered
-master_df[is.na(master_df)]&amp;lt;-&amp;quot;Not Entered&amp;quot;
-
-# postgrad or undergrad
-master_df$coursetype&amp;lt;-ifelse(grepl(&amp;quot;Undergraduate&amp;quot;, master_df$Name), &amp;quot;U&amp;quot;, &amp;quot;P&amp;quot;)
-master_df$Name&amp;lt;-gsub(&amp;quot;Undergraduate Course:|Postgraduate Course:&amp;quot;, &amp;quot;&amp;quot;, master_df$Name)
-
-# get time vars
-result&amp;lt;-list()
-
-for(i in 1:33){
-Time=unlist(strsplit(master_df$Time[i], &amp;quot;,&amp;quot;))
-Time&amp;lt;-gsub(&amp;quot; &amp;quot;, &amp;quot;&amp;quot;, Time)
-Time&amp;lt;-as.data.frame(Time)
-colnames(Time)&amp;lt;-&amp;quot;TimeVars&amp;quot;
-library(tidyr)
-Time&amp;lt;-Time %&amp;gt;%
-separate(TimeVars, 
-         into = c(&amp;quot;text&amp;quot;, &amp;quot;num&amp;quot;), 
-         sep = &amp;quot;(?&amp;lt;=[A-Za-z])(?=[0-9])&amp;quot;) 
-Time$Name&amp;lt;-master_df$Name[i]
-result[[i]] &amp;lt;- Time
-}
-timevars = do.call(rbind.fill, result)
-timevars = timevars[!is.na(timevars$text),]
-timevars&amp;lt;-timevars %&amp;gt;%
-  spread(text, num)
-timevars[is.na(timevars)]&amp;lt;-0
-timevars&amp;lt;-subset(timevars, Name!=&amp;#39; Water Resource Management (PGGE11018)&amp;#39;)
-timevars&amp;lt;-subset(timevars, Name!=&amp;#39; Epidemiology for Public Health (PUHR11016)&amp;#39;)
-
-# merge with master df
-master_df&amp;lt;-merge(master_df, timevars, by=&amp;quot;Name&amp;quot;, all.x=T)
-master_df$Time&amp;lt;-NULL
-master_df$NotEntered&amp;lt;-NULL&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Finally, onto the fun part, querying the data and producing graphs to present answers to the questions I was interested in. First let’s see the proportion of courses that are 10 and 20 credits:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/MscCourses_files/figure-html/visualisation1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    10.0    10.0    20.0    16.3    20.0    20.0&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;So we can see that 1/3 of the optional courses are currently 10 credits&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Next, I want to see how they relate to the degree clusters:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/MscCourses_files/figure-html/visualisation2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;EOGM has the most unique master courses (10)&lt;/li&gt;
-&lt;li&gt;EOGM and GIS share 11 courses&lt;/li&gt;
-&lt;li&gt;There is only one course listed in all of the masters (Principles and Practice of Remote Sensing (PGGE11233))&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Next, I’m interested in the assessment breakdown (coursework, written exam and practical exam):&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/MscCourses_files/figure-html/visualisation3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## 
-## C0W100P0 C100W0P0 C40W60P0 C50W50P0 
-##        2       18        2        5&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;Two thirds of the courses are assessed via coursework only&lt;/li&gt;
-&lt;li&gt;The second most common option is a 50/50 split between coursework and a Written exam&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Finally, let’s have a look at the learning outcomes, which will give me an understanding of the topics and skills that the student will have experience of by the end:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/MscCourses_files/figure-html/visualisation4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;There is probably a lot more that can be done with the data but this is a just a taster. In addition, this method could be applied to other schools (not just geosciences).&lt;/p&gt;
-</description>
     </item>
     
   </channel>

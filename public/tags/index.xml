@@ -130,6 +130,15 @@
     </item>
     
     <item>
+      <title>Causality</title>
+      <link>/tags/causality/</link>
+      <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/causality/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Childhood</title>
       <link>/tags/childhood/</link>
       <pubDate>Fri, 08 Sep 2017 00:00:00 +0000</pubDate>
@@ -319,6 +328,15 @@
     </item>
     
     <item>
+      <title>Lavaan</title>
+      <link>/tags/lavaan/</link>
+      <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/lavaan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Lifecourse</title>
       <link>/tags/lifecourse/</link>
       <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
@@ -351,6 +369,15 @@
       <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/mapzen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mediation</title>
+      <link>/tags/mediation/</link>
+      <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/mediation/</guid>
       <description></description>
     </item>
     
@@ -393,9 +420,18 @@
     <item>
       <title>Modelling</title>
       <link>/tags/modelling/</link>
-      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/modelling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Moderation</title>
+      <link>/tags/moderation/</link>
+      <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/moderation/</guid>
       <description></description>
     </item>
     
@@ -598,6 +634,15 @@
     </item>
     
     <item>
+      <title>Sem</title>
+      <link>/tags/sem/</link>
+      <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/sem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Sequence</title>
       <link>/tags/sequence/</link>
       <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
@@ -627,7 +672,7 @@
     <item>
       <title>Statistics</title>
       <link>/tags/statistics/</link>
-      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/statistics/</guid>
       <description></description>
