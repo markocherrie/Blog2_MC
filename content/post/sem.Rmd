@@ -33,16 +33,16 @@ Remember, you'll need to define the model in speech marks and then use it as the
 ## Example
 This example is on understanding the pathways to smoking in adolescents. The density of tobacco retailers in an adolescents' residential neighbourhood predicts propensity to smoke; the greater the retailers the more likely smoking is [(Shortt et al., 2014)](https://tobaccocontrol.bmj.com/content/25/1/75.info). However we know that density also predicts whether a family member will smoke and that if a family member is a smoker, the adolescent is more likely to smoke. Also, we know that the relationship between density of retailer and smoking is stronger when the individual has a lower socioeconomic status or lives in an area of higher deprivation [(Chuang et al., 2005)](https://www.ncbi.nlm.nih.gov/pubmed/15965140). How can we model these latent contructs (family smoking) and complex relationships? This hypothetical dataset called 'smokingdata' has the following variables:
 
-density: continuous density of tobacco retailers
-smoking: binary smoking status
-family: family smoking latent variable
-brother: measured variable on smoking status in brother
-mother: measured variable on smoking status in mother
-sister: measured variable on smoking status in sister
-father: measured variable on smoking status in father
-deprivation: binary variable of deprivation in local neighbourhood
+* density: continuous density of tobacco retailers
+* smoking: binary smoking status
+* family: family smoking latent variable
+* brother: measured variable on smoking status in brother
+* mother: measured variable on smoking status in mother
+* sister: measured variable on smoking status in sister
+* father: measured variable on smoking status in father
+* deprivation: binary variable of deprivation in local neighbourhood
 
-## Perform CFA 
+## Construct latent variables using CFA
 The first stage is to identify the latent constructs and the variables, which will be used to predict it (3 variables is minimum). Compare the model fit (use 'fit.measures=T') of several models and with what you expected given your reading of the literature. 
 
 ```{r cfa, eval=FALSE}
@@ -56,7 +56,7 @@ fit <- cfa(cfa.model, data = smokingdata, ordered=c("brother","mother","father",
 summary(fit, fit.measures=TRUE)
 ```
 
-## Build in the mediation 
+## Mediation Model 
 The key to building a mediation model is to make sure the regressions are in the correct order. In the example above, we need to make sure density is regressed with smoking and family, and family is regressed with smoking. Additionally in Lavaan, we use labels (e.g. a, b, c) to define effects, which we can then manipulate to get the direct (density on smoking) and indirect effects (density on smoking through family smoking).
 
 ```{r mediation, eval=FALSE}
@@ -91,9 +91,9 @@ mi <- modindices(fit)
 mi
 ```
 
-In our example we did not originally include a residual correlation between sister and brother smoking status which probably would have had a high 'mi' value and therefore worthy of closer inspection.  Once we have a model that we are happy with we can check the model fit. The model fit is calculated by comparing the sample variance/covariance matrix to the derived population sample variance/covariance matrix. There are a number statistics to determine goodness-of-fit (see references at the end of this post). 
+In our example we did not originally include a residual correlation between sister and brother smoking status which probably would have had a high 'mi' value and therefore worthy of closer inspection.  Once we have a model that we are happy with we can check the model fit. The model fit is calculated by comparing the sample variance/covariance matrix to a derived population sample variance/covariance matrix. There are a number statistics to determine goodness-of-fit (see references at the end of this post). 
 
-## Moderation
+## Moderation Model
 In the example we want to know if there are significant differences in the association between density and smoking by deprivation. This can be done by running a stratified model, and comparing the coefficients using the [Sobel test](https://en.wikipedia.org/wiki/Sobel_test). 
 
 ```{r moderation, eval=FALSE}
@@ -131,7 +131,7 @@ fit <- sem(moderation.model, data = smokingdata, ordered="smoking", group="depri
 summary(fit, fit.measures=TRUE)
 ```
 
-## Next steps
+## Standardized estimates and plotting
 From here, you will want to get standardized estimates for the models using the following code:
 
 ```{r standard, eval=FALSE}
@@ -142,12 +142,11 @@ You may also be interested to plot the model as a figure using ['semPlot'](http:
 
 ## Summary 
 1. Review literature and sketch out proposed relationships
-2. Construct latent variable using CFA
+2. Construct latent variables using CFA
 3. Mediation Model
-4. Modification Indices 
-5. Model fit statistics
-6. Moderation Model
-7. Standardized estimates and plotting
+4. Modification Indices & Model fit statistics
+5. Moderation Model
+6. Standardized estimates and plotting
 
 ## Resources
 

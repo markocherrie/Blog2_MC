@@ -301,10 +301,19 @@
 <div id="example" class="section level2">
 <h2>Example</h2>
 <p>This example is on understanding the pathways to smoking in adolescents. The density of tobacco retailers in an adolescents’ residential neighbourhood predicts propensity to smoke; the greater the retailers the more likely smoking is <a href="https://tobaccocontrol.bmj.com/content/25/1/75.info">(Shortt et al., 2014)</a>. However we know that density also predicts whether a family member will smoke and that if a family member is a smoker, the adolescent is more likely to smoke. Also, we know that the relationship between density of retailer and smoking is stronger when the individual has a lower socioeconomic status or lives in an area of higher deprivation <a href="https://www.ncbi.nlm.nih.gov/pubmed/15965140">(Chuang et al., 2005)</a>. How can we model these latent contructs (family smoking) and complex relationships? This hypothetical dataset called ‘smokingdata’ has the following variables:</p>
-<p>density: continuous density of tobacco retailers smoking: binary smoking status family: family smoking latent variable brother: measured variable on smoking status in brother mother: measured variable on smoking status in mother sister: measured variable on smoking status in sister father: measured variable on smoking status in father deprivation: binary variable of deprivation in local neighbourhood</p>
+<ul>
+<li>density: continuous density of tobacco retailers</li>
+<li>smoking: binary smoking status</li>
+<li>family: family smoking latent variable</li>
+<li>brother: measured variable on smoking status in brother</li>
+<li>mother: measured variable on smoking status in mother</li>
+<li>sister: measured variable on smoking status in sister</li>
+<li>father: measured variable on smoking status in father</li>
+<li>deprivation: binary variable of deprivation in local neighbourhood</li>
+</ul>
 </div>
-<div id="perform-cfa" class="section level2">
-<h2>Perform CFA</h2>
+<div id="construct-latent-variables-using-cfa" class="section level2">
+<h2>Construct latent variables using CFA</h2>
 <p>The first stage is to identify the latent constructs and the variables, which will be used to predict it (3 variables is minimum). Compare the model fit (use ‘fit.measures=T’) of several models and with what you expected given your reading of the literature.</p>
 <pre class="r"><code>library(lavaan)
 cfa.model &lt;- 
@@ -315,8 +324,8 @@ cfa.model &lt;-
 fit &lt;- cfa(cfa.model, data = smokingdata, ordered=c(&quot;brother&quot;,&quot;mother&quot;,&quot;father&quot;,&quot;sister&quot;))
 summary(fit, fit.measures=TRUE)</code></pre>
 </div>
-<div id="build-in-the-mediation" class="section level2">
-<h2>Build in the mediation</h2>
+<div id="mediation-model" class="section level2">
+<h2>Mediation Model</h2>
 <p>The key to building a mediation model is to make sure the regressions are in the correct order. In the example above, we need to make sure density is regressed with smoking and family, and family is regressed with smoking. Additionally in Lavaan, we use labels (e.g. a, b, c) to define effects, which we can then manipulate to get the direct (density on smoking) and indirect effects (density on smoking through family smoking).</p>
 <pre class="r"><code>mediation.model &lt;- 
            &#39; 
@@ -345,10 +354,10 @@ summary(fit, fit.measures=TRUE)</code></pre>
 <p>The next stage is to check the modification indices to understand whether adding pathways in your model would improve the fit. Crucially, these need to be validated by the literature.</p>
 <pre class="r"><code>mi &lt;- modindices(fit)
 mi</code></pre>
-<p>In our example we did not originally include a residual correlation between sister and brother smoking status which probably would have had a high ‘mi’ value and therefore worthy of closer inspection. Once we have a model that we are happy with we can check the model fit. The model fit is calculated by comparing the sample variance/covariance matrix to the derived population sample variance/covariance matrix. There are a number statistics to determine goodness-of-fit (see references at the end of this post).</p>
+<p>In our example we did not originally include a residual correlation between sister and brother smoking status which probably would have had a high ‘mi’ value and therefore worthy of closer inspection. Once we have a model that we are happy with we can check the model fit. The model fit is calculated by comparing the sample variance/covariance matrix to a derived population sample variance/covariance matrix. There are a number statistics to determine goodness-of-fit (see references at the end of this post).</p>
 </div>
-<div id="moderation" class="section level2">
-<h2>Moderation</h2>
+<div id="moderation-model" class="section level2">
+<h2>Moderation Model</h2>
 <p>In the example we want to know if there are significant differences in the association between density and smoking by deprivation. This can be done by running a stratified model, and comparing the coefficients using the <a href="https://en.wikipedia.org/wiki/Sobel_test">Sobel test</a>.</p>
 <pre class="r"><code>moderation.model &lt;- 
            &#39; 
@@ -383,8 +392,8 @@ mi</code></pre>
 fit &lt;- sem(moderation.model, data = smokingdata, ordered=&quot;smoking&quot;, group=&quot;deprivation&quot;)
 summary(fit, fit.measures=TRUE)</code></pre>
 </div>
-<div id="next-steps" class="section level2">
-<h2>Next steps</h2>
+<div id="standardized-estimates-and-plotting" class="section level2">
+<h2>Standardized estimates and plotting</h2>
 <p>From here, you will want to get standardized estimates for the models using the following code:</p>
 <pre class="r"><code>standardizedSolution(fit)</code></pre>
 <p>You may also be interested to plot the model as a figure using <a href="http://sachaepskamp.com/semPlot/examples">‘semPlot’</a>, an alternative is to construct it yourself using <a href="https://www.yworks.com/products/yed">Yed</a>, with the output that you have generated.</p>
@@ -393,10 +402,9 @@ summary(fit, fit.measures=TRUE)</code></pre>
 <h2>Summary</h2>
 <ol style="list-style-type: decimal">
 <li>Review literature and sketch out proposed relationships</li>
-<li>Construct latent variable using CFA</li>
+<li>Construct latent variables using CFA</li>
 <li>Mediation Model</li>
-<li>Modification Indices</li>
-<li>Model fit statistics</li>
+<li>Modification Indices &amp; Model fit statistics</li>
 <li>Moderation Model</li>
 <li>Standardized estimates and plotting</li>
 </ol>
