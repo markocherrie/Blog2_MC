@@ -858,6 +858,16 @@
     
     <url>
     
+      <loc>/</loc>
+      <lastmod>2017-08-29T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/mediation/</loc>
       <lastmod>2019-01-17T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -1140,16 +1150,6 @@
     
       <loc>/categories/research-tips/</loc>
       <lastmod>2017-11-02T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/</loc>
-      <lastmod>2017-08-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
