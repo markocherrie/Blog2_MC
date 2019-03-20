@@ -1,5 +1,5 @@
 baseurl = "http://www.markcherrie.net/"  # End your URL with a `/` trailing slash.
-title = "Mark Cherrie - Health and Environment Researcher"
+title = "Mark Cherrie"
 copyright = "&copy; 2019 Mark Cherrie"
 theme = "hugo-academic"
 enableEmoji = true
