@@ -3,9 +3,10 @@ title: 'How to find the optimal number of groups in GBTM'
 author: ~
 date: '2018-09-03'
 draft: no
-slug: gbtm
+slug: group-based-trajectory-modelling-in-R
 tags: ["Macroeconomy","Employment", "Statistics", "Modelling"]
 categories: ["Data Analysis"]
+description: "This blog post is on understanding groups of trajectories in longitudinal data and in particular how to determine the optimal group number."
 ---
 
 ## Background

@@ -13,12 +13,12 @@
     
     
     <item>
-      <title>Social Fragmentation Index</title>
-      <link>/post/sfi/</link>
+      <title>How to build a Social Fragmentation Index using census variables</title>
+      <link>/post/social-fragmentation-index/</link>
       <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/sfi/</guid>
-      <description>BackgroundThe Social Fragmentation Index (SFI) was developed by Peter Congdon. The indicator aims to use census variables to capture (for small areas across the country) aspects of the local population that may reflect a greater collective risk of social fragmentation/lack of social cohesion. The census variables are proxies for these risk factors, rather than ‘direct’ indicators. It focusses on risk due to potentially high levels of isolation and residential instability of members of the population.</description>
+      <guid>/post/social-fragmentation-index/</guid>
+      <description>Background The Social Fragmentation Index (SFI) was developed by Peter Congdon. The indicator aims to use census variables to capture (for small areas across the country) aspects of the local population that may reflect a greater collective risk of social fragmentation/lack of social cohesion. The census variables are proxies for these risk factors, rather than ‘direct’ indicators. It focusses on risk due to potentially high levels of isolation and residential instability of members of the population.</description>
     </item>
     
   </channel>

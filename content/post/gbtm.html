@@ -3,9 +3,10 @@ title: 'How to find the optimal number of groups in GBTM'
 author: ~
 date: '2018-09-03'
 draft: no
-slug: gbtm
+slug: group-based-trajectory-modelling-in-R
 tags: ["Macroeconomy","Employment", "Statistics", "Modelling"]
 categories: ["Data Analysis"]
+description: "This blog post is on understanding groups of trajectories in longitudinal data and in particular how to determine the optimal group number."
 ---
 
 
@@ -171,7 +172,7 @@ ggplot(traj, aes(x, y, group=id, colour=group2)) + geom_line() + geom_smooth(aes
 # Put in the F-CAP best model here
 plottraj(&quot;x&quot;, 4, &quot;linear&quot;, &quot;plot&quot;)</code></pre>
 <pre><code>## Be patient, lcmm is running ... 
-## The program took 1.46 seconds 
+## The program took 1.48 seconds 
 ##  
 ## Posterior classification: 
 ##   class1 class2 class3 class4

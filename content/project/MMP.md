@@ -3,7 +3,7 @@
 date = "2017-08-08"
 
 # Project title.
-title = ""
+title = "Mobility, Mood and Place Project (MMP)"
 
 # Project summary to display on homepage.
 summary = "We are exploring how physical, built and social environments evolve over time and how they impact on inequalities in health-related mobility as people move into older age. We used data from 1,091 people in their 70s, together with temporal, area-level measures of their current, recent and past environment."

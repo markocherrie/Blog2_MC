@@ -13,12 +13,12 @@
     
     
     <item>
-      <title>Social Fragmentation Index</title>
-      <link>/post/sfi/</link>
+      <title>How to build a Social Fragmentation Index using census variables</title>
+      <link>/post/social-fragmentation-index/</link>
       <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/sfi/</guid>
-      <description>BackgroundThe Social Fragmentation Index (SFI) was developed by Peter Congdon. The indicator aims to use census variables to capture (for small areas across the country) aspects of the local population that may reflect a greater collective risk of social fragmentation/lack of social cohesion. The census variables are proxies for these risk factors, rather than ‘direct’ indicators. It focusses on risk due to potentially high levels of isolation and residential instability of members of the population.</description>
+      <guid>/post/social-fragmentation-index/</guid>
+      <description>Background The Social Fragmentation Index (SFI) was developed by Peter Congdon. The indicator aims to use census variables to capture (for small areas across the country) aspects of the local population that may reflect a greater collective risk of social fragmentation/lack of social cohesion. The census variables are proxies for these risk factors, rather than ‘direct’ indicators. It focusses on risk due to potentially high levels of isolation and residential instability of members of the population.</description>
     </item>
     
     <item>
@@ -42,10 +42,10 @@
     
     <item>
       <title>NetCDF in R</title>
-      <link>/post/netcdf/</link>
+      <link>/post/netcdf-in-r/</link>
       <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/netcdf/</guid>
+      <guid>/post/netcdf-in-r/</guid>
       <description>NetCDF stands for “Network Common Data Format” and was created by ‘unidata’ for handling large geospatial data. Here’s a short description from their website:
 “NetCDF is a set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-orientated scientific data.”
 NetCDF files are containers for dimensions, variables and global atttributes. It’s used to store climatology, meteorology and oceanography data by over 1,300 organisations including NOAA and EUMETSAT.</description>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.54.0" />
+  <meta name="author" content="Mark Cherrie">
+  <meta name="description" content="Postdoctoral Researcher in Environment and Health">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.0/css/academicons.min.css" integrity="sha512-GGGNUPDhnG8LEAEDsjqYIQns+Gu8RBs4j5XGlxl7UfRaZBhCCm5jenJkeJL8uPuOXGqgl8/H1gjlWQDRjd3cUQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-104259166-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Researcher">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Researcher">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="/post/structural-equation-modelling-in-r/">
+
+  
+
+  <title>How to build a structural equation model in Lavaan | Researcher</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Researcher</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#publications_selected">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#talks">
+            
+            <span>Presentations</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">How to build a structural equation model in Lavaan</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2019-01-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Thu, Jan 17, 2019
+    </time>
+  </span>
+
+  
+  
+  
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/data-analysis">Data Analysis</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/statistics">Statistics</a
+    >, 
+    
+    <a href="/tags/modelling">Modelling</a
+    >, 
+    
+    <a href="/tags/sem">SEM</a
+    >, 
+    
+    <a href="/tags/causality">Causality</a
+    >, 
+    
+    <a href="/tags/lavaan">Lavaan</a
+    >, 
+    
+    <a href="/tags/moderation">Moderation</a
+    >, 
+    
+    <a href="/tags/mediation">Mediation</a
+    >, 
+    
+    <a href="/tags/r">R</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2fstructural-equation-modelling-in-r%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=How%20to%20build%20a%20structural%20equation%20model%20in%20Lavaan&amp;url=%2fpost%2fstructural-equation-modelling-in-r%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fstructural-equation-modelling-in-r%2f&amp;title=How%20to%20build%20a%20structural%20equation%20model%20in%20Lavaan"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2fstructural-equation-modelling-in-r%2f&amp;title=How%20to%20build%20a%20structural%20equation%20model%20in%20Lavaan"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=How%20to%20build%20a%20structural%20equation%20model%20in%20Lavaan&amp;body=%2fpost%2fstructural-equation-modelling-in-r%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+
+<div id="background" class="section level2">
+<h2>Background</h2>
+<p>I went on a <a href="https://www.psychometrics.cam.ac.uk/trainingworkshops/structural-equation-modelling-in-r-4-day-course">course</a> in Cambridge over the summer of 2018. This was to get me up to speed on structural equation modelling (SEM), which has a lot of potential applications in scenarios where the pathways between measured and unmeasured variables are the central focus of the research question.</p>
+</div>
+<div id="what-is-sem" class="section level2">
+<h2>What is SEM?</h2>
+<p>SEM is a mixture of confirmatory factor analysis (CFA) and path analysis. Another way to describe that, is that you have a measurement part and a structural part. They relate to two questions:</p>
+<ol style="list-style-type: decimal">
+<li>How can we measure latent concepts?</li>
+<li>What is the relationship between the variables in our model?</li>
+</ol>
+<p>The key point to structural equation modelling is that is splits measurement error and the correlation between the residuals from the structural coefficients. I recommend the Lavaan <a href="http://lavaan.ugent.be/tutorial/est.html">tutorial</a>; below is my workflow for building a mediation/moderation model in Lavaan.</p>
+</div>
+<div id="lavaan-syntax" class="section level2">
+<h2>Lavaan syntax</h2>
+<p>First of all the syntax for Lavaan models is as follows:</p>
+<ul>
+<li>~ Define regression formula</li>
+<li>~~ Define correlated residual variances (two observed variables)</li>
+<li>~= Define latent variable</li>
+<li>:= Define effect (i.e. indirect or total)</li>
+</ul>
+<p>Remember, you’ll need to define the model in speech marks and then use it as the model argument in the lavaan functions: cfa and sem.</p>
+</div>
+<div id="example" class="section level2">
+<h2>Example</h2>
+<p>This example is on understanding the pathways to smoking in adolescents. The density of tobacco retailers in an adolescents’ residential neighbourhood predicts propensity to smoke; the greater the density of retailers the more likely smoking is <a href="https://tobaccocontrol.bmj.com/content/25/1/75.info">(Shortt et al., 2014)</a>. However we know that density also predicts whether a family member will smoke and that if a family member is a smoker, the adolescent is more likely to smoke. Also, we know that the relationship between density of retailer and smoking is stronger when the individual has a lower socioeconomic status or lives in an area of higher deprivation <a href="https://www.ncbi.nlm.nih.gov/pubmed/15965140">(Chuang et al., 2005)</a>. How can we model these latent contructs (family smoking) and complex relationships? This hypothetical dataset called ‘smokingdata’ has the following variables:</p>
+<ul>
+<li>density: continuous density of tobacco retailers</li>
+<li>smoking: binary smoking status</li>
+<li>family: family smoking latent variable</li>
+<li>brother: measured variable on smoking status in brother</li>
+<li>mother: measured variable on smoking status in mother</li>
+<li>sister: measured variable on smoking status in sister</li>
+<li>father: measured variable on smoking status in father</li>
+<li>deprivation: binary variable of deprivation in local neighbourhood</li>
+</ul>
+</div>
+<div id="construct-latent-variables-using-cfa" class="section level2">
+<h2>Construct latent variables using CFA</h2>
+<p>The first stage is to identify the latent constructs and the variables, which will be used to predict it (3 variables is minimum). Compare the model fit (use ‘fit.measures=T’) of several models and with what you expected given your reading of the literature.</p>
+<pre class="r"><code>library(lavaan)
+cfa.model &lt;- 
+           &#39; 
+           # Measurement model
+             family  =~ brother + mother + father + sister
+           &#39;
+fit &lt;- cfa(cfa.model, data = smokingdata, ordered=c(&quot;brother&quot;,&quot;mother&quot;,&quot;father&quot;,&quot;sister&quot;))
+summary(fit, fit.measures=TRUE)</code></pre>
+</div>
+<div id="mediation-model" class="section level2">
+<h2>Mediation Model</h2>
+<p>The key to building a mediation model is to make sure the regressions are in the correct order. In the example above, we need to make sure density is regressed with smoking and family, and family is regressed with smoking. Additionally in Lavaan, we use labels (e.g. a, b, c) to define effects, which we can then manipulate to get the direct (density on smoking) and indirect effects (density on smoking through family smoking).</p>
+<pre class="r"><code>mediation.model &lt;- 
+           &#39; 
+           # Measurement model
+             family  =~ brother + mother + father + sister
+           # Residual correlations
+             brother ~~ father
+             brother ~~ mother
+             sister  ~~ mother
+             sister  ~~ father
+           # direct effect
+             smoking ~ c*density
+           # mediator
+             family ~  a*density
+             smoking ~ b*family
+           # indirect effect 
+             ab := a*b
+           # total effect
+             total := c + (a*b)
+         &#39;
+fit &lt;- sem(mediation.model, data = smokingdata, ordered=&quot;smoking&quot;)
+summary(fit, fit.measures=TRUE)</code></pre>
+</div>
+<div id="modification-indices-model-fit" class="section level2">
+<h2>Modification indices &amp; Model fit</h2>
+<p>The next stage is to check the modification indices to understand whether adding pathways in your model would improve the fit. Crucially, these need to be validated by the literature.</p>
+<pre class="r"><code>mi &lt;- modindices(fit)
+mi</code></pre>
+<p>In our example we did not originally include a residual correlation between sister and brother smoking status which probably would have had a high ‘mi’ value and therefore worthy of closer inspection. Once we have a model that we are happy with we can check the model fit. The model fit is calculated by comparing the sample variance/covariance matrix to a derived population sample variance/covariance matrix. There are a number statistics to determine goodness-of-fit (see references at the end of this post).</p>
+</div>
+<div id="moderation-model" class="section level2">
+<h2>Moderation Model</h2>
+<p>In the example we want to know if there are significant differences in the association between density and smoking by deprivation. This can be done by running a stratified model, and comparing the coefficients using the <a href="https://en.wikipedia.org/wiki/Sobel_test">Sobel test</a>.</p>
+<pre class="r"><code>moderation.model &lt;- 
+           &#39; 
+           # Measurement model
+             family  =~ brother + mother + father + sister
+           # Residual correlations
+             brother ~~ father
+             brother ~~ mother
+             sister  ~~ mother
+             sister  ~~ father
+           # direct effect
+             smoking ~ c(c1,c2)*density
+           # mediator
+             family ~  c(a1,a2)*density
+             smoking ~ c(b1,b2)*family
+          
+           # Group 1 - low deprivation
+             DirectLOW:= c1
+             IndirectLOW:= (a1*b1)
+             TotalLOW:= c1 + (a1*b1)
+            
+           # Group 2 - High deprivation 
+             DirectHIGH:= c2
+             IndirectHIGH:= (a2*b2)
+             TotalHIGH:= c2 + (a2*b2)
+
+           # Sobel test
+            DirectDIFF := DirectLOW-DirectHIGH
+            IndirectDIFF := IndirectLOW-IndirectHIGH
+            TotalDIFF := TotalLOW-TotalHIGH
+         &#39;
+fit &lt;- sem(moderation.model, data = smokingdata, ordered=&quot;smoking&quot;, group=&quot;deprivation&quot;)
+summary(fit, fit.measures=TRUE)</code></pre>
+</div>
+<div id="standardized-estimates-and-plotting" class="section level2">
+<h2>Standardized estimates and plotting</h2>
+<p>From here, you will want to get standardized estimates for the models using the following code:</p>
+<pre class="r"><code>standardizedSolution(fit)</code></pre>
+<p>You may also be interested to plot the model as a figure using <a href="http://sachaepskamp.com/semPlot/examples">‘semPlot’</a>; an alternative is to construct it yourself using <a href="https://www.yworks.com/products/yed">Yed</a>, with the output that you have generated.</p>
+</div>
+<div id="summary" class="section level2">
+<h2>Summary</h2>
+<ol style="list-style-type: decimal">
+<li>Review literature and sketch out proposed relationships</li>
+<li>Construct latent variables using CFA</li>
+<li>Mediation Model</li>
+<li>Modification Indices &amp; Model fit statistics</li>
+<li>Moderation Model</li>
+<li>Standardized estimates and plotting</li>
+</ol>
+</div>
+<div id="resources" class="section level2">
+<h2>Resources</h2>
+<ul>
+<li>What is sem? <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2987867/" class="uri">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2987867/</a></li>
+<li>Why sem? <a href="https://academic.oup.com/ije/article/38/2/549/657330" class="uri">https://academic.oup.com/ije/article/38/2/549/657330</a></li>
+<li>Reporting sem: <a href="https://www.tandfonline.com/doi/abs/10.3200/JOER.99.6.323-338" class="uri">https://www.tandfonline.com/doi/abs/10.3200/JOER.99.6.323-338</a></li>
+<li>Model fit guidelines: <a href="https://www.cscu.cornell.edu/news/Handouts/SEM_fit.pdf" class="uri">https://www.cscu.cornell.edu/news/Handouts/SEM_fit.pdf</a></li>
+<li>Lavaan syntax: <a href="http://jeromyanglim.tumblr.com/post/33556941601/lavaan-cheat-sheet" class="uri">http://jeromyanglim.tumblr.com/post/33556941601/lavaan-cheat-sheet</a></li>
+</ul>
+</div>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="/post/uber-kepler/"><span
+      aria-hidden="true">&larr;</span> How to quickly visualise massive spatio-temporal data</a></li>
+    
+
+    
+    <li class="next"><a href="/post/everydaygreen/">How can we measure everyday exposure to greenspaces? <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-www-markcherrie-net" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</section>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2019 Mark Cherrie &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min.js" integrity="sha512-iHzEu7GbSc705hE2skyH6/AlTpOfBmkx7nUqTLGzPYR+C1tRaItbRlJ7hT/D3YQ9SV0fqLKzp4XY9wKulTBGTw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" integrity="sha512-Z5heTz36xTemt1TbtbfXtTq5lMfYnOkXM2/eWcTTiLU01+Sw4ku1i7vScDc8fWhrP2abz9GQzgKH5NGBLoYlAw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js" integrity="sha512-CDeU7pRtkPX6XJtF/gcFWlEwyaX7mcAp5sO3VIu/ylsdR74wEw4wmBpD5yYTrmMAiAboi9thyBUr1vXRPA7t0Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+

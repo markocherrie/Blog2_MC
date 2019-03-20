@@ -23,20 +23,20 @@
     
     <item>
       <title>How to build a structural equation model in Lavaan</title>
-      <link>/post/sem/</link>
+      <link>/post/structural-equation-modelling-in-r/</link>
       <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/sem/</guid>
+      <guid>/post/structural-equation-modelling-in-r/</guid>
       <description>Background I went on a course in Cambridge over the summer of 2018. This was to get me up to speed on structural equation modelling (SEM), which has a lot of potential applications in scenarios where the pathways between measured and unmeasured variables are the central focus of the research question.
  What is SEM? SEM is a mixture of confirmatory factor analysis (CFA) and path analysis. Another way to describe that, is that you have a measurement part and a structural part.</description>
     </item>
     
     <item>
       <title>How to quickly visualise massive spatio-temporal data</title>
-      <link>/post/kepler/</link>
+      <link>/post/uber-kepler/</link>
       <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/kepler/</guid>
+      <guid>/post/uber-kepler/</guid>
       <description>Background Are you collecting lots of geospatial data and need a way to quickly visualise what you’ve got? Read on! I had this problem; I was collecting a lot of information on my daily movements from Arc App: Location and Activity (more on the use of Arc for research later). Additionally, I wanted to quickly see what features of the urban environment (e.g. greenspaces) I was being ‘exposed’ to. The solution was Uber’s open source geospatial analysis tool: Kepler.</description>
     </item>
     
@@ -51,29 +51,29 @@
     
     <item>
       <title>How can we understand patterns of prescription use?</title>
-      <link>/post/sequence/</link>
+      <link>/post/sequence-analysis-in-r/</link>
       <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/sequence/</guid>
+      <guid>/post/sequence-analysis-in-r/</guid>
       <description>Background Longitudinal analysis is important as due to the temporal sequence of exposure then outcome, we can make a stronger case for causality. A derivative of a class of models that fit into the ‘data-mining’ family is sequence analysis. One use of this model is to understand lifetime states, e.g. being employed, being in education, being retired. By understanding these state sequences we can understand how the duration and timing of a state can affect health in the long term.</description>
     </item>
     
     <item>
       <title>How to find the optimal number of groups in GBTM</title>
-      <link>/post/gbtm/</link>
+      <link>/post/group-based-trajectory-modelling-in-r/</link>
       <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbtm/</guid>
+      <guid>/post/group-based-trajectory-modelling-in-r/</guid>
       <description>Background Group-based trajectory modelling (GBMT) is a way of identifying latent patterns of change from multiple individual trajectories. It is widely used within the field of economics and also becoming popular in health geography. The process of deciding the number of classes is not transparent and tends to be based on one or two model fit statistics. Klijn et al., created a fit-criteria assessment plot (F-CAP) that accepts universal data input to aid the decision on the number of classes (2017).</description>
     </item>
     
     <item>
-      <title>Social Fragmentation Index</title>
-      <link>/post/sfi/</link>
+      <title>How to build a Social Fragmentation Index using census variables</title>
+      <link>/post/social-fragmentation-index/</link>
       <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/sfi/</guid>
-      <description>BackgroundThe Social Fragmentation Index (SFI) was developed by Peter Congdon. The indicator aims to use census variables to capture (for small areas across the country) aspects of the local population that may reflect a greater collective risk of social fragmentation/lack of social cohesion. The census variables are proxies for these risk factors, rather than ‘direct’ indicators. It focusses on risk due to potentially high levels of isolation and residential instability of members of the population.</description>
+      <guid>/post/social-fragmentation-index/</guid>
+      <description>Background The Social Fragmentation Index (SFI) was developed by Peter Congdon. The indicator aims to use census variables to capture (for small areas across the country) aspects of the local population that may reflect a greater collective risk of social fragmentation/lack of social cohesion. The census variables are proxies for these risk factors, rather than ‘direct’ indicators. It focusses on risk due to potentially high levels of isolation and residential instability of members of the population.</description>
     </item>
     
     <item>
@@ -107,10 +107,10 @@ Pre-legislative scrutiny on the draft piece of legislation (bill)First Reading 
     
     <item>
       <title>NetCDF in R</title>
-      <link>/post/netcdf/</link>
+      <link>/post/netcdf-in-r/</link>
       <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/netcdf/</guid>
+      <guid>/post/netcdf-in-r/</guid>
       <description>NetCDF stands for “Network Common Data Format” and was created by ‘unidata’ for handling large geospatial data. Here’s a short description from their website:
 “NetCDF is a set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-orientated scientific data.”
 NetCDF files are containers for dimensions, variables and global atttributes. It’s used to store climatology, meteorology and oceanography data by over 1,300 organisations including NOAA and EUMETSAT.</description>

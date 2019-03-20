@@ -3,7 +3,7 @@
 date = "2017-09-08"
   
 # Project title.
-title = "DISPLAY"
+title = "DISPLAY: Determining the impact of smoking point of sale legislation among youth (Display) study"
   
 # Project summary to display on homepage.
 summary = "The DISPLAY study has a multimodal before-and-after design using mixed methods to collect data in four purposively selected communities. This data was used to explore the location and density of tobacco retail outlets around the home, school and route to school in relation to smoking attitudes and behaviour."

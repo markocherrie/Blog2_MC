@@ -3,9 +3,10 @@ title: 'How to build a structural equation model in Lavaan'
 author: ~
 date: '2019-01-17'
 draft: no
-slug: sem
+slug: structural-equation-modelling-in-R
 tags: ["Statistics","Modelling", "SEM", "Causality", "Lavaan", "Moderation", "Mediation", "R"]
 categories: ["Data Analysis"]
+description: "This is a primer in using structural equation modelling in the programming language: R."
 ---
 
 ## Background

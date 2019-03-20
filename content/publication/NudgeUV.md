@@ -10,7 +10,7 @@ publication_short = "In *BMC Public Health*"
 selected = false
 title = "A randomised control crossover trial of a theory based intervention to improve sun-safe and healthy behaviours in construction workers: study protocol"
 url_pdf = ""
-url_project = "project/Misc/"
+url_project = ""
   
   
 # Optional featured image (relative to `static/img/` folder).

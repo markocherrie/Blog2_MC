@@ -2,10 +2,11 @@
 title: NetCDF in R
 author: ~
 date: '2018-02-24'
-slug: netCDF 
+slug: netCDF-in-R 
 categories: ["Data Processing"]
 tags: ["R", "NetCDF", "Data", "Time series", "Satellite"]
 draft: no
+description: "A primer in working with NetCDF using the R programming language."
 ---
 
 NetCDF stands for "Network Common Data Format" and was created by 'unidata' for handling large geospatial data. Here's a short description from their [website](https://www.unidata.ucar.edu/netcdf/):

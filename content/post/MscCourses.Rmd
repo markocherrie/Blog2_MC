@@ -12,7 +12,7 @@ The aim was to understand more about the optional courses available for MSc stud
 The first thing to do was to download the data from the University of Edinburgh website. Here is the code, which first builds the URL's that we need and then scrapes the relevant info one-by-one into a dataframe:
 
 
-```{r collection, echo=TRUE, message=FALSE}
+```{r collection, echo=TRUE, message=FALSE, eval=F}
 ############### DATA COLLECTION #########################
 
 ## scaping the edinburgh university website
@@ -162,7 +162,7 @@ ARCH_df<-mdply(ARCH_options, eduniscraper)
 
 Next step was to apply some cleaning, this was a iterative process of identifying issues with the output above and applying correction. Have a look at the code comments for more details:
 
-```{r cleaning, echo=TRUE, message=FALSE, warning=FALSE}
+```{r cleaning, echo=TRUE, message=FALSE, warning=FALSE,eval=F}
 
 ############### DATA CLEANING #########################
 
@@ -224,7 +224,7 @@ master_df$NotEntered<-NULL
 
 Finally, onto the fun part, querying the data and producing graphs to present answers to the questions I was interested in. First let's see the proportion of courses that are 10 and 20 credits:
 
-```{r visualisation1, echo=F, message=FALSE, warning=FALSE}
+```{r visualisation1, echo=F, message=FALSE, warning=FALSE, , eval=F}
 # credits
 library(ggplot2)
 ggplot(master_df) + stat_count(mapping = aes(x=as.factor(SCQFcredits), y=..prop.., group=1))
@@ -235,7 +235,7 @@ summary(master_df$SCQFcredits)
 
 Next, I want to see how they relate to the degree clusters:
 
-```{r visualisation2, echo=F, message=FALSE, warning=FALSE}
+```{r visualisation2, echo=F, message=FALSE, warning=FALSE, eval=F}
 # cluster group
 library(ggplot2)
 g<- ggplot(master_df) + aes(cluster_group)
@@ -248,7 +248,7 @@ g + geom_bar()
 
 Next, I'm interested in the assessment breakdown (coursework, written exam and practical exam):
 
-```{r visualisation3, echo=F, message=FALSE, warning=FALSE}
+```{r visualisation3, echo=F, message=FALSE, warning=FALSE, eval=F}
 # Coursework
 master_df$assessmentbreakdown<-paste0("C", master_df$Coursework, 
                                       "W", master_df$WrittenExam, 
@@ -263,7 +263,7 @@ table(master_df$assessmentbreakdown)
 
 Finally, let's have a look at the learning outcomes, which will give me an understanding of the topics and skills that the student will have experience of by the end: 
 
-```{r visualisation4, echo=F, message=FALSE, warning=FALSE}
+```{r visualisation4, echo=F, message=FALSE, warning=FALSE,eval=F}
 ### topic modelling for the skills and learning outcomes
 library(topicmodels)
 library(tm)

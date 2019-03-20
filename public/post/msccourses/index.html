@@ -470,30 +470,21 @@ master_df&lt;-merge(master_df, timevars, by=&quot;Name&quot;, all.x=T)
 master_df$Time&lt;-NULL
 master_df$NotEntered&lt;-NULL</code></pre>
 <p>Finally, onto the fun part, querying the data and producing graphs to present answers to the questions I was interested in. First let’s see the proportion of courses that are 10 and 20 credits:</p>
-<p><img src="/post/MscCourses_files/figure-html/visualisation1-1.png" width="672" /></p>
-<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    10.0    10.0    20.0    16.3    20.0    20.0</code></pre>
 <ul>
 <li>So we can see that 1/3 of the optional courses are currently 10 credits</li>
 </ul>
 <p>Next, I want to see how they relate to the degree clusters:</p>
-<p><img src="/post/MscCourses_files/figure-html/visualisation2-1.png" width="672" /></p>
 <ul>
 <li>EOGM has the most unique master courses (10)</li>
 <li>EOGM and GIS share 11 courses</li>
 <li>There is only one course listed in all of the masters (Principles and Practice of Remote Sensing (PGGE11233))</li>
 </ul>
 <p>Next, I’m interested in the assessment breakdown (coursework, written exam and practical exam):</p>
-<p><img src="/post/MscCourses_files/figure-html/visualisation3-1.png" width="672" /></p>
-<pre><code>## 
-## C0W100P0 C100W0P0 C40W60P0 C50W50P0 
-##        2       18        2        5</code></pre>
 <ul>
 <li>Two thirds of the courses are assessed via coursework only</li>
 <li>The second most common option is a 50/50 split between coursework and a Written exam</li>
 </ul>
 <p>Finally, let’s have a look at the learning outcomes, which will give me an understanding of the topics and skills that the student will have experience of by the end:</p>
-<p><img src="/post/MscCourses_files/figure-html/visualisation4-1.png" width="672" /></p>
 <p>There is probably a lot more that can be done with the data but this is a just a taster. In addition, this method could be applied to other schools (not just geosciences).</p>
 
     </div>
@@ -510,7 +501,7 @@ master_df$NotEntered&lt;-NULL</code></pre>
     
 
     
-    <li class="next"><a href="/post/sfi/">Social Fragmentation Index <span
+    <li class="next"><a href="/post/social-fragmentation-index/">How to build a Social Fragmentation Index using census variables <span
       aria-hidden="true">&rarr;</span></a></li>
     
   </ul>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.21" />
+  <meta name="generator" content="Hugo 0.54.0" />
   <meta name="author" content="Mark Cherrie">
   <meta name="description" content="Postdoctoral Researcher in Environment and Health">
 
@@ -56,7 +56,7 @@
 
   
 
-  <title>netCDF in R | Researcher</title>
+  <title>NetCDF in R | Researcher</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
@@ -169,7 +169,7 @@
 
 
   <div class="article-container">
-    <h1 itemprop="name">netCDF in R</h1>
+    <h1 itemprop="name">NetCDF in R</h1>
     
 
 <div class="article-metadata">
@@ -186,19 +186,7 @@
   <span class="article-categories">
     <i class="fa fa-folder"></i>
     
-    <a href="/categories/r">R</a
-    >, 
-    
-    <a href="/categories/netcdf">netCDF</a
-    >, 
-    
-    <a href="/categories/data">Data</a
-    >, 
-    
-    <a href="/categories/time-series">Time series</a
-    >, 
-    
-    <a href="/categories/satellite">satellite</a
+    <a href="/categories/data-processing">Data Processing</a
     >
     
   </span>
@@ -211,7 +199,19 @@
   <span class="article-tags">
     <i class="fa fa-tags"></i>
     
-    <a href="/tags/data-wrangling">Data wrangling</a
+    <a href="/tags/r">R</a
+    >, 
+    
+    <a href="/tags/netcdf">NetCDF</a
+    >, 
+    
+    <a href="/tags/data">Data</a
+    >, 
+    
+    <a href="/tags/time-series">Time series</a
+    >, 
+    
+    <a href="/tags/satellite">Satellite</a
     >
     
   </span>
@@ -231,28 +231,28 @@
     </li>
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=netCDF%20in%20R&amp;url=%2fpost%2fnetcdf-in-r%2f"
+         href="https://twitter.com/intent/tweet?text=NetCDF%20in%20R&amp;url=%2fpost%2fnetcdf-in-r%2f"
          target="_blank">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fnetcdf-in-r%2f&amp;title=netCDF%20in%20R"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fnetcdf-in-r%2f&amp;title=NetCDF%20in%20R"
          target="_blank">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=%2fpost%2fnetcdf-in-r%2f&amp;title=netCDF%20in%20R"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2fnetcdf-in-r%2f&amp;title=NetCDF%20in%20R"
          target="_blank">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=netCDF%20in%20R&amp;body=%2fpost%2fnetcdf-in-r%2f">
+         href="mailto:?subject=NetCDF%20in%20R&amp;body=%2fpost%2fnetcdf-in-r%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -265,10 +265,97 @@
 </div>
 
     <div class="article-style" itemprop="articleBody">
-      <p>NetCDF stands for “Network Common Data Format” which was created by unidata for geoscience data. Here’s a short description on their website (<a href="https://www.unidata.ucar.edu/netcdf/" class="uri">https://www.unidata.ucar.edu/netcdf/</a>):</p>
+      
+
+
+<p>NetCDF stands for “Network Common Data Format” and was created by ‘unidata’ for handling large geospatial data. Here’s a short description from their <a href="https://www.unidata.ucar.edu/netcdf/">website</a>:</p>
 <p>“NetCDF is a set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-orientated scientific data.”</p>
-<p>NetCDF files are containers for dimensions, variables and global atttributes. I’ve recently had to process air pollution data stored in this format (.nc/.NC). It’s used for a lot of climate data from x, y and z, so it’s worth learning how to use it if you might use this data in the future. Let’s pick apart the definition a bit further.</p>
-<p>Self-describing This is one of the main advantages of the format, whereby all the information required to use it correctly is supplied within the data file. So it doesn’t matter if you are using Python, Perl or R, you will be able to read it in and plot it.</p>
+<p>NetCDF files are containers for dimensions, variables and global atttributes. It’s used to store climatology, meteorology and oceanography data by over 1,300 organisations including <a href="https://www.esrl.noaa.gov/psd/data/gridded/data.gistemp.html">NOAA</a> and <a href="https://www.eumetsat.int/website/home/index.html">EUMETSAT</a>. I think the key advantage of the format is that all the information required to use it correctly is supplied within the data file. So it doesn’t matter if you are using Python, Perl or R, you will be able to read, manipulate and plot the data, and there is lots of information out there to help with that.</p>
+<p>I was asked recently to help with processing air pollution data stored in NetCDF format (.nc/.NC) using R. I’ve had a first attempt at describing one of the files we are using (NO2 max for a day), plotting, batch processing daily neighbourhood (postcode unit) based exposure estimates and finally converting to .rds for upload to a postgresql database. Some considerations of the data I was using was that it had a polar stereographic projection, which can be converted to a lat/long <a href="https://stackoverflow.com/questions/23837918/convert-polar-stereographic-projection-into-lat-long-grid-in-r">grid</a>. I decided that this might not be required if I used the points as they were and allocate the nearest air pollution point to the centroid of the postcode. As the data size was quite large (all postcode units in britain) the normal rgeos::gDistance method didn’t work (i.e. could not allocate vector error), so I used k-nearest neighbour (k=1), below is the code:</p>
+<pre class="r"><code># reading ncdf in R
+library(ncdf4)
+library(reshape2)
+library(dplyr)
+library(raster)
+
+# get all netcdf files
+flist &lt;- list.files(path = &quot;.&quot;, pattern = &quot;^.*\\.(nc|NC|Nc|Nc)$&quot;)
+
+# Open a connection to the first file in our list
+nc &lt;- nc_open(flist[1])
+
+# get variable names
+attributes(nc$var)$names
+
+# summary
+MaxNO2&lt;-ncatt_get(nc, attributes(nc$var)$names[3])
+
+#projection is:
+#projection: Stereographic
+#projection_params: 90.0 -32.0 0.933013
+# got this from the nc output
+nc_close(nc)
+
+# use the info collected from attributes to get the data
+xyznames &lt;- c(&quot;lon&quot;, &quot;lat&quot;, &quot;NO2_daymax&quot;)
+lon &lt;- raster(flist[1], varname= xyznames[1])
+lat &lt;- raster(flist[1], varname= xyznames[2])
+dat &lt;- brick(flist[1], varname = xyznames[3])
+
+# Values drops the &quot;raster&quot; wrapper, just returns values in order as a vector
+d &lt;- cbind(values(lon), values(lat), values(dat[[1]]))
+# remap arbitrary values to [0,1] for a colour table
+scl &lt;- function(x) (x - min(x, na.rm = TRUE))/diff(range(x, na.rm = TRUE))
+# set a number for colours
+n &lt;- 56
+# plot the data
+plot(d[,1:2], pch = 16, col = terrain.colors(n)[scl(d[,3]) * (n-1) + 1])
+
+# codepoint postcode unit points
+set1&lt;-readRDS(&quot;C:/Users/mcherrie/boundary/Postcodeunit.rds&quot;)
+set1 &lt;- spTransform(set1, CRS(&quot;+init=epsg:4326&quot;))
+
+# raster vals
+coords = cbind(d[,1], d[,2])
+set2 = SpatialPoints(coords)
+proj4string(set2) = CRS(&quot;+init=epsg:4326&quot;)
+plot(set2)
+
+A &lt;- SpatialPoints(set1)
+B &lt;- SpatialPoints(set2)
+# library(rgeos)
+# set1$nearest_in_set2 &lt;- apply(gDistance(set1sp, set2sp, byid=TRUE), 1, which.min)
+# doesn&#39;t work cannot allocate vector
+
+library(SearchTrees)
+# Find indices of the nearest points in B to each of the points in A
+tree &lt;- createTree(coordinates(B))
+inds &lt;- knnLookup(tree, newdat=coordinates(A), k=1)
+
+# create the dataframes --- need to double check this bit!
+Bdf&lt;-as.data.frame(B)
+Bdf$ind&lt;-seq(1,nrow(Bdf))
+colnames(Bdf)&lt;-c(&quot;AP_long&quot;, &quot;AP_lat&quot;, &quot;ind&quot;)
+Adf&lt;-as.data.frame(A)
+Adf$ind&lt;-inds
+colnames(Adf)&lt;-c(&quot;PU_long&quot;, &quot;PU_lat&quot;, &quot;ind&quot;)
+Cdf&lt;-merge(Adf, Bdf, by=&quot;ind&quot;)
+
+# get the Air pollution coordinates for the Postcode units
+PUDF&lt;-as.data.frame(set1)
+colnames(PUDF)&lt;-c(&quot;PU&quot;, &quot;Easting&quot;, &quot;Northing&quot;, &quot;PU_long&quot;, &quot;PU_lat&quot;)
+PUDF2&lt;-merge(PUDF, Cdf, by=c(&quot;PU_long&quot;, &quot;PU_lat&quot;), all.x=T)
+subsetAP&lt;-subset(PUDF2, select=c(&quot;PU&quot;, &quot;AP_long&quot;, &quot;AP_lat&quot;))
+
+# Let&#39;s output a year
+for(i in 1:2){
+d &lt;- cbind(values(lon), values(lat), values(dat[[i]]))
+name&lt;-dat[[i]]@z[[1]][1]
+colnames(d)&lt;-c(&quot;AP_long&quot;, &quot;AP_lat&quot;, &quot;Value&quot;)
+d2&lt;-merge(d, subsetAP, by=c(&quot;AP_long&quot;, &quot;AP_lat&quot;), all.y=T)
+saveRDS(d2, paste0(&quot;E:/airpollutiondata/&quot;,name,&quot;.rds&quot;))
+}</code></pre>
+<p>Any feedback welcome, thanks.</p>
 
     </div>
   </div>
@@ -284,6 +371,9 @@
     
 
     
+    <li class="next"><a href="/post/devolvedlegislation/">Devolved parliaments and assemblies Legislation <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
   </ul>
 </nav>
 
@@ -291,6 +381,31 @@
 
 <div class="article-container">
   
+<section id="comments">
+  <div id="disqus_thread">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-www-markcherrie-net" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</section>
+
 
 </div>
 
@@ -298,7 +413,7 @@
   <div class="container">
     <p class="powered-by">
 
-      &copy; 2017 Mark Cherrie &middot; 
+      &copy; 2019 Mark Cherrie &middot; 
 
       Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
       theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.

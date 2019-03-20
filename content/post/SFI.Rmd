@@ -1,11 +1,12 @@
 ---
-title: "Social Fragmentation Index"
+title: "How to build a Social Fragmentation Index using census variables"
 author: "Mark Cherrie"
 date: '2018-07-09'
 draft: no
-slug: sfi
+slug: social-fragmentation-index
 categories: ["Data Processing"]
 tags: ["macroeconomy", "recession", "mental health", "social capital"]
+description: "This blog post goes through the steps of collecting the census data to create a social fragmentation index."
 ---
 
 ## Background
@@ -267,7 +268,7 @@ plot_ly(SFIchange, x = ~change, y = ~simd2012score, color = ~LAname,text = ~past
 
 ## References 
 
-Allardyce, J., Gilmour, H., Atkinson, J., Rapson, T., Bishop, J., & McCreadie, R. (2005). Social fragmentation, deprivation and urbanicity: Relation to first-admission rates for psychoses. British Journal of Psychiatry, 187(5), 401-406. doi:10.1192/bjp.187.5.401
+Allardyce, J., Gilmour, H., Atkinson, J., Rapson, T., Bishop, J., & McCreadie, R. (2005). Social fragmentation, deprivation and urbanicity: Relation to first-admission rates for psychoses. British Journal of Psychiatry, 187(5), 401-406
 
 Congdon, P (1996) The incidence of suicide and parasuicide: a small area study, Urban Studies, 33, 137 – 158.
 
