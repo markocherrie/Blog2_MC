@@ -36,7 +36,7 @@ The USGS explorer is a Graphical User Interface; it is time consuming to downloa
 The aim was to use all the available Landsat 7 images (2001-2017; image every 16 days), masking clouds and water, and calcuate the median NDVI value for all 30 m pixels within a 500 m radius of the datazone's population weighted centroid.  
 
 #### Creating KML boundary files
-First, download the Datazone 2011 [population weighted centroids](https://data.gov.uk/dataset/data-zone-centroids-2011/resource/cc06b84c-8b55-4f15-abcf-ace1fda02679), load into R and export as a .kml file.
+First, download the Datazone 2011 [population weighted centroids](https://data.gov.uk/dataset/8aabd120-6e15-41bf-be7c-2536cbc4b2e5/data-zone-centroids-2011), load into R and export as a .kml file.
 
 #### GEE layout
 Sign into Google Earth Engine with your gmail account. The GEE layout is as follows:
