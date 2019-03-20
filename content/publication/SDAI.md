@@ -12,7 +12,7 @@ publication_short = "In *SSM*"
 selected = false
 title = "Changing labour market conditions during the ‘great recession’ and mental health in Scotland 2007–2011: an example using the Scottish Longitudinal Study and data for local areas in Scotland"
 url_pdf = ""
-url_project = ""
+#url_project = ""
   
   
 # Optional featured image (relative to `static/img/` folder).

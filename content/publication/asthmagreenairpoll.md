@@ -10,7 +10,7 @@ publication_short = "In *EI*"
 selected = false
 title = "Land cover and air pollution are associated with asthma hospitalisations: A cross-sectional study."
 url_pdf = "https://www.ncbi.nlm.nih.gov/pubmed/28926750"
-url_project = ""
+#url_project = ""
   
   
 # Optional featured image (relative to `static/img/` folder).
