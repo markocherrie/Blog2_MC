@@ -56,7 +56,7 @@
 
   
 
-  <title>The Geography of the Revoke article 50 petition | Mark Cherrie</title>
+  <title>The Geography of the Revoke Article 50 petition | Mark Cherrie</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
@@ -169,7 +169,7 @@
 
 
   <div class="article-container">
-    <h1 itemprop="name">The Geography of the Revoke article 50 petition</h1>
+    <h1 itemprop="name">The Geography of the Revoke Article 50 petition</h1>
     
 
 <div class="article-metadata">
@@ -231,28 +231,28 @@
     </li>
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=The%20Geography%20of%20the%20Revoke%20article%2050%20petition&amp;url=%2fpost%2fgeography_of_the_revoke_article_50_petition%2f"
+         href="https://twitter.com/intent/tweet?text=The%20Geography%20of%20the%20Revoke%20Article%2050%20petition&amp;url=%2fpost%2fgeography_of_the_revoke_article_50_petition%2f"
          target="_blank">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fgeography_of_the_revoke_article_50_petition%2f&amp;title=The%20Geography%20of%20the%20Revoke%20article%2050%20petition"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fgeography_of_the_revoke_article_50_petition%2f&amp;title=The%20Geography%20of%20the%20Revoke%20Article%2050%20petition"
          target="_blank">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=%2fpost%2fgeography_of_the_revoke_article_50_petition%2f&amp;title=The%20Geography%20of%20the%20Revoke%20article%2050%20petition"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2fgeography_of_the_revoke_article_50_petition%2f&amp;title=The%20Geography%20of%20the%20Revoke%20Article%2050%20petition"
          target="_blank">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=The%20Geography%20of%20the%20Revoke%20article%2050%20petition&amp;body=%2fpost%2fgeography_of_the_revoke_article_50_petition%2f">
+         href="mailto:?subject=The%20Geography%20of%20the%20Revoke%20Article%2050%20petition&amp;body=%2fpost%2fgeography_of_the_revoke_article_50_petition%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -268,27 +268,31 @@
       
 
 
-<div id="introduction" class="section level1">
-<h1>Introduction</h1>
-<p>The ‘Revoke article 50 and remain in the EU petition’ is the most popular petition ever, to do exactly what the title states. The rules are that after 10,000 signatures petitions get a response from the government, after 100,000 signatures petitions are considered for debate in Parliament and after 17.4 million we stop brexit (Andrea Leadsom, 2019). As of writing this (25/03/19 17:00 GMT), the petition has amassed over 5 million signatures. As a geograpger, I wondered whether there were some places that were signing a lot more than others and whether that was expected, given how they voted in the referendum.</p>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>The ‘Revoke article 50 and remain in the EU petition’ is the most popular petition ever, which aims to stop the brexit process. The rules are that after 10,000 signatures, petitions get a response from the government, after 100,000 signatures, petitions are considered for debate in Parliament and after 17.4 million, we stop Brexit (Andrea Leadsom, 2019). As of writing this (25/03/19 17:00 GMT), the petition has amassed over 5 million signatures. As a geographer, I wondered whether there were some places that were signing (read that as sighing on a proofread… probably accurate) a lot more than others and whether that was expected, given how their constituency voted in the referendum.</p>
+</div>
 <div id="method" class="section level2">
 <h2>Method</h2>
-<p>Luckily, the required data at the constituency level is publically available for: the number of signatures of the <a href="https://petition.parliament.uk/petitions/241584?fbclid=IwAR2E3C5chLiMm9MM7awL2qWw_Fkr_KLXert0S61swiRbYORAfmOOglgZ8as">‘Revoke article 50’ petition</a>, boundaries of the constituencies with the data on the <a href="http://www.statsmapsnpix.com/2017/04/getting-ready-for-ge2017-big-shapefile.html">2015 electorate</a> and the <a href="https://commonslibrary.parliament.uk/parliament-and-elections/elections-elections/brexit-votes-by-constituency/">% voting to leave in the referendum</a>. After merging these data together I firstly calculated the percentage of electorate who signed the petition. Secondly, I built a regression model using the electorate petition percentage as the dependent variables and the brexit leave estimate as the independent variable. The hypothesis is that the areas with higher percentages of leave voters would have the lowest percentage of the electorate signing the petition. By studying the residuals we can see consitiuencies that are signing the petition more or less than we would expect. I visualised the data as a <a href="http://www.dannydorling.org/?page_id=3132">cartogram</a>, distorting the map to enlarge constituencies that had a) higher petition percentages b) higher-than-expected petition percentages.</p>
+<p>Luckily, the required data at the constituency level is publically available for: the number of signatures of the <a href="https://petition.parliament.uk/petitions/241584?fbclid=IwAR2E3C5chLiMm9MM7awL2qWw_Fkr_KLXert0S61swiRbYORAfmOOglgZ8as">‘Revoke article 50’ petition</a>, boundaries of the constituencies with the data on the <a href="http://www.statsmapsnpix.com/2017/04/getting-ready-for-ge2017-big-shapefile.html">2015 electorate</a> and the <a href="https://commonslibrary.parliament.uk/parliament-and-elections/elections-elections/brexit-votes-by-constituency/">% voting to leave in the referendum</a>. After merging these data together I first calculated the percentage of electorate who signed the petition. I then built a regression model using the electorate petition percentage as the dependent variables and the Brexit leave estimate as the independent variable.</p>
+<p>The hypothesis is that the areas with higher percentages of leave voters would have the lowest percentage of the electorate signing the petition. By studying the residuals we can see constituencies that are signing the petition more or less than we would expect (given the referendum vote). I visualised the data as a <a href="http://www.dannydorling.org/?page_id=3132">cartogram</a>, distorting the map to enlarge constituencies that had a) higher petition percentages b) higher-than-expected petition percentages.</p>
 </div>
 <div id="results" class="section level2">
 <h2>Results</h2>
-<p>The highest percentages of petition signatures were: Hornsey and Wood Green (38%), Bristol West (37%), Cities of London and Westminster (37%), Brighton, Pavilion (35%) and Islington North (34%); and the lowest: Barnsley East (3%), Birmingham, Hodge Hill (3%), Doncaster North (3%), Dudley North (3%) and Easington (3%). As highlighted with the highest 5, the highest percentages were mostly found in London and lowest in the North:</p>
+<p>The highest percentages of petition signatures were: Hornsey and Wood Green (38%), Bristol West (37%), Cities of London and Westminster (37%), Brighton, Pavilion (35%) and Islington North (34%); and the lowest: Barnsley East (3%), Birmingham, Hodge Hill (3%), Doncaster North (3%), Dudley North (3%) and Easington (3%). Here’s the map of percentage of constituency signing the petition:</p>
 <div class="figure">
 <img src="img/brexit_images/percentageofelectorate.png" alt="Where have people been signing the petition?" />
 <p class="caption"><em>Where have people been signing the petition?</em></p>
 </div>
-<p>The Brexit referendum vote explained 69% of the variance of the petition signature percentage. For every percentage increase in the brexit leave vote there was a -0.46% lower petition percentage (95% CI -0.48 to -0.44). There was a general North East/South West divide in how well the model worked, with lower than expected petition percentages coming from Northern Ireland and the higher than expected petition percentages coming from the London and Brighton. Here’s the cartogram on expected petition percentage given the referendum’s vote:</p>
+<p>The Brexit referendum vote explained 69% of the variance of the petition signature percentage. For every percentage increase in the Brexit leave vote there was a -0.46% lower petition percentage (95% CI -0.48 to -0.44). There was a general North East/South West divide in how well the model worked, with much lower than expected petition percentages coming from Northern Ireland and much higher than expected petition percentages coming from London and Brighton. Here’s the cartogram on expected petition percentage given the referendum’s vote:</p>
 <div class="figure">
 <img src="img/brexit_images/revokearticlebrexitref.png" alt="Where has the petition had higher signatures than expected?" />
 <p class="caption"><em>Where has the petition had higher signatures than expected?</em></p>
 </div>
-<p>So if we can get a bit of a push in Northern England, Wales, Scotland and Northern Ireland we might hit that 17.4 million.</p>
 </div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>So if we can get a bit of a push in Northern England, Wales, Scotland and Northern Ireland we might hit that 17.4 million ☺</p>
 </div>
 
     </div>
