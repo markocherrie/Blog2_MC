@@ -30,13 +30,13 @@
 &lt;h2&gt;Results&lt;/h2&gt;
 &lt;p&gt;The highest percentages of petition signatures were: Hornsey and Wood Green (38%), Bristol West (37%), Cities of London and Westminster (37%), Brighton, Pavilion (35%) and Islington North (34%); and the lowest: Barnsley East (3%), Birmingham, Hodge Hill (3%), Doncaster North (3%), Dudley North (3%) and Easington (3%). As highlighted with the highest 5, the highest percentages were mostly found in London and lowest in the North:&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;img/brexit_images/percentageofelectorate.png&#34; alt=&#34;Where have people been signing the petition?&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;Where have people been signing the petition?&lt;/p&gt;
+&lt;img src=&#34;img/brexit_images/percentageofelectorate.png&#34; alt=&#34;Where have people been signing the petition?“&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;“Where have people been signing the petition?”“&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;The Brexit referendum vote explained 69% of the variance of the petition signature percentage. For every percentage increase in the brexit leave vote there was a -0.46% lower petition percentage (95% CI -0.48 to -0.44). There was a general North East/South West divide in how well the model worked, with lower than expected petition percentages coming from Northern Ireland and the higher than expected petition percentages coming from the London and Brighton. Here’s the cartogram on expected petition percentage given the referendum’s vote:&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;img/brexit_images/revokearticlebrexitref.png&#34; alt=&#34;Where has the petition had higher signatures than expected?&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;Where has the petition had higher signatures than expected?&lt;/p&gt;
+&lt;p class=&#34;caption&#34;&gt;“Where has the petition had higher signatures than expected?”&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;So if we can get a bit of a push in Northern England, Wales, Scotland and Northern Ireland we might hit that 17.4 million.&lt;/p&gt;
 &lt;/div&gt;
