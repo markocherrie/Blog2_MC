@@ -17,12 +17,12 @@ Luckily, the required data at the constituency level is publically available for
 ## Results
 The highest percentages of petition signatures were: Hornsey and Wood Green (38%), Bristol West (37%), Cities of London and Westminster (37%),  Brighton, Pavilion (35%) and Islington North (34%); and the lowest: Barnsley East (3%), Birmingham, Hodge Hill (3%), Doncaster North (3%), Dudley North (3%) and Easington (3%). As highlighted with the highest 5, the highest percentages were mostly found in London and lowest in the North:
 
-!["Where have people been signing the petition?""](img/brexit_images/percentageofelectorate.png)
+![_Where have people been signing the petition?_](img/brexit_images/percentageofelectorate.png)
 
 
 The Brexit referendum vote explained 69% of the variance of the petition signature percentage. For every percentage increase in the brexit leave vote there was a -0.46% lower petition percentage (95% CI -0.48 to -0.44). There was a general North East/South West divide in how well the model worked, with lower than expected petition percentages coming from Northern Ireland and the higher than expected petition percentages coming from the London and Brighton. Here's the cartogram on expected petition percentage given the referendum's vote:
 
-!["Where has the petition had higher signatures than expected?"](img/brexit_images/revokearticlebrexitref.png)
+![_Where has the petition had higher signatures than expected?_](img/brexit_images/revokearticlebrexitref.png)
 
 So if we can get a bit of a push in Northern England, Wales, Scotland and Northern Ireland we might hit that 17.4 million. 
 
