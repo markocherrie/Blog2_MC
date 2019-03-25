@@ -121,6 +121,15 @@
     </item>
     
     <item>
+      <title>Brexit</title>
+      <link>/tags/brexit/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/brexit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Built Environment</title>
       <link>/tags/built-environment/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
@@ -225,6 +234,15 @@
       <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/gee/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Geography</title>
+      <link>/tags/geography/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/geography/</guid>
       <description></description>
     </item>
     
@@ -544,6 +562,15 @@
     </item>
     
     <item>
+      <title>Politics</title>
+      <link>/tags/politics/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/politics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Postgresql</title>
       <link>/tags/postgresql/</link>
       <pubDate>Mon, 27 Mar 2017 00:00:00 +0000</pubDate>
@@ -571,9 +598,18 @@
     </item>
     
     <item>
+      <title>Qgis</title>
+      <link>/tags/qgis/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/qgis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
       <description></description>

@@ -1,0 +1,29 @@
+---
+title: "The Geography of the Revoke article 50 petition"
+author: ~
+date: '2019-03-25'
+slug: Geography_of_the_revoke_article_50_petition
+categories: ["Data Visualisation"]
+tags: ["R", "QGIS", "Politics", "Brexit", "Geography"]
+draft: no
+---
+
+# Introduction
+The 'Revoke article 50 and remain in the EU petition' is the most popular petition ever, to do exactly what the title states. The rules are that after 10,000 signatures petitions get a response from the government, after 100,000 signatures petitions are considered for debate in Parliament and after 17.4 million we stop brexit (Andrea Leadsom, 2019). As of writing this (25/03/19 17:00 GMT), the petition has amassed over 5 million signatures. As a geograpger, I wondered whether there were some places that were signing a lot more than others and whether that was expected, given how they voted in the referendum.
+
+## Method
+Luckily, the required data at the constituency level is publically available for: the number of signatures of the ['Revoke article 50' petition](https://petition.parliament.uk/petitions/241584?fbclid=IwAR2E3C5chLiMm9MM7awL2qWw_Fkr_KLXert0S61swiRbYORAfmOOglgZ8as), boundaries of the constituencies with the data on the [2015 electorate](http://www.statsmapsnpix.com/2017/04/getting-ready-for-ge2017-big-shapefile.html) and the [% voting to leave in the referendum](https://commonslibrary.parliament.uk/parliament-and-elections/elections-elections/brexit-votes-by-constituency/). After merging these data together I firstly calculated the percentage of electorate who signed the petition. Secondly, I built a regression model using the electorate petition percentage as the dependent variables and the brexit leave estimate as the independent variable. The hypothesis is that the areas with higher percentages of leave voters would have the lowest percentage of the electorate signing the petition. By studying the residuals we can see consitiuencies that are signing the petition more or less than we would expect. I visualised the data as a [cartogram](http://www.dannydorling.org/?page_id=3132), distorting the map to enlarge constituencies that had a) higher petition percentages b) higher-than-expected petition percentages.
+
+## Results
+The highest percentages of petition signatures were: Hornsey and Wood Green (38%), Bristol West (37%), Cities of London and Westminster (37%),  Brighton, Pavilion (35%) and Islington North (34%); and the lowest: Barnsley East (3%), Birmingham, Hodge Hill (3%), Doncaster North (3%), Dudley North (3%) and Easington (3%). As highlighted with the highest 5, the highest percentages were mostly found in London and lowest in the North:
+
+![Where have people been signing the petition?](img/brexit_images/percentageofelectorate.png)
+
+
+The Brexit referendum vote explained 69% of the variance of the petition signature percentage. For every percentage increase in the brexit leave vote there was a -0.46% lower petition percentage (95% CI -0.48 to -0.44). There was a general North East/South West divide in how well the model worked, with lower than expected petition percentages coming from Northern Ireland and the higher than expected petition percentages coming from the London and Brighton. Here's the cartogram on expected petition percentage given the referendum's vote:
+
+![Where has the petition had higher signatures than expected?](img/brexit_images/revokearticlebrexitref.png)
+
+So if we can get a bit of a push in Northern England, Wales, Scotland and Northern Ireland we might hit that 17.4 million. 
+
+
