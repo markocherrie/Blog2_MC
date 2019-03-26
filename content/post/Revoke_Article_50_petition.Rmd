@@ -22,7 +22,7 @@ The highest percentages of petition signatures were: Hornsey and Wood Green (38%
 ![_Where have people been signing the petition?_](img/brexit_images/percentageofelectorate.png)
 
 
-The Brexit referendum vote explained 69% of the variance of the petition signature percentage. For every percentage increase in the Brexit leave vote there was a -0.46% lower petition percentage (95% CI -0.48 to -0.44). There was a general North West/South East in the model residuals, with much lower than expected petition percentages coming from Northern Ireland and much higher than expected petition percentages coming from London and Brighton. Here's the cartogram on expected petition percentage given the referendum's vote:
+The Brexit referendum vote explained 69% of the variance of the petition signature percentage. For every percentage increase in the Brexit leave vote there was a -0.46% lower petition percentage (95% CI -0.48 to -0.44). There was a general North West/South East pattern in the model residuals, with much lower than expected petition percentages coming from Northern Ireland and much higher than expected petition percentages coming from London and Brighton. Here's the cartogram on expected petition percentage given the referendum's vote:
 
 ![_Where has the petition had higher signatures than expected?_](img/brexit_images/revokearticlebrexitref.png)
 

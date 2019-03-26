@@ -35,7 +35,7 @@
 &lt;img src=&#34;img/brexit_images/percentageofelectorate.png&#34; alt=&#34;Where have people been signing the petition?&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;&lt;em&gt;Where have people been signing the petition?&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;The Brexit referendum vote explained 69% of the variance of the petition signature percentage. For every percentage increase in the Brexit leave vote there was a -0.46% lower petition percentage (95% CI -0.48 to -0.44). There was a general North West/South East in the model residuals, with much lower than expected petition percentages coming from Northern Ireland and much higher than expected petition percentages coming from London and Brighton. Here’s the cartogram on expected petition percentage given the referendum’s vote:&lt;/p&gt;
+&lt;p&gt;The Brexit referendum vote explained 69% of the variance of the petition signature percentage. For every percentage increase in the Brexit leave vote there was a -0.46% lower petition percentage (95% CI -0.48 to -0.44). There was a general North West/South East pattern in the model residuals, with much lower than expected petition percentages coming from Northern Ireland and much higher than expected petition percentages coming from London and Brighton. Here’s the cartogram on expected petition percentage given the referendum’s vote:&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;img/brexit_images/revokearticlebrexitref.png&#34; alt=&#34;Where has the petition had higher signatures than expected?&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;&lt;em&gt;Where has the petition had higher signatures than expected?&lt;/em&gt;&lt;/p&gt;
