@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>/post/socialmedia/</loc>
+      <lastmod>2019-05-08T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/geography_of_the_revoke_article_50_petition/</loc>
       <lastmod>2019-03-25T00:00:00+00:00</lastmod>
     </url>
@@ -548,6 +557,16 @@
     
     <url>
     
+      <loc>/tags/blogging/</loc>
+      <lastmod>2019-05-08T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/brexit/</loc>
       <lastmod>2019-03-25T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -699,6 +718,16 @@
     
       <loc>/tags/employment/</loc>
       <lastmod>2018-09-03T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/facebook/</loc>
+      <lastmod>2019-05-08T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1108,7 +1137,7 @@
     <url>
     
       <loc>/post/</loc>
-      <lastmod>2019-03-25T00:00:00+00:00</lastmod>
+      <lastmod>2019-05-08T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1139,6 +1168,16 @@
     
       <loc>/project/</loc>
       <lastmod>2017-09-08T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/public-engagement/</loc>
+      <lastmod>2019-05-08T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1198,7 +1237,7 @@
     <url>
     
       <loc>/categories/research-tips/</loc>
-      <lastmod>2017-11-02T00:00:00+00:00</lastmod>
+      <lastmod>2019-05-08T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1269,6 +1308,16 @@
     
       <loc>/tags/social-capital/</loc>
       <lastmod>2018-07-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/social-media/</loc>
+      <lastmod>2019-05-08T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1369,6 +1418,16 @@
     
       <loc>/tags/traminer/</loc>
       <lastmod>2018-10-03T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/twitter/</loc>
+      <lastmod>2019-05-08T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

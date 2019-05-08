@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
-    <lastBuildDate>Thu, 02 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/research-tips/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using Social Media to Engage Research End Users: Thoughts from UoE Research Support Office Event</title>
+      <link>/post/socialmedia/</link>
+      <pubDate>Wed, 08 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/socialmedia/</guid>
+      <description>BackgroundSocial media is becoming the dominant platform for getting information, for the general population by superseding television and newspapers and increasingly for academics, displacing peer-reviewed journal articles. Time is limited and short communications are easier to digest, especially when on a mobile.
+To summarise findings from a research project or engage in an academic/policy debate in very short social media snippets is an impressive skill and one that I am keen to learn.</description>
+    </item>
     
     <item>
       <title>Removing pages from a PDF</title>
