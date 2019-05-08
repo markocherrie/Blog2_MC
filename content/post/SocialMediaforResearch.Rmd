@@ -1,5 +1,5 @@
 ---
-title: 'Using Social Media to Engage Research End Users: Thoughts from UoE Research Support Office Event'
+title: 'Using Social Media to Engage Research End Users'
 author: ~
 date: '2019-05-08'
 draft: no
@@ -12,7 +12,7 @@ description: "A summary of tips from a RSO event on how to use social media effe
 ## Background
 Social media is becoming the dominant platform for getting information, for the general population by superseding television and newspapers and increasingly for academics, displacing peer-reviewed journal articles. Time is limited and short communications are easier to digest, especially when on a mobile. 
 
-To summarise findings from a research project or engage in an academic/policy debate in very short social media snippets is an impressive skill and one that I am keen to learn. This was the motivation behind going on the Research Support Office event on ['Using social media to engage research end users'](https://www.ed.ac.uk/arts-humanities-soc-sci/research-ke/support-for-staff/staff-development/learning-lunches-events/using-social-media-to-engage-research-end-users). 
+To summarise findings from a research project or engage in an academic/policy debate in very short social media snippets is an impressive skill and one that I am keen to learn. This was the motivation behind going on the Research Support Office event on ['Using social media to engage research end users'](https://www.ed.ac.uk/arts-humanities-soc-sci/research-ke/support-for-staff/staff-development/learning-lunches-events/using-social-media-to-engage-research-end-users). I've written down a few thoughts from the event below:
 
 ## Why use social media?
 1. Dissemination - share cutting-edge research
