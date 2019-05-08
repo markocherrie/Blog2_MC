@@ -9,6 +9,8 @@ categories: ["Research Tips"]
 description: "A summary of tips from a RSO event on how to use social media effectively"
 ---
 
+![Photo by NordWood Themes on Unsplash](img/socialmedia.jpg)
+
 ## Background
 Social media is becoming the dominant platform for getting information, for the general population by superseding television and newspapers and increasingly for academics, displacing peer-reviewed journal articles. Time is limited and short communications are easier to digest, especially when on a mobile. 
 
@@ -19,7 +21,7 @@ I've written down a few thoughts from the event below:
 ## Why use social media?
 1. Dissemination - share cutting-edge research
 2. Listening - retweet/like other research (a personalised newsfeed)
-3. Connecting - reuse content and feedback to contributors, get advice on research from peers, conference hashtag (if it's your event make sure hashtag isn't already taken!)
+3. Connecting - reuse content and feedback to contributors, conference hashtag (if it's your event make sure hashtag isn't already taken!)
 4. Interacting - plan ahead, make it regular, half an hour a day?
 
 They recommended that to start it might be useful to have a go with two types of social media platforms:
