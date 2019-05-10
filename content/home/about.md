@@ -33,7 +33,9 @@ weight = 1
 
 # Biography
 
-I love working with all kinds of data, problem solving and presenting ideas to promote public well-being. In that capacity, I am currently working on several exciting projects at the Centre for Research on Environment, Society and Health <a href="https://cresh.org.uk/">(CRESH)</a>. On this site you'll find a record of my work and current interests which will be updated monthly. Download my full CV [here](https://drive.google.com/file/d/1PQY0JeUiYeNw1C0EHZBsgn5dBuxMsYPy/view?usp=sharing). 
+My research lies within the disciplines of environmental epidemiology and health geography. My focus is on the concept of the [exposome](https://academic.oup.com/ije/article/41/1/24/650703) - the totality of environmental exposures from cradle to grave. I am guided by the [life course of place](https://rgs-ibg.onlinelibrary.wiley.com/doi/full/10.1111/tran.12246) approach and the [uncertain geographic context problem](https://www.tandfonline.com/doi/abs/10.1080/00045608.2012.687349), which I use to to understand the significance of environmental exposures on health inequalities.  
+
+I'm currently working at the Centre for Research on Environment, Society and Health <a href="https://cresh.org.uk/">(CRESH)</a>, University of Edinburgh. On this site you'll find a record of my work and current interests which will be updated monthly. Download my full CV [here](https://drive.google.com/file/d/1PQY0JeUiYeNw1C0EHZBsgn5dBuxMsYPy/view?usp=sharing). 
 
 
 
