@@ -415,8 +415,6 @@ Once you like the look of your visualisation, there are options to share as an i
 &lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Example&lt;/h2&gt;
 &lt;p&gt;This example is a simulated dataset on 6-month status of prescription use. If the participant has had a prescription in the last 6 months they are defined as a cases, and subdivided by old/new (whether they had prescriptions in the first 6 months), relapse/norelapse (whether they have come off prescriptions for 6 months and then back on), recurrence/remission (whether on/off prescriptions by the end of the time period); If they have never been prescribed they are classified as “Never”. The app first gives a description of the simulated dataset, the state distribution, state index and state distributions by cluster group.&lt;/p&gt;
-&lt;iframe src=&#34;https://thebest.shinyapps.io/Sequence/?showcase=0&#34; width=&#34;672&#34; height=&#34;400px&#34;&gt;
-&lt;/iframe&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -591,7 +589,7 @@ ggplot(traj, aes(x, y, group=id, colour=group2)) + geom_line() + geom_smooth(aes
 # Put in the F-CAP best model here
 plottraj(&amp;quot;x&amp;quot;, 4, &amp;quot;linear&amp;quot;, &amp;quot;plot&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Be patient, lcmm is running ... 
-## The program took 1.48 seconds 
+## The program took 1.2 seconds 
 ##  
 ## Posterior classification: 
 ##   class1 class2 class3 class4

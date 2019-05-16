@@ -18,7 +18,7 @@
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/geography_of_the_revoke_article_50_petition/</guid>
-      <description>Introduction The ‘Revoke article 50 and remain in the EU petition’ is the most popular petition ever, which aims to stop the brexit process. The rules are that after 10,000 signatures, petitions get a response from the government, after 100,000 signatures, petitions are considered for debate in Parliament and after 17.4 million, we stop Brexit (Andrea Leadsom, 2019). As of writing this (25/03/19 17:00 GMT), the petition has amassed over 5 million signatures.</description>
+      <description>IntroductionThe ‘Revoke article 50 and remain in the EU petition’ is the most popular petition ever, which aims to stop the brexit process. The rules are that after 10,000 signatures, petitions get a response from the government, after 100,000 signatures, petitions are considered for debate in Parliament and after 17.4 million, we stop Brexit (Andrea Leadsom, 2019). As of writing this (25/03/19 17:00 GMT), the petition has amassed over 5 million signatures.</description>
     </item>
     
     <item>
@@ -27,8 +27,8 @@
       <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/structural-equation-modelling-in-r/</guid>
-      <description>Background I went on a course in Cambridge over the summer of 2018. This was to get me up to speed on structural equation modelling (SEM), which has a lot of potential applications in scenarios where the pathways between measured and unmeasured variables are the central focus of the research question.
- What is SEM? SEM is a mixture of confirmatory factor analysis (CFA) and path analysis. Another way to describe that, is that you have a measurement part and a structural part.</description>
+      <description>BackgroundI went on a course in Cambridge over the summer of 2018. This was to get me up to speed on structural equation modelling (SEM), which has a lot of potential applications in scenarios where the pathways between measured and unmeasured variables are the central focus of the research question.
+What is SEM?SEM is a mixture of confirmatory factor analysis (CFA) and path analysis. Another way to describe that, is that you have a measurement part and a structural part.</description>
     </item>
     
     <item>
@@ -37,7 +37,7 @@
       <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/sequence-analysis-in-r/</guid>
-      <description>Background Longitudinal analysis is important as due to the temporal sequence of exposure then outcome, we can make a stronger case for causality. A derivative of a class of models that fit into the ‘data-mining’ family is sequence analysis. One use of this model is to understand lifetime states, e.g. being employed, being in education, being retired. By understanding these state sequences we can understand how the duration and timing of a state can affect health in the long term.</description>
+      <description>BackgroundLongitudinal analysis is important as due to the temporal sequence of exposure then outcome, we can make a stronger case for causality. A derivative of a class of models that fit into the ‘data-mining’ family is sequence analysis. One use of this model is to understand lifetime states, e.g. being employed, being in education, being retired. By understanding these state sequences we can understand how the duration and timing of a state can affect health in the long term.</description>
     </item>
     
     <item>
@@ -55,8 +55,8 @@
       <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/gee/</guid>
-      <description>Introduction Motivation I’m interested in a long-term small-area level measure of ‘green spaces’, features of the natural environment that are important for a wide variety of health outcomes.
- Green spaces over time There are two major green space datasets for Scotland, Scotland’s Greenspace Map 2011 and the Ordnance Survey’s Greenspace Map 2017. These maps were produced by characterising OS polygons using aerial photos, with the latter updated every 6 months from July 2017.</description>
+      <description>IntroductionMotivationI’m interested in a long-term small-area level measure of ‘green spaces’, features of the natural environment that are important for a wide variety of health outcomes.
+Green spaces over timeThere are two major green space datasets for Scotland, Scotland’s Greenspace Map 2011 and the Ordnance Survey’s Greenspace Map 2017. These maps were produced by characterising OS polygons using aerial photos, with the latter updated every 6 months from July 2017.</description>
     </item>
     
     <item>
