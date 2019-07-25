@@ -23,11 +23,8 @@ The first step in sequence analysis is to format the dataset into wide format (t
 5. Regression with cluster groups 
 
 ## Example
-This example is a simulated dataset on 6-month status of prescription use. If the participant has had a prescription in the last 6 months they are defined as a cases, and subdivided by old/new (whether they had prescriptions in the first 6 months), relapse/norelapse (whether they have come off prescriptions for 6 months and then back on), recurrence/remission (whether on/off prescriptions by the end of the time period); If they have never been prescribed they are classified as "Never". The app first gives a description of the simulated dataset, the state distribution, state index and state distributions by cluster group. 
+This [example](https://thebest.shinyapps.io/Sequence/) is a simulated dataset on 6-month status of prescription use. If the participant has had a prescription in the last 6 months they are defined as a cases, and subdivided by old/new (whether they had prescriptions in the first 6 months), relapse/norelapse (whether they have come off prescriptions for 6 months and then back on), recurrence/remission (whether on/off prescriptions by the end of the time period); If they have never been prescribed they are classified as "Never". The app first gives a description of the simulated dataset, the state distribution, state index and state distributions by cluster group. 
 
-```{r presapp, echo=FALSE, message=FALSE, warning=FALSE}
-knitr::include_app("https://thebest.shinyapps.io/Sequence/")
-```
 
 
 

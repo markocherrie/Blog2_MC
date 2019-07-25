@@ -414,7 +414,7 @@ Once you like the look of your visualisation, there are options to share as an i
 &lt;/div&gt;
 &lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Example&lt;/h2&gt;
-&lt;p&gt;This example is a simulated dataset on 6-month status of prescription use. If the participant has had a prescription in the last 6 months they are defined as a cases, and subdivided by old/new (whether they had prescriptions in the first 6 months), relapse/norelapse (whether they have come off prescriptions for 6 months and then back on), recurrence/remission (whether on/off prescriptions by the end of the time period); If they have never been prescribed they are classified as “Never”. The app first gives a description of the simulated dataset, the state distribution, state index and state distributions by cluster group.&lt;/p&gt;
+&lt;p&gt;This &lt;a href=&#34;https://thebest.shinyapps.io/Sequence/&#34;&gt;example&lt;/a&gt; is a simulated dataset on 6-month status of prescription use. If the participant has had a prescription in the last 6 months they are defined as a cases, and subdivided by old/new (whether they had prescriptions in the first 6 months), relapse/norelapse (whether they have come off prescriptions for 6 months and then back on), recurrence/remission (whether on/off prescriptions by the end of the time period); If they have never been prescribed they are classified as “Never”. The app first gives a description of the simulated dataset, the state distribution, state index and state distributions by cluster group.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>

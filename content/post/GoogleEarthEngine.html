@@ -45,10 +45,7 @@ categories: ["Data Processing"]
 <div id="gee-layout" class="section level4">
 <h4>GEE layout</h4>
 <p>Sign into Google Earth Engine with your gmail account. The GEE layout is as follows:</p>
-<div class="figure">
-<img src="img/GEE_images/GEElayout.png" />
-
-</div>
+<p><img src="img/GEE_images/GEElayout.png" /></p>
 <p>The main panel here is the Code editor which will allow you to save code (to the script manager) and run a script.</p>
 </div>
 <div id="loading-vectors" class="section level4">
@@ -65,7 +62,7 @@ categories: ["Data Processing"]
 </div>
 <div id="mapping" class="section level4">
 <h4>Mapping</h4>
-<p>GEE allows you to apply lots of GIS functions over collections of features (i.e. ‘ee.FeatureCollection’) or satellite images (i.e. ee.ImageCollection). To do so we create a function that has one argument (for the sake of simplicity named ‘feature’ for features and ‘image’ for images) that calls the ‘.map’ function, to apply another function (e.g. in the case of buffering, ‘.buffer’) to every feature/image in the collection. In our case we have done this to buffer, mask clouds, mask water and calculate NDVI. For the cloud mask function we use the ‘ee.Algorithms.Landsat.simpleCloudScore’ functions which takes input from beightness, temperature and NDSI and provides a score from 1-100 on liklihood of cloud (we use a threshold of below 25 using the ‘.lt’ function). A similar procedure is used to mask water pixels, where we only keep image pixels that equal 1 (as derived from the Hansen image). For the NDVI, we are using a function called ‘normalizedDifference’ which takes the Near Infra-red band (B4) as the first argument and the red band (B3) as the second argument.</p>
+<p>GEE allows you to apply lots of GIS functions over collections of features (i.e. ‘ee.FeatureCollection’) or satellite images (i.e. ee.ImageCollection). To do so we create a function that has one argument (for the sake of simplicity named ‘feature’ for features and ‘image’ for images) that calls the ‘.map’ function, to apply another function (e.g. in the case of buffering, ‘.buffer’) to every feature/image in the collection. In our case we have done this to buffer, mask clouds, mask water and calculate NDVI. For the cloud mask function we use the ‘ee.Algorithms.Landsat.simpleCloudScore’ functions which takes input from beightness, temperature and NDSI and provides a score from 1-100 on liklihood of cloud (we use a threshold of below 25 using the ‘.lt’ function). A similar procedure is used to mask water pixels, where we only keep image pixels that equal 1 (as derived from the Hansen image). For the NDVI, we are using a function called ‘normalizedDifference’ which takes the Near Infra-red band (B4) as the first argument and the red band (B3) as the second argument.</p>
 </div>
 <div id="iterating" class="section level4">
 <h4>Iterating</h4>
@@ -81,11 +78,8 @@ categories: ["Data Processing"]
 </div>
 <div id="visualising" class="section level4">
 <h4>Visualising</h4>
-<p>Importantly when visualising to the map any commands will start with ‘Map.’. The ‘.addlayer’ function will add the image tothe screen, with a number of options available for how it looks (e.g. ‘.setCenter’). In our case we want to see the clipped NDVI layer for each population weighted datazone centroid:</p>
-<div class="figure">
-<img src="img/GEE_images/greenmap.png" />
-
-</div>
+<p>Importantly when visualising to the map any commands will start with ‘Map.’. The ‘.addlayer’ function will add the image tothe screen, with a number of options available for how it looks (e.g. ‘.setCenter’). In our case we want to see the clipped NDVI layer for each population weighted datazone centroid:</p>
+<p><img src="img/GEE_images/greenmap.png" /></p>
 </div>
 <div id="exporting" class="section level4">
 <h4>Exporting</h4>
@@ -94,14 +88,14 @@ categories: ["Data Processing"]
 <div id="cleaning" class="section level4">
 <h4>Cleaning</h4>
 <p>The exported data can be cleaned in R. We first want to gather all the files for each year into a single file. Next we want to fill in the missing values. The missing values (~5% of which ~70% were in 2015) were imputed with a kalman smoothing using the ‘imputeTS’ package. Kalman smoothing was chosen as this (along with na.interpolation and na.seadec) will yield the best results (Moritz and Bartz-Beielstein, 2017) The NDVI values were then aggregated to datazone level and saved as csv files. They were also aggregated at a local authority level; here is the time series graph (loess smoothed line):</p>
-<iframe width="900" height="1000" src="http://rpubs.com/Marko/NDVI_LA" frameborder="0" allowfullscreen>
-</iframe>
-<p><small>For the graph if you double click on an LA name on the right-hand side then it will show that one only. Single clicking on another LA name will add that to the graph. Double clicking twice on an LA name will bring up the original graph with all the LA’s.</small></p>
+<p><img src="img/GEE_images/LANDVI.png" /></p>
+<p>An interactive version can be accessed <a href="http://rpubs.com/Marko/NDVI_LA">here</a>.</p>
 </div>
 </div>
 <div id="references" class="section level2">
 <h2>References</h2>
-<p><small> Gorelick, N., M. Hancher, M. Dixon, S. Ilyushchenko, D. Thau and R. Moore (2017). “Google Earth Engine: Planetary-scale geospatial analysis for everyone.” Remote Sensing of Environment 202: 18-27.</p>
+<p><small>
+Gorelick, N., M. Hancher, M. Dixon, S. Ilyushchenko, D. Thau and R. Moore (2017). “Google Earth Engine: Planetary-scale geospatial analysis for everyone.” Remote Sensing of Environment 202: 18-27.</p>
 <p>Hansen, M. C., P. V. Potapov, R. Moore, M. Hancher, S. A. Turubanova, A. Tyukavina, D. Thau, S. V. Stehman, S. J. Goetz, T. R. Loveland, A. Kommareddy, A. Egorov, L. Chini, C. O. Justice and J. R. G. Townshend (2013). “High-Resolution Global Maps of 21st-Century Forest Cover Change.” Science 342(6160): 850-853.</p>
 <p>Klompmaker, J. O., G. Hoek, L. D. Bloemsma, U. Gehring, M. Strak, A. H. Wijga, C. van den Brink, B. Brunekreef, E. Lebret and N. A. H. Janssen (2018). “Green space definition affects associations of green space with overweight and physical activity.” Environ Res 160: 531-540.</p>
 <p>Moritz S and Bartz-Beielstein T (2017). imputeTS: Time Series Missing Value Imputation in R. The R Journal, 9(1), pp. 207-218. <a href="https://journal.r-project.org/archive/2017/RJ-2017-009/index.html" class="uri">https://journal.r-project.org/archive/2017/RJ-2017-009/index.html</a>.</p>
@@ -117,7 +111,9 @@ categories: ["Data Processing"]
 <div id="another-gee-example" class="section level4">
 <h4>2. Another GEE example</h4>
 <p>I have lived in three places in Edinburgh during my life (childhood, undergrad. and postdoc.), and I wondered which had the highest greeness recently. We can manually set the coordinates and get the median greeness for each year from 2011-2018. The figure shows that using the daily images there is a lot of noise, but that a stable pattern arises over time (1st place childhood, 2nd place undergraduate, 3rd place postdoc):</p>
-<p><img src="img/GEE_images/real.png" /> But it looks like my ideal of living at the top of Ben Lomond is the clear winner: <img src="img/GEE_images/ideal.png" /></p>
+<p><img src="img/GEE_images/real.png" />
+But it looks like my ideal of living at the top of Ben Lomond is the clear winner:
+<img src="img/GEE_images/ideal.png" /></p>
 </div>
 <div id="r-code" class="section level4">
 <h4>3. R code</h4>

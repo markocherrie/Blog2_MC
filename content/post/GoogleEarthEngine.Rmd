@@ -78,10 +78,9 @@ Importantly when exporting any commands will start with 'Export.'. GEE is linked
 #### Cleaning
 The exported data can be cleaned in R. We first want to gather all the files for each year into a single file. Next we want to fill in the missing values. The missing values (~5% of which ~70% were in 2015) were imputed with a kalman smoothing using the 'imputeTS' package. Kalman smoothing was chosen as this (along with na.interpolation and na.seadec) will yield the best results (Moritz and Bartz-Beielstein, 2017) The NDVI values were then aggregated to datazone level and saved as csv files. They were also aggregated at a local authority level; here is the time series graph (loess smoothed line):
 
-<iframe width="900" height="1000" src="http://rpubs.com/Marko/NDVI_LA" frameborder="0" allowfullscreen></iframe>
+![](img/GEE_images/LANDVI.png)
 
-<small>For the graph if you double click on an LA name on the right-hand side then it will show that one only. Single clicking on another LA name will add that to the graph. Double clicking twice on an LA name will bring up the original graph with all the LA's.</small> 
-
+An interactive version can be accessed [here](http://rpubs.com/Marko/NDVI_LA).
 
 ## References
 
