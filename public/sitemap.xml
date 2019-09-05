@@ -5,6 +5,24 @@
     
     <url>
     
+      <loc>/post/china/</loc>
+      <lastmod>2019-07-25T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/post/lifeplaces/</loc>
+      <lastmod>2019-07-20T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/socialmedia/</loc>
       <lastmod>2019-05-08T00:00:00+00:00</lastmod>
     </url>
@@ -616,6 +634,16 @@
     
     <url>
     
+      <loc>/tags/china/</loc>
+      <lastmod>2019-07-25T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/clustering/</loc>
       <lastmod>2018-10-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -636,6 +664,16 @@
     
     <url>
     
+      <loc>/tags/collaboration/</loc>
+      <lastmod>2019-07-25T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/data/</loc>
       <lastmod>2018-02-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -648,6 +686,16 @@
     
       <loc>/categories/data-analysis/</loc>
       <lastmod>2019-03-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/data-collection/</loc>
+      <lastmod>2019-07-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -698,6 +746,26 @@
     
       <loc>/tags/display/</loc>
       <lastmod>2017-09-08T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/ecr/</loc>
+      <lastmod>2019-07-25T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/edinburgh/</loc>
+      <lastmod>2019-07-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -836,6 +904,16 @@
     
     <url>
     
+      <loc>/tags/interdisciplinary/</loc>
+      <lastmod>2019-07-25T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/intervention/</loc>
       <lastmod>2017-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -877,7 +955,27 @@
     <url>
     
       <loc>/tags/lifecourse/</loc>
-      <lastmod>2017-08-08T00:00:00+00:00</lastmod>
+      <lastmod>2019-07-20T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/lifegrid/</loc>
+      <lastmod>2019-07-20T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/lifeplace/</loc>
+      <lastmod>2019-07-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1036,6 +1134,16 @@
     
     <url>
     
+      <loc>/tags/newton-fund/</loc>
+      <lastmod>2019-07-25T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/nudge-theory/</loc>
       <lastmod>2017-12-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -1106,6 +1214,16 @@
     
     <url>
     
+      <loc>/tags/place/</loc>
+      <lastmod>2019-07-20T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/policy/</loc>
       <lastmod>2018-03-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -1137,7 +1255,7 @@
     <url>
     
       <loc>/post/</loc>
-      <lastmod>2019-05-08T00:00:00+00:00</lastmod>
+      <lastmod>2019-07-25T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1237,7 +1355,7 @@
     <url>
     
       <loc>/categories/research-tips/</loc>
-      <lastmod>2019-05-08T00:00:00+00:00</lastmod>
+      <lastmod>2019-07-25T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1446,6 +1564,16 @@
     
     <url>
     
+      <loc>/tags/uk/</loc>
+      <lastmod>2019-07-25T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/uv/</loc>
       <lastmod>2017-08-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -1527,7 +1655,7 @@
     <url>
     
       <loc>/tags/workshop/</loc>
-      <lastmod>2018-11-03T00:00:00+00:00</lastmod>
+      <lastmod>2019-07-25T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

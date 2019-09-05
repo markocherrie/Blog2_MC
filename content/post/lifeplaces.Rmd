@@ -1,0 +1,117 @@
+---
+title: 'Development of a lifeplace questionnaire'
+author: ~
+date: '2019-07-20'
+draft: no
+slug: lifeplaces
+tags: ["Lifegrid","Lifecourse","Place", "Lifeplace", "Edinburgh"]
+categories: ["Data Collection"]
+---
+
+## Background
+There are two parts required to conduct a study on health and place across the lifecourse:
+
+1. Longitudinal information on the environment 
+2. Information on residential location 
+
+This blogpost focusses on the latter. This information might be collected prospectively via routine administrative records (e.g. GP location), which could be linked to health records. However, for a number of research questions we might want to understand non-routinely collected information (e.g. tobacco smoking history), which is available in a number of cohort studies. To collect the residential location retrospectively the most common method is to ask the participant to fill out a [lifegrid questionnnaire](https://www.lancaster.ac.uk/fass/projects/hvp/newsletters/holland3.htm). Typically the questionnaire is structured with years in the first column and then columns for external events (filled in beforehand by the researcher), personal events, residential location and occupation. The participant then fills out the grid, with their memory being prompted by the global and (their own) personal events. 
+
+
+![](img/lifeplaces/lifegridexample.png)
+
+## Current limitations
+
+Whilst this method is very useful for gaining valuable residential location information, there are limitations. First, given that that the grid is actually asking a large number of questions, it could generate response fatigue, which might lower the quality of information gained. Second, the written residential information needs to be digitised and then geocoded, which can be timely. Third, the residential environment is only one area where environmental exposure takes place. We know that work, school, commuting areas and those for recreation vary in their importance, dependent on the particular environment-health relationship studied. For example, the difference in exposure between poorer/richer children to tobacco retailing goes from 2.3 to a 6 fold after accounting for places outside of the residential environment - on the way to/from school [(Caryl, 2019)](https://cresh.org.uk/2019/07/10/children-in-deprived-areas-encounter-shops-selling-tobacco-six-times-more-frequently-than-those-in-well-off-areas/). 
+
+## Introduction 
+
+I think the first two limitations might be solved by taking the questionnaire online. That is, designing an interface so that inputted information is opaque until saturation is achieved. By collecting digital information it can be then geocoded on-the-fly with a [historical geocoder](github.com/LSCS-Projects/HAGGIS). The participant's computing ability would have to be considered, and possibly a trained researcher would need to assist with data input in some cases.  
+
+The final limitation is difficult in the context of not wanting to overburden the participant. However because it is so important to assessing their lifetime exposure, I think that information on places should be asked outside of a lifegrid questionnaire. That is, there could be two questionnaires - the traditional lifegrid (without residential locations) and a lifeplace questionnaire which asks for information on locations in the full extent of the participant's activity space - a 'lifespaces' questionnaire. 
+
+In order to develop a 'lifespaces' questionnaire we need to how many places to ask about and how big a buffer we would set around these places to get an acceptable amount of their movement accounted for. I'll now describe a mini-experiment that I did to try and answer these questions.      
+
+## Research Questions
+
+* How many places should we ask about in a lifespaces questionnaire?
+* What buffer size would we need to capture most of the locations?
+
+## Method
+
+I record location data on my iphone using ['Arc App - Location & Activity'](). This is a continuous measurement of my movement (providing I have my iphone with me, which is almost always). For this analysis I used data on 171,857 points from 169 days and 1223 hours of recording time. I deleted spurious locations (speed between points <160km/h; elevation <1345m). To understand whether there were clusters of points I generated a heatmap of all the points and annotated them with descriptive labels:
+
+
+![](img/lifeplaces/activityspace.png)
+
+I found that there were 10 places that were hotspots for my location. I labelled these:
+
+* Primary Home
+* Secondary Home (Parent's house)
+* Primary Work
+* Secondary Work (Working in a safe haven)
+* Primary Travel (Travelling to primary work)
+* Secondary Travel (Travelling to train station for work/recreation outside Edinburgh)
+* Primary Recreation (Gym)
+* Secondary Recreation (Shopping in town)
+* Tertiary Recreation (Hill walking)
+* Quaternary Recreation (Wedding location)
+
+Some of these locations were temporary i.e. Secondary Work, which was due to me working with sensitive data in a safe haven environment away from my usual office, and Quaternary recreation, which was the location of my wedding. 
+
+Next, we were interested in the percentage of movement points in buffers of varying sizes surrounding the places above. I calculated the percentage of points within a range of buffers (0-10,000 m radius) for three scenarios:
+
+* Home only (usual lifegrid questionnaire)
+
+![](img/lifeplaces/home.png)
+
+This shows that a very low percentage of movement points are accounted for by the home environment (even at a 2.5 km buffer we only account for 30% of the locations). The large increase in percentage of points at around 3 km is because the home buffer was encasing the work location.   
+
+* Home and work 
+
+![](img/lifeplaces/homework.png)
+
+The work buffer is set at half of the home buffer. So by using both the home and work/school we can account just 60% of the movement points if we set a 1.25 km home buffer and 625m work buffer. Even very low buffer sizes of 500m (home) and 250m (work) can capture around 40% of the movement points.
+
+
+* Lifeplaces
+
+![](img/lifeplaces/all.png)
+
+The lifespaces buffers use the same proportion as above for recreation but keeping the routes constant at 200 m. This shows that with a 50 m home buffer, 25 m for all others (except 200 m for route), we can account for 50% of movement locations. There is a stable logarithmic growth, flattening around 5 km home buffer at around 80% of locations. 
+
+## Conclusions
+
+This mini-experiment is limited in that it was only using my own data, but a stength is that it used a long time period (more than most GPS studies). My life stage is probably more stable in terms of movement that earlier (e.g. being a student) or later (e.g. in retirement). The conclusions are caveated with the need to replicated in a cohort of varying age, sex, ethnicity and socioeconmic status. However, it does show that instead of only collecting information on the residential location, we would greatly improve the percentage of exposure ascertained by also collecting information on the work location. If a way of collecting lots of locations without fatiguing the respondant could be developed then we could ascertain a lot of place-based exposore. We might consider eight locations, with the following questions:
+
+* Primary Home: What was your home address?
+* Secondary Home: Did you spend a lot of time in another home i.e. family/friends/partner? If so, where?
+
+* Primary Work: What was your work address?
+* Secondary Work: Did you spend any time in another work location? If so, where?
+
+* Primary Travel: Which route did you take to work?
+* Secondary Travel: Are there any routes you took frequently for work/recreation during this time?
+
+* Primary Recreation: Where did you spend most of your time for recreation? i.e. exercise, meeting friends, shopping
+* Secondary Recreation: Were there any special events that meant you spent more time in a particular location? If so, where?
+
+The buffer question really depends on the percentage of exposure the researcher requires for their study. The curves above can be used as a rule of thumb to determine which might be suitable. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

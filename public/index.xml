@@ -11,6 +11,184 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>UK-China Researcher Links Workshop - Urban analytics at the interface between environment, human health and behaviour</title>
+      <link>/post/china/</link>
+      <pubDate>Thu, 25 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/china/</guid>
+      <description>
+
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;div id=&#34;the-workshop&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;The workshop&lt;/h4&gt;
+&lt;p&gt;The Newton funded ‘research links’ workshop was designed to bring together 34 early career researchers in the fields of environmental science, ecology, computer science, urban planning, geography, public health, data sciences and modelling. It was held in Tongji University in Shanghai from the 2-4th of July 2019. The workshop aimed to:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Show-case the most recent research and knowledge advancement in the field&lt;/li&gt;
+&lt;li&gt;Facilitate state-of-the-art research and impact on policy and decision making (i.e. to improve environmental health in China and the UK)&lt;/li&gt;
+&lt;li&gt;Engage and support ECRs in collaborative work across disciplines, institutions, regions and countries&lt;/li&gt;
+&lt;li&gt;Create cross-disciplinary and cross-country links, and long-lasting collaborations to underpin future training or research collaboration.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;From the excellent presentations, discussions in between sessions and workshops, we developed ideas on a UK-China project on the spatial distribution of environmental conditions over time and how they contribute to health inequalities within cities, i.e. A lifecourse of place study.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;div id=&#34;environmental-injustice&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Environmental injustice&lt;/h4&gt;
+&lt;p&gt;A quick recap, environmental injustice is the disproportionate exposure to environmental harms by people in certain social groups (e.g. by ethnicity and income).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;environmental-inequity-in-the-uk-and-china&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Environmental Inequity in the UK and China&lt;/h4&gt;
+&lt;p&gt;Environmental injustice in the UK has been characterised for a range of &lt;a href=&#34;https://en.wikipedia.org/wiki/Pathogenesis&#34;&gt;pathogenic&lt;/a&gt; and &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/books/NBK435854/&#34;&gt;salutogenic&lt;/a&gt; factors. These include air pollution, climate - average temperature, industrial facilities (pathogenic), and greenspace and UV (salutogenic). A clear positive gradient exists between area-level ill health and multiple environmental deprivation, (Pearce et al., 2010), however this effect was most pronounced in the least income deprived areas showing that environmental injusice may not be a precusor to health inequalities like it is the US. This could change, with regards to air pollution, the least deprived areas have benefited most from recent environmental policy (Mitchell et al., 2015).&lt;/p&gt;
+&lt;p&gt;An environmental crisis arose in China in the decades following the 1978 economic reform. Air pollution, water contamination, soil problems, biodivesity loss and mega projects are some of the biggest environmental issues, and have been exacerbated by natural disasters and high sensitivity to climate change. These have worsened due to the pace of urbanisation; for example, Shenzhen went from 3,148 residents in 1950 to over 12 million in 2017. The rural-to-urban population and the poor bear the greatest burden of environmental degradation. There is evidence that environmental injustice is being put on the agenda in China (Freeman and Lu, 2008), but not to the extent where it is “popular within environmental policy or civil society” (Mah and Wang, 2017).&lt;/p&gt;
+&lt;p&gt;In the following sections, the evidence of select environmental injustice papers will be reviewed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;air-pollution-inequity-in-the-uk-and-china&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Air pollution inequity in the UK and China&lt;/h4&gt;
+&lt;p&gt;“In rural areas, the absolute burden of air pollution-related LYs lost was &lt;strong&gt;lowest&lt;/strong&gt; in the most deprived deciles (Milojevic et al., 2017).”&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;green-space-inequity-in-the-uk-and-china&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Green space inequity in the UK and China&lt;/h4&gt;
+&lt;p&gt;In Shenzhen, China, it was observed that people living in disadvantaged neighbourhoods had lower quantity of public greenspace, with worse access, but that quality was higher (You, 2016). This is at odds with the UK literature. In Sheffield, UK, it was observed that for people living in the most disadvantaged neighbourhoods the quantity of public greenspace was lower, but access was &lt;strong&gt;better&lt;/strong&gt; and quality was &lt;strong&gt;lower&lt;/strong&gt; (Mears, 2019).&lt;/p&gt;
+&lt;p&gt;This is a good example of how inequity of environment will play out differently in the two countries. However, perhaps the differences are partly due to the way that the environment has been measured? In the first example quality is measured by &lt;a href=&#34;https://r-spatialecology.github.io/landscapemetrics/articles/articles/general-background.html&#34;&gt;landscape metrics&lt;/a&gt;, in the second by a &lt;a href=&#34;https://en.wikipedia.org/wiki/Green_Flag_Award&#34;&gt;quality assessment criteria&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;climate-inequity-in-the-uk-and-china&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Climate inequity in the UK and China&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.nytimes.com/interactive/2016/10/25/world/asia/china-climate-change-resettlement.html&#34;&gt;Ecological migrants&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;method&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Method&lt;/h2&gt;
+&lt;div id=&#34;environmental-data-in-china&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Environmental data in China&lt;/h4&gt;
+&lt;p&gt;Parkview data collection - amenities&lt;/p&gt;
+&lt;p&gt;Artificial neural network on aerial photography from digimap (25cm)
+Landscape metrics for the different classes - &lt;a href=&#34;http://www.umass.edu/landeco/research/fragstats/documents/Conceptual%20Background/Landscape%20Metrics/Landscape%20Metrics.htm&#34; class=&#34;uri&#34;&gt;http://www.umass.edu/landeco/research/fragstats/documents/Conceptual%20Background/Landscape%20Metrics/Landscape%20Metrics.htm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;landscape metrics - exposure metrics (clustering of multiple )&lt;/p&gt;
+&lt;p&gt;trajectory analysis on dominant neighbourhood&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;secondary-health-data-in-china&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Secondary health data in China&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;implications&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Implications&lt;/h2&gt;
+&lt;p&gt;In the UK, environmental policies have not had the desired effect; in China, environmental policies have not been given priority. Environmental injustice plays out differently between the two countries. Some authors have promoted &lt;a href=&#34;https://www.cnu.org/resources/what-new-urbanism&#34;&gt;new urbanism&lt;/a&gt; as a way to reduce environmental inequity and health inequalities (Iravani and Rao, 2019).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/UKChina/newurbanism.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The encouraging part of applying a new urbanism framework is that it could work; environmental injustice is not inevitable (e.g. Edinburgh has a flat relationship between income and air pollution). However, we need to contextualise environmental injustice &lt;strong&gt;within&lt;/strong&gt; countries as well as between - to understand it at the local level (Bailey et al., 2018). Improvements to the urban environment through remediation or provision of amenities, should be undertaken with plans to prevent the possibility of displacment of residents through land revaluation, investments and gentrification (Anguelovski, 2015).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;collaboration&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Collaboration&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;p&gt;Mears, M., et al. (2019). “Understanding the socioeconomic equity of publicly accessible greenspace distribution: The example of Sheffield, UK.” Geoforum 103: 126-137&lt;/p&gt;
+&lt;p&gt;You, H. Y. (2016). “Characterizing the inequalities in urban public green space provision in Shenzhen, China.” Habitat International 56: 176-180.&lt;/p&gt;
+&lt;p&gt;Freeman, C. and X. Lu (2008). Assessing Chinese Government Response to the Challenge of Environment and Health. Library of Congress.&lt;/p&gt;
+&lt;p&gt;Kimpton, A. (2017). “A spatial analytic approach for classifying greenspace and comparing greenspace social equity.” Applied Geography 82: 129-142.&lt;/p&gt;
+&lt;p&gt;Anguelovski, I. (2015). “From Toxic Sites to Parks as (Green) LULUs? New Challenges of Inequity, Privilege, Gentrification, and Exclusion for Urban Environmental Justice.” Journal of Planning Literature 31(1): 23-36.&lt;/p&gt;
+&lt;p&gt;Milojevic, A., et al. (2017). “Socioeconomic and urban-rural differentials in exposure to air pollution and mortality burden in England.” Environmental Health 16(1): 104.&lt;/p&gt;
+&lt;p&gt;Pearce, J. R., et al. (2010). “Environmental justice and health: the implications of the socio-spatial distribution of multiple environmental deprivation for health inequalities in the United Kingdom.” Transactions of the Institute of British Geographers 35(4): 522-539.&lt;/p&gt;
+&lt;p&gt;Gong, P., et al. (2012). “Urbanisation and health in China.” Lancet 379(9818): 843-852.&lt;/p&gt;
+&lt;p&gt;Iravani, H. and V. Rao (2019). “The effects of New Urbanism on public health.” Journal of Urban Design: 1-18.&lt;/p&gt;
+&lt;p&gt;Mitchell, G., et al. (2015). “Who benefits from environmental policy? An environmental justice analysis of air quality change in Britain, 2001–2011.” Environmental Research Letters 10: 105009.&lt;/p&gt;
+&lt;p&gt;Bailey, N., et al. (2018). “Reconsidering the Relationship between Air Pollution and Deprivation.” International Journal of Environmental Research and Public Health 15(4).&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Development of a lifeplace questionnaire</title>
+      <link>/post/lifeplaces/</link>
+      <pubDate>Sat, 20 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/lifeplaces/</guid>
+      <description>
+
+
+&lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;There are two parts required to conduct a study on health and place across the lifecourse:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Longitudinal information on the environment&lt;/li&gt;
+&lt;li&gt;Information on residential location&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This blogpost focusses on the latter. This information might be collected prospectively via routine administrative records (e.g. GP location), which could be linked to health records. However, for a number of research questions we might want to understand non-routinely collected information (e.g. tobacco smoking history), which is available in a number of cohort studies. To collect the residential location retrospectively the most common method is to ask the participant to fill out a &lt;a href=&#34;https://www.lancaster.ac.uk/fass/projects/hvp/newsletters/holland3.htm&#34;&gt;lifegrid questionnnaire&lt;/a&gt;. Typically the questionnaire is structured with years in the first column and then columns for external events (filled in beforehand by the researcher), personal events, residential location and occupation. The participant then fills out the grid, with their memory being prompted by the global and (their own) personal events.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/lifeplaces/lifegridexample.png&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;current-limitations&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Current limitations&lt;/h2&gt;
+&lt;p&gt;Whilst this method is very useful for gaining valuable residential location information, there are limitations. First, given that that the grid is actually asking a large number of questions, it could generate response fatigue, which might lower the quality of information gained. Second, the written residential information needs to be digitised and then geocoded, which can be timely. Third, the residential environment is only one area where environmental exposure takes place. We know that work, school, commuting areas and those for recreation vary in their importance, dependent on the particular environment-health relationship studied. For example, the difference in exposure between poorer/richer children to tobacco retailing goes from 2.3 to a 6 fold after accounting for places outside of the residential environment - on the way to/from school &lt;a href=&#34;https://cresh.org.uk/2019/07/10/children-in-deprived-areas-encounter-shops-selling-tobacco-six-times-more-frequently-than-those-in-well-off-areas/&#34;&gt;(Caryl, 2019)&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;I think the first two limitations might be solved by taking the questionnaire online. That is, designing an interface so that inputted information is opaque until saturation is achieved. By collecting digital information it can be then geocoded on-the-fly with a &lt;a href=&#34;github.com/LSCS-Projects/HAGGIS&#34;&gt;historical geocoder&lt;/a&gt;. The participant’s computing ability would have to be considered, and possibly a trained researcher would need to assist with data input in some cases.&lt;/p&gt;
+&lt;p&gt;The final limitation is difficult in the context of not wanting to overburden the participant. However because it is so important to assessing their lifetime exposure, I think that information on places should be asked outside of a lifegrid questionnaire. That is, there could be two questionnaires - the traditional lifegrid (without residential locations) and a lifeplace questionnaire which asks for information on locations in the full extent of the participant’s activity space - a ‘lifespaces’ questionnaire.&lt;/p&gt;
+&lt;p&gt;In order to develop a ‘lifespaces’ questionnaire we need to how many places to ask about and how big a buffer we would set around these places to get an acceptable amount of their movement accounted for. I’ll now describe a mini-experiment that I did to try and answer these questions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;research-questions&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Research Questions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;How many places should we ask about in a lifespaces questionnaire?&lt;/li&gt;
+&lt;li&gt;What buffer size would we need to capture most of the locations?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;method&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Method&lt;/h2&gt;
+&lt;p&gt;I record location data on my iphone using &lt;a href=&#34;&#34;&gt;‘Arc App - Location &amp;amp; Activity’&lt;/a&gt;. This is a continuous measurement of my movement (providing I have my iphone with me, which is almost always). For this analysis I used data on 171,857 points from 169 days and 1223 hours of recording time. I deleted spurious locations (speed between points &amp;lt;160km/h; elevation &amp;lt;1345m). To understand whether there were clusters of points I generated a heatmap of all the points and annotated them with descriptive labels:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/lifeplaces/activityspace.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;I found that there were 10 places that were hotspots for my location. I labelled these:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Primary Home&lt;/li&gt;
+&lt;li&gt;Secondary Home (Parent’s house)&lt;/li&gt;
+&lt;li&gt;Primary Work&lt;/li&gt;
+&lt;li&gt;Secondary Work (Working in a safe haven)&lt;/li&gt;
+&lt;li&gt;Primary Travel (Travelling to primary work)&lt;/li&gt;
+&lt;li&gt;Secondary Travel (Travelling to train station for work/recreation outside Edinburgh)&lt;/li&gt;
+&lt;li&gt;Primary Recreation (Gym)&lt;/li&gt;
+&lt;li&gt;Secondary Recreation (Shopping in town)&lt;/li&gt;
+&lt;li&gt;Tertiary Recreation (Hill walking)&lt;/li&gt;
+&lt;li&gt;Quaternary Recreation (Wedding location)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Some of these locations were temporary i.e. Secondary Work, which was due to me working with sensitive data in a safe haven environment away from my usual office, and Quaternary recreation, which was the location of my wedding.&lt;/p&gt;
+&lt;p&gt;Next, we were interested in the percentage of movement points in buffers of varying sizes surrounding the places above. I calculated the percentage of points within a range of buffers (0-10,000 m radius) for three scenarios:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Home only (usual lifegrid questionnaire)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;img/lifeplaces/home.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;This shows that a very low percentage of movement points are accounted for by the home environment (even at a 2.5 km buffer we only account for 30% of the locations). The large increase in percentage of points at around 3 km is because the home buffer was encasing the work location.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Home and work&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;img/lifeplaces/homework.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The work buffer is set at half of the home buffer. So by using both the home and work/school we can account just 60% of the movement points if we set a 1.25 km home buffer and 625m work buffer. Even very low buffer sizes of 500m (home) and 250m (work) can capture around 40% of the movement points.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lifeplaces&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;img/lifeplaces/all.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The lifespaces buffers use the same proportion as above for recreation but keeping the routes constant at 200 m. This shows that with a 50 m home buffer, 25 m for all others (except 200 m for route), we can account for 50% of movement locations. There is a stable logarithmic growth, flattening around 5 km home buffer at around 80% of locations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusions&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Conclusions&lt;/h2&gt;
+&lt;p&gt;This mini-experiment is limited in that it was only using my own data, but a stength is that it used a long time period (more than most GPS studies). My life stage is probably more stable in terms of movement that earlier (e.g. being a student) or later (e.g. in retirement). The conclusions are caveated with the need to replicated in a cohort of varying age, sex, ethnicity and socioeconmic status. However, it does show that instead of only collecting information on the residential location, we would greatly improve the percentage of exposure ascertained by also collecting information on the work location. If a way of collecting lots of locations without fatiguing the respondant could be developed then we could ascertain a lot of place-based exposore. We might consider eight locations, with the following questions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Primary Home: What was your home address?&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Secondary Home: Did you spend a lot of time in another home i.e. family/friends/partner? If so, where?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;Primary Work: What was your work address?&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Secondary Work: Did you spend any time in another work location? If so, where?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;Primary Travel: Which route did you take to work?&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Secondary Travel: Are there any routes you took frequently for work/recreation during this time?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;Primary Recreation: Where did you spend most of your time for recreation? i.e. exercise, meeting friends, shopping&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Secondary Recreation: Were there any special events that meant you spent more time in a particular location? If so, where?&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The buffer question really depends on the percentage of exposure the researcher requires for their study. The curves above can be used as a rule of thumb to determine which might be suitable.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Using Social Media to Engage Research End Users</title>
       <link>/post/socialmedia/</link>
       <pubDate>Wed, 08 May 2019 00:00:00 +0000</pubDate>
@@ -621,24 +799,6 @@ plottraj(&amp;quot;x&amp;quot;, 4, &amp;quot;linear&amp;quot;, &amp;quot;plot&am
 &lt;p&gt;n.b We do not include random effects in the above models. These are not included in the the SAS and Stata procedures for GBTM. The implication is that we do not allow variation within or between classes. The practical implication is that this will result in a greater number of latent classes being selected (Further discussion in &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3085403/&#34;&gt;Saunders&lt;/a&gt;, 2011).&lt;/p&gt;
 &lt;/div&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Pathogen seasonality and links with weather in England and Wales: a big data time series analysis</title>
-      <link>/publication/pathogen/</link>
-      <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/pathogen/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Changing labour market conditions during the ‘great recession’ and mental health in Scotland 2007–2011: an example using the Scottish Longitudinal Study and data for local areas in Scotland</title>
-      <link>/publication/sdai/</link>
-      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/sdai/</guid>
-      <description></description>
     </item>
     
   </channel>

@@ -1,0 +1,107 @@
+---
+title: 'UK-China Researcher Links Workshop - Urban analytics at the interface between environment, human health and behaviour'
+author: "Mark Cherrie"
+date: '2019-07-25'
+draft: yes
+slug: China
+tags: ["China", "UK","Collaboration","Workshop", "Interdisciplinary", "ECR", "Newton Fund"]
+categories: ["Research Tips"]
+---
+
+## Introduction
+
+#### The workshop 
+
+The Newton funded 'research links' workshop was designed to bring together 34 early career researchers in the fields of environmental science, ecology, computer science, urban planning, geography, public health, data sciences and modelling. It was held in Tongji University in Shanghai from the 2-4th of July 2019. The workshop aimed to:
+
+1. Show-case the most recent research and knowledge advancement in the field
+2. Facilitate state-of-the-art research and impact on policy and decision making (i.e. to improve environmental health in China and the UK)
+3. Engage and support ECRs in collaborative work across disciplines, institutions, regions and countries
+4. Create cross-disciplinary and cross-country links, and long-lasting collaborations to underpin future training or research collaboration.
+
+From the excellent presentations, discussions in between sessions and workshops, we developed ideas on a UK-China project on the spatial distribution of environmental conditions over time and how they contribute to health inequalities within cities, i.e. A lifecourse of place study. 
+
+## Background 
+
+#### Environmental injustice
+A quick recap, environmental injustice is the disproportionate exposure to environmental harms by people in certain social groups (e.g. by ethnicity and income). 
+
+#### Environmental Inequity in the UK and China
+
+Environmental injustice in the UK has been characterised for a range of [pathogenic](https://en.wikipedia.org/wiki/Pathogenesis) and [salutogenic](https://www.ncbi.nlm.nih.gov/books/NBK435854/) factors. These include air pollution, climate - average temperature, industrial facilities (pathogenic), and greenspace and UV (salutogenic). A clear positive gradient exists between area-level ill health and multiple environmental deprivation, (Pearce et al., 2010), however this effect was most pronounced in the least income deprived areas showing that environmental injusice may not be a precusor to health inequalities like it is the US. This could change, with regards to air pollution, the least deprived areas have benefited most from recent environmental policy (Mitchell et al., 2015). 
+
+An environmental crisis arose in China in the decades following the 1978 economic reform. Air pollution, water contamination, soil problems, biodivesity loss and mega projects are some of the biggest environmental issues, and have been exacerbated by natural disasters and high sensitivity to climate change. These have worsened due to the pace of urbanisation; for example, Shenzhen went from 3,148 residents in 1950 to over 12 million in 2017. The rural-to-urban population and the poor bear the greatest burden of environmental degradation. There is evidence that environmental injustice is being put on the agenda in China (Freeman and Lu, 2008), but not to the extent where it is "popular within environmental policy or civil society" (Mah and Wang, 2017).  
+
+
+In the following sections, the evidence of select environmental injustice papers will be reviewed. 
+
+#### Air pollution inequity in the UK and China
+
+"In rural areas, the absolute burden of air pollution-related LYs lost was **lowest** in the most deprived deciles (Milojevic et al., 2017)."
+
+
+
+
+#### Green space inequity in the UK and China
+
+In Shenzhen, China, it was observed that people living in disadvantaged neighbourhoods had lower quantity of public greenspace, with worse access, but that quality was higher (You, 2016). This is at odds with the UK literature. In Sheffield, UK, it was observed that for people living in the most disadvantaged neighbourhoods the quantity of public greenspace was lower, but access was **better** and quality was **lower** (Mears, 2019). 
+
+This is a good example of how inequity of environment will play out differently in the two countries. However, perhaps the differences are partly due to the way that the environment has been measured? In the first example quality is measured by [landscape metrics](https://r-spatialecology.github.io/landscapemetrics/articles/articles/general-background.html), in the second by a [quality assessment criteria](https://en.wikipedia.org/wiki/Green_Flag_Award). 
+
+#### Climate inequity in the UK and China
+
+[Ecological migrants](https://www.nytimes.com/interactive/2016/10/25/world/asia/china-climate-change-resettlement.html))
+
+## Method 
+
+#### Environmental data in China
+
+Parkview data collection - amenities
+
+Artificial neural network on aerial photography from digimap (25cm)
+Landscape metrics for the different classes - http://www.umass.edu/landeco/research/fragstats/documents/Conceptual%20Background/Landscape%20Metrics/Landscape%20Metrics.htm
+
+landscape metrics - exposure metrics (clustering of multiple )
+
+trajectory analysis on dominant neighbourhood
+
+
+#### Secondary health data in China
+
+
+## Implications  
+
+In the UK, environmental policies have not had the desired effect; in China, environmental policies have not been given priority. Environmental injustice plays out differently between the two countries. Some authors have promoted [new urbanism](https://www.cnu.org/resources/what-new-urbanism) as a way to reduce environmental inequity and health inequalities (Iravani and Rao, 2019).
+
+![](img/UKChina/newurbanism.png)
+
+The encouraging part of applying a new urbanism framework is that it could work; environmental injustice is not inevitable (e.g. Edinburgh has a flat relationship between income and air pollution). However, we need to contextualise environmental injustice **within** countries as well as between - to understand it at the local level (Bailey et al., 2018). Improvements to the urban environment through remediation or provision of amenities, should be undertaken with plans to prevent the possibility of displacment of residents through land revaluation, investments and gentrification (Anguelovski, 2015).  
+
+## Collaboration
+
+
+
+## References
+
+Mears, M., et al. (2019). "Understanding the socioeconomic equity of publicly accessible greenspace distribution: The example of Sheffield, UK." Geoforum 103: 126-137
+
+You, H. Y. (2016). "Characterizing the inequalities in urban public green space provision in Shenzhen, China." Habitat International 56: 176-180.
+
+Freeman, C. and X. Lu (2008). Assessing Chinese Government Response to the Challenge of Environment and Health. Library of Congress.
+
+Kimpton, A. (2017). "A spatial analytic approach for classifying greenspace and comparing greenspace social equity." Applied Geography 82: 129-142.
+
+Anguelovski, I. (2015). "From Toxic Sites to Parks as (Green) LULUs? New Challenges of Inequity, Privilege, Gentrification, and Exclusion for Urban Environmental Justice." Journal of Planning Literature 31(1): 23-36.
+
+Milojevic, A., et al. (2017). "Socioeconomic and urban-rural differentials in exposure to air pollution and mortality burden in England." Environmental Health 16(1): 104.
+	
+Pearce, J. R., et al. (2010). "Environmental justice and health: the implications of the socio-spatial distribution of multiple environmental deprivation for health inequalities in the United Kingdom." Transactions of the Institute of British Geographers 35(4): 522-539.
+
+Gong, P., et al. (2012). "Urbanisation and health in China." Lancet 379(9818): 843-852.
+
+Iravani, H. and V. Rao (2019). "The effects of New Urbanism on public health." Journal of Urban Design: 1-18.
+
+Mitchell, G., et al. (2015). "Who benefits from environmental policy? An environmental justice analysis of air quality change in Britain, 2001–2011." Environmental Research Letters 10: 105009.
+	
+Bailey, N., et al. (2018). "Reconsidering the Relationship between Air Pollution and Deprivation." International Journal of Environmental Research and Public Health 15(4).
+
