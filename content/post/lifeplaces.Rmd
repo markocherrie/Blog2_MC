@@ -21,19 +21,19 @@ This blog post focusses on the latter. This information might be collected prosp
 
 ## Current limitations
 
-Whilst this method is very useful for gaining valuable residential location information, there are limitations. First, given that that the grid is actually asking a large number of questions, it could generate response fatigue, which might lower the quality of information gained. Second, the written residential information needs to be digitised and then geocoded, which can be timely. Third, the residential environment is only one area where environmental exposure takes place. We know that work, school, commuting areas and those for recreation vary in their importance, dependent on the particular environment-health relationship studied. For example, the difference in exposure between poorer/richer children to tobacco retailing goes from 2.3 to a 6 fold after accounting for places outside of the residential environment - on the way to/from school [(Caryl, 2019)](https://cresh.org.uk/2019/07/10/children-in-deprived-areas-encounter-shops-selling-tobacco-six-times-more-frequently-than-those-in-well-off-areas/). 
+Whilst this method is very useful for gaining valuable residential location information, there are limitations. First, given that that the grid is actually asking a large number of questions, it could generate response fatigue, which might lower the quality of information gained. Second, the written residential information needs to be digitised and then geocoded, which can be time-consuming. Third, the residential environment is only one area where environmental exposure takes place. We know that work, school, commuting areas and those for recreation vary in their importance, dependent on the particular environment-health relationship studied. For example, the difference in exposure between poorer/richer children to tobacco retailing goes from 2.3 to a 6 fold after accounting for places outside of the residential environment - on the way to/from school [(Caryl, 2019)](https://cresh.org.uk/2019/07/10/children-in-deprived-areas-encounter-shops-selling-tobacco-six-times-more-frequently-than-those-in-well-off-areas/). 
 
 ## Introduction 
 
 I think the first two limitations might be solved by taking the questionnaire online. That is, designing an interface so that inputted information is opaque until saturation is achieved. By collecting digital information it can be then geocoded on-the-fly with a [historical geocoder](github.com/LSCS-Projects/HAGGIS). The participant's computing ability would have to be considered, and possibly a trained researcher would need to assist with data input in some cases.  
 
-The final limitation is difficult in the context of not wanting to overburden the participant. However because it is so important to assessing their lifetime exposure, I think that information on places should be asked outside of a lifegrid questionnaire. That is, there could be two questionnaires - the traditional lifegrid (without residential locations) and a lifeplace questionnaire which asks for information on locations in the full extent of the participant's activity space - a 'lifespaces' questionnaire. 
+The final limitation is difficult in the context of not wanting to overburden the participant. However because it is so important to assessing their lifetime exposure, I think that information on places should be asked outside of a lifegrid questionnaire. That is, there could be two questionnaires - the traditional lifegrid (without residential locations) and a 'lifeplace' questionnaire which asks for information on locations in the full extent of the participant's activity space.
 
-In order to develop a 'lifespaces' questionnaire we need to how many places to ask about and how big a buffer we would set around these places to get an acceptable amount of their movement accounted for. I'll now describe a mini-experiment that I did to try and answer these questions.      
+In order to develop a 'lifeplace' questionnaire we need to how many places to ask about and how big a buffer we would set around these places to get an acceptable amount of their movement accounted for. I'll now describe a mini-experiment that I did to try and answer these questions.      
 
 ## Research Questions
 
-* How many places should we ask about in a lifespaces questionnaire?
+* How many places should we ask about in a lifeplace questionnaire?
 * What buffer size would we need to capture most of the locations?
 
 ## Method
@@ -58,7 +58,7 @@ I found that there were 10 places that were hotspots for my location. I labelled
 
 Some of these locations were temporary i.e. Secondary Work, which was due to me working with sensitive data in a safe haven environment away from my usual office, and Quaternary recreation, which was the location of my wedding. 
 
-Next, we were interested in the percentage of movement points in buffers of varying sizes surrounding the places above. I calculated the percentage of points within a range of buffers (0-10,000 m radius) for three scenarios:
+Next, we were interested in the percentage of my location points in buffers of varying sizes surrounding the places above. I calculated the percentage of points within a range of buffers (0-10,000 m radius) for three scenarios:
 
 * Home only (usual lifegrid questionnaire)
 
@@ -70,18 +70,18 @@ This shows that a very low percentage of movement points are accounted for by th
 
 ![](img/lifeplaces/homework.png)
 
-The work buffer is set at half of the home buffer. So by using both the home and work/school we can account just 60% of the movement points if we set a 1.25 km home buffer and 625m work buffer. Even very low buffer sizes of 500m (home) and 250m (work) can capture around 40% of the movement points.
+The work buffer is set at half of the home buffer. So by using both the home and work/school we can account just 60% of the movement points if we set a 1.25 km home buffer and 625m work buffer. Even very low buffer sizes of 500m (home) and 250m (work) can capture around 40% of the location points.
 
 
 * Lifeplaces
 
 ![](img/lifeplaces/all.png)
 
-The lifespaces buffers use the same proportion as above for recreation but keeping the routes constant at 200 m. This shows that with a 50 m home buffer, 25 m for all others (except 200 m for route), we can account for 50% of movement locations. There is a stable logarithmic growth, flattening around 5 km home buffer at around 80% of locations. 
+The lifeplace buffers use the same proportion as above for recreation but keeping the routes constant at 200 m. This shows that with a 50 m home buffer, 25 m for all others (except 200 m for route), we can account for 50% of location points. There is a stable logarithmic growth, flattening around 5 km home buffer at around 80% of locations. 
 
 ## Conclusions
 
-This mini-experiment is limited in that it was only using my own data, but a stength is that it used a long time period (more than most GPS studies). My life stage is probably more stable in terms of movement that earlier (e.g. being a student) or later (e.g. in retirement). The conclusions are caveated with the need to replicated in a cohort of varying age, sex, ethnicity and socioeconmic status. However, it does show that instead of only collecting information on the residential location, we would greatly improve the percentage of exposure ascertained by also collecting information on the work location. If a way of collecting lots of locations without fatiguing the respondant could be developed then we could ascertain a lot of place-based exposore. We might consider eight locations, with the following questions:
+This mini-experiment is limited in that it was only using my own data, but a stength is that it used a long time period (more than most GPS studies). My life stage is probably more stable in terms of movement than earlier (e.g. being a student) or later (e.g. early retirement) time periods. The conclusions are caveated by the need for replication in a cohort of varying age, sex, ethnicity and socioeconomic status. However, it does show that instead of only collecting information on the residential location, we would greatly improve the percentage of exposure ascertained by also collecting information on the work location. If a way of collecting several locations, without fatiguing the respondent, could be developed then we might be able to ascertain the majority (70-80%) of place-based exposure. We might consider eight locations, with the following questions:
 
 * Primary Home: What was your home address?
 * Secondary Home: Did you spend a lot of time in another home i.e. family/friends/partner? If so, where?
