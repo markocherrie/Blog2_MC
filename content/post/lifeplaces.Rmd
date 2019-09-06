@@ -38,7 +38,11 @@ In order to develop a 'lifeplace' questionnaire we need to know how many places 
 
 ## Method
 
-I record location data on my iphone using ['Arc App - Location & Activity'](). This is a continuous measurement of my movement (providing I have my iphone with me, which is almost always). For this analysis I used data on 171,857 points from 169 days and 1223 hours of recording time. I deleted spurious locations (speed between points <160km/h; elevation <1345m). To understand whether there were clusters of points I generated a heatmap of all the points and annotated them with descriptive labels:
+I record location data on my iphone using ['Arc App - Location & Activity'](). This is a continuous measurement of my movement (providing I have my iphone with me, which is almost always). For this analysis I used data on 171,857 points from 169 days and 1223 hours of recording time. I deleted spurious locations (speed between points <160km/h; elevation <1345m). 
+
+## Results
+
+To understand whether there were clusters of points I generated a heatmap of all the points and annotated them with descriptive labels:
 
 
 ![](img/lifeplaces/activityspace.png)

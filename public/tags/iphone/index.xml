@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Natural Environment on Mark Cherrie</title>
-    <link>/tags/natural-environment/</link>
-    <description>Recent content in Natural Environment on Mark Cherrie</description>
+    <title>Iphone on Mark Cherrie</title>
+    <link>/tags/iphone/</link>
+    <description>Recent content in Iphone on Mark Cherrie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
     <lastBuildDate>Sun, 02 Jun 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/natural-environment/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/iphone/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       
       <guid>/post/everydaygreen/</guid>
       <description>BackgroundSpending time in the natural environment (green and blue spaces) is linked with better health outcomes throughout life (Douglas). From prenatal/pregnancy, childhood, adolescence to adulthood and later adulthood, we benefit from more social interaction, less stress, more physical activity, more diverse microbial exposure from being in these places. One of the key questions facing ‘lifecourse of place’ studies is trying to determine when these places matter most for a variety of health outcomes or whether it is the accumulation of time spent in these areas that is important.</description>
-    </item>
-    
-    <item>
-      <title>How to quickly visualise massive spatio-temporal data</title>
-      <link>/post/uber-kepler/</link>
-      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/uber-kepler/</guid>
-      <description>BackgroundAre you collecting lots of geospatial data and need a way to quickly visualise what you’ve got? Read on! I had this problem; I was collecting a lot of information on my daily movements from Arc App: Location and Activity (more on the use of Arc for research later). Additionally, I wanted to quickly see what features of the urban environment (e.g. greenspaces) I was being ‘exposed’ to. The solution was Uber’s open source geospatial analysis tool: Kepler.</description>
     </item>
     
   </channel>

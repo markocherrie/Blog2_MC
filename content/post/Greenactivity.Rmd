@@ -1,15 +1,16 @@
 ---
-title: 'How can we measure everyday exposure to greenspaces?'
+title: 'How to process information gathered on your mobile to get information on everyday exposure to greenspace?'
 author: ~
-date: '2019-03-10'
+date: '2019-06-02'
 draft: yes
 slug: everydaygreen
-tags: ["Green space","Built environment", "Arc", "GPS"]
+tags: ["GPS", "Iphone","Arc App","Green space","Natural environment"]
 categories: ["Data Analysis"]
 ---
 
-How can we estimate exposure to the natural environment day-to-day?
+## Background
 
+Spending time in the natural environment (green and blue spaces) is linked with better health outcomes throughout life (Douglas). From prenatal/pregnancy, childhood, adolescence to adulthood and later adulthood, we benefit from more social interaction, less stress, more physical activity, more diverse microbial exposure from being in these places. One of the key questions facing 'lifecourse of place' studies is trying to determine when these places matter most for a variety of health outcomes or whether it is the accumulation of time spent in these areas that is important. At the other end of the spectrum we are faced with the same question, when during the day or month does interaction with the natural environment matter most. There is starting to be studies in this area, for example trying to understand the difference between passive and active time spent in greenspaces (ref), and trying to understand the dose response for nature benefits (ref). 
 
 
   

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
-    <lastBuildDate>Sat, 22 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/arc-app/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to process information gathered on your mobile to get information on everyday exposure to greenspace?</title>
+      <link>/post/everydaygreen/</link>
+      <pubDate>Sun, 02 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/everydaygreen/</guid>
+      <description>BackgroundSpending time in the natural environment (green and blue spaces) is linked with better health outcomes throughout life (Douglas). From prenatal/pregnancy, childhood, adolescence to adulthood and later adulthood, we benefit from more social interaction, less stress, more physical activity, more diverse microbial exposure from being in these places. One of the key questions facing ‘lifecourse of place’ studies is trying to determine when these places matter most for a variety of health outcomes or whether it is the accumulation of time spent in these areas that is important.</description>
+    </item>
     
     <item>
       <title>How to quickly visualise massive spatio-temporal data</title>

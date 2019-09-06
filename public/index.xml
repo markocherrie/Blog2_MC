@@ -137,7 +137,11 @@ Landscape metrics for the different classes - &lt;a href=&#34;http://www.umass.e
 &lt;/div&gt;
 &lt;div id=&#34;method&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Method&lt;/h2&gt;
-&lt;p&gt;I record location data on my iphone using &lt;a href=&#34;&#34;&gt;‘Arc App - Location &amp;amp; Activity’&lt;/a&gt;. This is a continuous measurement of my movement (providing I have my iphone with me, which is almost always). For this analysis I used data on 171,857 points from 169 days and 1223 hours of recording time. I deleted spurious locations (speed between points &amp;lt;160km/h; elevation &amp;lt;1345m). To understand whether there were clusters of points I generated a heatmap of all the points and annotated them with descriptive labels:&lt;/p&gt;
+&lt;p&gt;I record location data on my iphone using &lt;a href=&#34;&#34;&gt;‘Arc App - Location &amp;amp; Activity’&lt;/a&gt;. This is a continuous measurement of my movement (providing I have my iphone with me, which is almost always). For this analysis I used data on 171,857 points from 169 days and 1223 hours of recording time. I deleted spurious locations (speed between points &amp;lt;160km/h; elevation &amp;lt;1345m).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;results&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;p&gt;To understand whether there were clusters of points I generated a heatmap of all the points and annotated them with descriptive labels:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;img/lifeplaces/activityspace.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;I found that there were 10 places that were hotspots for my location. I labelled these:&lt;/p&gt;
 &lt;ul&gt;
@@ -184,6 +188,22 @@ Landscape metrics for the different classes - &lt;a href=&#34;http://www.umass.e
 &lt;li&gt;&lt;p&gt;Secondary Recreation: Were there any special events that meant you spent more time in a particular location? If so, where?&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The buffer question really depends on the percentage of exposure the researcher requires for their study. The curves above can be used as a rule of thumb to determine which might be suitable.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to process information gathered on your mobile to get information on everyday exposure to greenspace?</title>
+      <link>/post/everydaygreen/</link>
+      <pubDate>Sun, 02 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/everydaygreen/</guid>
+      <description>
+
+
+&lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;Spending time in the natural environment (green and blue spaces) is linked with better health outcomes throughout life (Douglas). From prenatal/pregnancy, childhood, adolescence to adulthood and later adulthood, we benefit from more social interaction, less stress, more physical activity, more diverse microbial exposure from being in these places. One of the key questions facing ‘lifecourse of place’ studies is trying to determine when these places matter most for a variety of health outcomes or whether it is the accumulation of time spent in these areas that is important. At the other end of the spectrum we are faced with the same question, when during the day or month does interaction with the natural environment matter most. There is starting to be studies in this area, for example trying to understand the difference between passive and active time spent in greenspaces (ref), and trying to understand the dose response for nature benefits (ref).&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -287,19 +307,6 @@ Landscape metrics for the different classes - &lt;a href=&#34;http://www.umass.e
       
       <guid>/talk/openspace2019/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>How can we measure everyday exposure to greenspaces?</title>
-      <link>/post/everydaygreen/</link>
-      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/everydaygreen/</guid>
-      <description>
-
-
-&lt;p&gt;How can we estimate exposure to the natural environment day-to-day?&lt;/p&gt;
-</description>
     </item>
     
     <item>
