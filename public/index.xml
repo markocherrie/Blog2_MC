@@ -125,14 +125,14 @@ Landscape metrics for the different classes - &lt;a href=&#34;http://www.umass.e
 &lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;I think the first two limitations might be solved by taking the questionnaire online. That is, designing an interface so that inputted information is opaque until saturation is achieved. By collecting digital information it can be then geocoded on-the-fly with a &lt;a href=&#34;github.com/LSCS-Projects/HAGGIS&#34;&gt;historical geocoder&lt;/a&gt;. The participant’s computing ability would have to be considered, and possibly a trained researcher would need to assist with data input in some cases.&lt;/p&gt;
-&lt;p&gt;The final limitation is difficult in the context of not wanting to overburden the participant. However because it is so important to assessing their lifetime exposure, I think that information on places should be asked outside of a lifegrid questionnaire. That is, there could be two questionnaires - the traditional lifegrid (without residential locations) and a ‘lifeplace’ questionnaire which asks for information on locations in the full extent of the participant’s activity space.&lt;/p&gt;
-&lt;p&gt;In order to develop a ‘lifeplace’ questionnaire we need to how many places to ask about and how big a buffer we would set around these places to get an acceptable amount of their movement accounted for. I’ll now describe a mini-experiment that I did to try and answer these questions.&lt;/p&gt;
+&lt;p&gt;The final limitation is difficult in the context of not wanting to overburden the participant. However as it is so important for assessing their lifetime exposure, I think that information on places should be asked outside of a lifegrid questionnaire. That is, there could be two questionnaires - the traditional lifegrid (without residential locations) and a ‘lifeplace’ questionnaire which asks for information on locations in the full extent of the participant’s activity space.&lt;/p&gt;
+&lt;p&gt;In order to develop a ‘lifeplace’ questionnaire we need to know how many places to ask about and how big a buffer we would set around these places to get an acceptable amount of their movement accounted for. I’ll now describe a mini-experiment that I did to try and answer these questions.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;research-questions&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Research Questions&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;How many places should we ask about in a lifeplace questionnaire?&lt;/li&gt;
-&lt;li&gt;What buffer size would we need to capture most of the locations?&lt;/li&gt;
+&lt;li&gt;What buffer size around these places would we need to capture most of the locations?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div id=&#34;method&#34; class=&#34;section level2&#34;&gt;
@@ -163,7 +163,7 @@ Landscape metrics for the different classes - &lt;a href=&#34;http://www.umass.e
 &lt;li&gt;Home and work&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;img/lifeplaces/homework.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;The work buffer is set at half of the home buffer. So by using both the home and work/school we can account just 60% of the movement points if we set a 1.25 km home buffer and 625m work buffer. Even very low buffer sizes of 500m (home) and 250m (work) can capture around 40% of the location points.&lt;/p&gt;
+&lt;p&gt;The work buffer is set at half of the home buffer. So by using both the home and work/school we can account just 60% of the movement points if we set a 1.25 km home buffer and 625m work buffer. Even low buffer sizes of 500m (home) and 250m (work) can capture around 40% of the location points.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Lifeplaces&lt;/li&gt;
 &lt;/ul&gt;
