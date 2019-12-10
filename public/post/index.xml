@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
-    <lastBuildDate>Thu, 25 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Monitoring changes in the built environment: tobacco retailers in Scotland</title>
+      <link>/post/tobaccoretailerchange/</link>
+      <pubDate>Thu, 26 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/tobaccoretailerchange/</guid>
+      <description>Introduction The built environment is constantly changing. Whether it be short-term changes - e.g. roadworks, or long-term, e.g. a new road. These changes can impact exposures (air pollutants from road traffic), behaviours (decision to drive to work) or health (risk of being in a traffic accident). It’s therefore important to monitor the changes to the built environment so that interventions can be developed to reduce risk to health either directly or indirectly (exposure/behaviour).</description>
+    </item>
     
     <item>
       <title>UK-China Researcher Links Workshop - Urban analytics at the interface between environment, human health and behaviour</title>
@@ -18,8 +27,8 @@
       <pubDate>Thu, 25 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/china/</guid>
-      <description>IntroductionThe workshopThe Newton funded ‘research links’ workshop was designed to bring together 34 early career researchers in the fields of environmental science, ecology, computer science, urban planning, geography, public health, data sciences and modelling. It was held in Tongji University in Shanghai from the 2-4th of July 2019. The workshop aimed to:
-Show-case the most recent research and knowledge advancement in the fieldFacilitate state-of-the-art research and impact on policy and decision making (i.</description>
+      <description>Introduction The workshop The Newton funded ‘research links’ workshop was designed to bring together 34 early career researchers in the fields of environmental science, ecology, computer science, urban planning, geography, public health, data sciences and modelling. It was held in Tongji University in Shanghai from the 2-4th of July 2019. The workshop aimed to:
+Show-case the most recent research and knowledge advancement in the field Facilitate state-of-the-art research and impact on policy and decision making (i.</description>
     </item>
     
     <item>

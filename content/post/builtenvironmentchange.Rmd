@@ -1,0 +1,129 @@
+---
+title: "Monitoring changes in the built environment: tobacco retailers in Scotland"
+author: ~
+date: '2019-09-26'
+slug: tobaccoretailerchange
+categories: ["Data Visualisation"]
+tags: ["R", "Built environment", "Place Monitoring", "Tobacco", "Retail"]
+draft: yes
+---
+
+## Introduction
+The built environment is constantly changing. Whether it be short-term changes - e.g. roadworks, or long-term, e.g. a new road. These changes can impact exposures (air pollutants from road traffic), behaviours (decision to drive to work) or health (risk of being in a traffic accident). It's therefore important to monitor the changes to the built environment so that interventions can be developed to reduce risk to health either directly or indirectly (exposure/behaviour). Monitoring the built environment can be done through remote sensing, surveying, crowdsourcing or administrative data collection. 
+
+### Remote Sensing 
+Satellites can be equipped with instruments that collect information on reflected light, which can be used to infer [changes in vegetation](https://www.markcherrie.net/post/gee/) and therefore by the inverse - the (non-vegetated) built environment. 
+
+### Surveying
+A mixture or remote sensing (aerial photography) and surveying is used to create the [Ordnance Survey's (OS) databases](https://www.ordnancesurvey.co.uk/about/what-we-do). The OS Open Map Local data has been used by the CRESH/SPHSU team to understand changes in [buildings, roads and woodlands](https://cresh.org.uk/2019/08/02/an-atlas-of-change-in-scotlands-built-environment-2016-17/). 
+
+### Crowdsourcing
+The [FixMyStreet](https://www.fixmystreet.com/) website was developed using a [web-based reporting platform](https://github.com/mysociety/fixmystreet) by the group - [MySociety](https://www.mysociety.org/) to allow people to record local problems, e.g. graffiti, fly tipping, broken paving slabs, or street lighting.
+
+### Administrative data collection
+Finally, we might use data collected by local and national government. The CRESH team used this kind of information to populate the database on location of [alcohol and tobacco retailers in Scotland](https://creshmap.com/shiny/alcoholtobacco/). The webmap visualises the data for 2012 and 2016. The alcohol retailer data is manually collected by requesting this licensing information from each of the 32 Scottish local authorities. The tobacco retailer data is collected in a centralised [register](https://www.tobaccoregisterscotland.org/), available online. Therefore for tobacco retailers we can assess change at shorter time intervals by querying the online database. This blogpost is a write up of a method to query the Scottirh 
+
+## Aims
+1. Download tobacco retailers in Scotland 
+2. Assess change in tobacco retailers over time (shorter interval than previously - 1 year)
+
+## Method
+After the Tobacco and Primary Medical Services (Scotland) Act 2010, it became law that all tobacco retailers were required to register on the [Scottish Tobacco Retailer Register (STRR)](https://www.tobaccoregisterscotland.org/). From the 1 October 2017, all nicotine vapour retailers also had to register. A person who breaches the act three times in a two year period is banned (for upto 12 months) from the register and therefore selling tobacco in Scotland. An R script was created to download the tobacco register. 
+
+```{r download,echo = T, eval=FALSE}
+
+library('rvest')
+
+# Specify the URL and then read the html
+url <- 'https://www.tobaccoregisterscotland.org/search-the-register/?Name=&Postcode=&LocalAuthority=&BusinessType=&ProductType=&PremisesStatus='
+webpage <- read_html(url)
+
+# calculate the number of records then do a look with all the pages!
+Numberofrecords <- html_nodes(webpage,'.premises-search-results__total')
+Numberofrecords <- html_text(Numberofrecords)
+Numberofrecords <- readr::parse_number(Numberofrecords)
+
+# iteratre over the pages, extracting the bits that we need
+STRR_df<-NULL
+pages<-round(as.numeric(Numberofrecords)/20,0)+1
+for(i in seq(1:pages)){
+  url <- paste0('https://www.tobaccoregisterscotland.org/search-the-register/?Name=&Postcode=&LocalAuthority=&BusinessType=&ProductType=&PremisesStatus=&page=', i)
+  webpage <- read_html(url)
+  Address <- html_nodes(webpage,'dd:nth-child(2)')
+  LocalAuthority <- html_nodes(webpage,'dd:nth-child(4)')
+  BusinessType <- html_nodes(webpage,'dd:nth-child(6)')
+  ProductSold <-html_nodes(webpage,'dd:nth-child(8)')
+  CompanyName <-html_nodes(webpage,"dd:nth-child(10)")
+  Status <-html_nodes(webpage,"dd:nth-child(12)")
+  
+  # make into text
+  Address <- html_text(Address)
+  LocalAuthority <- html_text(LocalAuthority)
+  BusinessType <- html_text(BusinessType)
+  ProductSold <- html_text(ProductSold)
+  CompanyName <- html_text(CompanyName)
+  Status <- html_text(Status)
+  
+  # combine
+  STRR<-as.data.frame(cbind(Address,LocalAuthority, BusinessType,ProductSold, CompanyName,Status))
+  STRR$Address<-as.character(STRR$Address)
+  STRR$Address<-paste0(STRR$Address, ", Scotland")
+  STRR_df<-rbind(STRR_df, STRR)
+}
+
+write.csv(STRR_df,paste0("data/STRR_", Sys.Date(), ".csv"), row.names=F)
+
+```
+
+Let's compare two downloads of the STRR database:
+
+```{r compare, echo=T, eval=F}
+STRR06<-read.csv("data/STRR_2019-06-26.csv")
+STRR09<-read.csv("data/STRR_2019-09-25.csv")
+
+diff <- data.frame(Address=setdiff(STRR09$Address, STRR06$Address))
+STRRdiff<-merge(diff, STRR09, by="Address", all.x=T)
+
+library(ggplot2)
+
+STRRdiff %>%
+  ggplot(aes(BusinessType)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle =75, hjust = 1))
+
+ggsave("output/BusinessTypeChange.png")
+
+STRRdiff %>%
+  ggplot(aes(LocalAuthority)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 75, hjust = 1))
+
+ggsave("output/LocalAuthorityChange.png")
+
+STRRdiff %>%
+  ggplot(aes(ProductSold)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 75, hjust = 1))
+
+ggsave("output/ProductSold.png")
+```
+
+## Results
+
+Between the 25th of June and 26th of September 2019, there were 187 additions to the STRR. The local authority with the greatest increase was Glasgow with 40 retailers, followed by Edinburgh and North Lanarkshire.
+
+![](img/SRTT_images/LocalAuthorityChange.png)
+
+The majority of the increase (87 retailers) was from 'Convenience stores', but a notable increase was found in 'Other retail'. 
+
+![](img/SRTT_images/BusinessTypeChange.png)
+
+The majority of retailers who had newly registered were selling both tobacco and nicotine vapour. Interestingly, there were more new registrations for nicotine vapour products only compared to tobacco only. 
+
+![](img/SRTT_images/ProductSold.png)
+
+## Conclusion
+This analysis shows the potential of monitoring places using administrative data. Patterns over a three month period were described and show differences in tobacco retailing in Scotland by geography, type of product and type of retailer. Future work will supplement previous analysis on [tobacco retailer change in scotland](https://tobaccocontrol.bmj.com/content/early/2019/01/28/tobaccocontrol-2018-054543.info), with more granular measures of change, which could be used to act, in a more timely manner, on clustering of products (i.e. availability of tobacco) in deprived areas. 
+
+
+

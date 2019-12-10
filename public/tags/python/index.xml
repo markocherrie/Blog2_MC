@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Mark Cherrie</title>
+    <link>/tags/python/</link>
+    <description>Recent content in Python on Mark Cherrie</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
+    <lastBuildDate>Sun, 25 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Monitoring change in the built environment: tobacco retailers in Scotland</title>
+      <link>/post/builtenvironmentchange/</link>
+      <pubDate>Sun, 25 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/builtenvironmentchange/</guid>
+      <description>Introduction The built environment is constantly changing. Whether it be short term changes - e.g. roadworks, or long term, e.g. a new road. These changes can impact our exposures (air pollutants from road traffic), behaviours (decision to drive to work) or health (risk of being in a traffic accident). It’s thereofore important to monitor the changes to the built environment.
+One way is using remote sensing. Satellites can be equipped with instruments that collect information on reflected light, which can be used to infer changes in vegetation.</description>
+    </item>
+    
+  </channel>
+</rss>

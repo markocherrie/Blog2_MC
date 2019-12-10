@@ -1,0 +1,125 @@
+---
+title: "Monitoring changes in the built environment: tobacco retailers in Scotland"
+author: ~
+date: '2019-09-26'
+slug: tobaccoretailerchange
+categories: ["Data Visualisation"]
+tags: ["R", "Built environment", "Place Monitoring", "Tobacco", "Retail"]
+draft: yes
+---
+
+
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>The built environment is constantly changing. Whether it be short-term changes - e.g. roadworks, or long-term, e.g. a new road. These changes can impact exposures (air pollutants from road traffic), behaviours (decision to drive to work) or health (risk of being in a traffic accident). It’s therefore important to monitor the changes to the built environment so that interventions can be developed to reduce risk to health either directly or indirectly (exposure/behaviour). Monitoring the built environment can be done through remote sensing, surveying, crowdsourcing or administrative data collection.</p>
+<div id="remote-sensing" class="section level3">
+<h3>Remote Sensing</h3>
+<p>Satellites can be equipped with instruments that collect information on reflected light, which can be used to infer <a href="https://www.markcherrie.net/post/gee/">changes in vegetation</a> and therefore by the inverse - the (non-vegetated) built environment.</p>
+</div>
+<div id="surveying" class="section level3">
+<h3>Surveying</h3>
+<p>A mixture or remote sensing (aerial photography) and surveying is used to create the <a href="https://www.ordnancesurvey.co.uk/about/what-we-do">Ordnance Survey’s (OS) databases</a>. The OS Open Map Local data has been used by the CRESH/SPHSU team to understand changes in <a href="https://cresh.org.uk/2019/08/02/an-atlas-of-change-in-scotlands-built-environment-2016-17/">buildings, roads and woodlands</a>.</p>
+</div>
+<div id="crowdsourcing" class="section level3">
+<h3>Crowdsourcing</h3>
+<p>The <a href="https://www.fixmystreet.com/">FixMyStreet</a> website was developed using a <a href="https://github.com/mysociety/fixmystreet">web-based reporting platform</a> by the group - <a href="https://www.mysociety.org/">MySociety</a> to allow people to record local problems, e.g. graffiti, fly tipping, broken paving slabs, or street lighting.</p>
+</div>
+<div id="administrative-data-collection" class="section level3">
+<h3>Administrative data collection</h3>
+<p>Finally, we might use data collected by local and national government. The CRESH team used this kind of information to populate the database on location of <a href="https://creshmap.com/shiny/alcoholtobacco/">alcohol and tobacco retailers in Scotland</a>. The webmap visualises the data for 2012 and 2016. The alcohol retailer data is manually collected by requesting this licensing information from each of the 32 Scottish local authorities. The tobacco retailer data is collected in a centralised <a href="https://www.tobaccoregisterscotland.org/">register</a>, available online. Therefore for tobacco retailers we can assess change at shorter time intervals by querying the online database. This blogpost is a write up of a method to query the Scottirh</p>
+</div>
+</div>
+<div id="aims" class="section level2">
+<h2>Aims</h2>
+<ol style="list-style-type: decimal">
+<li>Download tobacco retailers in Scotland</li>
+<li>Assess change in tobacco retailers over time (shorter interval than previously - 1 year)</li>
+</ol>
+</div>
+<div id="method" class="section level2">
+<h2>Method</h2>
+<p>After the Tobacco and Primary Medical Services (Scotland) Act 2010, it became law that all tobacco retailers were required to register on the <a href="https://www.tobaccoregisterscotland.org/">Scottish Tobacco Retailer Register (STRR)</a>. From the 1 October 2017, all nicotine vapour retailers also had to register. A person who breaches the act three times in a two year period is banned (for upto 12 months) from the register and therefore selling tobacco in Scotland. An R script was created to download the tobacco register.</p>
+<pre class="r"><code>library(&#39;rvest&#39;)
+
+# Specify the URL and then read the html
+url &lt;- &#39;https://www.tobaccoregisterscotland.org/search-the-register/?Name=&amp;Postcode=&amp;LocalAuthority=&amp;BusinessType=&amp;ProductType=&amp;PremisesStatus=&#39;
+webpage &lt;- read_html(url)
+
+# calculate the number of records then do a look with all the pages!
+Numberofrecords &lt;- html_nodes(webpage,&#39;.premises-search-results__total&#39;)
+Numberofrecords &lt;- html_text(Numberofrecords)
+Numberofrecords &lt;- readr::parse_number(Numberofrecords)
+
+# iteratre over the pages, extracting the bits that we need
+STRR_df&lt;-NULL
+pages&lt;-round(as.numeric(Numberofrecords)/20,0)+1
+for(i in seq(1:pages)){
+  url &lt;- paste0(&#39;https://www.tobaccoregisterscotland.org/search-the-register/?Name=&amp;Postcode=&amp;LocalAuthority=&amp;BusinessType=&amp;ProductType=&amp;PremisesStatus=&amp;page=&#39;, i)
+  webpage &lt;- read_html(url)
+  Address &lt;- html_nodes(webpage,&#39;dd:nth-child(2)&#39;)
+  LocalAuthority &lt;- html_nodes(webpage,&#39;dd:nth-child(4)&#39;)
+  BusinessType &lt;- html_nodes(webpage,&#39;dd:nth-child(6)&#39;)
+  ProductSold &lt;-html_nodes(webpage,&#39;dd:nth-child(8)&#39;)
+  CompanyName &lt;-html_nodes(webpage,&quot;dd:nth-child(10)&quot;)
+  Status &lt;-html_nodes(webpage,&quot;dd:nth-child(12)&quot;)
+  
+  # make into text
+  Address &lt;- html_text(Address)
+  LocalAuthority &lt;- html_text(LocalAuthority)
+  BusinessType &lt;- html_text(BusinessType)
+  ProductSold &lt;- html_text(ProductSold)
+  CompanyName &lt;- html_text(CompanyName)
+  Status &lt;- html_text(Status)
+  
+  # combine
+  STRR&lt;-as.data.frame(cbind(Address,LocalAuthority, BusinessType,ProductSold, CompanyName,Status))
+  STRR$Address&lt;-as.character(STRR$Address)
+  STRR$Address&lt;-paste0(STRR$Address, &quot;, Scotland&quot;)
+  STRR_df&lt;-rbind(STRR_df, STRR)
+}
+
+write.csv(STRR_df,paste0(&quot;data/STRR_&quot;, Sys.Date(), &quot;.csv&quot;), row.names=F)</code></pre>
+<p>Let’s compare two downloads of the STRR database:</p>
+<pre class="r"><code>STRR06&lt;-read.csv(&quot;data/STRR_2019-06-26.csv&quot;)
+STRR09&lt;-read.csv(&quot;data/STRR_2019-09-25.csv&quot;)
+
+diff &lt;- data.frame(Address=setdiff(STRR09$Address, STRR06$Address))
+STRRdiff&lt;-merge(diff, STRR09, by=&quot;Address&quot;, all.x=T)
+
+library(ggplot2)
+
+STRRdiff %&gt;%
+  ggplot(aes(BusinessType)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle =75, hjust = 1))
+
+ggsave(&quot;output/BusinessTypeChange.png&quot;)
+
+STRRdiff %&gt;%
+  ggplot(aes(LocalAuthority)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 75, hjust = 1))
+
+ggsave(&quot;output/LocalAuthorityChange.png&quot;)
+
+STRRdiff %&gt;%
+  ggplot(aes(ProductSold)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 75, hjust = 1))
+
+ggsave(&quot;output/ProductSold.png&quot;)</code></pre>
+</div>
+<div id="results" class="section level2">
+<h2>Results</h2>
+<p>Between the 25th of June and 26th of September 2019, there were 187 additions to the STRR. The local authority with the greatest increase was Glasgow with 40 retailers, followed by Edinburgh and North Lanarkshire.</p>
+<p><img src="img/SRTT_images/LocalAuthorityChange.png" /></p>
+<p>The majority of the increase (87 retailers) was from ‘Convenience stores’, but a notable increase was found in ‘Other retail’.</p>
+<p><img src="img/SRTT_images/BusinessTypeChange.png" /></p>
+<p>The majority of retailers who had newly registered were selling both tobacco and nicotine vapour. Interestingly, there were more new registrations for nicotine vapour products only compared to tobacco only.</p>
+<p><img src="img/SRTT_images/ProductSold.png" /></p>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>This analysis shows the potential of monitoring places using administrative data. Patterns over a three month period were described and show differences in tobacco retailing in Scotland by geography, type of product and type of retailer. Future work will supplement previous analysis on <a href="https://tobaccocontrol.bmj.com/content/early/2019/01/28/tobaccocontrol-2018-054543.info">tobacco retailer change in scotland</a>, with more granular measures of change, which could be used to act, in a more timely manner, on clustering of products (i.e. availability of tobacco) in deprived areas.</p>
+</div>

@@ -32,27 +32,11 @@ Environmental injustice in the UK has been characterised for a range of [pathoge
 
 An environmental crisis arose in China in the decades following the 1978 economic reform. Air pollution, water contamination, soil problems, biodivesity loss and mega projects are some of the biggest environmental issues, and have been exacerbated by natural disasters and high sensitivity to climate change. These have worsened due to the pace of urbanisation; for example, Shenzhen went from 3,148 residents in 1950 to over 12 million in 2017. The rural-to-urban population and the poor bear the greatest burden of environmental degradation. There is evidence that environmental injustice is being put on the agenda in China (Freeman and Lu, 2008), but not to the extent where it is "popular within environmental policy or civil society" (Mah and Wang, 2017).  
 
-
-In the following sections, the evidence of select environmental injustice papers will be reviewed. 
-
-#### Air pollution inequity in the UK and China
-
-"In rural areas, the absolute burden of air pollution-related LYs lost was **lowest** in the most deprived deciles (Milojevic et al., 2017)."
-
-
-
-
-#### Green space inequity in the UK and China
+#### Green space inequity in the UK and China Example
 
 In Shenzhen, China, it was observed that people living in disadvantaged neighbourhoods had lower quantity of public greenspace, with worse access, but that quality was higher (You, 2016). This is at odds with the UK literature. In Sheffield, UK, it was observed that for people living in the most disadvantaged neighbourhoods the quantity of public greenspace was lower, but access was **better** and quality was **lower** (Mears, 2019). 
 
 This is a good example of how inequity of environment will play out differently in the two countries. However, perhaps the differences are partly due to the way that the environment has been measured? In the first example quality is measured by [landscape metrics](https://r-spatialecology.github.io/landscapemetrics/articles/articles/general-background.html), in the second by a [quality assessment criteria](https://en.wikipedia.org/wiki/Green_Flag_Award). 
-
-#### Climate inequity in the UK and China
-
-[Ecological migrants](https://www.nytimes.com/interactive/2016/10/25/world/asia/china-climate-change-resettlement.html))
-
-## Method 
 
 #### Environmental data in China
 
@@ -76,10 +60,6 @@ In the UK, environmental policies have not had the desired effect; in China, env
 ![](img/UKChina/newurbanism.png)
 
 The encouraging part of applying a new urbanism framework is that it could work; environmental injustice is not inevitable (e.g. Edinburgh has a flat relationship between income and air pollution). However, we need to contextualise environmental injustice **within** countries as well as between - to understand it at the local level (Bailey et al., 2018). Improvements to the urban environment through remediation or provision of amenities, should be undertaken with plans to prevent the possibility of displacment of residents through land revaluation, investments and gentrification (Anguelovski, 2015).  
-
-## Collaboration
-
-
 
 ## References
 
