@@ -21,10 +21,10 @@ A mixture or remote sensing (aerial photography) and surveying is used to create
 The [FixMyStreet](https://www.fixmystreet.com/) website was developed using a [web-based reporting platform](https://github.com/mysociety/fixmystreet) by the group - [MySociety](https://www.mysociety.org/) to allow people to record local problems, e.g. graffiti, fly tipping, broken paving slabs, or street lighting.
 
 ### Administrative data collection
-Finally, we might use data collected by local and national government. The CRESH team used this kind of information to populate the database on location of [alcohol and tobacco retailers in Scotland](https://creshmap.com/shiny/alcoholtobacco/). The webmap visualises the data for 2012 and 2016. The alcohol retailer data is manually collected by requesting this licensing information from each of the 32 Scottish local authorities. The tobacco retailer data is collected in a centralised [register](https://www.tobaccoregisterscotland.org/), available online. Therefore for tobacco retailers we can assess change at shorter time intervals by querying the online database. This blogpost is a write up of a method to query the Scottirh 
+Finally, we might use data collected by local and national government. The CRESH team used this kind of information to populate the database on location of [alcohol and tobacco retailers in Scotland](https://creshmap.com/shiny/alcoholtobacco/). The webmap visualises the data for 2012 and 2016. The alcohol retailer data is manually collected by requesting this licensing information from each of the 32 Scottish local authorities. The tobacco retailer data is collected in a centralised register, available online. Therefore for tobacco retailers we can assess change at shorter time intervals by querying the online database. This blogpost uses the register for to two aims. 
 
 ## Aims
-1. Download tobacco retailers in Scotland 
+1. Download tobacco retailers in Scotland automatically
 2. Assess change in tobacco retailers over time (shorter interval than previously - 1 year)
 
 ## Method
