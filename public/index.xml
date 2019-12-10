@@ -28,21 +28,21 @@
 &lt;/div&gt;
 &lt;div id=&#34;surveying&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Surveying&lt;/h3&gt;
-&lt;p&gt;A mixture or remote sensing (aerial photography) and surveying is used to create the &lt;a href=&#34;https://www.ordnancesurvey.co.uk/about/what-we-do&#34;&gt;Ordnance Survey’s (OS) databases&lt;/a&gt;. The OS Open Map Local data has been used by the CRESH/SPHSU team to understand changes in &lt;a href=&#34;https://cresh.org.uk/2019/08/02/an-atlas-of-change-in-scotlands-built-environment-2016-17/&#34;&gt;buildings, roads and woodlands&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A mixture or remote sensing (aerial photography) and surveying is used to create the &lt;a href=&#34;https://www.ordnancesurvey.co.uk/about/what-we-do&#34;&gt;Ordnance Survey’s (OS) databases&lt;/a&gt;. The OS Open Map Local data has been used by the CRESH/SPHSU team to map changes in &lt;a href=&#34;https://cresh.org.uk/2019/08/02/an-atlas-of-change-in-scotlands-built-environment-2016-17/&#34;&gt;buildings, roads and woodlands&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;crowdsourcing&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Crowdsourcing&lt;/h3&gt;
-&lt;p&gt;The &lt;a href=&#34;https://www.fixmystreet.com/&#34;&gt;FixMyStreet&lt;/a&gt; website was developed using a &lt;a href=&#34;https://github.com/mysociety/fixmystreet&#34;&gt;web-based reporting platform&lt;/a&gt; by the group - &lt;a href=&#34;https://www.mysociety.org/&#34;&gt;MySociety&lt;/a&gt; to allow people to record local problems, e.g. graffiti, fly tipping, broken paving slabs, or street lighting.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://www.fixmystreet.com/&#34;&gt;FixMyStreet&lt;/a&gt; website was developed using a &lt;a href=&#34;https://github.com/mysociety/fixmystreet&#34;&gt;web-based reporting platform&lt;/a&gt; by the group - &lt;a href=&#34;https://www.mysociety.org/&#34;&gt;MySociety&lt;/a&gt;. This website enables people to record local problems, e.g. graffiti, fly tipping, broken paving slabs, or street lighting. Researchers can use this data to see how ‘problems’ in the built environment change over time.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;administrative-data-collection&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Administrative data collection&lt;/h3&gt;
-&lt;p&gt;Finally, we might use data collected by local and national government. The CRESH team used this kind of information to populate the database on location of &lt;a href=&#34;https://creshmap.com/shiny/alcoholtobacco/&#34;&gt;alcohol and tobacco retailers in Scotland&lt;/a&gt;. The webmap visualises the data for 2012 and 2016. The alcohol retailer data is manually collected by requesting this licensing information from each of the 32 Scottish local authorities. The tobacco retailer data is collected in a centralised register, available online. Therefore for tobacco retailers we can assess change at shorter time intervals by querying the online database. This blogpost uses the register for to two aims.&lt;/p&gt;
+&lt;p&gt;Finally, we might use data collected by local and national government. The CRESH team used this kind of information to populate the database on location of &lt;a href=&#34;https://creshmap.com/shiny/alcoholtobacco/&#34;&gt;alcohol and tobacco retailers in Scotland&lt;/a&gt;. This webmap visualises the data for 2012 and 2016. The alcohol retailer data was collected manually by requesting licensing information from each of the 32 Scottish local authorities. The tobacco retailer data was collected by querying a centralised register, available online. Therefore for tobacco retailers we can assess change at shorter time intervals by regularly querying the online database. This blogpost uses the register for two aims.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;aims&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Aims&lt;/h2&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;Download tobacco retailers in Scotland automatically&lt;/li&gt;
+&lt;li&gt;Create a way to automatically download records of tobacco retailers in Scotland&lt;/li&gt;
 &lt;li&gt;Assess change in tobacco retailers over time (shorter interval than previously - 1 year)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
@@ -89,7 +89,7 @@ for(i in seq(1:pages)){
 }
 
 write.csv(STRR_df,paste0(&amp;quot;data/STRR_&amp;quot;, Sys.Date(), &amp;quot;.csv&amp;quot;), row.names=F)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Let’s compare two downloads of the STRR database:&lt;/p&gt;
+&lt;p&gt;We can then use the ‘setdiff’ function to compare two downloads of the STRR database:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;STRR06&amp;lt;-read.csv(&amp;quot;data/STRR_2019-06-26.csv&amp;quot;)
 STRR09&amp;lt;-read.csv(&amp;quot;data/STRR_2019-09-25.csv&amp;quot;)
 

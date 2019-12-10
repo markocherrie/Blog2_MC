@@ -277,21 +277,21 @@
 </div>
 <div id="surveying" class="section level3">
 <h3>Surveying</h3>
-<p>A mixture or remote sensing (aerial photography) and surveying is used to create the <a href="https://www.ordnancesurvey.co.uk/about/what-we-do">Ordnance Survey’s (OS) databases</a>. The OS Open Map Local data has been used by the CRESH/SPHSU team to understand changes in <a href="https://cresh.org.uk/2019/08/02/an-atlas-of-change-in-scotlands-built-environment-2016-17/">buildings, roads and woodlands</a>.</p>
+<p>A mixture or remote sensing (aerial photography) and surveying is used to create the <a href="https://www.ordnancesurvey.co.uk/about/what-we-do">Ordnance Survey’s (OS) databases</a>. The OS Open Map Local data has been used by the CRESH/SPHSU team to map changes in <a href="https://cresh.org.uk/2019/08/02/an-atlas-of-change-in-scotlands-built-environment-2016-17/">buildings, roads and woodlands</a>.</p>
 </div>
 <div id="crowdsourcing" class="section level3">
 <h3>Crowdsourcing</h3>
-<p>The <a href="https://www.fixmystreet.com/">FixMyStreet</a> website was developed using a <a href="https://github.com/mysociety/fixmystreet">web-based reporting platform</a> by the group - <a href="https://www.mysociety.org/">MySociety</a> to allow people to record local problems, e.g. graffiti, fly tipping, broken paving slabs, or street lighting.</p>
+<p>The <a href="https://www.fixmystreet.com/">FixMyStreet</a> website was developed using a <a href="https://github.com/mysociety/fixmystreet">web-based reporting platform</a> by the group - <a href="https://www.mysociety.org/">MySociety</a>. This website enables people to record local problems, e.g. graffiti, fly tipping, broken paving slabs, or street lighting. Researchers can use this data to see how ‘problems’ in the built environment change over time.</p>
 </div>
 <div id="administrative-data-collection" class="section level3">
 <h3>Administrative data collection</h3>
-<p>Finally, we might use data collected by local and national government. The CRESH team used this kind of information to populate the database on location of <a href="https://creshmap.com/shiny/alcoholtobacco/">alcohol and tobacco retailers in Scotland</a>. The webmap visualises the data for 2012 and 2016. The alcohol retailer data is manually collected by requesting this licensing information from each of the 32 Scottish local authorities. The tobacco retailer data is collected in a centralised register, available online. Therefore for tobacco retailers we can assess change at shorter time intervals by querying the online database. This blogpost uses the register for to two aims.</p>
+<p>Finally, we might use data collected by local and national government. The CRESH team used this kind of information to populate the database on location of <a href="https://creshmap.com/shiny/alcoholtobacco/">alcohol and tobacco retailers in Scotland</a>. This webmap visualises the data for 2012 and 2016. The alcohol retailer data was collected manually by requesting licensing information from each of the 32 Scottish local authorities. The tobacco retailer data was collected by querying a centralised register, available online. Therefore for tobacco retailers we can assess change at shorter time intervals by regularly querying the online database. This blogpost uses the register for two aims.</p>
 </div>
 </div>
 <div id="aims" class="section level2">
 <h2>Aims</h2>
 <ol style="list-style-type: decimal">
-<li>Download tobacco retailers in Scotland automatically</li>
+<li>Create a way to automatically download records of tobacco retailers in Scotland</li>
 <li>Assess change in tobacco retailers over time (shorter interval than previously - 1 year)</li>
 </ol>
 </div>
@@ -338,7 +338,7 @@ for(i in seq(1:pages)){
 }
 
 write.csv(STRR_df,paste0(&quot;data/STRR_&quot;, Sys.Date(), &quot;.csv&quot;), row.names=F)</code></pre>
-<p>Let’s compare two downloads of the STRR database:</p>
+<p>We can then use the ‘setdiff’ function to compare two downloads of the STRR database:</p>
 <pre class="r"><code>STRR06&lt;-read.csv(&quot;data/STRR_2019-06-26.csv&quot;)
 STRR09&lt;-read.csv(&quot;data/STRR_2019-09-25.csv&quot;)
 

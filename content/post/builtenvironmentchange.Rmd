@@ -15,16 +15,16 @@ The built environment is constantly changing. Whether it be short-term changes -
 Satellites can be equipped with instruments that collect information on reflected light, which can be used to infer [changes in vegetation](https://www.markcherrie.net/post/gee/) and therefore by the inverse - the (non-vegetated) built environment. 
 
 ### Surveying
-A mixture or remote sensing (aerial photography) and surveying is used to create the [Ordnance Survey's (OS) databases](https://www.ordnancesurvey.co.uk/about/what-we-do). The OS Open Map Local data has been used by the CRESH/SPHSU team to understand changes in [buildings, roads and woodlands](https://cresh.org.uk/2019/08/02/an-atlas-of-change-in-scotlands-built-environment-2016-17/). 
+A mixture or remote sensing (aerial photography) and surveying is used to create the [Ordnance Survey's (OS) databases](https://www.ordnancesurvey.co.uk/about/what-we-do). The OS Open Map Local data has been used by the CRESH/SPHSU team to map changes in [buildings, roads and woodlands](https://cresh.org.uk/2019/08/02/an-atlas-of-change-in-scotlands-built-environment-2016-17/). 
 
 ### Crowdsourcing
-The [FixMyStreet](https://www.fixmystreet.com/) website was developed using a [web-based reporting platform](https://github.com/mysociety/fixmystreet) by the group - [MySociety](https://www.mysociety.org/) to allow people to record local problems, e.g. graffiti, fly tipping, broken paving slabs, or street lighting.
+The [FixMyStreet](https://www.fixmystreet.com/) website was developed using a [web-based reporting platform](https://github.com/mysociety/fixmystreet) by the group - [MySociety](https://www.mysociety.org/). This website enables people to record local problems, e.g. graffiti, fly tipping, broken paving slabs, or street lighting. Researchers can use this data to see how 'problems' in the built environment change over time. 
 
 ### Administrative data collection
-Finally, we might use data collected by local and national government. The CRESH team used this kind of information to populate the database on location of [alcohol and tobacco retailers in Scotland](https://creshmap.com/shiny/alcoholtobacco/). The webmap visualises the data for 2012 and 2016. The alcohol retailer data is manually collected by requesting this licensing information from each of the 32 Scottish local authorities. The tobacco retailer data is collected in a centralised register, available online. Therefore for tobacco retailers we can assess change at shorter time intervals by querying the online database. This blogpost uses the register for to two aims. 
+Finally, we might use data collected by local and national government. The CRESH team used this kind of information to populate the database on location of [alcohol and tobacco retailers in Scotland](https://creshmap.com/shiny/alcoholtobacco/). This webmap visualises the data for 2012 and 2016. The alcohol retailer data was  collected manually by requesting licensing information from each of the 32 Scottish local authorities. The tobacco retailer data was collected by querying a centralised register, available online. Therefore for tobacco retailers we can assess change at shorter time intervals by regularly querying the online database. This blogpost uses the register for two aims. 
 
 ## Aims
-1. Download tobacco retailers in Scotland automatically
+1. Create a way to automatically download records of tobacco retailers in Scotland 
 2. Assess change in tobacco retailers over time (shorter interval than previously - 1 year)
 
 ## Method
@@ -75,7 +75,7 @@ write.csv(STRR_df,paste0("data/STRR_", Sys.Date(), ".csv"), row.names=F)
 
 ```
 
-Let's compare two downloads of the STRR database:
+We can then use the 'setdiff' function to compare two downloads of the STRR database:
 
 ```{r compare, echo=T, eval=F}
 STRR06<-read.csv("data/STRR_2019-06-26.csv")
