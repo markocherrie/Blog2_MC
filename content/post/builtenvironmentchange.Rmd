@@ -3,7 +3,7 @@ title: "Monitoring changes in the built environment: tobacco retailers in Scotla
 author: ~
 date: '2019-09-26'
 slug: tobaccoretailerchange
-categories: ["Data Visualisation"]
+categories: ["Data Processing"]
 tags: ["R", "Built environment", "Place Monitoring", "Tobacco", "Retail"]
 draft: no
 ---
