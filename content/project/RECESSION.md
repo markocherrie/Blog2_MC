@@ -13,7 +13,7 @@ summary = "This ESRC funded project was aimed at exploring how the 'Great Recess
   
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-  tags = ["Recession", "Austerity", "Mental health", "Welfare", "Administrative data", "Safe haven", "Greenspace", "Social Cohesion"]
+  tags = ["RECESSION", "Austerity", "Mental health", "Welfare", "Administrative data", "Safe haven", "Greenspace", "Social Cohesion"]
   
 # Optional external URL for project (replaces project detail page).
   external_link = "https://sls.lscs.ac.uk/projects/view/2015_015/"

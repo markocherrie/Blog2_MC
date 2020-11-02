@@ -13,7 +13,7 @@ summary = "There are several projects I am working on in response to the COVID-1
   
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-  tags = ["COVID-19", "Infectious disease", "Health inequalities", "Occupational health"]
+  tags = ["COVID19", "Infectious disease", "Health inequalities", "Occupational health"]
   
 # Optional external URL for project (replaces project detail page).
   external_link = "https://www.covidsafeworkplaces.info/"

@@ -51,7 +51,7 @@ view = 1
   
 [[filter]]
   name = "RECESSION"
-  tag = ".RECESSSION"
+  tag = ".RECESSION"
   
 [[filter]]
   name = "COVID19"
