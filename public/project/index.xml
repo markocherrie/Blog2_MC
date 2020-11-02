@@ -2,71 +2,97 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Mark Cherrie</title>
-    <link>/project/</link>
+    <link>http://www.markcherrie.net/project/</link>
     <description>Recent content in Projects on Mark Cherrie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
+    <copyright>&amp;copy; 2020 Mark Cherrie</copyright>
     <lastBuildDate>Fri, 08 Sep 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/project/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>DISPLAY: Determining the impact of smoking point of sale legislation among youth (Display) study</title>
-      <link>/project/display/</link>
+      <link>http://www.markcherrie.net/project/display/</link>
       <pubDate>Fri, 08 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/project/display/</guid>
+      <guid>http://www.markcherrie.net/project/display/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Alcohol and Tobacco Environments in Scotland</title>
-      <link>/project/webmap/</link>
+      <link>http://www.markcherrie.net/project/webmap/</link>
       <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/project/webmap/</guid>
-      <description>I led the re-development of the CRESH webmap, which was originally launched in 2015. This app was designed to allow users to map tobacco and alcohol outlet density, and related health outcomes for small areas in Scotland (i.e. datazones, which represent around 5,000 residents).
-There is increasing evidence which shows that the density of tobacco and alcohol retailers has an effect on both smoking/drinking behaviours but also the associated morbidity/mortality. For example those living in areas with the highest density of retailers have double the alcohol-related death rate; and adolescents living in areas with the highest density of tobacco retailers are 50% more likely to smoke.</description>
+      <guid>http://www.markcherrie.net/project/webmap/</guid>
+      <description>&lt;p&gt;I led the re-development of the CRESH &lt;a href=&#34;https://creshmap.com/&#34; target=&#34;_blank&#34;&gt;webmap&lt;/a&gt;, which was originally launched in 2015. This app was designed to allow users to map tobacco and alcohol outlet density, and related health outcomes for small areas in Scotland (i.e. datazones, which represent around 5,000 residents).&lt;/p&gt;
+
+&lt;p&gt;There is increasing evidence which shows that the density of tobacco and alcohol retailers has an effect on both smoking/drinking behaviours but also the associated morbidity/mortality. For example those living in areas with the highest density of retailers have double the alcohol-related death rate; and adolescents living in areas with the highest density of tobacco retailers are 50% more likely to smoke.&lt;/p&gt;
+
+&lt;p&gt;The alcohol retailer data was collected from representatives of the 32 local authorities, and required months of cleaning to have it ready for the webmap. In the redevelopment we tried to make the information accessible and clearly presented. In addition, we really pushed to make the data easy to download, to empower local communities so that they are more involved in the decisions on the built environment surrounding their homes.&lt;/p&gt;
+
+&lt;p&gt;The CRESH webmap was created in partnership with Alcohol Focus Scotland (AFS) and Action on Smoking and Health Scotland (ASH Scotland). The original research was funded by the Scottish Collaboration for Public Health Research and Policy and we have received funding from the Economic and Social Research Council (ESRC) to publicise our research and make it more accessible to the public and policy makers.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Analysing the Association between Ultraviolet Radiation, Vitamin D and Allergic Disease</title>
-      <link>/project/uv/</link>
+      <link>http://www.markcherrie.net/project/uv/</link>
       <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/project/uv/</guid>
-      <description>Atopic diseases are common in the UK, with eczema, asthma and allergic rhinitis typically developing sequentially during childhood, as in the theory of the &amp;lsquo;atopic march&amp;rsquo;. Some people will &amp;lsquo;grow out&amp;rsquo; out of these diseases but others face lifelong morbidity. Current figures from asthma UK show that the prevalence of people in the UK receiving treatment for asthma is approximately 9% in children and 8% of adults. These rates have risen since the 1970&amp;rsquo;s, evidenced by the an increase in prevalence rates between the ISAAC (International Study of Asthma and Allergies in Childhood) phase one (1994) and phase three (2002&amp;frasl;2003).</description>
+      <guid>http://www.markcherrie.net/project/uv/</guid>
+      <description>&lt;p&gt;Atopic diseases are common in the UK, with eczema, asthma and allergic rhinitis typically developing sequentially during childhood, as in the theory of the &amp;lsquo;atopic march&amp;rsquo;. Some people will &amp;lsquo;grow out&amp;rsquo; out of these diseases but others face lifelong morbidity. Current figures from asthma UK show that the prevalence of people in the UK receiving treatment for asthma is approximately 9% in children and 8% of adults. These rates have risen since the 1970&amp;rsquo;s, evidenced by the an increase in prevalence rates between the ISAAC (International Study of Asthma and Allergies in Childhood) phase one (1994) and phase three (&lt;sup&gt;2002&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2003&lt;/sub&gt;). The trend is the same for developing nations. Thus, it is clear that these diseases will represent a significant burden to individual families and national healthcare providers around the world for the foreseeable future. Atopic diseases have a complex aetiology, but are broadly caused by environmental and genetic factors. It is through geographical analysis of the distribution of these diseases that hypotheses can be generated. For example, in the UK, eczema has been mapped using data from the CLS’s (Centre of Longitudinal Studies) 1958 Birth Cohort, this study implicated factors such as water hardness, industrial pollution, pollen, heavy metal deposits and climate.&lt;/p&gt;
+
+&lt;p&gt;The aim of my PhD &lt;a href=&#34;https://drive.google.com/drive/folders/1Cy1xxwsGX7nN6rMeIvkDkj2CCbbsVYIj?usp=sharing&#34; target=&#34;_blank&#34;&gt;thesis&lt;/a&gt; was to investigate the association between UVR (&lt;a href=&#34;https://www.mindmeister.com/172005637?t=CCFm9l6zxY&#34; target=&#34;_blank&#34;&gt;Ultraviolet Radiation&lt;/a&gt;) exposure on allergic disease incidence using secondary data sources. Ultraviolet radiation is the primary contributor to vitamin D levels, often quoted to contribute 80-90% of an individual&amp;rsquo;s circulating 25(OH)D. Vitamin D has been linked to several immune functions within the body including Treg production (which in turn modulates Th1/Th2 balance) and antimicrobial peptide induction, which protects against infection. Vitamin D could play an important role in reducing risk of atopic disease.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Environmental determinants of IVF treatment</title>
-      <link>/project/ivf/</link>
+      <link>http://www.markcherrie.net/project/ivf/</link>
       <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/project/ivf/</guid>
+      <guid>http://www.markcherrie.net/project/ivf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Medical &amp; Environmental Data Mash-up Infrastructure project (MEDMI)</title>
-      <link>/project/medmi/</link>
+      <link>http://www.markcherrie.net/project/medmi/</link>
       <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/project/medmi/</guid>
-      <description>The Medical &amp;amp; Environmental Data Mash-up Infrastructure project is aiming to connect diverse databases to improve our understanding of the links between climate, environment, and human health. View the project’s full site at www.data-mashup.org.uk
-To support rapid, novel, and rigorous research in these areas, MEDMI will link and analyse complex meteorological, environmental and epidemiological data, through the use of the emerging data &amp;ldquo;mash-up&amp;rdquo;&amp;rdquo; field of computational science.
-Existing databases stored in various locations and organisations will be combined in a consistent temporal and spatial framework, creating an internet based platform that will enable data on a host of variables to be mapped and interrogated.</description>
+      <guid>http://www.markcherrie.net/project/medmi/</guid>
+      <description>&lt;p&gt;The Medical &amp;amp; Environmental Data Mash-up Infrastructure project is aiming to connect diverse databases to improve our understanding of the links between climate, environment, and human health. View the project’s full site at www.data-mashup.org.uk&lt;/p&gt;
+
+&lt;p&gt;To support rapid, novel, and rigorous research in these areas, MEDMI will link and analyse complex meteorological, environmental and epidemiological data, through the use of the emerging data &amp;ldquo;mash-up&amp;rdquo;&amp;rdquo; field of computational science.&lt;/p&gt;
+
+&lt;p&gt;Existing databases stored in various locations and organisations will be combined in a consistent temporal and spatial framework, creating an internet based platform that will enable data on a host of variables to be mapped and interrogated.&lt;/p&gt;
+
+&lt;p&gt;The 3 year project represents a working partnership between the University of Exeter, the Met Office, Public Health England, London School of Hygiene &amp;amp; Tropical Medicine, and University of Bristol&lt;/p&gt;
+
+&lt;p&gt;As the research progresses, several planned studies will assess the validity of the new data set, initially focusing on potential links between:&lt;/p&gt;
+
+&lt;p&gt;Extreme temperatures, air quality, and mortality
+Climate, weather, and infectious diseases
+Climate, coastal &amp;amp; ocean dynamics, and harmful algal blooms
+Ultimately the team will work towards making the new data set available to research teams across the world, helping to expand upon the existing scope of the project and develop new applications and products.&lt;/p&gt;
+
+&lt;p&gt;A large proportion of diseases worldwide are associated with environmental factors, and climate change forecasts are placing increasing emphasis on the ways in which our weather, combined with the environment, can impact upon health and wellbeing.&lt;/p&gt;
+
+&lt;p&gt;Creating a unique data and analysis platform is a vital step to advance epidemiologic, clinical, and commercial collaborative applications in the field, which will lead ultimately to improved health outcomes.&lt;/p&gt;
+
+&lt;p&gt;Funded by the Medical Research Council and Natural Environment Research Council MEDMI is running from September 2013 to May 2016.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Mobility, Mood and Place Project (MMP)</title>
-      <link>/project/mmp/</link>
+      <link>http://www.markcherrie.net/project/mmp/</link>
       <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/project/mmp/</guid>
-      <description>Our health and mobility are intrinsically linked with the quality of our local environment. All sorts of things affect us, from housing density and neighbourhood deprivation to access to green space. In Topic 3, we have explored how physical, built and social environments evolve over time and how they impact on inequalities in health in older age, related to mobility throughout life. We have used data from just under 600 people in their 70’s, together with long term, area-level measures of their childhood, adulthood and current environment.</description>
+      <guid>http://www.markcherrie.net/project/mmp/</guid>
+      <description>&lt;p&gt;Our health and mobility are intrinsically linked with the quality of our local environment. All sorts of things affect us, from housing density and neighbourhood deprivation to access to green space. In Topic 3, we have explored how physical, built and social environments evolve over time and how they impact on inequalities in health in older age, related to mobility throughout life. We have used data from just under 600 people in their 70’s, together with long term, area-level measures of their childhood, adulthood and current environment.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

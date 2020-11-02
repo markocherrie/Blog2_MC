@@ -2,25 +2,63 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Facebook on Mark Cherrie</title>
-    <link>/tags/facebook/</link>
+    <link>http://www.markcherrie.net/tags/facebook/</link>
     <description>Recent content in Facebook on Mark Cherrie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
+    <copyright>&amp;copy; 2020 Mark Cherrie</copyright>
     <lastBuildDate>Wed, 08 May 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/facebook/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/tags/facebook/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Using Social Media to Engage Research End Users</title>
-      <link>/post/socialmedia/</link>
+      <link>http://www.markcherrie.net/post/socialmedia/</link>
       <pubDate>Wed, 08 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/socialmedia/</guid>
-      <description>Photo by NordWood Themes on Unsplash
-BackgroundSocial media is becoming the dominant platform for getting information, for the general population by superseding television and newspapers and increasingly for academics, displacing peer-reviewed journal articles. Time is limited and short communications are easier to digest, especially when on a mobile.
-To summarise findings from a research project or engage in an academic/policy debate in very short social media snippets is an impressive skill and one that I am keen to learn.</description>
+      <guid>http://www.markcherrie.net/post/socialmedia/</guid>
+      <description>&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;img/socialmedia.jpg&#34; alt=&#34;Photo by NordWood Themes on Unsplash&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Photo by NordWood Themes on Unsplash&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;Social media is becoming the dominant platform for getting information, for the general population by superseding television and newspapers and increasingly for academics, displacing peer-reviewed journal articles. Time is limited and short communications are easier to digest, especially when on a mobile.&lt;/p&gt;
+&lt;p&gt;To summarise findings from a research project or engage in an academic/policy debate in very short social media snippets is an impressive skill and one that I am keen to learn. This was the motivation behind going on the Research Support Office event on &lt;a href=&#34;https://www.ed.ac.uk/arts-humanities-soc-sci/research-ke/support-for-staff/staff-development/learning-lunches-events/using-social-media-to-engage-research-end-users&#34;&gt;‘Using social media to engage research end users’&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Firstly, what are the benefits of using social media to engage with research end users:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;why-use-social-media&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Why use social media?&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Dissemination - share cutting-edge research&lt;/li&gt;
+&lt;li&gt;Listening - retweet/like other research (a personalised newsfeed)&lt;/li&gt;
+&lt;li&gt;Connecting - reuse content and feedback to contributors, conference hashtag (if it’s your event make sure hashtag isn’t already taken!)&lt;/li&gt;
+&lt;li&gt;Interacting - plan ahead, make it regular, half an hour a day?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;It might be useful to have a go with two types of social media platforms:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;types-of-social-media&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Types of social media&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Project blog - Keep it short (&amp;lt; 500 words) and informal, UoE has an &lt;a href=&#34;https://www.ed.ac.uk/information-services/learning-technology/blogging&#34;&gt;in-house service for Wordpress blogging&lt;/a&gt;, which comes with lots of support (e.g. security, GDPR compliancy)&lt;/li&gt;
+&lt;li&gt;Twitter - always include imagery (and make it fun)&lt;/li&gt;
+&lt;li&gt;Facebook - good for events&lt;/li&gt;
+&lt;li&gt;E-newsletter&lt;/li&gt;
+&lt;li&gt;Infographics&lt;/li&gt;
+&lt;li&gt;Video/Audio channels&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;A number of free open source software are available to help get started:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;software&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Software&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;a href=&#34;https://tweetdeck.twitter.com/&#34;&gt;Tweetdeck&lt;/a&gt; - schedule tweets for times of day (some times/days more effective - most effective times are subject specific)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wakelet.com/findoutmore.html&#34;&gt;Wakelet&lt;/a&gt; - gather social media data to tell a story (for an event for example)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.canva.com/&#34;&gt;Canva&lt;/a&gt; - online graphic design for images, infographics etc.&lt;/li&gt;
+&lt;li&gt;Google/twitter analytics - measuring engagement&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://unsplash.com/&#34;&gt;Unsplash&lt;/a&gt; - free high resolution images&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
     </item>
     
   </channel>

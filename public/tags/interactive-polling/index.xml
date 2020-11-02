@@ -2,23 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Interactive Polling on Mark Cherrie</title>
-    <link>/tags/interactive-polling/</link>
+    <link>http://www.markcherrie.net/tags/interactive-polling/</link>
     <description>Recent content in Interactive Polling on Mark Cherrie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
+    <copyright>&amp;copy; 2020 Mark Cherrie</copyright>
     <lastBuildDate>Sat, 03 Nov 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/interactive-polling/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/tags/interactive-polling/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How to make teaching/outreach more interactive</title>
-      <link>/post/mentimeter/</link>
+      <link>http://www.markcherrie.net/post/mentimeter/</link>
       <pubDate>Sat, 03 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/mentimeter/</guid>
-      <description>BackgroundI am keen to employ technology to assist in teaching. I went to the Social Science and Medicine Annual Scientific meeting in Glasgow last September and noticed that they were using software to get responses from the audience. The software was called Mentimeter. It turns out there has been a paper published by researchers from the University of Glasgow on the merits of interactive polling for teaching. The authors summarise that experiences of this technology are generally positive but caution that future use should focus first on the pedagogical approach.</description>
+      <guid>http://www.markcherrie.net/post/mentimeter/</guid>
+      <description>&lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;I am keen to employ technology to assist in teaching. I went to the &lt;a href=&#34;https://socsocmed.org.uk/annual-scientific-meeting/&#34;&gt;Social Science and Medicine Annual Scientific meeting&lt;/a&gt; in Glasgow last September and noticed that they were using software to get responses from the audience. The software was called &lt;a href=&#34;https://www.mentimeter.com/&#34;&gt;Mentimeter&lt;/a&gt;. It turns out there has been a &lt;a href=&#34;http://evs.psy.gla.ac.uk/papers/draperbrown.pdf&#34;&gt;paper&lt;/a&gt; published by researchers from the University of Glasgow on the merits of interactive polling for teaching. The authors summarise that experiences of this technology are generally positive but caution that future use should focus first on the pedagogical approach. Two approaches are put forward: 1) launching student discussion, and 2) to focus on developing teaching aligned to the students questions and needs. I’ll now give a brief description on how to carry out a Mentimeter polling session and how I have used it in teaching and outreach.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;mentimeter&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Mentimeter&lt;/h2&gt;
+&lt;p&gt;Mentimeter is proprietary cloud-based software that can collect, record and visualise participant responses via interaction with a webpage. The teacher first asks the students to go onto the webpage and input a code to get to the right question (questions are created on the Mentimeter site, which is very intuitive). The teacher then activates the voting and results are visualised in real-time on the screen. I’ve found the easiest way to include polls in a presentation is to use the Powerpoint &lt;a href=&#34;https://www.mentimeter.com/powerpoint&#34;&gt;plugin&lt;/a&gt;. The plots and data can then be downloaded and are useful for reports after the event.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;examples-of-use&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Examples of use&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Teaching: Honing in on plans for dissertations by asking what type of data students anticipate collecting, to stimulate discussion on the merits of these data.&lt;/li&gt;
+&lt;li&gt;Outreach: Developing a structural equation model by asking experts to categorise pathways by their strength of association with outcomes&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;thoughts-on-use&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Thoughts on use&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;The use of an internet-enabled device can be exclusionary, if possible there should be devices that can be used by students that are ready to vote.&lt;/li&gt;
+&lt;li&gt;In addition to the previous point, it might be beneficial to mix more traditional interactive methods (e.g. the Carousel Activity) with the new technology so there’s a greater chance that people feel comfortable with the type of interaction.&lt;/li&gt;
+&lt;li&gt;The data and plots generated from interactive polling are so useful for reflection and it is much less time-consuming than transcribing hand written notes.&lt;/li&gt;
+&lt;li&gt;There may be limitations to the type of questions that can be asked and the type of answers that can be supplied (e.g. doodles). In relation to the first point, especially in small groups with questions that might be more personal (i.e. related to their project) some students might not feel confident having their answers shared among the group, and this should be respected.&lt;/li&gt;
+&lt;li&gt;Although I have found the technology to be robust, there are always going to be challenges with connectivity. The polling should be a pivot point not the key part of the teaching.&lt;/li&gt;
+&lt;li&gt;I would think that spending more time on getting everyone up to speed with the concept of polling and having fewer key questions is better than trying to fit in lots of questions (also relates to student &lt;a href=&#34;https://www.google.com/search?q=response+fatigue&amp;amp;oq=response+fatigue&amp;amp;aqs=chrome..69i57j0l5.2592j0j4&amp;amp;sourceid=chrome&amp;amp;ie=UTF-8&#34;&gt;respondent fatigue&lt;/a&gt;).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;What are your experiences with interactive polling for teaching/outreach?&lt;/p&gt;
+&lt;/div&gt;
+</description>
     </item>
     
   </channel>

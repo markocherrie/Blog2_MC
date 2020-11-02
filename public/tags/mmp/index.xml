@@ -2,23 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mmp on Mark Cherrie</title>
-    <link>/tags/mmp/</link>
+    <link>http://www.markcherrie.net/tags/mmp/</link>
     <description>Recent content in Mmp on Mark Cherrie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
+    <copyright>&amp;copy; 2020 Mark Cherrie</copyright>
     <lastBuildDate>Tue, 08 Aug 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/mmp/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/tags/mmp/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Mobility, Mood and Place Project (MMP)</title>
-      <link>/project/mmp/</link>
+      <link>http://www.markcherrie.net/project/mmp/</link>
       <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/project/mmp/</guid>
-      <description>Our health and mobility are intrinsically linked with the quality of our local environment. All sorts of things affect us, from housing density and neighbourhood deprivation to access to green space. In Topic 3, we have explored how physical, built and social environments evolve over time and how they impact on inequalities in health in older age, related to mobility throughout life. We have used data from just under 600 people in their 70’s, together with long term, area-level measures of their childhood, adulthood and current environment.</description>
+      <guid>http://www.markcherrie.net/project/mmp/</guid>
+      <description>&lt;p&gt;Our health and mobility are intrinsically linked with the quality of our local environment. All sorts of things affect us, from housing density and neighbourhood deprivation to access to green space. In Topic 3, we have explored how physical, built and social environments evolve over time and how they impact on inequalities in health in older age, related to mobility throughout life. We have used data from just under 600 people in their 70’s, together with long term, area-level measures of their childhood, adulthood and current environment.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

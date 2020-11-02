@@ -2,23 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Movement on Mark Cherrie</title>
-    <link>/tags/movement/</link>
+    <link>http://www.markcherrie.net/tags/movement/</link>
     <description>Recent content in Movement on Mark Cherrie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
+    <copyright>&amp;copy; 2020 Mark Cherrie</copyright>
     <lastBuildDate>Sat, 22 Dec 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/movement/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/tags/movement/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How to quickly visualise massive spatio-temporal data</title>
-      <link>/post/uber-kepler/</link>
+      <link>http://www.markcherrie.net/post/uber-kepler/</link>
       <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/uber-kepler/</guid>
-      <description>BackgroundAre you collecting lots of geospatial data and need a way to quickly visualise what you’ve got? Read on! I had this problem; I was collecting a lot of information on my daily movements from Arc App: Location and Activity (more on the use of Arc for research later). Additionally, I wanted to quickly see what features of the urban environment (e.g. greenspaces) I was being ‘exposed’ to. The solution was Uber’s open source geospatial analysis tool: Kepler.</description>
+      <guid>http://www.markcherrie.net/post/uber-kepler/</guid>
+      <description>&lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;Are you collecting lots of geospatial data and need a way to quickly visualise what you’ve got? Read on! I had this problem; I was collecting a lot of information on my daily movements from &lt;a href=&#34;https://itunes.apple.com/us/app/arc-app-location-activity/id1063151918?mt=8&#34;&gt;Arc App: Location and Activity&lt;/a&gt; (more on the use of Arc for research later). Additionally, I wanted to quickly see what features of the urban environment (e.g. greenspaces) I was being ‘exposed’ to. The solution was Uber’s open source geospatial analysis tool: &lt;a href=&#34;https://kepler.gl&#34;&gt;Kepler.gl&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;method&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Method&lt;/h2&gt;
+&lt;p&gt;Some formatting of your data is required, but it’s pretty simple, just output a CSV with a &lt;a href=&#34;https://stat.ethz.ch/R-manual/R-devel/library/base/html/as.POSIXlt.html&#34;&gt;datetime&lt;/a&gt;, latitude and longitude column, alongside any other attribute data that you are interested in (here I’m interested in greenspace exposure, i.e. when I was within 50 metres of a &lt;a href=&#34;https://www.ordnancesurvey.co.uk/business-and-government/products/os-open-greenspace.html&#34;&gt;greenspace&lt;/a&gt;). That’s the hard bit. After this, you have lots of options for styling your visualisation. You receive an automatic animation of your data over time, which you have control of with a set of buttons to determine playback. A notable, but more time-consuming, alternative to creating animations from data is the &lt;a href=&#34;https://medium.com/@tjukanov/geogiffery-in-a-nutshell-introduction-to-qgis-time-manager-31bb79f2af19&#34;&gt;QGIS Time manager&lt;/a&gt;.&lt;br /&gt;
+Once you like the look of your visualisation, there are options to share as an image or a URL. If, like me, you want to do furthering editing (e.g. annotate certain frames) then you can do a screen recording and then import to a video editing program such as iMovie (n.b. There is probably a better way of doing this). Anyway, hopefully this blog will give enough information to get started with kepler.gl. I was able to create a visualisation of my contact with greenspaces over a 6 months period, which is shown below.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;visualisation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Visualisation&lt;/h2&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/5K49kbiK-Q0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34; title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
+&lt;/div&gt;
+</description>
     </item>
     
   </channel>

@@ -2,112 +2,110 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Recent &amp; Upcoming Talks on Mark Cherrie</title>
-    <link>/talk/</link>
+    <link>http://www.markcherrie.net/talk/</link>
     <description>Recent content in Recent &amp; Upcoming Talks on Mark Cherrie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
+    <copyright>&amp;copy; 2020 Mark Cherrie</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/talk/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Quantifying exposure to the natural environment across the lifecourse: Implications for health inequalities</title>
-      <link>/talk/openspace2019/</link>
+      <link>http://www.markcherrie.net/talk/openspace2019/</link>
       <pubDate>Mon, 18 Mar 2019 12:00:00 +0000</pubDate>
       
-      <guid>/talk/openspace2019/</guid>
+      <guid>http://www.markcherrie.net/talk/openspace2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Geospatial Research Methods</title>
-      <link>/talk/geospatialresearchmethods-2019/</link>
+      <link>http://www.markcherrie.net/talk/geospatialresearchmethods-2019/</link>
       <pubDate>Thu, 07 Mar 2019 12:00:00 +0000</pubDate>
       
-      <guid>/talk/geospatialresearchmethods-2019/</guid>
+      <guid>http://www.markcherrie.net/talk/geospatialresearchmethods-2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tobacco Outlet Density and Tobacco/smoking knowledge in Scottish adolescents</title>
-      <link>/talk/stadisplay/</link>
+      <link>http://www.markcherrie.net/talk/stadisplay/</link>
       <pubDate>Thu, 17 Jan 2019 11:30:00 +0000</pubDate>
       
-      <guid>/talk/stadisplay/</guid>
+      <guid>http://www.markcherrie.net/talk/stadisplay/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hard times: mental health under austerity</title>
-      <link>/talk/foss/</link>
+      <link>http://www.markcherrie.net/talk/foss/</link>
       <pubDate>Wed, 07 Nov 2018 11:30:00 +0000</pubDate>
       
-      <guid>/talk/foss/</guid>
+      <guid>http://www.markcherrie.net/talk/foss/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Simple Features in R</title>
-      <link>/talk/simplefeatures/</link>
+      <link>http://www.markcherrie.net/talk/simplefeatures/</link>
       <pubDate>Wed, 27 Jun 2018 10:00:00 +0000</pubDate>
       
-      <guid>/talk/simplefeatures/</guid>
+      <guid>http://www.markcherrie.net/talk/simplefeatures/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Transitions in frailty status in older adults: Associations with neighbourhood parks over the lifecourse</title>
-      <link>/talk/gisr_mmp/</link>
+      <link>http://www.markcherrie.net/talk/gisr_mmp/</link>
       <pubDate>Thu, 19 Apr 2018 12:30:00 +0000</pubDate>
       
-      <guid>/talk/gisr_mmp/</guid>
+      <guid>http://www.markcherrie.net/talk/gisr_mmp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Has the introduction of point-of-sale legislation led to a reduction in exposure to tobacco retailing? A longitudinal study?</title>
-      <link>/talk/gisr_display/</link>
+      <link>http://www.markcherrie.net/talk/gisr_display/</link>
       <pubDate>Thu, 19 Apr 2018 11:30:00 +0000</pubDate>
       
-      <guid>/talk/gisr_display/</guid>
+      <guid>http://www.markcherrie.net/talk/gisr_display/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Geospatial Research Methods</title>
-      <link>/talk/geospatialresearchmethods-talk/</link>
+      <link>http://www.markcherrie.net/talk/geospatialresearchmethods-talk/</link>
       <pubDate>Wed, 21 Mar 2018 11:30:00 +0000</pubDate>
       
-      <guid>/talk/geospatialresearchmethods-talk/</guid>
+      <guid>http://www.markcherrie.net/talk/geospatialresearchmethods-talk/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data, data, big not small, how can R increase efficiency for all?</title>
-      <link>/talk/example-talk/</link>
+      <link>http://www.markcherrie.net/talk/example-talk/</link>
       <pubDate>Thu, 28 Sep 2017 11:30:00 +0000</pubDate>
       
-      <guid>/talk/example-talk/</guid>
+      <guid>http://www.markcherrie.net/talk/example-talk/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Association between area-level socioeconomic deprivation and mental health in later life: A retrospective life course analysis in the Lothian Birth Cohort 1936</title>
-      <link>/talk/imgs_mmp/</link>
+      <link>http://www.markcherrie.net/talk/imgs_mmp/</link>
       <pubDate>Wed, 05 Jul 2017 12:30:00 +0000</pubDate>
       
-      <guid>/talk/imgs_mmp/</guid>
+      <guid>http://www.markcherrie.net/talk/imgs_mmp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Places, then and now, how do they influence our health?</title>
-      <link>/talk/digitisationmmp/</link>
+      <link>http://www.markcherrie.net/talk/digitisationmmp/</link>
       <pubDate>Tue, 14 Jun 2016 10:00:00 +0000</pubDate>
       
-      <guid>/talk/digitisationmmp/</guid>
+      <guid>http://www.markcherrie.net/talk/digitisationmmp/</guid>
       <description></description>
     </item>
     

@@ -2,60 +2,396 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Visualisation on Mark Cherrie</title>
-    <link>/categories/data-visualisation/</link>
+    <link>http://www.markcherrie.net/categories/data-visualisation/</link>
     <description>Recent content in Data Visualisation on Mark Cherrie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
+    <copyright>&amp;copy; 2020 Mark Cherrie</copyright>
     <lastBuildDate>Mon, 25 Mar 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/data-visualisation/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/categories/data-visualisation/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>The Geography of the Revoke Article 50 petition</title>
-      <link>/post/geography_of_the_revoke_article_50_petition/</link>
+      <link>http://www.markcherrie.net/post/geography_of_the_revoke_article_50_petition/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/geography_of_the_revoke_article_50_petition/</guid>
-      <description>IntroductionThe ‘Revoke article 50 and remain in the EU petition’ is the most popular petition ever, which aims to stop the brexit process. The rules are that after 10,000 signatures, petitions get a response from the government, after 100,000 signatures, petitions are considered for debate in Parliament and after 17.4 million, we stop Brexit (Andrea Leadsom, 2019). As of writing this (25/03/19 17:00 GMT), the petition has amassed over 5 million signatures.</description>
+      <guid>http://www.markcherrie.net/post/geography_of_the_revoke_article_50_petition/</guid>
+      <description>&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;The ‘Revoke article 50 and remain in the EU petition’ is the most popular petition ever, which aims to stop the brexit process. The rules are that after 10,000 signatures, petitions get a response from the government, after 100,000 signatures, petitions are considered for debate in Parliament and after 17.4 million, we stop Brexit (Andrea Leadsom, 2019). As of writing this (25/03/19 17:00 GMT), the petition has amassed over 5 million signatures. As a geographer, I wondered whether there were some places that were signing (read that as sighing on a proofread… probably accurate) a lot more than others and whether that was expected, given how their constituency voted in the referendum.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;method&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Method&lt;/h2&gt;
+&lt;p&gt;Luckily, the required data at the constituency level is publically available for: the number of signatures of the &lt;a href=&#34;https://petition.parliament.uk/petitions/241584?fbclid=IwAR2E3C5chLiMm9MM7awL2qWw_Fkr_KLXert0S61swiRbYORAfmOOglgZ8as&#34;&gt;‘Revoke article 50’ petition&lt;/a&gt;, boundaries of the constituencies with the data on the &lt;a href=&#34;http://www.statsmapsnpix.com/2017/04/getting-ready-for-ge2017-big-shapefile.html&#34;&gt;2015 electorate&lt;/a&gt; and the &lt;a href=&#34;https://commonslibrary.parliament.uk/parliament-and-elections/elections-elections/brexit-votes-by-constituency/&#34;&gt;% voting to leave in the referendum&lt;/a&gt;. After merging these data together I first calculated the percentage of electorate who signed the petition. I then built a regression model using the electorate petition percentage as the dependent variable and the Brexit leave estimate as the independent variable.&lt;/p&gt;
+&lt;p&gt;The hypothesis is that the areas with higher percentages of leave voters would have the lowest percentage of the electorate signing the petition. By studying the residuals we can see constituencies that are signing the petition more or less than we would expect (given the referendum vote). I visualised the data as a &lt;a href=&#34;http://www.dannydorling.org/?page_id=3132&#34;&gt;cartogram&lt;/a&gt;, distorting the map to enlarge constituencies that had a) higher petition percentages b) higher-than-expected petition percentages.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;results&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;p&gt;The highest percentages of petition signatures were: Hornsey and Wood Green (38%), Bristol West (37%), Cities of London and Westminster (37%), Brighton, Pavilion (35%) and Islington North (34%); and the lowest: Barnsley East (3%), Birmingham, Hodge Hill (3%), Doncaster North (3%), Dudley North (3%) and Easington (3%). Here’s the map of percentage of constituency signing the petition:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;img/brexit_images/percentageofelectorate.png&#34; alt=&#34;Where have people been signing the petition?&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;&lt;em&gt;Where have people been signing the petition?&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The Brexit referendum vote explained 69% of the variance of the petition signature percentage. For every percentage increase in the Brexit leave vote there was a -0.46% lower petition percentage (95% CI -0.48 to -0.44). There was a general North West/South East pattern in the model residuals, with much lower than expected petition percentages coming from Northern Ireland and much higher than expected petition percentages coming from London and Brighton. Here’s the cartogram on expected petition percentage given the referendum’s vote:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;img/brexit_images/revokearticlebrexitref.png&#34; alt=&#34;Where has the petition had higher signatures than expected?&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;&lt;em&gt;Where has the petition had higher signatures than expected?&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusion&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://petition.parliament.uk/petitions/241584?fbclid=IwAR2E3C5chLiMm9MM7awL2qWw_Fkr_KLXert0S61swiRbYORAfmOOglgZ8as&#34;&gt;Sign up&lt;/a&gt;, especially if you are in Northern England, Wales, Scotland and Northern Ireland and we might hit 17.4 million ☺&lt;/p&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>How to quickly visualise massive spatio-temporal data</title>
-      <link>/post/uber-kepler/</link>
+      <link>http://www.markcherrie.net/post/uber-kepler/</link>
       <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/uber-kepler/</guid>
-      <description>BackgroundAre you collecting lots of geospatial data and need a way to quickly visualise what you’ve got? Read on! I had this problem; I was collecting a lot of information on my daily movements from Arc App: Location and Activity (more on the use of Arc for research later). Additionally, I wanted to quickly see what features of the urban environment (e.g. greenspaces) I was being ‘exposed’ to. The solution was Uber’s open source geospatial analysis tool: Kepler.</description>
+      <guid>http://www.markcherrie.net/post/uber-kepler/</guid>
+      <description>&lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;Are you collecting lots of geospatial data and need a way to quickly visualise what you’ve got? Read on! I had this problem; I was collecting a lot of information on my daily movements from &lt;a href=&#34;https://itunes.apple.com/us/app/arc-app-location-activity/id1063151918?mt=8&#34;&gt;Arc App: Location and Activity&lt;/a&gt; (more on the use of Arc for research later). Additionally, I wanted to quickly see what features of the urban environment (e.g. greenspaces) I was being ‘exposed’ to. The solution was Uber’s open source geospatial analysis tool: &lt;a href=&#34;https://kepler.gl&#34;&gt;Kepler.gl&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;method&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Method&lt;/h2&gt;
+&lt;p&gt;Some formatting of your data is required, but it’s pretty simple, just output a CSV with a &lt;a href=&#34;https://stat.ethz.ch/R-manual/R-devel/library/base/html/as.POSIXlt.html&#34;&gt;datetime&lt;/a&gt;, latitude and longitude column, alongside any other attribute data that you are interested in (here I’m interested in greenspace exposure, i.e. when I was within 50 metres of a &lt;a href=&#34;https://www.ordnancesurvey.co.uk/business-and-government/products/os-open-greenspace.html&#34;&gt;greenspace&lt;/a&gt;). That’s the hard bit. After this, you have lots of options for styling your visualisation. You receive an automatic animation of your data over time, which you have control of with a set of buttons to determine playback. A notable, but more time-consuming, alternative to creating animations from data is the &lt;a href=&#34;https://medium.com/@tjukanov/geogiffery-in-a-nutshell-introduction-to-qgis-time-manager-31bb79f2af19&#34;&gt;QGIS Time manager&lt;/a&gt;.&lt;br /&gt;
+Once you like the look of your visualisation, there are options to share as an image or a URL. If, like me, you want to do furthering editing (e.g. annotate certain frames) then you can do a screen recording and then import to a video editing program such as iMovie (n.b. There is probably a better way of doing this). Anyway, hopefully this blog will give enough information to get started with kepler.gl. I was able to create a visualisation of my contact with greenspaces over a 6 months period, which is shown below.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;visualisation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Visualisation&lt;/h2&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/5K49kbiK-Q0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34; title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>Devolved parliaments and assemblies Legislation</title>
-      <link>/post/devolvedlegislation/</link>
+      <link>http://www.markcherrie.net/post/devolvedlegislation/</link>
       <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/devolvedlegislation/</guid>
-      <description>Scotland, Wales and Northern Ireland have had devolved powers since 1997, 1997 and 1998 respectively. During this time 480 Acts have been passed, an act being defined as primary legislation which has been through several stages from:
-Pre-legislative scrutiny on the draft piece of legislation (bill)First Reading - first presentation, no votingSecond Reading - debate on principles, votingCommittee Stage - Considers bill clausesConsideration or report stage - Consider further amendmentsThird Reading - Consider final textPassage - Sent to other house (i.</description>
+      <guid>http://www.markcherrie.net/post/devolvedlegislation/</guid>
+      <description>&lt;p&gt;Scotland, Wales and Northern Ireland have had devolved powers since 1997, 1997 and 1998 respectively. During this time 480 Acts have been passed, an act being defined as primary legislation which has been through several stages from:&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Pre-legislative scrutiny on the draft piece of legislation (bill)&lt;/li&gt;
+&lt;li&gt;First Reading - first presentation, no voting&lt;/li&gt;
+&lt;li&gt;Second Reading - debate on principles, voting&lt;/li&gt;
+&lt;li&gt;Committee Stage - Considers bill clauses&lt;/li&gt;
+&lt;li&gt;Consideration or report stage - Consider further amendments&lt;/li&gt;
+&lt;li&gt;Third Reading - Consider final text&lt;/li&gt;
+&lt;li&gt;Passage - Sent to other house (i.e. if created in commons to lords, vice versa)&lt;/li&gt;
+&lt;li&gt;Consideration of Lords/Commons Amendments&lt;/li&gt;
+&lt;li&gt;Royal Assent&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;When working with longitudinal data it might be fruitful to identify legislation that may have had an effect on the behaviour or health of study participants. In particular, if you have study participants living across the UK, the acts orginating from the devolved parliaments might be interesting as they may be associated with differences in health/behaviour observed.&lt;/p&gt;
+&lt;p&gt;Data are collected on all legislation passed in the UK on the &lt;a href=&#34;http://www.legislation.gov.uk&#34;&gt;legislation.gov.uk&lt;/a&gt; website. Some visualisation of this data has been done over time to show the frequency of legislation passed by year. However it’s quite tricky to identify when legislation has been passed across the devolved countries and how they relate to one another. The aim was to develop a visualisation to quickly identify legilsation from the devolved parliaments and assemblies.&lt;/p&gt;
+&lt;p&gt;Firstly, the data from the website was scraped using a function called ‘legiscraper’:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(httr)
+library(rvest)
+
+# legislation scraper
+legiscraper&amp;lt;-function(page, countrycode){
+test&amp;lt;-read_html(paste0(&amp;quot;http://www.legislation.gov.uk/&amp;quot;, countrycode, &amp;quot;?page=&amp;quot;, page))
+tableinfo &amp;lt;- html_nodes(test,&amp;#39;#content td&amp;#39;)
+tableinfo &amp;lt;- html_text(tableinfo)
+# Delete Welsh names which are causing problems
+if(countrycode==&amp;quot;anaw&amp;quot;){
+  toDelete &amp;lt;- seq(0, length(tableinfo), 4)
+  tableinfo &amp;lt;- tableinfo[-toDelete]
+} 
+nrow&amp;lt;-length(grep(&amp;quot;^[0-9]&amp;quot;, tableinfo))
+df &amp;lt;- data.frame(matrix(unlist(tableinfo), nrow=nrow, byrow=T),stringsAsFactors=FALSE)
+return(df)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, the input options for the ‘legiscraper’ function were created and then the function was run for each country (n.b. I was counting the number of pages that the data was on, but will look into automating this in the future):&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Scotland
+library(plyr)
+scotdf&amp;lt;-data.frame(page=1:14, countrycode=&amp;quot;asp&amp;quot;)
+Scotland&amp;lt;-mdply(scotdf, legiscraper)
+# Wales
+walesdf&amp;lt;-data.frame(page=1:2, countrycode=&amp;quot;anaw&amp;quot;)
+Wales&amp;lt;-mdply(walesdf, legiscraper)
+# Northern Ireland 
+nidf&amp;lt;-data.frame(page=1:9, countrycode=&amp;quot;nia&amp;quot;)
+NorthernIreland&amp;lt;-mdply(nidf, legiscraper)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Each dataframe was then binded and cleaned, before saving for each year:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# cleaning
+library(stringr)
+Legislationdf&amp;lt;-rbind(Scotland, Wales, NorthernIreland)
+Legislationdf$Year&amp;lt;-as.numeric(substr(Legislationdf$X2, 1,4))
+colnames(Legislationdf)&amp;lt;-c(&amp;quot;&amp;quot;,&amp;quot;&amp;quot;,&amp;quot;Legislationname&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;Parliament&amp;quot;, &amp;quot;Year&amp;quot;)
+Legislationdf&amp;lt;-subset(Legislationdf, select=c(&amp;quot;Legislationname&amp;quot;, &amp;quot;Parliament&amp;quot;, &amp;quot;Year&amp;quot;))
+Legislationdf&amp;lt;-Legislationdf[,c(1,3,2)]
+# write .csv files
+write.csv(Legislationdf, &amp;quot;LegislationAll.csv&amp;quot;, row.names=F)
+for (i in 1999:2018){
+  subsetdf&amp;lt;-subset(Legislationdf, year==i)
+  write.csv(subsetdf, &amp;quot;Legislationdf&amp;quot;, i, &amp;quot;.csv&amp;quot;, row.names=F)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To create the shiny app, the user interface was defined as follows:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(shiny)
+library(networkD3)
+
+ui &amp;lt;- fluidPage(
+titlePanel(&amp;quot;Devolved Parliaments and Assemblies Legislation, by Year&amp;quot;),
+  sidebarLayout(
+    sidebarPanel(
+     selectInput(&amp;quot;Year&amp;quot;, &amp;quot;Choose Year&amp;quot;, choices=c(&amp;quot;All&amp;quot;,&amp;quot;1999&amp;quot;, &amp;quot;2000&amp;quot;,      &amp;quot;2001&amp;quot;,&amp;quot;2002&amp;quot;, &amp;quot;2003&amp;quot;, &amp;quot;2004&amp;quot;, &amp;quot;2005&amp;quot;, &amp;quot;2006&amp;quot;, &amp;quot;2007&amp;quot;, &amp;quot;2008&amp;quot;,          &amp;quot;2009&amp;quot;,&amp;quot;2010&amp;quot;, &amp;quot;2011&amp;quot;, &amp;quot;2012&amp;quot;, &amp;quot;2013&amp;quot;,&amp;quot;2014&amp;quot;, &amp;quot;2015&amp;quot;, &amp;quot;2016&amp;quot;,           &amp;quot;2017&amp;quot;, &amp;quot;2018&amp;quot;)),
+  actionButton(&amp;quot;click&amp;quot;, &amp;quot;Render&amp;quot;),
+  downloadButton(&amp;quot;downloadData&amp;quot;, &amp;quot;Download&amp;quot;),
+  helpText(&amp;quot;Data from http://www.legislation.gov.uk&amp;quot;)
+    ),
+  mainPanel(forceNetworkOutput(
+  &amp;quot;forced&amp;quot;, width = &amp;quot;100%&amp;quot;, height = &amp;quot;700px&amp;quot;))
+                ))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now onto the server side file. After packages and visualisation colour options were set, the data needed to be read in then subsetted based on the user’s ‘Year’ input. The trickiest part was formatting this data for the ‘networkD3’ package. Luckily there was a very good post on &lt;a href=&#34;https://bit.ly/2J7659N&#34;&gt;stackexchange&lt;/a&gt; by Peter Ellis, on how to create the input data and modify the colour of nodes. Some difficulties did arise from formatting (the imported csv variables were not in the same format as the in memory data), a &lt;a href=&#34;https://github.com/tidyverse/dplyr/issues/1388&#34;&gt;function name conflict&lt;/a&gt; and the order of node id’s. The fixes are detailed below. Finally, with an interactive app like this, the amount of data displayed differs, and so the options for display were based on whether the user picked the full or subsetted input. Code below:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(shiny)
+library(networkD3)
+library(dplyr)
+
+# Colour for the vis
+ColourScale &amp;lt;- &amp;#39;d3.scaleOrdinal()
+.domain([&amp;quot;Acts of the Scottish Parliament&amp;quot;, 
+  &amp;quot;Acts of the National Assembly for Wales&amp;quot;, &amp;quot;Acts of the Northern Ireland Assembly&amp;quot;,&amp;quot;Year&amp;quot;])
+  .range([&amp;quot;#FF6900&amp;quot;, &amp;quot;#694489&amp;quot;, &amp;quot;#ff0090&amp;quot;, &amp;quot;#888888&amp;quot;]);&amp;#39;
+
+server &amp;lt;- function(input, output, session) {
+  # year subset
+  subset &amp;lt;- reactive({input$Year})  
+  # on render click get the data
+  data &amp;lt;- eventReactive(input$click, {
+    read.csv(paste0(&amp;quot;Legislationdf&amp;quot;, subset(), &amp;quot;.csv&amp;quot;))
+  })
+  # download button
+  output$downloadData &amp;lt;- downloadHandler(
+    filename = function() {
+      paste(&amp;quot;DevolvedLegislation.csv&amp;quot;, sep = &amp;quot;&amp;quot;)
+    },
+    content = function(file) {
+      write.csv(data(), file, row.names = FALSE)
+    }
+  )
+# Output 
+  output$forced &amp;lt;- renderForceNetwork({
+    # manipulate data
+    master&amp;lt;-data()
+    # when saved as &amp;#39;.csv&amp;#39; formatting went out the window
+    master$Legislationname&amp;lt;-as.character(master$Legislationname)
+    master$Year&amp;lt;-as.double(master$Year)
+    master$Parliament&amp;lt;-as.character(master$Parliament)
+    # now onto making the network input 
+    src&amp;lt;-master[,1]
+    target&amp;lt;-master[,2]
+    networkData &amp;lt;- data.frame(src, target, stringsAsFactors = FALSE)
+    networkData$target&amp;lt;-as.character(networkData$target)
+    
+    # nodes
+    nodes &amp;lt;- data.frame(name = unique(c(as.character(src), target)), stringsAsFactors = FALSE)
+    nodes$id &amp;lt;- 0:(nrow(nodes) - 1)
+    
+    # edges - notice &amp;#39;dplyr::&amp;#39; as there were some problems with rename... 
+    library(dplyr)
+      edges &amp;lt;- networkData %&amp;gt;%
+      dplyr::left_join(nodes, by = c(&amp;quot;src&amp;quot; = &amp;quot;name&amp;quot;))%&amp;gt;%
+      dplyr::select(-src) %&amp;gt;%
+      dplyr::rename(source = id) %&amp;gt;%
+      dplyr::left_join(nodes, by = c(&amp;quot;target&amp;quot; = &amp;quot;name&amp;quot;))%&amp;gt;%
+      dplyr::select(-target) %&amp;gt;%
+      dplyr::rename(target = id)
+    
+    edges$width &amp;lt;- 1
+
+    # make a grouping variable that will match to colours
+    mergenodes&amp;lt;-master[,c(1,3)]
+    colnames(mergenodes)&amp;lt;-c(&amp;quot;name&amp;quot;, &amp;quot;Parliament&amp;quot;)
+    nodes&amp;lt;-merge(nodes, mergenodes, by=&amp;quot;name&amp;quot;, all.x=T)
+    nodes$Parliament[is.na(nodes$Parliament)]&amp;lt;-&amp;quot;Year&amp;quot;
+    
+    ##### This is CRUCIAL, they have to be ordered by id, or you won&amp;#39;t get what you expect...
+    nodes &amp;lt;- nodes[order(nodes$id),] 
+
+    # different display for all of the data vs year subset
+if(nrow(master)==480){
+  
+  add=data.frame(source=c(499:481), target=c(498:480), width=0.5)
+  edges&amp;lt;-rbind(edges, add)
+  forceNetwork(Links = edges, Nodes = nodes, 
+               Source = &amp;quot;source&amp;quot;,
+               Target = &amp;quot;target&amp;quot;,
+               linkDistance=100,
+               NodeID =&amp;quot;name&amp;quot;,
+               Group = &amp;quot;Parliament&amp;quot;,
+               Value = &amp;quot;width&amp;quot;,
+               opacity = 0.9,
+               zoom = TRUE,
+               charge=-5,
+               legend=T,
+               fontSize = 12,
+               colourScale = JS(ColourScale))
+}else{
+    #### And for yearly subset 
+    forceNetwork(Links = edges, Nodes = nodes, 
+                 Source = &amp;quot;source&amp;quot;,
+                 Target = &amp;quot;target&amp;quot;,
+                 NodeID =&amp;quot;name&amp;quot;,
+                 Group = &amp;quot;Parliament&amp;quot;,
+                 Value = &amp;quot;width&amp;quot;,
+                 opacity = 0.9,
+                 linkDistance = 240,
+                 fontSize = 15,
+                 charge=-2,
+                 zoom = TRUE,
+                 opacityNoHover = 1,
+                 legend=T,
+                 colourScale = JS(ColourScale))
+}
+  })
+  
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here is the final app:&lt;/p&gt;
+&lt;p&gt;Next steps are to look at whether the legilsation can be classified into groups meaninfully, or whether a node can act as a link to a webpage for more information.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Mapping Green Space and Traffic in Glasgow</title>
-      <link>/post/greentraffic/</link>
+      <link>http://www.markcherrie.net/post/greentraffic/</link>
       <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/greentraffic/</guid>
-      <description>BackgroundThe health benefit of greater availability of greenspaces is mediated by the quality of these spaces (Zhang et al., 2017). Recently, quality was associated with psychological distress, whereas availability had no effect (Feng and Astell-Burt, 2018). Both of these measures of quality were self-reported. Another method to determine quality is from GIS-derived measures of land use. Perhaps the optimal method is using questionnaire self-report and GIS-derived measures as has been developed by (Stessens et al.</description>
+      <guid>http://www.markcherrie.net/post/greentraffic/</guid>
+      <description>&lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;The health benefit of greater availability of greenspaces is mediated by the quality of these spaces &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5451986/&#34;&gt;(Zhang et al., 2017)&lt;/a&gt;. Recently, quality was associated with psychological distress, whereas availability had no effect &lt;a href=&#34;https://bmcpsychiatry.biomedcentral.com/articles/10.1186/s12888-018-1926-1&#34;&gt;(Feng and Astell-Burt, 2018)&lt;/a&gt;. Both of these measures of quality were self-reported. Another method to determine quality is from GIS-derived measures of land use. Perhaps the optimal method is using questionnaire self-report and GIS-derived measures as has been developed by &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S2212041616303898&#34;&gt;(Stessens et al., 2017)&lt;/a&gt;. Their measure of quality had the following subdomains and weightings: Naturalness and biodiversity (0.10), Spaciousness (0.16), Quietness (0.14) which were GIS-derived; cleanliness and maintenence (0.31), facilities (0.20) and feelings of safety (0.20) which were questionnaire-derived. In this work, I hypothesised that heavy traffic and accidents would influence quietness, and feelings of safety, thus reducing the quality of the greenspace. The first step then was to understand how traffic events and greenspaces covary, in Glasgow, as a case study.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;research-questions&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Research Questions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Do traffic events occur close to greenspaces?&lt;/li&gt;
+&lt;li&gt;How does this vary temporally?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;method&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Method&lt;/h2&gt;
+&lt;p&gt;I will describe the process of building a data visualisation to answer these questions. First load the packages:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# allows r to work with spatial data
+library(rgdal)
+# allows r to connect with google apis
+library(googleway)
+# allows r to perform GIS operations (on vectors especially?)
+library(rgeos)
+# general purpose plotting package for r
+library(ggplot2)
+# download the greenspace map for scotland from:
+# https://www.ordnancesurvey.co.uk/opendatadownload/products.html&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, read in the green space data:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# read the data
+green&amp;lt;-readOGR(&amp;quot;boundaries/green&amp;quot;, &amp;quot;GB_GreenspaceSite&amp;quot;)
+# Download the local authority boundary for Glasgow City from here:
+# https://saspac.org/data/2011-census/scotland-2011/
+glasgow&amp;lt;-readOGR(&amp;quot;boundaries/Scottish-Census-boundaries(shp)/2011_Council_Area/CA_2011_EoR_Glasgow_City&amp;quot;, &amp;quot;CA_2011_EoR_Glasgow_City&amp;quot;)
+# clip to glasgow
+green_subset &amp;lt;- green[glasgow, ]
+
+# Project Glasgow greenspace (BNG) to lat/long (WGS84)
+green_subset &amp;lt;- spTransform(green_subset, CRS(&amp;quot;+init=epsg:4326&amp;quot;))
+
+# Make it a dataframe
+green_polygon&amp;lt;-fortify(green_subset)
+
+# Tidy the coloumn names so that we can use it with the polyline encoding function
+colnames(green_polygon)[1]&amp;lt;-&amp;quot;lon&amp;quot;
+green_polygon&amp;lt;-subset(green_polygon, select=c(&amp;quot;lon&amp;quot;, &amp;quot;lat&amp;quot;, &amp;quot;id&amp;quot;))
+
+# Now for each group of points (vertices of polygon) we want to encode the polygon using the &amp;quot;encode_pl&amp;quot; function from the package googleway (comment block it do it doens&amp;#39;t run everytime)
+
+if(FALSE) {
+polyline_df&amp;lt;-NULL
+for (i in unique(green_polygon$id)){
+dataG&amp;lt;-subset(green_polygon, id==i)
+polyline&amp;lt;-encode_pl(dataG$lat, dataG$lon)
+polyline_df&amp;lt;-rbind(df, polyline)
+}
+polyline_df&amp;lt;-as.data.frame(polyline_df)
+colnames(polyline_df)&amp;lt;-&amp;quot;polyline&amp;quot;
+}
+}
+# Let&amp;#39;s write this out so that the end viz/application doesn&amp;#39;t need to do this bit again
+# write.csv(polyline_df, &amp;quot;data/polyline_df.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, let’s get historic traffic data:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Data on historical traffic from here:
+# https://www.dft.gov.uk/traffic-counts/area.php?region=Scotland&amp;amp;la=Glasgow+City
+# &amp;quot;Briefly the file contains the annual traffic (otherwise known as volume of traffic) on each link of the major road network. This is calculated by multiplying the Annual average daily flow (AADF) by the corresponding length of road and by the number of days in the year&amp;quot;&amp;quot;
+data&amp;lt;-read.csv(&amp;quot;data/Glasgow+City_TRAF.csv&amp;quot;)
+# make the data frame spatial
+coords = cbind(data$Easting, data$Northing)
+sp = SpatialPoints(coords)
+# add the data
+spdf = SpatialPointsDataFrame(coords, data)
+# Set projection to bng
+proj4string(spdf) &amp;lt;- CRS(&amp;quot;+init=epsg:27700&amp;quot;)
+# project to bng
+spdf &amp;lt;- spTransform(spdf, CRS(&amp;quot;+init=epsg:4326&amp;quot;))
+# Let&amp;#39;s just look at all the motovehicles combineds
+traffichistoric&amp;lt;-as.data.frame(spdf)
+traffichistoric&amp;lt;-subset(traffichistoric, select=c(&amp;quot;coords.x1&amp;quot;, &amp;quot;coords.x2&amp;quot;, &amp;quot;AllMotorVehicles&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To get contemporary traffic information we can use the googleway package, i.e. current traffic volume on roads. All the data is then brought together in the Rshiny app:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# load packages
+library(shiny)
+library(googleway)
+library(maptools)
+
+# Read the processed data
+traffichistoric&amp;lt;-read.csv(&amp;quot;data/traffichistoric.csv&amp;quot;)
+polyline_df&amp;lt;-read.csv(&amp;quot;data/polyline_df.csv&amp;quot;)
+
+# Create the shiny user input specs
+ui &amp;lt;- fluidPage(google_mapOutput(&amp;quot;map&amp;quot;))
+
+# Create the shiny server specs
+server &amp;lt;- function(input, output, session){
+
+# Have to have an API key to use Google data  
+map_key &amp;lt;- &amp;quot;Your-key-here&amp;quot;
+  
+# Style option not used but we can change the style of the map with the following code:
+style &amp;lt;- &amp;#39;[{&amp;quot;featureType&amp;quot;:&amp;quot;all&amp;quot;,&amp;quot;elementType&amp;quot;:&amp;quot;all&amp;quot;,&amp;quot;stylers&amp;quot;:[{&amp;quot;invert_lightness&amp;quot;:true}, {&amp;quot;saturation&amp;quot;:10},{&amp;quot;lightness&amp;quot;:30},{&amp;quot;gamma&amp;quot;:0.5},{&amp;quot;hue&amp;quot;:&amp;quot;#435158&amp;quot;}]}, {&amp;quot;featureType&amp;quot;:&amp;quot;road.arterial&amp;quot;,&amp;quot;elementType&amp;quot;:&amp;quot;all&amp;quot;,&amp;quot;stylers&amp;quot;:[{&amp;quot;visibility&amp;quot;:&amp;quot;simplified&amp;quot;}]}, {&amp;quot;featureType&amp;quot;:&amp;quot;transit.station&amp;quot;,&amp;quot;elementType&amp;quot;:&amp;quot;labels.text&amp;quot;,&amp;quot;stylers&amp;quot;:[{&amp;quot;visibility&amp;quot;:&amp;quot;off&amp;quot;}]}]&amp;#39;
+  
+# output the map, use glasgow lat long to centre map, play with the zoom to make it look good
+output$map &amp;lt;-renderGoogle_map({google_map(key = map_key, location=c(55.8642, -4.2518), zoom=13) %&amp;gt;%
+# Add a heatmap of the historical traffic counts
+add_heatmap(data = traffichistoric, lat = &amp;#39;coords.x2&amp;#39;, lon = &amp;#39;coords.x1&amp;#39;, option_opacity = 0.3) %&amp;gt;%
+# This is the key bit to get contemporary traffic
+add_traffic() %&amp;gt;% 
+# And to the get the polygons of greenspace
+add_polygons(data = polyline_df, polyline =&amp;quot;polyline&amp;quot;, stroke_weight = 3, fill_colour = &amp;quot;green&amp;quot;, stroke_colour = &amp;quot;black&amp;quot;) 
+})}
+# run the app!
+shinyApp(ui, server)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;visualisation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Visualisation&lt;/h2&gt;
+&lt;p&gt;Here is the final result:&lt;/p&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>Mapzen Isochrone Maps</title>
-      <link>/post/isochrone/</link>
+      <link>http://www.markcherrie.net/post/isochrone/</link>
       <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/isochrone/</guid>
-      <description>I have just come across Mapzen’s routing engine (Valhalla), which can be used to produce incredible isochrone maps, mentioned in this blog post. If you’ve not heard of Mapzen they provide mapping tools for developers so that their websites can be converted to the spatial side. The neat thing about isochrone lines is that they show the boundary around a point where travel time is equal. So you can ask some interesting proximity based questions (e.</description>
+      <guid>http://www.markcherrie.net/post/isochrone/</guid>
+      <description>&lt;p&gt;I have just come across Mapzen’s routing engine (Valhalla), which can be used to produce incredible isochrone maps, mentioned in this &lt;a href=&#34;https://mapzen.com/blog/introducing-isochrone-service/&#34;&gt;blog post&lt;/a&gt;. If you’ve not heard of &lt;a href=&#34;https://mapzen.com/&#34;&gt;Mapzen&lt;/a&gt; they provide mapping tools for developers so that their websites can be converted to the spatial side. The neat thing about isochrone lines is that they show the boundary around a point where travel time is equal. So you can ask some interesting proximity based questions (e.g. What types of greenspace do I have within a 5 minute walk from my home?). I’ve been eager to create isochrone maps since seeing &lt;a href=&#34;https://www.rome2rio.com/blog/2016/01/08/time-flies-according-to-these-maps-it-does/&#34;&gt;Rome2Rio’s set&lt;/a&gt;, which show isochrones from London for 1914 and 2016. Below I have used the &lt;a href=&#34;https://mapzen.com/mobility/explorer/&#34;&gt;mobility explorer&lt;/a&gt; to generate isochrones boundaries (in 15 minute bands) for where I live, for several different travel options (walking, cycling, public transport and driving). Have a go!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/mapzenimages/walking.png&#34; alt=&#34;Walking&#34; /&gt; &lt;img src=&#34;img/mapzenimages/cycling.png&#34; alt=&#34;Cycling&#34; /&gt; &lt;img src=&#34;img/mapzenimages/transit.png&#34; alt=&#34;Public Transport&#34; /&gt; &lt;img src=&#34;img/mapzenimages/driving.png&#34; alt=&#34;Driving&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;As with all my posts, I’m writing from memory, from my own experiences, which may have not been remembered correctly or do not include the full picture. If you think there should be an improvement to the post then please get in touch and I’ll update it, I’m always willing to learn!&lt;/p&gt;
+</description>
     </item>
     
   </channel>

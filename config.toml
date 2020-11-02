@@ -1,6 +1,6 @@
 baseurl = "http://www.markcherrie.net/"  # End your URL with a `/` trailing slash.
 title = "Mark Cherrie"
-copyright = "&copy; 2019 Mark Cherrie"
+copyright = "&copy; 2020 Mark Cherrie"
 theme = "hugo-academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
@@ -22,14 +22,14 @@ defaultContentLanguageInSubdir = false
 
 [params]
   name = "Mark Cherrie"
-  role = "Postdoctoral Researcher in Environment and Health"
-  organization = "University of Edinburgh"
+  role = "Senior Scientist in Environment and Health"
+  organization = "Institute of Occupational Medicine/University of Edinburgh"
   organization_url = ""
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "Mark.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "mark.cherrie.mc@gmail.com"
   address = "School of Geosciences, Drummond Street, Edinburgh, EH8 9XP"
-  office_hours = ""
+  office_hours = "9am-6pm"
   phone = ""
   skype = "mark.cherrie.mc"
   telegram = ""

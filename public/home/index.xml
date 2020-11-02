@@ -2,87 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homes on Mark Cherrie</title>
-    <link>/home/</link>
+    <link>http://www.markcherrie.net/home/</link>
     <description>Recent content in Homes on Mark Cherrie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
+    <copyright>&amp;copy; 2020 Mark Cherrie</copyright>
     <lastBuildDate>Tue, 29 Aug 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title></title>
-      <link>/home/about/</link>
-      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/home/about/</guid>
-      <description>Biography My research lies at the intersection of environmental epidemiology and health geography. My focus is on the concept of the exposome - the totality of &amp;lsquo;environmental&amp;rsquo; exposures from cradle to grave. I am guided by the life course of place approach and the uncertain geographic context problem. My goal is to understand how we interact with the natural and built environment to inform policy and technological developments to reduce the gap in health between the most and least advantaged in society.</description>
-    </item>
-    
-    <item>
-      <title>Projects</title>
-      <link>/home/projects/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/home/projects/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Selected Publications</title>
-      <link>/home/publications_selected/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/home/publications_selected/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Recent Publications</title>
-      <link>/home/publications/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/home/publications/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Recent &amp; Upcoming Presentations</title>
-      <link>/home/talks/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/home/talks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Teaching</title>
-      <link>/home/teaching/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/home/teaching/</guid>
-      <description>This is an example of using the custom widget to create your own homepage section.</description>
-    </item>
-    
-    <item>
-      <title>Recent Posts</title>
-      <link>/home/posts/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/home/posts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Contact</title>
-      <link>/home/contact/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/home/contact/</guid>
-      <description></description>
-    </item>
+    <atom:link href="/home/" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>

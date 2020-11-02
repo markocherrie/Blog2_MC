@@ -2,23 +2,43 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sequence on Mark Cherrie</title>
-    <link>/tags/sequence/</link>
+    <link>http://www.markcherrie.net/tags/sequence/</link>
     <description>Recent content in Sequence on Mark Cherrie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
+    <copyright>&amp;copy; 2020 Mark Cherrie</copyright>
     <lastBuildDate>Wed, 03 Oct 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/sequence/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/tags/sequence/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How can we understand patterns of prescription use?</title>
-      <link>/post/sequence-analysis-in-r/</link>
+      <link>http://www.markcherrie.net/post/sequence-analysis-in-r/</link>
       <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/sequence-analysis-in-r/</guid>
-      <description>BackgroundLongitudinal analysis is important as due to the temporal sequence of exposure then outcome, we can make a stronger case for causality. A derivative of a class of models that fit into the ‘data-mining’ family is sequence analysis. One use of this model is to understand lifetime states, e.g. being employed, being in education, being retired. By understanding these state sequences we can understand how the duration and timing of a state can affect health in the long term.</description>
+      <guid>http://www.markcherrie.net/post/sequence-analysis-in-r/</guid>
+      <description>&lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;Longitudinal analysis is important as due to the temporal sequence of exposure then outcome, we can make a stronger case for causality. A derivative of a class of models that fit into the ‘data-mining’ family is sequence analysis. One use of this model is to understand lifetime states, e.g. being employed, being in education, being retired. By understanding these state sequences we can understand how the duration and timing of a state can affect health in the long term. An excellent R package that allows you to conduct sequence analysis is the &lt;a href=&#34;https://cran.r-project.org/web/packages/TraMineR/index.html&#34;&gt;TraMineR&lt;/a&gt; package. Here I’m going to describe how traminer can be used to understand patterns in prescription use.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;sequence-analysis&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Sequence Analysis&lt;/h2&gt;
+&lt;p&gt;The first step in sequence analysis is to format the dataset into wide format (time as columns and unit of observation as rows). The function in R to define the sequence is ‘seqdef’. Once we have this object, step 2 is to create visualisations using ‘seqplot’. There are many to choose from, I like the index plot (use argument, ‘type=I’), which shows you all the sequences, so is a raw look at the diversity of sequences (n.b. I recommend using the argument ‘sort=“from.start”’ to get a clearer picture). I also like the distribution plot (‘type=d’); this is a summary of the percentages for each time point that correspond to each state. You can then use the group argument to understand difference by the covariates (refer to your original dataframe with the information on for example, sex, age etc.). There are a number of metrics that can be calculated on the sequence including length, duration of distinct states, transition rates, Shannon entropy and turbulence. These are all descriptive statistics to understand the stability of the sequences over time. Step 3 is to understand sequence dissimilarity, i.e. to calculate how close two sequences are. There are a number of dissimilarity measures (e.g. longest common prefix, optimal matching). The latter is commonly used and is based on how many edits, deletions and substitutions it takes to get from one sequence to another; the result is a ‘cost’ of transformation. Generally there tends to be measures that favour sequencing (e.g. when and what order) or timing (e.g. how long in a state). Step 4 is to use the dissimilarity measure with one of two families for clustering (e.g. hierarchical clustering and partitioning around medoids; using ‘WeightedCluster’ package). The researcher has to specify the number of groups and then assess the cluster quality by looking at several measures (e.g. average silhouette width; -1 to 1; higher is better), and interpret them in relation to the literature. The final stage is to use the cluster groups in a regression analysis as covariates or outcome variables.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;summary&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Define sequence&lt;/li&gt;
+&lt;li&gt;Visualise and descriptive statistics&lt;/li&gt;
+&lt;li&gt;Sequence dissimilarity&lt;/li&gt;
+&lt;li&gt;Clustering (create clusters, assess quality of clusters, interpret them)&lt;/li&gt;
+&lt;li&gt;Regression with cluster groups&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Example&lt;/h2&gt;
+&lt;p&gt;This &lt;a href=&#34;https://thebest.shinyapps.io/Sequence/&#34;&gt;example&lt;/a&gt; is a simulated dataset on 6-month status of prescription use. If the participant has had a prescription in the last 6 months they are defined as a cases, and subdivided by old/new (whether they had prescriptions in the first 6 months), relapse/norelapse (whether they have come off prescriptions for 6 months and then back on), recurrence/remission (whether on/off prescriptions by the end of the time period); If they have never been prescribed they are classified as “Never”. The app first gives a description of the simulated dataset, the state distribution, state index and state distributions by cluster group.&lt;/p&gt;
+&lt;/div&gt;
+</description>
     </item>
     
   </channel>

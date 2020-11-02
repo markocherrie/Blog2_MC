@@ -2,55 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Research Tips on Mark Cherrie</title>
-    <link>/categories/research-tips/</link>
+    <link>http://www.markcherrie.net/categories/research-tips/</link>
     <description>Recent content in Research Tips on Mark Cherrie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
-    <lastBuildDate>Thu, 25 Jul 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/research-tips/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>UK-China Researcher Links Workshop - Urban analytics at the interface between environment, human health and behaviour</title>
-      <link>/post/china/</link>
-      <pubDate>Thu, 25 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/china/</guid>
-      <description>Introduction The workshop The Newton funded ‘research links’ workshop was designed to bring together 34 early career researchers in the fields of environmental science, ecology, computer science, urban planning, geography, public health, data sciences and modelling. It was held in Tongji University in Shanghai from the 2-4th of July 2019. The workshop aimed to:
-Show-case the most recent research and knowledge advancement in the field Facilitate state-of-the-art research and impact on policy and decision making (i.</description>
-    </item>
+    <copyright>&amp;copy; 2020 Mark Cherrie</copyright>
+    <lastBuildDate>Wed, 08 May 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/categories/research-tips/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Using Social Media to Engage Research End Users</title>
-      <link>/post/socialmedia/</link>
+      <link>http://www.markcherrie.net/post/socialmedia/</link>
       <pubDate>Wed, 08 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/socialmedia/</guid>
-      <description>Photo by NordWood Themes on Unsplash
-BackgroundSocial media is becoming the dominant platform for getting information, for the general population by superseding television and newspapers and increasingly for academics, displacing peer-reviewed journal articles. Time is limited and short communications are easier to digest, especially when on a mobile.
-To summarise findings from a research project or engage in an academic/policy debate in very short social media snippets is an impressive skill and one that I am keen to learn.</description>
+      <guid>http://www.markcherrie.net/post/socialmedia/</guid>
+      <description>&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;img/socialmedia.jpg&#34; alt=&#34;Photo by NordWood Themes on Unsplash&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Photo by NordWood Themes on Unsplash&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;Social media is becoming the dominant platform for getting information, for the general population by superseding television and newspapers and increasingly for academics, displacing peer-reviewed journal articles. Time is limited and short communications are easier to digest, especially when on a mobile.&lt;/p&gt;
+&lt;p&gt;To summarise findings from a research project or engage in an academic/policy debate in very short social media snippets is an impressive skill and one that I am keen to learn. This was the motivation behind going on the Research Support Office event on &lt;a href=&#34;https://www.ed.ac.uk/arts-humanities-soc-sci/research-ke/support-for-staff/staff-development/learning-lunches-events/using-social-media-to-engage-research-end-users&#34;&gt;‘Using social media to engage research end users’&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Firstly, what are the benefits of using social media to engage with research end users:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;why-use-social-media&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Why use social media?&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Dissemination - share cutting-edge research&lt;/li&gt;
+&lt;li&gt;Listening - retweet/like other research (a personalised newsfeed)&lt;/li&gt;
+&lt;li&gt;Connecting - reuse content and feedback to contributors, conference hashtag (if it’s your event make sure hashtag isn’t already taken!)&lt;/li&gt;
+&lt;li&gt;Interacting - plan ahead, make it regular, half an hour a day?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;It might be useful to have a go with two types of social media platforms:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;types-of-social-media&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Types of social media&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Project blog - Keep it short (&amp;lt; 500 words) and informal, UoE has an &lt;a href=&#34;https://www.ed.ac.uk/information-services/learning-technology/blogging&#34;&gt;in-house service for Wordpress blogging&lt;/a&gt;, which comes with lots of support (e.g. security, GDPR compliancy)&lt;/li&gt;
+&lt;li&gt;Twitter - always include imagery (and make it fun)&lt;/li&gt;
+&lt;li&gt;Facebook - good for events&lt;/li&gt;
+&lt;li&gt;E-newsletter&lt;/li&gt;
+&lt;li&gt;Infographics&lt;/li&gt;
+&lt;li&gt;Video/Audio channels&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;A number of free open source software are available to help get started:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;software&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Software&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;a href=&#34;https://tweetdeck.twitter.com/&#34;&gt;Tweetdeck&lt;/a&gt; - schedule tweets for times of day (some times/days more effective - most effective times are subject specific)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wakelet.com/findoutmore.html&#34;&gt;Wakelet&lt;/a&gt; - gather social media data to tell a story (for an event for example)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.canva.com/&#34;&gt;Canva&lt;/a&gt; - online graphic design for images, infographics etc.&lt;/li&gt;
+&lt;li&gt;Google/twitter analytics - measuring engagement&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://unsplash.com/&#34;&gt;Unsplash&lt;/a&gt; - free high resolution images&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>Removing pages from a PDF</title>
-      <link>/post/pdf/</link>
+      <link>http://www.markcherrie.net/post/pdf/</link>
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/pdf/</guid>
-      <description>More of a note than a post but hopefully this can help someone else out having the same issue.
-I needed to remove a couple of pages from a PDF document today. This can be done easily on a mac using preview (i.e. backspace when the page thumbnail is highlighted) but I couldn’t find a way on the PC, using my default PDF reader- Acrobat Reader DC. It seems that most of the useful functionality requires the pro version.</description>
+      <guid>http://www.markcherrie.net/post/pdf/</guid>
+      <description>&lt;p&gt;More of a note than a post but hopefully this can help someone else out having the same issue.&lt;/p&gt;
+&lt;p&gt;I needed to remove a couple of pages from a PDF document today. This can be done easily on a mac using preview (i.e. backspace when the page thumbnail is highlighted) but I couldn’t find a way on the PC, using my default PDF reader- Acrobat Reader DC. It seems that most of the useful functionality requires the pro version.&lt;/p&gt;
+&lt;p&gt;I first tried to edit it in GIMP (opensource photo editing software). I was able to import each of the PDF pages as layers and delete the layers I didn’t need. However, I couldn’t find a way of exporting properly, all I got was the first page. I did see something about saving it as a .mng and using inkscape/imagemagick’s ‘convert’ command but it seemed like a bit of work. Next up, LibreOffice, I saw an article describing that it was possible to import and edit a PDF using this software. This worked well, and was very intuitive, however when I looked at the exported PDF document it had made all the pages portrait. This was a problem as my some of my pages with wide tables were landscape, so it had clipped them. Not being able to find a way to rotate individual pages in LibreOffice (there must be a way of doing this!), I tried a final option to use the Google Drive extension - DocHub. This worked so well and made it really easy to save the edited pdf back to my Google Drive.&lt;/p&gt;
+&lt;p&gt;So if you need some powerful software to edit a PDF quickly, check out &lt;a href=&#34;https://dochub.com&#34;&gt;DocHub&lt;/a&gt;! Just beware that it’s only free up to a point. You can view and edit up to 2,000 documents, sign 5 documents/month, request up to 3 signers/month and email up to 3 documents/day, anything over this and you will need to go onto the pro account.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>First post</title>
-      <link>/post/first-post/</link>
+      <link>http://www.markcherrie.net/post/first-post/</link>
       <pubDate>Thu, 07 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/first-post/</guid>
-      <description>Welcome to my first post. As an avid R user, I was amazed at how quickly it was to setup a static website with the help from the R package: “blogdown”. I thought Yihui Xie gave a convincing argument for blogging from his personal experience (Appendix D in above website). In summary he provides three reasons in favour of blogging:
-To consolidate thoughts and create a clearer argument for topics that are important to you.</description>
+      <guid>http://www.markcherrie.net/post/first-post/</guid>
+      <description>&lt;p&gt;Welcome to my first post. As an avid R user, I was amazed at how quickly it was to setup a static website with the help from the R package: &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34;&gt;“blogdown”&lt;/a&gt;. I thought Yihui Xie gave a convincing argument for blogging from his personal experience (Appendix D in above website). In summary he provides three reasons in favour of blogging:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;To consolidate thoughts and create a clearer argument for topics that are important to you.&lt;/li&gt;
+&lt;li&gt;To engage with other people and get helpful feedback.&lt;/li&gt;
+&lt;li&gt;To remember things that you have done so that they can be re-used in new applications.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;These are things that I already try to do, albeit unsystematically. I find that the things I do in this respect are either quite time consuming (e.g. giving a tutorial or presentation) or fleeting (e.g. conversations with friends and family). With respect to the third point I have a github repository for &lt;a href=&#34;https://github.com/markocherrie/Helpful_Code&#34;&gt;helpful code&lt;/a&gt;, however this tends to be more of a dump of code snippets rather than a thoughtful write-up of what I was doing. So this website fits in nicely.&lt;/p&gt;
+&lt;p&gt;I mentioned that this is a static website in the first paragraph. This terminology was completely new to me when I started to set this site up. A static website is one that has every webpage stored as a single file on the server, e.g. this post has it’s own HTML (Hypertext Markup Language) file associated with it. Hugo, Jeykll and Hexo are the static site generators that you pass these files to. The main advantage to static websites is that you can hit the ground running, a little bit of HTML and CSS (Cascading Style Sheets) knowledge can go a long way. There is no requirement to know any server side scripting languages such a PHP (Hypertext Preprocessor) or SQL (Structured Query Language), which means there is no server-host interaction and therefore load times are very quick. There are drawbacks though. If you intend to change something on every page, then this can be very time consuming. There is also a lot less functionality compared to a dynamic page which gives you the ability to add features such as shopping carts and social media interactions. Another option would have been to use a CMS (Content Management System) such as Joomla or Wordpress, beating both static and dynamic on ease of setup and time to update. Although I feel that their functionality is a black box and if you want to deviate from the default template then you may get unstuck. CMS’s have got around this by adding plugins. However I have found that often these aren’t available on the cheaper pricing tiers. For example Wordpress does not allow you to use iframe (a webpage inside another webpage…webception) and adding a plugin is only available on the business pricing tier (£20.83 a month). So I’d argue that a static website for a blog is a good option, which allows the website to grow as the webmaster’s skills do.&lt;/p&gt;
+&lt;p&gt;As with all my posts, I’m writing from memory, from my own experiences, which may have not been remembered correctly or do not include the full picture. If you think there should be an improvement to the post then please get in touch and I’ll update it, I’m always willing to learn!&lt;/p&gt;
+</description>
     </item>
     
   </channel>

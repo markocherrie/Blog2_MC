@@ -2,25 +2,109 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Satellite on Mark Cherrie</title>
-    <link>/tags/satellite/</link>
+    <link>http://www.markcherrie.net/tags/satellite/</link>
     <description>Recent content in Satellite on Mark Cherrie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
+    <copyright>&amp;copy; 2020 Mark Cherrie</copyright>
     <lastBuildDate>Sat, 24 Feb 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/satellite/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/tags/satellite/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>NetCDF in R</title>
-      <link>/post/netcdf-in-r/</link>
+      <link>http://www.markcherrie.net/post/netcdf-in-r/</link>
       <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/netcdf-in-r/</guid>
-      <description>NetCDF stands for “Network Common Data Format” and was created by ‘unidata’ for handling large geospatial data. Here’s a short description from their website:
-“NetCDF is a set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-orientated scientific data.”
-NetCDF files are containers for dimensions, variables and global atttributes. It’s used to store climatology, meteorology and oceanography data by over 1,300 organisations including NOAA and EUMETSAT.</description>
+      <guid>http://www.markcherrie.net/post/netcdf-in-r/</guid>
+      <description>&lt;p&gt;NetCDF stands for “Network Common Data Format” and was created by ‘unidata’ for handling large geospatial data. Here’s a short description from their &lt;a href=&#34;https://www.unidata.ucar.edu/netcdf/&#34;&gt;website&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;“NetCDF is a set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-orientated scientific data.”&lt;/p&gt;
+&lt;p&gt;NetCDF files are containers for dimensions, variables and global atttributes. It’s used to store climatology, meteorology and oceanography data by over 1,300 organisations including &lt;a href=&#34;https://www.esrl.noaa.gov/psd/data/gridded/data.gistemp.html&#34;&gt;NOAA&lt;/a&gt; and &lt;a href=&#34;https://www.eumetsat.int/website/home/index.html&#34;&gt;EUMETSAT&lt;/a&gt;. I think the key advantage of the format is that all the information required to use it correctly is supplied within the data file. So it doesn’t matter if you are using Python, Perl or R, you will be able to read, manipulate and plot the data, and there is lots of information out there to help with that.&lt;/p&gt;
+&lt;p&gt;I was asked recently to help with processing air pollution data stored in NetCDF format (.nc/.NC) using R. I’ve had a first attempt at describing one of the files we are using (NO2 max for a day), plotting, batch processing daily neighbourhood (postcode unit) based exposure estimates and finally converting to .rds for upload to a postgresql database. Some considerations of the data I was using was that it had a polar stereographic projection, which can be converted to a lat/long &lt;a href=&#34;https://stackoverflow.com/questions/23837918/convert-polar-stereographic-projection-into-lat-long-grid-in-r&#34;&gt;grid&lt;/a&gt;. I decided that this might not be required if I used the points as they were and allocate the nearest air pollution point to the centroid of the postcode. As the data size was quite large (all postcode units in britain) the normal rgeos::gDistance method didn’t work (i.e. could not allocate vector error), so I used k-nearest neighbour (k=1), below is the code:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# reading ncdf in R
+library(ncdf4)
+library(reshape2)
+library(dplyr)
+library(raster)
+
+# get all netcdf files
+flist &amp;lt;- list.files(path = &amp;quot;.&amp;quot;, pattern = &amp;quot;^.*\\.(nc|NC|Nc|Nc)$&amp;quot;)
+
+# Open a connection to the first file in our list
+nc &amp;lt;- nc_open(flist[1])
+
+# get variable names
+attributes(nc$var)$names
+
+# summary
+MaxNO2&amp;lt;-ncatt_get(nc, attributes(nc$var)$names[3])
+
+#projection is:
+#projection: Stereographic
+#projection_params: 90.0 -32.0 0.933013
+# got this from the nc output
+nc_close(nc)
+
+# use the info collected from attributes to get the data
+xyznames &amp;lt;- c(&amp;quot;lon&amp;quot;, &amp;quot;lat&amp;quot;, &amp;quot;NO2_daymax&amp;quot;)
+lon &amp;lt;- raster(flist[1], varname= xyznames[1])
+lat &amp;lt;- raster(flist[1], varname= xyznames[2])
+dat &amp;lt;- brick(flist[1], varname = xyznames[3])
+
+# Values drops the &amp;quot;raster&amp;quot; wrapper, just returns values in order as a vector
+d &amp;lt;- cbind(values(lon), values(lat), values(dat[[1]]))
+# remap arbitrary values to [0,1] for a colour table
+scl &amp;lt;- function(x) (x - min(x, na.rm = TRUE))/diff(range(x, na.rm = TRUE))
+# set a number for colours
+n &amp;lt;- 56
+# plot the data
+plot(d[,1:2], pch = 16, col = terrain.colors(n)[scl(d[,3]) * (n-1) + 1])
+
+# codepoint postcode unit points
+set1&amp;lt;-readRDS(&amp;quot;C:/Users/mcherrie/boundary/Postcodeunit.rds&amp;quot;)
+set1 &amp;lt;- spTransform(set1, CRS(&amp;quot;+init=epsg:4326&amp;quot;))
+
+# raster vals
+coords = cbind(d[,1], d[,2])
+set2 = SpatialPoints(coords)
+proj4string(set2) = CRS(&amp;quot;+init=epsg:4326&amp;quot;)
+plot(set2)
+
+A &amp;lt;- SpatialPoints(set1)
+B &amp;lt;- SpatialPoints(set2)
+# library(rgeos)
+# set1$nearest_in_set2 &amp;lt;- apply(gDistance(set1sp, set2sp, byid=TRUE), 1, which.min)
+# doesn&amp;#39;t work cannot allocate vector
+
+library(SearchTrees)
+# Find indices of the nearest points in B to each of the points in A
+tree &amp;lt;- createTree(coordinates(B))
+inds &amp;lt;- knnLookup(tree, newdat=coordinates(A), k=1)
+
+# create the dataframes --- need to double check this bit!
+Bdf&amp;lt;-as.data.frame(B)
+Bdf$ind&amp;lt;-seq(1,nrow(Bdf))
+colnames(Bdf)&amp;lt;-c(&amp;quot;AP_long&amp;quot;, &amp;quot;AP_lat&amp;quot;, &amp;quot;ind&amp;quot;)
+Adf&amp;lt;-as.data.frame(A)
+Adf$ind&amp;lt;-inds
+colnames(Adf)&amp;lt;-c(&amp;quot;PU_long&amp;quot;, &amp;quot;PU_lat&amp;quot;, &amp;quot;ind&amp;quot;)
+Cdf&amp;lt;-merge(Adf, Bdf, by=&amp;quot;ind&amp;quot;)
+
+# get the Air pollution coordinates for the Postcode units
+PUDF&amp;lt;-as.data.frame(set1)
+colnames(PUDF)&amp;lt;-c(&amp;quot;PU&amp;quot;, &amp;quot;Easting&amp;quot;, &amp;quot;Northing&amp;quot;, &amp;quot;PU_long&amp;quot;, &amp;quot;PU_lat&amp;quot;)
+PUDF2&amp;lt;-merge(PUDF, Cdf, by=c(&amp;quot;PU_long&amp;quot;, &amp;quot;PU_lat&amp;quot;), all.x=T)
+subsetAP&amp;lt;-subset(PUDF2, select=c(&amp;quot;PU&amp;quot;, &amp;quot;AP_long&amp;quot;, &amp;quot;AP_lat&amp;quot;))
+
+# Let&amp;#39;s output a year
+for(i in 1:2){
+d &amp;lt;- cbind(values(lon), values(lat), values(dat[[i]]))
+name&amp;lt;-dat[[i]]@z[[1]][1]
+colnames(d)&amp;lt;-c(&amp;quot;AP_long&amp;quot;, &amp;quot;AP_lat&amp;quot;, &amp;quot;Value&amp;quot;)
+d2&amp;lt;-merge(d, subsetAP, by=c(&amp;quot;AP_long&amp;quot;, &amp;quot;AP_lat&amp;quot;), all.y=T)
+saveRDS(d2, paste0(&amp;quot;E:/airpollutiondata/&amp;quot;,name,&amp;quot;.rds&amp;quot;))
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Any feedback welcome, thanks.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

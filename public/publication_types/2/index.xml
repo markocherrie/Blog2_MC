@@ -2,94 +2,92 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2 on Mark Cherrie</title>
-    <link>/publication_types/2/</link>
+    <link>http://www.markcherrie.net/publication_types/2/</link>
     <description>Recent content in 2 on Mark Cherrie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
+    <copyright>&amp;copy; 2020 Mark Cherrie</copyright>
     <lastBuildDate>Mon, 18 Feb 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/publication_types/2/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Association between activity space exposure to parks in childhood and adolescence and cognitive ageing in later life</title>
-      <link>/publication/activityspace/</link>
+      <link>http://www.markcherrie.net/publication/activityspace/</link>
       <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/publication/activityspace/</guid>
+      <guid>http://www.markcherrie.net/publication/activityspace/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pathogen seasonality and links with weather in England and Wales: a big data time series analysis</title>
-      <link>/publication/pathogen/</link>
+      <link>http://www.markcherrie.net/publication/pathogen/</link>
       <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/publication/pathogen/</guid>
+      <guid>http://www.markcherrie.net/publication/pathogen/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Changing labour market conditions during the ‘great recession’ and mental health in Scotland 2007–2011: an example using the Scottish Longitudinal Study and data for local areas in Scotland</title>
-      <link>/publication/sdai/</link>
+      <link>http://www.markcherrie.net/publication/sdai/</link>
       <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/publication/sdai/</guid>
+      <guid>http://www.markcherrie.net/publication/sdai/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Association between Serum 25-Hydroxy Vitamin D Levels and the Prevalence of Adult-Onset Asthma</title>
-      <link>/publication/asthmavitd/</link>
+      <link>http://www.markcherrie.net/publication/asthmavitd/</link>
       <pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/publication/asthmavitd/</guid>
+      <guid>http://www.markcherrie.net/publication/asthmavitd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Life course of place: a longitudinal study of mental health and place</title>
-      <link>/publication/lifecourseplacemental/</link>
+      <link>http://www.markcherrie.net/publication/lifecourseplacemental/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/publication/lifecourseplacemental/</guid>
+      <guid>http://www.markcherrie.net/publication/lifecourseplacemental/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A randomised control crossover trial of a theory based intervention to improve sun-safe and healthy behaviours in construction workers: study protocol</title>
-      <link>/publication/nudgeuv/</link>
+      <link>http://www.markcherrie.net/publication/nudgeuv/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/publication/nudgeuv/</guid>
+      <guid>http://www.markcherrie.net/publication/nudgeuv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Green space and cognitive ageing: A retrospective life course analysis in the Lothian Birth Cohort 1936</title>
-      <link>/publication/parkscogage/</link>
+      <link>http://www.markcherrie.net/publication/parkscogage/</link>
       <pubDate>Mon, 06 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/publication/parkscogage/</guid>
+      <guid>http://www.markcherrie.net/publication/parkscogage/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Land cover and air pollution are associated with asthma hospitalisations: A cross-sectional study.</title>
-      <link>/publication/asthmagreenairpoll/</link>
+      <link>http://www.markcherrie.net/publication/asthmagreenairpoll/</link>
       <pubDate>Sat, 16 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/publication/asthmagreenairpoll/</guid>
+      <guid>http://www.markcherrie.net/publication/asthmagreenairpoll/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Coastal climate is associated with elevated solar irradiance and higher serum vitamin D levels</title>
-      <link>/publication/uv/</link>
+      <link>http://www.markcherrie.net/publication/uv/</link>
       <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>/publication/uv/</guid>
+      <guid>http://www.markcherrie.net/publication/uv/</guid>
       <description></description>
     </item>
     

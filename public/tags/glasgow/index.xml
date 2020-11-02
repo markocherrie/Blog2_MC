@@ -2,23 +2,134 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Glasgow on Mark Cherrie</title>
-    <link>/tags/glasgow/</link>
+    <link>http://www.markcherrie.net/tags/glasgow/</link>
     <description>Recent content in Glasgow on Mark Cherrie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
+    <copyright>&amp;copy; 2020 Mark Cherrie</copyright>
     <lastBuildDate>Fri, 10 Nov 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/glasgow/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/tags/glasgow/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Mapping Green Space and Traffic in Glasgow</title>
-      <link>/post/greentraffic/</link>
+      <link>http://www.markcherrie.net/post/greentraffic/</link>
       <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/greentraffic/</guid>
-      <description>BackgroundThe health benefit of greater availability of greenspaces is mediated by the quality of these spaces (Zhang et al., 2017). Recently, quality was associated with psychological distress, whereas availability had no effect (Feng and Astell-Burt, 2018). Both of these measures of quality were self-reported. Another method to determine quality is from GIS-derived measures of land use. Perhaps the optimal method is using questionnaire self-report and GIS-derived measures as has been developed by (Stessens et al.</description>
+      <guid>http://www.markcherrie.net/post/greentraffic/</guid>
+      <description>&lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;The health benefit of greater availability of greenspaces is mediated by the quality of these spaces &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5451986/&#34;&gt;(Zhang et al., 2017)&lt;/a&gt;. Recently, quality was associated with psychological distress, whereas availability had no effect &lt;a href=&#34;https://bmcpsychiatry.biomedcentral.com/articles/10.1186/s12888-018-1926-1&#34;&gt;(Feng and Astell-Burt, 2018)&lt;/a&gt;. Both of these measures of quality were self-reported. Another method to determine quality is from GIS-derived measures of land use. Perhaps the optimal method is using questionnaire self-report and GIS-derived measures as has been developed by &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S2212041616303898&#34;&gt;(Stessens et al., 2017)&lt;/a&gt;. Their measure of quality had the following subdomains and weightings: Naturalness and biodiversity (0.10), Spaciousness (0.16), Quietness (0.14) which were GIS-derived; cleanliness and maintenence (0.31), facilities (0.20) and feelings of safety (0.20) which were questionnaire-derived. In this work, I hypothesised that heavy traffic and accidents would influence quietness, and feelings of safety, thus reducing the quality of the greenspace. The first step then was to understand how traffic events and greenspaces covary, in Glasgow, as a case study.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;research-questions&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Research Questions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Do traffic events occur close to greenspaces?&lt;/li&gt;
+&lt;li&gt;How does this vary temporally?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;method&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Method&lt;/h2&gt;
+&lt;p&gt;I will describe the process of building a data visualisation to answer these questions. First load the packages:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# allows r to work with spatial data
+library(rgdal)
+# allows r to connect with google apis
+library(googleway)
+# allows r to perform GIS operations (on vectors especially?)
+library(rgeos)
+# general purpose plotting package for r
+library(ggplot2)
+# download the greenspace map for scotland from:
+# https://www.ordnancesurvey.co.uk/opendatadownload/products.html&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, read in the green space data:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# read the data
+green&amp;lt;-readOGR(&amp;quot;boundaries/green&amp;quot;, &amp;quot;GB_GreenspaceSite&amp;quot;)
+# Download the local authority boundary for Glasgow City from here:
+# https://saspac.org/data/2011-census/scotland-2011/
+glasgow&amp;lt;-readOGR(&amp;quot;boundaries/Scottish-Census-boundaries(shp)/2011_Council_Area/CA_2011_EoR_Glasgow_City&amp;quot;, &amp;quot;CA_2011_EoR_Glasgow_City&amp;quot;)
+# clip to glasgow
+green_subset &amp;lt;- green[glasgow, ]
+
+# Project Glasgow greenspace (BNG) to lat/long (WGS84)
+green_subset &amp;lt;- spTransform(green_subset, CRS(&amp;quot;+init=epsg:4326&amp;quot;))
+
+# Make it a dataframe
+green_polygon&amp;lt;-fortify(green_subset)
+
+# Tidy the coloumn names so that we can use it with the polyline encoding function
+colnames(green_polygon)[1]&amp;lt;-&amp;quot;lon&amp;quot;
+green_polygon&amp;lt;-subset(green_polygon, select=c(&amp;quot;lon&amp;quot;, &amp;quot;lat&amp;quot;, &amp;quot;id&amp;quot;))
+
+# Now for each group of points (vertices of polygon) we want to encode the polygon using the &amp;quot;encode_pl&amp;quot; function from the package googleway (comment block it do it doens&amp;#39;t run everytime)
+
+if(FALSE) {
+polyline_df&amp;lt;-NULL
+for (i in unique(green_polygon$id)){
+dataG&amp;lt;-subset(green_polygon, id==i)
+polyline&amp;lt;-encode_pl(dataG$lat, dataG$lon)
+polyline_df&amp;lt;-rbind(df, polyline)
+}
+polyline_df&amp;lt;-as.data.frame(polyline_df)
+colnames(polyline_df)&amp;lt;-&amp;quot;polyline&amp;quot;
+}
+}
+# Let&amp;#39;s write this out so that the end viz/application doesn&amp;#39;t need to do this bit again
+# write.csv(polyline_df, &amp;quot;data/polyline_df.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, let’s get historic traffic data:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Data on historical traffic from here:
+# https://www.dft.gov.uk/traffic-counts/area.php?region=Scotland&amp;amp;la=Glasgow+City
+# &amp;quot;Briefly the file contains the annual traffic (otherwise known as volume of traffic) on each link of the major road network. This is calculated by multiplying the Annual average daily flow (AADF) by the corresponding length of road and by the number of days in the year&amp;quot;&amp;quot;
+data&amp;lt;-read.csv(&amp;quot;data/Glasgow+City_TRAF.csv&amp;quot;)
+# make the data frame spatial
+coords = cbind(data$Easting, data$Northing)
+sp = SpatialPoints(coords)
+# add the data
+spdf = SpatialPointsDataFrame(coords, data)
+# Set projection to bng
+proj4string(spdf) &amp;lt;- CRS(&amp;quot;+init=epsg:27700&amp;quot;)
+# project to bng
+spdf &amp;lt;- spTransform(spdf, CRS(&amp;quot;+init=epsg:4326&amp;quot;))
+# Let&amp;#39;s just look at all the motovehicles combineds
+traffichistoric&amp;lt;-as.data.frame(spdf)
+traffichistoric&amp;lt;-subset(traffichistoric, select=c(&amp;quot;coords.x1&amp;quot;, &amp;quot;coords.x2&amp;quot;, &amp;quot;AllMotorVehicles&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To get contemporary traffic information we can use the googleway package, i.e. current traffic volume on roads. All the data is then brought together in the Rshiny app:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# load packages
+library(shiny)
+library(googleway)
+library(maptools)
+
+# Read the processed data
+traffichistoric&amp;lt;-read.csv(&amp;quot;data/traffichistoric.csv&amp;quot;)
+polyline_df&amp;lt;-read.csv(&amp;quot;data/polyline_df.csv&amp;quot;)
+
+# Create the shiny user input specs
+ui &amp;lt;- fluidPage(google_mapOutput(&amp;quot;map&amp;quot;))
+
+# Create the shiny server specs
+server &amp;lt;- function(input, output, session){
+
+# Have to have an API key to use Google data  
+map_key &amp;lt;- &amp;quot;Your-key-here&amp;quot;
+  
+# Style option not used but we can change the style of the map with the following code:
+style &amp;lt;- &amp;#39;[{&amp;quot;featureType&amp;quot;:&amp;quot;all&amp;quot;,&amp;quot;elementType&amp;quot;:&amp;quot;all&amp;quot;,&amp;quot;stylers&amp;quot;:[{&amp;quot;invert_lightness&amp;quot;:true}, {&amp;quot;saturation&amp;quot;:10},{&amp;quot;lightness&amp;quot;:30},{&amp;quot;gamma&amp;quot;:0.5},{&amp;quot;hue&amp;quot;:&amp;quot;#435158&amp;quot;}]}, {&amp;quot;featureType&amp;quot;:&amp;quot;road.arterial&amp;quot;,&amp;quot;elementType&amp;quot;:&amp;quot;all&amp;quot;,&amp;quot;stylers&amp;quot;:[{&amp;quot;visibility&amp;quot;:&amp;quot;simplified&amp;quot;}]}, {&amp;quot;featureType&amp;quot;:&amp;quot;transit.station&amp;quot;,&amp;quot;elementType&amp;quot;:&amp;quot;labels.text&amp;quot;,&amp;quot;stylers&amp;quot;:[{&amp;quot;visibility&amp;quot;:&amp;quot;off&amp;quot;}]}]&amp;#39;
+  
+# output the map, use glasgow lat long to centre map, play with the zoom to make it look good
+output$map &amp;lt;-renderGoogle_map({google_map(key = map_key, location=c(55.8642, -4.2518), zoom=13) %&amp;gt;%
+# Add a heatmap of the historical traffic counts
+add_heatmap(data = traffichistoric, lat = &amp;#39;coords.x2&amp;#39;, lon = &amp;#39;coords.x1&amp;#39;, option_opacity = 0.3) %&amp;gt;%
+# This is the key bit to get contemporary traffic
+add_traffic() %&amp;gt;% 
+# And to the get the polygons of greenspace
+add_polygons(data = polyline_df, polyline =&amp;quot;polyline&amp;quot;, stroke_weight = 3, fill_colour = &amp;quot;green&amp;quot;, stroke_colour = &amp;quot;black&amp;quot;) 
+})}
+# run the app!
+shinyApp(ui, server)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;visualisation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Visualisation&lt;/h2&gt;
+&lt;p&gt;Here is the final result:&lt;/p&gt;
+&lt;/div&gt;
+</description>
     </item>
     
   </channel>

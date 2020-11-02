@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.54.0" />
+  <meta name="generator" content="Hugo 0.32" />
   <meta name="author" content="Mark Cherrie">
-  <meta name="description" content="Postdoctoral Researcher in Environment and Health">
+  <meta name="description" content="Senior Scientist in Environment and Health">
 
   
   
@@ -46,13 +46,13 @@
     
   
 
-  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Mark Cherrie">
-  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Mark Cherrie">
+  <link rel="alternate" href="http://www.markcherrie.net/index.xml" type="application/rss+xml" title="Mark Cherrie">
+  <link rel="feed" href="http://www.markcherrie.net/index.xml" type="application/rss+xml" title="Mark Cherrie">
 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="/post/rshiny-weather-app/">
+  <link rel="canonical" href="http://www.markcherrie.net/post/rshiny-weather-app/">
 
   
 
@@ -227,35 +227,35 @@
   <ul class="share">
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=%2fpost%2frshiny-weather-app%2f"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.markcherrie.net%2fpost%2frshiny-weather-app%2f"
          target="_blank">
         <i class="fa fa-facebook"></i>
       </a>
     </li>
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Nudging%20people%20to%20make%20healthy%20behaviour%20choices&amp;url=%2fpost%2frshiny-weather-app%2f"
+         href="https://twitter.com/intent/tweet?text=Nudging%20people%20to%20make%20healthy%20behaviour%20choices&amp;url=http%3a%2f%2fwww.markcherrie.net%2fpost%2frshiny-weather-app%2f"
          target="_blank">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2frshiny-weather-app%2f&amp;title=Nudging%20people%20to%20make%20healthy%20behaviour%20choices"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.markcherrie.net%2fpost%2frshiny-weather-app%2f&amp;title=Nudging%20people%20to%20make%20healthy%20behaviour%20choices"
          target="_blank">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=%2fpost%2frshiny-weather-app%2f&amp;title=Nudging%20people%20to%20make%20healthy%20behaviour%20choices"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fwww.markcherrie.net%2fpost%2frshiny-weather-app%2f&amp;title=Nudging%20people%20to%20make%20healthy%20behaviour%20choices"
          target="_blank">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Nudging%20people%20to%20make%20healthy%20behaviour%20choices&amp;body=%2fpost%2frshiny-weather-app%2f">
+         href="mailto:?subject=Nudging%20people%20to%20make%20healthy%20behaviour%20choices&amp;body=http%3a%2f%2fwww.markcherrie.net%2fpost%2frshiny-weather-app%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -268,10 +268,7 @@
 </div>
 
     <div class="article-style" itemprop="articleBody">
-      
-
-
-<p>Nudge theory made it big after the 2008 book by Thaler and Sunstein gathered some high profile readers (Obama, Cameron etc). Alongside public health officials and politicians, researchers have been interested in using the theory to influence people to make ‘healthy’ behaviour choices. The central tenant of the theory is based around libertarian paternalism, or influencing an individual’s ‘choice architecture’ without coercion. Nudge-type interventions (e.g. nutritional labeling, size of serving dishes) have been used to tackle <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4967524/">obesity</a> and were found to increase ‘healthy’ behaviours by 15.3%.</p>
+      <p>Nudge theory made it big after the 2008 book by Thaler and Sunstein gathered some high profile readers (Obama, Cameron etc). Alongside public health officials and politicians, researchers have been interested in using the theory to influence people to make ‘healthy’ behaviour choices. The central tenant of the theory is based around libertarian paternalism, or influencing an individual’s ‘choice architecture’ without coercion. Nudge-type interventions (e.g. nutritional labeling, size of serving dishes) have been used to tackle <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4967524/">obesity</a> and were found to increase ‘healthy’ behaviours by 15.3%.</p>
 <p>Biometerology is the study of the impacts of the weather and climate on human health. The Met Office provide a cold weather <a href="https://www.metoffice.gov.uk/public/weather/cold-weather-alert/#?tab=coldWeatherAlert">alert</a> to ensure that people with conditions susceptible to the cold (e.g. COPD) can take precautions, based on evidence of spikes in hospital admissions in weeks of <a href="http://err.ersjournals.com/content/15/101/185.full">cold weather - below 0°C</a>. This kind of thing seems to be becoming more popular, with Facebook recently implementing weather information on their users’ timelines. I wondered whether I could replicate this type of nudge in an R Shiny application.</p>
 <p>In terms of data sources, the <a href="https://www.metoffice.gov.uk/datapoint">datapoint API</a> available from the UK Met Office provides 3 hourly forecasts for a range of weather (e.g. temperature, UV, wind speed) for 5,000 UK sites (i.e. requires a script to determine closest station). Data from the Met Office goes through many rigorous checks and is reliable. Functions to query the datapoint API have been written in <a href="https://pypi.python.org/pypi/datapoint/">python</a> and porting this to R is not a small task. Also, the datapoint API has been taken offline in recent months so that it can be updated (UPDATE 02/02/2018, it is now back online, and will be used in the future).</p>
 <p>In the interim I used weather data from the <a href="https://www.wunderground.com/weather/api/">Weather Underground API</a>. This provides hourly weather forecasts for a given latitude and longitude and is available for locations around the world. The latitude and longitude was determined by the user’s smartphone or computer <a href="https://github.com/AugustT/shiny_geolocation">location</a>. As this is a test, and I want to do a full literature review to ensure the best weather thresholds, I started with a trivial example - whether it is warm enough to wear shorts to work (arbitrarily set at over 15°C).</p>
@@ -337,12 +334,12 @@ shinyServer(function(input, output) {
   <nav>
   <ul class="pager">
     
-    <li class="previous"><a href="/post/greentraffic/"><span
+    <li class="previous"><a href="http://www.markcherrie.net/post/greentraffic/"><span
       aria-hidden="true">&larr;</span> Mapping Green Space and Traffic in Glasgow</a></li>
     
 
     
-    <li class="next"><a href="/post/netcdf-in-r/">NetCDF in R <span
+    <li class="next"><a href="http://www.markcherrie.net/post/netcdf-in-r/">NetCDF in R <span
       aria-hidden="true">&rarr;</span></a></li>
     
   </ul>
@@ -355,7 +352,7 @@ shinyServer(function(input, output) {
 <section id="comments">
   <div id="disqus_thread">
     <div id="disqus_thread"></div>
-<script type="application/javascript">
+<script>
     var disqus_config = function () {
     
     
@@ -384,7 +381,7 @@ shinyServer(function(input, output) {
   <div class="container">
     <p class="powered-by">
 
-      &copy; 2019 Mark Cherrie &middot; 
+      &copy; 2020 Mark Cherrie &middot; 
 
       Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
       theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.

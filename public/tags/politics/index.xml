@@ -2,23 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Politics on Mark Cherrie</title>
-    <link>/tags/politics/</link>
+    <link>http://www.markcherrie.net/tags/politics/</link>
     <description>Recent content in Politics on Mark Cherrie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Mark Cherrie</copyright>
+    <copyright>&amp;copy; 2020 Mark Cherrie</copyright>
     <lastBuildDate>Mon, 25 Mar 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/politics/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/tags/politics/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>The Geography of the Revoke Article 50 petition</title>
-      <link>/post/geography_of_the_revoke_article_50_petition/</link>
+      <link>http://www.markcherrie.net/post/geography_of_the_revoke_article_50_petition/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/geography_of_the_revoke_article_50_petition/</guid>
-      <description>IntroductionThe ‘Revoke article 50 and remain in the EU petition’ is the most popular petition ever, which aims to stop the brexit process. The rules are that after 10,000 signatures, petitions get a response from the government, after 100,000 signatures, petitions are considered for debate in Parliament and after 17.4 million, we stop Brexit (Andrea Leadsom, 2019). As of writing this (25/03/19 17:00 GMT), the petition has amassed over 5 million signatures.</description>
+      <guid>http://www.markcherrie.net/post/geography_of_the_revoke_article_50_petition/</guid>
+      <description>&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;The ‘Revoke article 50 and remain in the EU petition’ is the most popular petition ever, which aims to stop the brexit process. The rules are that after 10,000 signatures, petitions get a response from the government, after 100,000 signatures, petitions are considered for debate in Parliament and after 17.4 million, we stop Brexit (Andrea Leadsom, 2019). As of writing this (25/03/19 17:00 GMT), the petition has amassed over 5 million signatures. As a geographer, I wondered whether there were some places that were signing (read that as sighing on a proofread… probably accurate) a lot more than others and whether that was expected, given how their constituency voted in the referendum.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;method&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Method&lt;/h2&gt;
+&lt;p&gt;Luckily, the required data at the constituency level is publically available for: the number of signatures of the &lt;a href=&#34;https://petition.parliament.uk/petitions/241584?fbclid=IwAR2E3C5chLiMm9MM7awL2qWw_Fkr_KLXert0S61swiRbYORAfmOOglgZ8as&#34;&gt;‘Revoke article 50’ petition&lt;/a&gt;, boundaries of the constituencies with the data on the &lt;a href=&#34;http://www.statsmapsnpix.com/2017/04/getting-ready-for-ge2017-big-shapefile.html&#34;&gt;2015 electorate&lt;/a&gt; and the &lt;a href=&#34;https://commonslibrary.parliament.uk/parliament-and-elections/elections-elections/brexit-votes-by-constituency/&#34;&gt;% voting to leave in the referendum&lt;/a&gt;. After merging these data together I first calculated the percentage of electorate who signed the petition. I then built a regression model using the electorate petition percentage as the dependent variable and the Brexit leave estimate as the independent variable.&lt;/p&gt;
+&lt;p&gt;The hypothesis is that the areas with higher percentages of leave voters would have the lowest percentage of the electorate signing the petition. By studying the residuals we can see constituencies that are signing the petition more or less than we would expect (given the referendum vote). I visualised the data as a &lt;a href=&#34;http://www.dannydorling.org/?page_id=3132&#34;&gt;cartogram&lt;/a&gt;, distorting the map to enlarge constituencies that had a) higher petition percentages b) higher-than-expected petition percentages.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;results&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;p&gt;The highest percentages of petition signatures were: Hornsey and Wood Green (38%), Bristol West (37%), Cities of London and Westminster (37%), Brighton, Pavilion (35%) and Islington North (34%); and the lowest: Barnsley East (3%), Birmingham, Hodge Hill (3%), Doncaster North (3%), Dudley North (3%) and Easington (3%). Here’s the map of percentage of constituency signing the petition:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;img/brexit_images/percentageofelectorate.png&#34; alt=&#34;Where have people been signing the petition?&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;&lt;em&gt;Where have people been signing the petition?&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The Brexit referendum vote explained 69% of the variance of the petition signature percentage. For every percentage increase in the Brexit leave vote there was a -0.46% lower petition percentage (95% CI -0.48 to -0.44). There was a general North West/South East pattern in the model residuals, with much lower than expected petition percentages coming from Northern Ireland and much higher than expected petition percentages coming from London and Brighton. Here’s the cartogram on expected petition percentage given the referendum’s vote:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;img/brexit_images/revokearticlebrexitref.png&#34; alt=&#34;Where has the petition had higher signatures than expected?&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;&lt;em&gt;Where has the petition had higher signatures than expected?&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusion&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://petition.parliament.uk/petitions/241584?fbclid=IwAR2E3C5chLiMm9MM7awL2qWw_Fkr_KLXert0S61swiRbYORAfmOOglgZ8as&#34;&gt;Sign up&lt;/a&gt;, especially if you are in Northern England, Wales, Scotland and Northern Ireland and we might hit 17.4 million ☺&lt;/p&gt;
+&lt;/div&gt;
+</description>
     </item>
     
   </channel>

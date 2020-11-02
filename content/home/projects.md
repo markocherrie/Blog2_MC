@@ -48,6 +48,14 @@ view = 1
 [[filter]]
   name = "MEDMI"
   tag = ".MEDMI"
-
+  
+[[filter]]
+  name = "RECESSION"
+  tag = ".RECESSSION"
+  
+[[filter]]
+  name = "COVID19"
+  tag = ".COVID19"
+  
 +++
 
